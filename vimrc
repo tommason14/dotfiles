@@ -86,6 +86,10 @@ autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/sn
 
 let mapleader = ","
 
+"Try out additional escape
+inoremap jj <Esc>
+inoremap ;; <Esc>
+
 " Sort selected text alphabetically
 vnoremap <Leader>s :sort<CR>
 
@@ -114,6 +118,8 @@ nnoremap <Leader><Space> z=
 
 " Run python in vim
 vnoremap <Leader>p y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
+
+nnoremap <Leader>p :norm ggVG$,p<CR>
 
 " Set filetype to allow above command whenever
 nnoremap <Leader>f :set ft=python<CR>i
@@ -175,6 +181,14 @@ au BufNewFile,BufRead *.js
     \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set filetype=js |
+
+au BufNewFile,BufRead *.json 
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set expandtab |
+    \ set shiftwidth=2 |
+    \ set textwidth=79 |
+    \ set filetype=json |
 
 au BufNewFile,BufRead *.css 
     \ set tabstop=2 |

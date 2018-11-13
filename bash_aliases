@@ -12,6 +12,7 @@ alias dotfiles='cd ~/dotfiles'
 
 # aliases for default commands
 alias l='ls'
+alias ld='ls'
 alias lsa='ls -a'
 alias c='clear'
 alias mkdir='mkdir -p'
@@ -50,3 +51,5 @@ alias jn='jupyter notebook'
 alias raijin='ssh tm3124@raijin.nci.org.au'
 alias magnus='ssh tmason@magnus.pawsey.org.au'
 alias gaia='ssh tmas0011@msgln6.its.monash.edu.au'
+
+alias project='cd ~/Desktop/chem_assistant/chem_assistant'
