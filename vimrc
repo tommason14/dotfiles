@@ -117,8 +117,11 @@ inoremap <Up> <C-o>gk
 nnoremap <Leader><Space> z=
 
 " Run python in vim
+
+" Run on selected text
 vnoremap <Leader>p y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
 
+"Entire buffer
 nnoremap <Leader>p :norm ggVG$,p<CR>
 
 " Set filetype to allow above command whenever
@@ -133,7 +136,7 @@ vnoremap <Leader>a :Tabularize /&<CR>
 " Format csv files in buffer
 nnoremap <Leader>r ggVG:s/,/,    /g<CR>:noh<CR>
 
-" Toggle comments
+" Toggle comments - <Command>-/ mapped to ,c in iterm2
 noremap <silent> <Leader>c :TComment<CR>
 
 " Remove the highlighting after search, by removing after enter key is pressed
