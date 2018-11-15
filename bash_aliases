@@ -3,6 +3,8 @@ NO_COLOUR='\033[0m'
 export PS1='\[\033[0;36m\]\D{%d/%m %H:%M} \W $ \[\033[0m\]'
 EDITOR=vim
 
+export PYTHONPATH=~/Desktop/chem_assistant:${PYTHONPATH}
+
 # edit dotfiles, but they are linked to the home directory, so source the home directory
 alias bashrc='vim ~/dotfiles/bashrc && source ~/.bashrc'
 alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'

@@ -121,7 +121,7 @@ nnoremap <Leader><Space> z=
 " Run on selected text
 vnoremap <Leader>p y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
 
-"Entire buffer
+" Visually select entire buffer, then run python 
 nnoremap <Leader>p :norm ggVG$,p<CR>
 
 " Set filetype to allow above command whenever

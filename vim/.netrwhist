@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/tommason/Desktop/chem_assistant/ideas'
-let g:netrw_dirhist_2='/Users/tommason/Documents/Web Design/sites/personal-site/.git'
-let g:netrw_dirhist_3='/Users/tommason/Desktop/chem_assistant/chem_assistant/core/frags'
-let g:netrw_dirhist_4='/Users/tommason/Desktop/chem_assistant/chem_assistant/core/frags/acetate0'
-let g:netrw_dirhist_5='/Users/tommason/Desktop/chem_assistant/chem_assistant/core/__pycache__'
-let g:netrw_dirhist_6='/Users/tommason/Desktop/chem_assistant/chem_assistant/interfaces'
-let g:netrw_dirhist_7='/Users/tommason/Desktop/chem_assistant/.git'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/tommason/Desktop/files'
+let g:netrw_dirhist_2='/Users/tommason/Desktop/chem_assistant/chem_assistant/scripts'
