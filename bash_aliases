@@ -55,3 +55,9 @@ alias magnus='ssh tmason@magnus.pawsey.org.au'
 alias gaia='ssh tmas0011@msgln6.its.monash.edu.au'
 
 alias project='cd ~/Desktop/chem_assistant/chem_assistant'
+
+alias gs='git status'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gp='git push'
+alias gpf='git push -f'
