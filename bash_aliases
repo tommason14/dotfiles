@@ -16,9 +16,9 @@ alias dotfiles='cd ~/dotfiles'
 alias l='ls'
 alias ld='ls'
 alias lsa='ls -a'
+alias ll='ls -l'
 alias c='clear'
 alias mkdir='mkdir -p'
-
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -32,8 +32,9 @@ alias downloads='cd ~/Downloads'
 alias dw='cd ~/Downloads'
 alias documents='cd ~/Documents'
 alias dc='cd ~/Documents'
+alias mo='cd ~/Movies'
+alias pc='cd ~/Pictures'
 
-alias site='cd ~/Documents/Web\ Design/sites/personal-site'
 
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
@@ -48,14 +49,14 @@ alias avo='/Applications/Avogadro.app/Contents/MacOS/Avogadro'
 alias avogadro='/Applications/Avogadro.app/Contents/MacOS/Avogadro'
 alias jn='jupyter notebook'
 
-
 # monash
-alias raijin='ssh tm3124@raijin.nci.org.au'
+alias raijin='ssh -X tm3124@raijin.nci.org.au'
 alias magnus='ssh tmason@magnus.pawsey.org.au'
-alias gaia='ssh tmas0011@msgln6.its.monash.edu.au'
+alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
 
-alias project='cd ~/Desktop/chem_assistant/chem_assistant'
+alias lammps_dir='cd /usr/local/share/lammps'
 
+alias ga='git add .'
 alias gs='git status'
 alias gc='git commit'
 alias gca='git commit --amend'

@@ -142,6 +142,13 @@ noremap <silent> <Leader>c :TComment<CR>
 " Remove the highlighting after search, by removing after enter key is pressed
 " regardless. <backspace> removes the :noh at bottom of editor
 nnoremap <CR> :noh<CR>:<backspace>
+
+" Easy navigation through splits
+nnoremap <Leader>h <C-W><C-H>
+nnoremap <Leader>j <C-W><C-J>
+nnoremap <Leader>k <C-W><C-K>
+nnoremap <Leader>l <C-W><C-L>
+
 " Visuals {{{1
 
 set number
