@@ -41,37 +41,39 @@ alias ...='cd ../../'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-if [ $PWD == *"tommason"* -o $PWD == *"tmas0023"* ]; then
+# if [ $PWD == *"tommason"* -o $PWD == *"tmas0023"* ]; then
 
-    alias desktop='cd ~/Desktop'
-    alias dk='cd ~/Desktop'
-    alias downloads='cd ~/Downloads'
-    alias dw='cd ~/Downloads'
-    alias documents='cd ~/Documents'
-    alias dc='cd ~/Documents'
-    alias mo='cd ~/Movies'
-    alias pc='cd ~/Pictures'
+alias desktop='cd ~/Desktop'
+alias dk='cd ~/Desktop'
+alias downloads='cd ~/Downloads'
+alias dw='cd ~/Downloads'
+alias documents='cd ~/Documents'
+alias dc='cd ~/Documents'
+alias mo='cd ~/Movies'
+alias pc='cd ~/Pictures'
 
-    alias jn='jupyter notebook'
-    
-    # monash
-    alias raijin='ssh -X tm3124@raijin.nci.org.au'
-    alias magnus='ssh tmason@magnus.pawsey.org.au'
-    alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
-    
-    alias lammps_dir='cd /usr/local/share/lammps'
-    
-    alias ga='git add .'
-    alias gs='git status'
-    alias gc='git commit'
-    alias gca='git commit --amend'
-    alias gp='git push'
-    alias gpf='git push -f'
-    alias gd='git diff'
-    
-    alias size='du -sh'
+alias jn='jupyter notebook'
 
-fi
+# monash
+alias raijin='ssh -X tm3124@raijin.nci.org.au'
+alias magnus='ssh tmason@magnus.pawsey.org.au'
+alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
+
+alias lammps_dir='cd /usr/local/share/lammps'
+
+alias ga='git add .'
+alias gs='git status'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gp='git push'
+alias gpf='git push -f'
+alias gd='git diff'
+
+alias size='du -sh'
+
+# fi
+
+
 #static sites
 alias hc='mv node_modules/ _node_modules/ && harp compile && mv _node_modules/ node_modules/'
 alias hs='harp server'
