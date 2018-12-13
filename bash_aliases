@@ -9,7 +9,7 @@ if [[ $PWD == *"tmas0023"* ]]; then
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/Documents/Monash/chem_assistant
+    export PATH=~/Documents/Monash/chem_assistant:$PATH
     export PYTHONPATH=~/Desktop/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 fi
