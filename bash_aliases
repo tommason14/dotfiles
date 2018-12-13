@@ -3,6 +3,10 @@ NO_COLOUR='\033[0m'
 export PS1='\[\033[0;36m\]\D{%d/%m %H:%M} \W $ \[\033[0m\]'
 EDITOR=vim
 
+if [[ $PWD == *"tmas0023"* ]]; then
+    export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
+fi
+
 export PYTHONPATH=~/Desktop/chem_assistant:${PYTHONPATH}
 
 # edit dotfiles, but they are linked to the home directory, so source the home directory
@@ -62,3 +66,6 @@ alias gc='git commit'
 alias gca='git commit --amend'
 alias gp='git push'
 alias gpf='git push -f'
+alias gd='git diff'
+
+alias size='du -sh'

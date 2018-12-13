@@ -1,18 +1,18 @@
 " Plugins {{{1
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/dotfiles/vim/bundle')
-
-Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
-Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
-Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
-Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
-Plugin 'junegunn/goyo.vim'               " Perfect for writing
-Plugin 'godlygeek/tabular'               " Fantastic formatting
-Plugin 'tomtom/tcomment_vim'             " Comments
-call vundle#end()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" call vundle#begin('~/dotfiles/vim/bundle')
+" 
+" Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
+" Plugin 'Chiel92/vim-autoformat'
+" Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
+" Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
+" Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
+" Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
+" Plugin 'junegunn/goyo.vim'               " Perfect for writing
+" Plugin 'godlygeek/tabular'               " Fantastic formatting
+" Plugin 'tomtom/tcomment_vim'             " Comments
+" call vundle#end()
 
 " Basics {{{1
 

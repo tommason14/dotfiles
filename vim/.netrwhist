@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/tommason/Desktop/files'
 let g:netrw_dirhist_2='/Users/tommason/Desktop/chem_assistant/chem_assistant/scripts'
 let g:netrw_dirhist_3='/Users/tommason/Documents/Monash/Automation/FMO_opt_from_xyz'
 let g:netrw_dirhist_4='/Users/tommason/Desktop/chem_assistant/chem_assistant'
 let g:netrw_dirhist_5='/Users/tommason/Desktop/chem_assistant/chem_assistant/core'
 let g:netrw_dirhist_6='/usr/local/Cellar/lammps/2017-08-11_4/share/lammps/tools/createatoms'
+let g:netrw_dirhist_7='/Users/tmas0023/dotfiles/vim'
