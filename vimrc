@@ -1,18 +1,18 @@
 " Plugins {{{1
 
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin('~/dotfiles/vim/bundle')
-" 
-" Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
-" Plugin 'Chiel92/vim-autoformat'
-" Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
-" Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
-" Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
-" Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
-" Plugin 'junegunn/goyo.vim'               " Perfect for writing
-" Plugin 'godlygeek/tabular'               " Fantastic formatting
-" Plugin 'tomtom/tcomment_vim'             " Comments
-" call vundle#end()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin('~/dotfiles/vim/bundle')
+
+Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
+Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
+Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
+Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
+Plugin 'junegunn/goyo.vim'               " Perfect for writing
+Plugin 'godlygeek/tabular'               " Fantastic formatting
+Plugin 'tomtom/tcomment_vim'             " Comments
+call vundle#end()
 
 " Basics {{{1
 
@@ -48,10 +48,6 @@ set smartcase
 set hlsearch   " highlight results
 set incsearch  " search as you type
 
-" Statusline {{{1
-
-"set laststatus=2
-
 " Ultisnips {{{1
 
 let g:snips_author="Tom Mason"
@@ -62,7 +58,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" autocmd {{{1 
+" New python/R {{{1 
 
 function! NewPython()
   silent! 0r ~/.vim/templates/skeleton.py
@@ -86,9 +82,13 @@ autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/sn
 
 let mapleader = ","
 
+" Snippet placeholder
+inoremap ;; <Esc>/<++><Enter>"_c4l
+vnoremap ;; <Esc>/<++><Enter>"_c4l
+map ;; <Esc>/<++><Enter>"_c4l
+
 "Try out additional escape
 inoremap jj <Esc>
-inoremap ;; <Esc>
 
 " Sort selected text alphabetically
 vnoremap <Leader>s :sort<CR>
@@ -167,6 +167,10 @@ au BufNewFile,BufRead *.py
     \ set shiftwidth=4 |
     \ set textwidth=100 |
     \ set filetype=python |
+
+autocmd FileType py inoremap ,info 
+autocmd FileType py inoremap #! #!/usr/bin/env python3<CR># -*- coding: utf-8 -*-
+
 " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade 
     \ set tabstop=2 |
@@ -241,3 +245,26 @@ au BufNewFile,BufRead *.txt
     \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set filetype=plain |
+
+" LaTeX {{{1 
+
+au BufNewFile,BufRead *.tex
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set expandtab |
+    \ set shiftwidth=2 |
+    \ set textwidth=79 |
+    \ set filetype=tex |
+
+autocmd FileType tex inoremap ,deg $^{\circ}$C
+autocmd FileType tex inoremap ,tm T\textsubscript{m}
+autocmd FileType tex inoremap ,sub \textsubscript{} <++><Esc>T{i
+autocmd FileType tex inoremap ,tsub \textsubscript{} <++><Esc>T{i
+autocmd FileType tex inoremap ,sup \textsuperscript{} <++><Esc>T{i
+autocmd FileType tex inoremap ,tsup \textsuperscript{} <++><Esc>T{i
+autocmd FileType tex inoremap ,one $^{-1}$
+autocmd FileType tex inoremap ,kj kJ~mol$^{-1}$
+autocmd FileType tex inoremap ,inm $  $ <++><Esc>2T$a
+autocmd FileType tex inoremap ,it \textit{} <++><Esc>T{i
+autocmd FileType tex inoremap ,bf \textbf{} <++><Esc>T{i
+autocmd FileType tex inoremap ,t \begin{table}[h]<CR>\small<CR>  \caption{}<CR>  \label{<++>}<CR>  \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}${<++>}}<CR>    \hline<CR>    <++>     \\ % headers<CR>    \hline \\<CR>    <++> \\ % data<CR>     \hline<CR>  \end{tabular*}<CR>\end{table}<Esc>?caption<CR>wa

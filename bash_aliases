@@ -10,7 +10,7 @@ fi
 
 if [[ $PWD == *"tommason"* ]]; then
     export PATH=~/Documents/Monash/chem_assistant:$PATH
-    export PYTHONPATH=~/Desktop/chem_assistant:$PYTHONPATH
+    export PYTHONPATH=~/Documents/Monash/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 fi
 
@@ -79,3 +79,4 @@ alias hc='mv node_modules/ _node_modules/ && harp compile && mv _node_modules/ n
 alias hs='harp server'
 alias js='jekyll serve'
 
+alias ra='ranger'
