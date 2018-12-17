@@ -1,6 +1,7 @@
 CYAN='\033[0;36m'
 NO_COLOUR='\033[0m'
-export PS1='\[\033[0;36m\]\D{%d/%m %H:%M} \W $ \[\033[0m\]'
+# export PS1='\[\033[0;36m\]\D{%d/%m %H:%M} \W $ \[\033[0m\]'
+export PS1='\[\033[0;36m\]\h \D{%d/%m} \W $ \[\033[0m\]'
 EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
