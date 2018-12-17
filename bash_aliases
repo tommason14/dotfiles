@@ -5,7 +5,9 @@ EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
     export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
+    export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+    
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
@@ -19,6 +21,11 @@ if [[ $PWD == *"565"* ]]; then
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
 fi
 
+if [[ $PWD == *"tmason1"* ]]; then
+    export PATH=~/monash_automation/chem_assistant:$PATH
+    export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+fi
 
 # edit dotfiles, but they are linked to the home directory, so source the home directory
 alias bashrc='vim ~/dotfiles/bashrc && source ~/.bashrc'
@@ -58,6 +65,7 @@ alias jn='jupyter notebook'
 alias raijin='ssh -X tm3124@raijin.nci.org.au'
 alias magnus='ssh tmason@magnus.pawsey.org.au'
 alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
+alias m3='ssh tmason1@m3.massive.org.au'
 
 alias lammps_dir='cd /usr/local/share/lammps'
 
@@ -80,3 +88,4 @@ alias hs='harp server'
 alias js='jekyll serve'
 
 alias ra='ranger'
+alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
