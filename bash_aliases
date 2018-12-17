@@ -25,6 +25,7 @@ if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/chem_assistant:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+    alias queue='squeue -u tmason1'
 fi
 
 # edit dotfiles, but they are linked to the home directory, so source the home directory
