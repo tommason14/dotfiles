@@ -22,6 +22,8 @@ if [[ $PWD == *"565"* ]]; then
     export PATH=/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias job_count='nqstat | grep tm3124 | wc -l'
+
 fi
 
 # magnus
@@ -29,13 +31,16 @@ if [[ $PWD == *"tmason"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias job_count='squeue | grep tmason | wc -l'
 fi
 
+# m3
 if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/chem_assistant:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias queue='squeue -u tmason1'
+    alias job_count='squeue | grep tmason1 | wc -l'
 fi
 
 # edit dotfiles, but they are linked to the home directory, so source the home directory
@@ -79,6 +84,11 @@ alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
 alias m3='ssh tmason1@m3.massive.org.au'
 
 alias lammps_dir='cd /usr/local/share/lammps'
+
+# submissions
+alias rjn_sub='ssh tm3124@raijin.nci.org.au'
+
+
 
 alias ga='git add .'
 alias gs='git status'
