@@ -17,8 +17,16 @@ if [[ $PWD == *"tommason"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 fi
 
+# raijin
 if [[ $PWD == *"565"* ]]; then
     export PATH=/home/565/tm3124/monash_automation:$PATH
+    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+fi
+
+# magnus
+if [[ $PWD == *"tmason"* ]]; then
+    export PATH=~/monash_automation:$PATH
+    export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
 fi
 
