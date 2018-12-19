@@ -6,7 +6,7 @@ EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
     export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
-    export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
+    export PYTHONPATH=~/Documents/monash_automation/:~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     
 fi
@@ -20,6 +20,7 @@ fi
 # raijin
 if [[ $PWD == *"565"* ]]; then
     export PATH=/home/565/tm3124/monash_automation:$PATH
+    export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
 fi
 
@@ -68,7 +69,7 @@ alias documents='cd ~/Documents'
 alias dc='cd ~/Documents'
 alias mo='cd ~/Movies'
 alias pc='cd ~/Pictures'
-
+alias google='cd ~/Google\ Drive'
 alias jn='jupyter notebook'
 
 # monash

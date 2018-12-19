@@ -157,6 +157,7 @@ set relativenumber
 " Changes style of highlighting
 hi clear SpellBad
 hi SpellBad cterm=underline
+set spellcapcheck=""
 
 " Python  {{{1
 
