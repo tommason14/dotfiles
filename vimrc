@@ -27,6 +27,7 @@ set clipboard=unnamed " system-wide copy
 set backspace=2 " backspace works like other editors
 set spell " spell-checker
 set visualbell " no beeps!
+set expandtab
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -115,6 +116,9 @@ inoremap <Up> <C-o>gk
 
 " Spell check - offer replacement
 nnoremap <Leader><Space> z=
+
+" set no spell
+nnoremap <Leader>s :set nospell<CR>
 
 " Run python in vim
 
