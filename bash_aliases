@@ -19,7 +19,7 @@ fi
 
 # raijin
 if [[ $PWD == *"565"* ]]; then
-    export PATH=/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
+    export PATH=/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='nqstat | grep tm3124 | wc -l'
