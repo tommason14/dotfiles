@@ -241,7 +241,7 @@ au BufNewFile,BufRead *.md
     \ set expandtab |
     \ set shiftwidth=2 |
     \ set textwidth=79 |
-    \ set filetype=md |
+    \ set filetype=markdown |
 
 au BufNewFile,BufRead *.txt 
     \ set tabstop=2 |
