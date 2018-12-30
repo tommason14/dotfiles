@@ -51,7 +51,7 @@ if [[ $PWD == *"565"* ]]; then
   }
 
   addtosub() {
-    echo $1 >> ~/submissions.txt
+    echo "$@" >> ~/submissions.txt
   }
 
 fi
@@ -64,7 +64,7 @@ if [[ $PWD == *"tmason"* ]]; then
   }
 
   addtosub() {
-    echo $1 >> ~/submissions.txt
+    echo "$@" >> ~/submissions.txt
   }
 
 fi
