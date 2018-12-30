@@ -78,7 +78,7 @@ alias google='cd ~/Google\ Drive'
 alias jn='jupyter notebook'
 
 # monash
-alias raijin='ssh -X tm3124@raijin.nci.org.au'
+alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
 alias magnus='ssh tmason@magnus.pawsey.org.au'
 alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
 alias m3='ssh tmason1@m3.massive.org.au'

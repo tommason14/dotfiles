@@ -88,7 +88,7 @@ inoremap ;; <Esc>/<++><Enter>"_c4l
 vnoremap ;; <Esc>/<++><Enter>"_c4l
 map ;; <Esc>/<++><Enter>"_c4l
 
-"Try out additional escape
+" Try out additional escape
 inoremap jj <Esc>
 
 " Sort selected text alphabetically
@@ -273,3 +273,4 @@ autocmd FileType tex inoremap ,inm $  $ <++><Esc>2T$a
 autocmd FileType tex inoremap ,it \textit{} <++><Esc>T{i
 autocmd FileType tex inoremap ,bf \textbf{} <++><Esc>T{i
 autocmd FileType tex inoremap ,t \begin{table}[h]<CR>\small<CR>  \caption{}<CR>  \label{<++>}<CR>  \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}${<++>}}<CR>    \hline<CR>    <++>     \\ % headers<CR>    \hline \\<CR>    <++> \\ % data<CR>     \hline<CR>  \end{tabular*}<CR>\end{table}<Esc>?caption<CR>wa
+

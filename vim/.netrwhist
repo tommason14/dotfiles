@@ -1,15 +1,5 @@
 let g:netrw_dirhistmax  =10
-<<<<<<< HEAD
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/tommason/Desktop/files'
-let g:netrw_dirhist_2='/Users/tommason/Desktop/chem_assistant/chem_assistant/scripts'
-let g:netrw_dirhist_3='/Users/tommason/Documents/Monash/Automation/FMO_opt_from_xyz'
-let g:netrw_dirhist_4='/Users/tommason/Desktop/chem_assistant/chem_assistant'
-let g:netrw_dirhist_5='/Users/tommason/Desktop/chem_assistant/chem_assistant/core'
-let g:netrw_dirhist_6='/usr/local/Cellar/lammps/2017-08-11_4/share/lammps/tools/createatoms'
-let g:netrw_dirhist_7='/Users/tmas0023/dotfiles/vim'
-let g:netrw_dirhist_8='/Users/tommason/Desktop/vib_testing'
-=======
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/tmas0023/Desktop/frags/acetate_0/hess'
->>>>>>> 1bb42bc57c0dff7b6ff2735c2df9b4984a8cfe1a
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3'
+let g:netrw_dirhist_2='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3/p4'
+let g:netrw_dirhist_3='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3/p4/opt'

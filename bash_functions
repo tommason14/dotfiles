@@ -41,3 +41,32 @@ for f in *.$1; do mv $f `basename $f .$1`.$2; done;
 zipall(){
 zip $1 -r * -x "*.DS_Store"
 }
+
+
+if [[ $PWD == *"565"* ]]; then
+
+  sub() {
+     pwd >> ~/submissions.txt
+     qsub $1 |& tee -a ~/submissions.txt     
+  }
+
+  addtosub() {
+    echo $1 >> ~/submissions.txt
+  }
+
+fi
+
+if [[ $PWD == *"tmason"* ]]; then
+
+  sub() {
+     pwd >> ~/submissions.txt
+     sbatch $1 |& tee -a ~/submissions.txt     
+  }
+
+  addtosub() {
+    echo $1 >> ~/submissions.txt
+  }
+
+fi
+
+
