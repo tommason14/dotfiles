@@ -23,7 +23,8 @@ if [[ $PWD == *"565"* ]]; then
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='nqstat | grep tm3124 | wc -l'
-
+    
+    alias gspec='cp /home/565/tm3124/bin/meta_templates/gamess_spec/meta.py .'
 fi
 
 # magnus
