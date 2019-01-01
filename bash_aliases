@@ -5,14 +5,14 @@ export PS1='\[\033[0;36m\]\h \D{%d/%m} \W $ \[\033[0m\]'
 EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
-    export PATH=/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
+    export PATH=~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/Documents/Monash/chem_assistant:$PATH
+    export PATH=~/dotfiles/python_wrappers:~/Documents/Monash/chem_assistant:$PATH
     export PYTHONPATH=~/Documents/Monash/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 fi
@@ -87,7 +87,8 @@ alias m3='ssh tmason1@m3.massive.org.au'
 alias lammps_dir='cd /usr/local/share/lammps'
 
 # submissions
-alias rjn_sub='ssh tm3124@raijin.nci.org.au'
+alias rjn_sub='ssh tm3124@raijin.nci.org.au cat /home/565/tm3124/submissions.txt'
+alias mgs_sub='ssh tmason@magnus.pawsey.org.au cat /home/tmason/submissions.txt'
 
 
 
