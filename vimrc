@@ -274,3 +274,12 @@ autocmd FileType tex inoremap ,it \textit{} <++><Esc>T{i
 autocmd FileType tex inoremap ,bf \textbf{} <++><Esc>T{i
 autocmd FileType tex inoremap ,t \begin{table}[h]<CR>\small<CR>  \caption{}<CR>  \label{<++>}<CR>  \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}${<++>}}<CR>    \hline<CR>    <++>     \\ % headers<CR>    \hline \\<CR>    <++> \\ % data<CR>     \hline<CR>  \end{tabular*}<CR>\end{table}<Esc>?caption<CR>wa
 
+" Bash {{{1
+
+au BufNewFile,BufRead *.sh bash*
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set expandtab |
+    \ set shiftwidth=2 |
+    \ set textwidth=79 |
+    \ set filetype=sh |
