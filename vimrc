@@ -74,8 +74,8 @@ function! NewR()
   startinsert
 endfunction
 
-autocmd BufNewFile *.py call NewPython()
-autocmd BufNewFile *.R call NewR()
+" autocmd BufNewFile *.py call NewPython()
+" autocmd BufNewFile *.R call NewR()
 
 autocmd Filetype tex nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/tex.snippets<CR>
 autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/python.snippets<CR>

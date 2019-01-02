@@ -47,7 +47,7 @@ if [[ $PWD == *"565"* ]]; then
 
   sub() {
      pwd >> ~/submissions.txt
-     qsub $1 |& tee -a ~/submissions.txt     
+     qsub $1 2>&1 | tee -a ~/submissions.txt     
   }
 
   addtosub() {
@@ -60,7 +60,7 @@ if [[ $PWD == *"tmason"* ]]; then
 
   sub() {
      pwd >> ~/submissions.txt
-     sbatch $1 |& tee -a ~/submissions.txt     
+     sbatch $1 2>&1 | tee -a ~/submissions.txt     
   }
 
   addtosub() {
@@ -69,4 +69,11 @@ if [[ $PWD == *"tmason"* ]]; then
 
 fi
 
-
+update_repos() {
+  cd ~/dotfiles
+  echo "Updating dotfiles..."
+  git pull && source ~/.bashrc #if error, no reload of bashrc
+  cd ~/Documents/monash_automation
+  echo "Updating monash_automation..." 
+  git pull
+}
