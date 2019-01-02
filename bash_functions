@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 tex() {
 
 pdflatex $1
@@ -69,11 +70,27 @@ if [[ $PWD == *"tmason"* ]]; then
 
 fi
 
-update_repos() {
+pull_repos() {
   cd ~/dotfiles
   echo "Updating dotfiles..."
   git pull && source ~/.bashrc #if error, no reload of bashrc
   cd ~/Documents/monash_automation
   echo "Updating monash_automation..." 
   git pull
+}
+
+push_repos() {
+  pushd ~/dotfiles
+  echo "Pushing dotfiles to master..."
+  git add . && git commit && git push
+  cd ~/Documents/monash_automation
+  echo "Pushing monash_automation to master..." 
+  git add . && git commit && git push
+  popd
+}
+
+force_push() {
+  git add .
+  git commit --amend --no-edit
+  git push --force
 }

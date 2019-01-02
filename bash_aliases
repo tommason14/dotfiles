@@ -1,7 +1,11 @@
-CYAN='\033[0;36m'
-NO_COLOUR='\033[0m'
-# export PS1='\[\033[0;36m\]\D{%d/%m %H:%M} \W $ \[\033[0m\]'
-export PS1='\[\033[0;36m\]\h \D{%d/%m} \W $ \[\033[0m\]'
+#!/usr/bin/env sh
+CYAN='\[\033[0;36m\]'
+NO_COLOUR='\[\033[0m\]'
+if [[ $HOSTNAME == "MU00151959X" ]]; then
+  export PS1="${CYAN}Local \D{%d/%m} \W $ ${NO_COLOUR}"
+else
+  export PS1="${CYAN}\h \D{%d/%m} \W $ ${NO_COLOUR}"
+fi
 EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
@@ -65,44 +69,42 @@ alias ...='cd ../../'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# if [ $PWD == *"tommason"* -o $PWD == *"tmas0023"* ]; then
+if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 
-alias desktop='cd ~/Desktop'
-alias dk='cd ~/Desktop'
-alias downloads='cd ~/Downloads'
-alias dw='cd ~/Downloads'
-alias documents='cd ~/Documents'
-alias dc='cd ~/Documents'
-alias mo='cd ~/Movies'
-alias pc='cd ~/Pictures'
-alias google='cd ~/Google\ Drive'
-alias jn='jupyter notebook'
+  alias desktop='cd ~/Desktop'
+  alias dk='cd ~/Desktop'
+  alias downloads='cd ~/Downloads'
+  alias dw='cd ~/Downloads'
+  alias documents='cd ~/Documents'
+  alias dc='cd ~/Documents'
+  alias mo='cd ~/Movies'
+  alias pc='cd ~/Pictures'
+  alias google='cd ~/Google\ Drive'
+  alias jn='jupyter notebook'
 
-# monash
-alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
-alias magnus='ssh tmason@magnus.pawsey.org.au'
-alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
-alias m3='ssh tmason1@m3.massive.org.au'
+  # monash
+  alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
+  alias magnus='ssh tmason@magnus.pawsey.org.au'
+  alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
+  alias m3='ssh tmason1@m3.massive.org.au'
 
-alias lammps_dir='cd /usr/local/share/lammps'
+  alias lammps_dir='cd /usr/local/share/lammps'
 
-# submissions
-alias rjn_sub='ssh tm3124@raijin.nci.org.au cat /home/565/tm3124/submissions.txt'
-alias mgs_sub='ssh tmason@magnus.pawsey.org.au cat /home/tmason/submissions.txt'
+  # submissions
+  alias rjn_sub='ssh tm3124@raijin.nci.org.au cat /home/565/tm3124/submissions.txt'
+  alias mgs_sub='ssh tmason@magnus.pawsey.org.au cat /home/tmason/submissions.txt'
 
+  alias ga='git add .'
+  alias gs='git status'
+  alias gc='git commit'
+  alias gca='git commit --amend'
+  alias gp='git push'
+  alias gpf='git push -f'
+  alias gd='git diff'
 
+  alias size='du -sh'
 
-alias ga='git add .'
-alias gs='git status'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gp='git push'
-alias gpf='git push -f'
-alias gd='git diff'
-
-alias size='du -sh'
-
-# fi
+fi
 
 
 #static sites
