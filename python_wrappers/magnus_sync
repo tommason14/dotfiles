@@ -9,6 +9,7 @@ Github: https:github.com/tommason14
 Description: rsync wrapper for magnus
 """
 
+import os
 import sys
 
 if len(sys.argv) <= 3:

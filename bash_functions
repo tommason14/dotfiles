@@ -71,19 +71,28 @@ if [[ $PWD == *"tmason"* ]]; then
 fi
 
 pull_repos() {
-  cd ~/dotfiles
+  pushd ~/dotfiles
   echo "Updating dotfiles..."
   git pull && source ~/.bashrc #if error, no reload of bashrc
-  cd ~/Documents/monash_automation
+  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* ]]; then
+    cd ~/monash_automation
+  else # on local machine
+    cd ~/Documents/monash_automation
+  fi
   echo "Updating monash_automation..." 
   git pull
+  popd
 }
 
 push_repos() {
   pushd ~/dotfiles
   echo "Pushing dotfiles to master..."
   git add . && git commit && git push
-  cd ~/Documents/monash_automation
+  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* ]]; then
+    cd ~/monash_automation
+  else # on local machine
+    cd ~/Documents/monash_automation
+  fi
   echo "Pushing monash_automation to master..." 
   git add . && git commit && git push
   popd

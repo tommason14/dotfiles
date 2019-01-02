@@ -10,14 +10,14 @@ EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
     export PATH=~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
-    export PYTHONPATH=~/Documents/monash_automation/:~/Documents/monash_automation/chem_assistant:$PYTHONPATH
+    export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/dotfiles/python_wrappers:~/Documents/Monash/chem_assistant:$PATH
-    export PYTHONPATH=~/Documents/Monash/chem_assistant:$PYTHONPATH
+    export PATH=~/dotfiles/python_wrappers:~/Documents/monash_automation:$PATH
+    export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 fi
 
@@ -41,7 +41,7 @@ fi
 
 # m3
 if [[ $PWD == *"tmason1"* ]]; then
-    export PATH=~/monash_automation/chem_assistant:$PATH
+    export PATH=~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias queue='squeue -u tmason1'
