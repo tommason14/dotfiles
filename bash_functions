@@ -1,12 +1,22 @@
 #!/usr/bin/env sh
 tex() {
-
-pdflatex $1
-bibtex ${1%.tex}
-pdflatex $1
-pdflatex $1
-open ${1%.tex}.pdf
+  pdflatex $1
+  bibtex ${1%.tex}
+  pdflatex $1
+  pdflatex $1
+  open ${1%.tex}.pdf
 }
+
+clean_tex() {
+  args="bbl blg log synctex.gz fls fdb_latexmk out"
+  for arg in $args
+  do
+    if [ -f $1.$arg ]; then
+      rm $1.$arg
+    fi
+  done
+}
+
 
 gitall() {
 

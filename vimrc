@@ -276,7 +276,7 @@ autocmd FileType tex inoremap ,t \begin{table}[h]<CR>\small<CR>  \caption{}<CR> 
 
 " Bash {{{1
 
-au BufNewFile,BufRead *.sh bash*
+au BufNewFile,BufRead *.sh,bash*
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set expandtab |

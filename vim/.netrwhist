@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3'
 let g:netrw_dirhist_2='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3/p4'
 let g:netrw_dirhist_3='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3/p4/opt'
+let g:netrw_dirhist_4='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/raijin_8_7_18/2ip/c4mim/mes/c4mim-mes-6/p4/opt'

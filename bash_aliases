@@ -12,13 +12,15 @@ if [[ $PWD == *"tmas0023"* ]]; then
     export PATH=~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+    alias automation='cd ~/Documents/monash_automation'
     
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/dotfiles/python_wrappers:~/Documents/monash_automation:$PATH
+    export PATH=~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+    alias automation='cd ~/Documents/Monash/monash_automation'
 fi
 
 # raijin
@@ -27,7 +29,8 @@ if [[ $PWD == *"565"* ]]; then
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='nqstat | grep tm3124 | wc -l'
-    
+    alias automation='cd ~/monash_automation'
+
     alias gspec='cp /home/565/tm3124/bin/meta_templates/gamess_spec/meta.py .'
 fi
 
@@ -37,6 +40,7 @@ if [[ $PWD == *"tmason"* ]]; then
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason | wc -l'
+    alias automation='cd ~/monash_automation'
 fi
 
 # m3
@@ -46,6 +50,7 @@ if [[ $PWD == *"tmason1"* ]]; then
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias queue='squeue -u tmason1'
     alias job_count='squeue | grep tmason1 | wc -l'
+    alias automation='cd ~/monash_automation'
 fi
 
 # edit dotfiles, but they are linked to the home directory, so source the home directory
