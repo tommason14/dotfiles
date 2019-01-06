@@ -86,7 +86,9 @@ pull_repos() {
   git pull && source ~/.bashrc #if error, no reload of bashrc
   if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* ]]; then
     cd ~/monash_automation
-  else # on local machine
+  elif [[ $PWD == *"tommason"* ]]; then # MacBook
+    cd ~/Documents/Monash/monash_automation
+  elif [[ $PWD == *"tmas0023"* ]]; then # Uni
     cd ~/Documents/monash_automation
   fi
   echo "Updating monash_automation..." 
@@ -100,7 +102,9 @@ push_repos() {
   git add . && git commit && git push
   if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* ]]; then
     cd ~/monash_automation
-  else # on local machine
+  elif [[ $PWD == *"tommason"* ]]; then # MacBook
+    cd ~/Documents/Monash/monash_automation
+  elif [[ $PWD == *"tmas0023"* ]]; then # Uni
     cd ~/Documents/monash_automation
   fi
   echo "Pushing monash_automation to master..." 

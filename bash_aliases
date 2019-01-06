@@ -18,20 +18,21 @@ fi
 
 if [[ $PWD == *"tommason"* ]]; then
     export PATH=~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:$PATH
-    export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
+    export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
 fi
 
 # raijin
-if [[ $PWD == *"565"* ]]; then
+if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
     export PATH=/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
-    alias job_count='nqstat | grep tm3124 | wc -l'
+    alias job_count='qstat -u tm3124 | grep tm3124 | wc -l'
     alias automation='cd ~/monash_automation'
-
-    alias gspec='cp /home/565/tm3124/bin/meta_templates/gamess_spec/meta.py .'
+    
+    alias gspec='cp /~/monash_automation/chem_assistant/templates/gamess_meta/spec/meta.py .'
+    alias pspec='cp ~/monash_automation/chem_assistant/templates/psi_meta/spec/meta.py .'
 fi
 
 # magnus
