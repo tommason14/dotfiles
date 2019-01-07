@@ -109,7 +109,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias gd='git diff'
 
   alias size='du -sh'
-
+  alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 fi
 
 

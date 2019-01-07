@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 make_pdf() {
-pandoc $1.md --pdf-engine=xelatex --filter=pandoc=citeproc -o $1.pdf
+pandoc $1.md --pdf-engine=xelatex --filter=pandoc-citeproc -o $1.pdf
 }
 
 tex() {
