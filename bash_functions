@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
 make_pdf() {
-pandoc $1.md --pdf-engine=xelatex --filter=pandoc-citeproc -o $1.pdf
+pandoc $1 --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
+open ${1%.md}.pdf
 }
 
 tex() {
@@ -122,3 +123,11 @@ force_push() {
   git commit --amend --no-edit
   git push --force
 }
+
+make_gif() {
+
+args="$@"
+
+convert -loop 0 -delay 20 image* run.gif
+}
+
