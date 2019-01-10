@@ -10,7 +10,7 @@ EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
     export PATH=~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
-    export PYTHONPATH=~/Documents/monash_automation/chem_assistant:$PYTHONPATH
+    export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
@@ -94,6 +94,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias magnus='ssh tmason@magnus.pawsey.org.au'
   alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
   alias m3='ssh tmason1@m3.massive.org.au'
+  alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
 
   alias lammps_dir='cd /usr/local/share/lammps'
 
