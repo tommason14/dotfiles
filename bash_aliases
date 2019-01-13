@@ -50,7 +50,7 @@ if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
-    alias queue='squeue -u tmason1'
+    alias queue='squeue -u tmason1 && check_queue_for_completion.py'
     alias job_count='squeue | grep tmason1 | wc -l'
     alias automation='cd ~/monash_automation'
 fi
