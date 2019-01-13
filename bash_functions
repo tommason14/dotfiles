@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 make_pdf() {
-pandoc $1 --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
+pandoc $1 -H preamble.tex --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
 open ${1%.md}.pdf
 }
 
