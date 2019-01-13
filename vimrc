@@ -138,7 +138,7 @@ nnoremap sv :so $MYVIMRC<CR>
 vnoremap <Leader>a :Tabularize /&<CR>
 
 " Format csv files in buffer
-nnoremap <Leader>r ggVG:s/,/,    /g<CR>:noh<CR>
+nnoremap <Leader>r :Tabularize /,<CR>
 
 " Toggle comments - <Command>-/ mapped to ,c in iterm2
 noremap <silent> <Leader>c :TComment<CR>
