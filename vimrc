@@ -125,7 +125,10 @@ nnoremap <Leader>s :set nospell<CR>
 " Run on selected text
 vnoremap <Leader>p y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
 
-" Visually select entire buffer, then run python 
+" Run on selected text, no output
+vnoremap <Leader>n y`]o<Esc>p`[v`]:!python3<CR>
+
+" Run on entire buffer
 nnoremap <Leader>p :norm ggVG$,p<CR>
 
 " Set filetype to allow above command whenever
@@ -135,10 +138,10 @@ nnoremap <Leader>f :set ft=python<CR>i
 nnoremap <Leader>v :tabnew $MYVIMRC<CR>
 nnoremap sv :so $MYVIMRC<CR>
 
-vnoremap <Leader>a :Tabularize /&<CR>
+vnoremap <Leader>a :Tabularize /&<CR><CR>
 
 " Format csv files in buffer
-nnoremap <Leader>r :Tabularize /,<CR>
+nnoremap <Leader>r :Tabularize /,<CR><CR>
 
 " Toggle comments - <Command>-/ mapped to ,c in iterm2
 noremap <silent> <Leader>c :TComment<CR>

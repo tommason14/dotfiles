@@ -68,6 +68,7 @@ alias lsa='ls -a'
 alias ll='ls -l'
 alias c='clear'
 alias mkdir='mkdir -p'
+alias cwd="echo ${PWD// /\\ }"
 
 alias cd..='cd ..'
 alias ..='cd ..'

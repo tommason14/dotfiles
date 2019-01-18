@@ -1,10 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3'
-let g:netrw_dirhist_2='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3/p4'
-let g:netrw_dirhist_3='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/Raijin_hy2ip_coords_dec2018/hydrated_acetate_dec2018/calcs (opt_rjn)/c4mim/ac/3/p4/opt'
-let g:netrw_dirhist_4='/Users/tommason/Google Drive/Hydrated_ILs/Data from SCs/raijin_8_7_18/2ip/c4mim/mes/c4mim-mes-6/p4/opt'
-let g:netrw_dirhist_5='/Users/tommason/Documents/Monash/monash_automation/ideas'
-let g:netrw_dirhist_6='/Users/tommason/Documents/Monash/monash_automation'
-let g:netrw_dirhist_7='/Users/tommason/Documents/Monash/monash_automation/ideas'
-let g:netrw_dirhist_8='/Users/tmas0023/Desktop/water'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/usr/local/Cellar/lammps/2017-08-11_4/share/lammps/examples/melt'
