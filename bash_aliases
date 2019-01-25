@@ -37,7 +37,7 @@ if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
 fi
 
 # magnus
-if [[ $PWD == *"tmason"* ]]; then
+if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
@@ -45,6 +45,13 @@ if [[ $PWD == *"tmason"* ]]; then
     alias automation='cd ~/monash_automation'
 fi
 
+#stampede2
+if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
+    export PATH=~/monash_automation:$PATH
+    export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
+    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias automation='cd ~/monash_automation'
+fi
 # m3
 if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/:$PATH
