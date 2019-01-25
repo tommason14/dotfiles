@@ -3,9 +3,12 @@ CYAN='\[\033[0;36m\]'
 NO_COLOUR='\[\033[0m\]'
 if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}Local \D{%d/%m} \W $ ${NO_COLOUR}"
+elif [[ HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
+  export PS1="${CYAN}Stampede2 \D{%d/%m} \W $ ${NO_COLOUR}"
 else
   export PS1="${CYAN}\h \D{%d/%m} \W $ ${NO_COLOUR}"
 fi
+
 EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
@@ -62,7 +65,7 @@ if [[ $PWD == *"tmason1"* ]]; then
 fi
 
 # edit dotfiles, but they are linked to the home directory, so source the home directory
-alias bashrc='vim ~/dotfiles/bashrc && source ~/.bashrc'
+alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
 alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
 alias vimrc='vim ~/dotfiles/vimrc'
