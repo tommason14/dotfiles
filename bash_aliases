@@ -105,6 +105,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
   alias m3='ssh tmason1@m3.massive.org.au'
   alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
+  alias stampede='ssh -l tmason stampede2.tacc.utexas.edu'
 
   alias lammps_dir='cd /usr/local/share/lammps'
 
