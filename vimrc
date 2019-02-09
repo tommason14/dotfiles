@@ -12,6 +12,7 @@ Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'tomtom/tcomment_vim'             " Comments
+Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 call vundle#end()
 
 " Basics {{{1
@@ -247,6 +248,7 @@ au BufNewFile,BufRead *.md
     \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set filetype=markdown |
+    \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
 
 au BufNewFile,BufRead *.txt 
     \ set tabstop=2 |
