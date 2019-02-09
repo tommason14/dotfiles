@@ -17,7 +17,6 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-    
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
@@ -25,6 +24,11 @@ if [[ $PWD == *"tommason"* ]]; then
     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
+
+    #static sites
+    alias hc='mv node_modules/ _node_modules/ && harp compile && mv _node_modules/ node_modules/'
+    alias hs='harp server'
+    alias js='jekyll serve'
 fi
 
 # raijin
@@ -78,7 +82,6 @@ alias lsa='ls -a'
 alias ll='ls -l'
 alias c='clear'
 alias mkdir='mkdir -p'
-alias cwd="echo ${PWD// /\\ }"
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -97,6 +100,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google\ Drive'
+  alias analysis='cd ~/Google\ Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
 
   # monash
@@ -104,9 +108,13 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias magnus='ssh tmason@magnus.pawsey.org.au'
   alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
   alias m3='ssh tmason1@m3.massive.org.au'
-  alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
+  # alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
+  alias monarch='ssh -Y tmason1@monarch.erc.monash.edu.au'
+  alias stampede='ssh -X tmason@stampede2.tacc.utexas.edu'
 
   alias lammps_dir='cd /usr/local/share/lammps'
+  alias polymers='cd ~/Google\ Drive/Polymers'
+
 
   # submissions
   alias rjn_sub='ssh tm3124@raijin.nci.org.au cat /home/565/tm3124/submissions.txt'
@@ -125,10 +133,6 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 fi
 
 
-#static sites
-alias hc='mv node_modules/ _node_modules/ && harp compile && mv _node_modules/ node_modules/'
-alias hs='harp server'
-alias js='jekyll serve'
 
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'

@@ -290,3 +290,12 @@ au BufNewFile,BufRead *.sh,bash*
     \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set filetype=sh |
+
+" C++ {{{1
+au BufNewFile,BufRead *.cpp
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set expandtab |
+    \ set shiftwidth=2 |
+    \ set textwidth=79 |
+    \ set filetype=cpp |

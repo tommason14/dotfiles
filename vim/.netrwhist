@@ -1,5 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/usr/local/Cellar/lammps/2017-08-11_4/share/lammps/examples/melt'
 let g:netrw_dirhist_2='/Users/tmas0023/.pymol'
-let g:netrw_dirhist_3='/Users/tommason/Google Drive/Polymers/polymerisation_rates/initial_geoms'
+let g:netrw_dirhist_3='/Users/tmas0023/.pandoc'
+let g:netrw_dirhist_4='/Users/tmas0023'
+let g:netrw_dirhist_5='/Users/tmas0023/.pandoc'
+let g:netrw_dirhist_6='/Users/tmas0023/Desktop/gamess/source'
+let g:netrw_dirhist_7='/Users/tmas0023/Desktop/gamess'
+let g:netrw_dirhist_8='/Users/tmas0023/Desktop/gamess/source'

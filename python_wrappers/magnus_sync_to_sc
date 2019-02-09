@@ -25,7 +25,7 @@ else:
     string = "rsync -rav -e ssh --include '*/' "
 
     for ext in extensions:
-        string += f"--include '*.{ext}' "
+        string += f"--include '*{ext}' "
 
     string += f"--exclude='*' {LOCAL_DIR} tmason@magnus.pawsey.org.au:/scratch/pawsey0197/tmason/{REMOTE_DIR}"
 
