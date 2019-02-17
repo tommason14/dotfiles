@@ -2,11 +2,11 @@
 CYAN='\[\033[0;36m\]'
 NO_COLOUR='\[\033[0m\]'
 if [[ $HOSTNAME == "MU00151959X" ]]; then
-  export PS1="${CYAN}Local \D{%d/%m} \W $ ${NO_COLOUR}"
+  export PS1="${CYAN}Local \D{%d/%m} \W \n>> ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1="${CYAN}Stampede2 \D{%d/%m} \W $ ${NO_COLOUR}"
+  export PS1="${CYAN}Stampede2 \D{%d/%m} \W \n>> ${NO_COLOUR}"
 else
-  export PS1="${CYAN}\h \D{%d/%m} \W $ ${NO_COLOUR}"
+  export PS1="${CYAN}\h \D{%d/%m} \W \n>> ${NO_COLOUR}"
 fi
 
 EDITOR=vim
