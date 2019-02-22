@@ -25,6 +25,8 @@ if [[ $PWD == *"tommason"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
 
+    alias uni='ssh tmas0023@dyn-130-194-161-79.its.monash.edu.au'
+
     #static sites
     alias hc='mv node_modules/ _node_modules/ && harp compile && mv _node_modules/ node_modules/'
     alias hs='harp server'
