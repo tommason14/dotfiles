@@ -102,8 +102,8 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias dc='cd ~/Documents'
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
-  alias google='cd ~/Google\ Drive'
-  alias analysis='cd ~/Google\ Drive/Hydrated_ILs/Analysis'
+  alias google='cd ~/Google_Drive'
+  alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
 
   # monash
@@ -133,6 +133,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
+  alias paper='cd ~/Google_Drive/Hydrated_ILs/Publishing/Write_up/current/'
 fi
 
 
