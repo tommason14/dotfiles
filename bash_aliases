@@ -17,6 +17,7 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
+    alias backups='cd ~/Backups'
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
