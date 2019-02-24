@@ -153,21 +153,17 @@ noremap <silent> <Leader>c :TComment<CR>
 " regardless. <backspace> removes the :noh at bottom of editor
 nnoremap <CR> :noh<CR>:<backspace>
 
+" Reapply the custom spellcheck look
+nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
+
+
+
 " Easy navigation through splits
 nnoremap <Leader>h <C-W><C-H>
 nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 
-" Visuals {{{1
-
-set number
-set relativenumber
-
-" Changes style of highlighting
-hi clear SpellBad
-hi SpellBad cterm=underline
-set spellcapcheck=""
 
 " Python  {{{1
 
@@ -189,7 +185,7 @@ au BufNewFile,BufRead *.jade
     \ set expandtab |
     \ set shiftwidth=2 |
     \ set textwidth=79 |
-    \ set filetype=jade |
+    \ set filetype=pug |
 
 au BufNewFile,BufRead *.html 
     \ set tabstop=2 |
@@ -261,12 +257,14 @@ au BufNewFile,BufRead *.txt
 " LaTeX {{{1 
 
 au BufNewFile,BufRead *.tex
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=tex |
+    \ set formatoptions=tc        |
+    \ set tabstop=2               |
+    \ set softtabstop=2           |
+    \ set expandtab               |
+    \ set shiftwidth=2            |
+    \ set textwidth=79            |
+    \ set filetype=tex            |
+    \ set syntax=latex-rewrite    |
 
 autocmd FileType tex inoremap ,deg $^{\circ}$C
 autocmd FileType tex inoremap ,tm T\textsubscript{m}
@@ -299,3 +297,14 @@ au BufNewFile,BufRead *.cpp
     \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set filetype=cpp |
+
+
+" Visuals {{{1
+
+set number
+set relativenumber
+
+" Changes style of highlighting
+hi clear SpellBad
+hi SpellBad cterm=underline
+set spellcapcheck=""
