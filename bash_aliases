@@ -94,6 +94,7 @@ alias .....='cd ../../../..'
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 
+  alias ls='ls -G'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
   alias downloads='cd ~/Downloads'
