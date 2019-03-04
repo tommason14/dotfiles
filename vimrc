@@ -60,23 +60,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" New python/R {{{1 
-
-function! NewPython()
-  silent! 0r ~/.vim/templates/skeleton.py
-  %s/filename/\=expand("%:t")/
-  norm gg8j$a 
-  startinsert
-endfunction
-
-function! NewR()
-  silent! 0r ~/.vim/templates/skeleton.R
-  norm ggG$o
-  startinsert
-endfunction
-
-" autocmd BufNewFile *.py call NewPython()
-" autocmd BufNewFile *.R call NewR()
 
 autocmd Filetype tex nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/tex.snippets<CR>
 autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/python.snippets<CR>
