@@ -119,7 +119,7 @@ inoremap <Up> <C-o>gk
 nnoremap <Leader><Space> z=
 
 " set no spell
-nnoremap <Leader>s :set nospell<CR>
+" nnoremap <Leader>s :set nospell<CR>
 
 " Run python in vim
 

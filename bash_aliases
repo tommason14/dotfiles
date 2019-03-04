@@ -18,6 +18,7 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
     alias backups='cd ~/Backups'
+    alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
@@ -91,6 +92,7 @@ alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
+
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 
