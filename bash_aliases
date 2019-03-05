@@ -39,7 +39,7 @@ fi
 if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
     export PATH=/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='qstat -u tm3124 | grep tm3124 | wc -l'
     alias automation='cd ~/monash_automation'
     
@@ -51,7 +51,7 @@ fi
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason | wc -l'
     alias automation='cd ~/monash_automation'
 fi
@@ -60,14 +60,14 @@ fi
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
 fi
 # m3
 if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason1 | wc -l'
     alias automation='cd ~/monash_automation'
 fi
