@@ -1,0 +1,29 @@
+# styling
+
+show spheres
+show sticks
+set sphere_scale = 0.23
+set stick_radius = 0.15
+set ray_opaque_background = 0
+set ray_shadows = 0
+set spec_power = 1500
+set sphere_scale = 0.3
+set stick_h_scale = 1.0
+
+# colors 
+
+color tv_orange, (name C*)
+color white, (name H*)
+color tv_blue, (name N*)
+color firebrick, (name O*)
+
+color slate, (name P*)
+
+color greencyan, (name S*)
+
+# c tv_orange
+# h white
+# n tv_blue
+# o firebrick
+# p slate
+# s paleyellow

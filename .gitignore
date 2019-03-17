@@ -1,0 +1,3 @@
+# don't upload Vundle files to github. Just run :PluginInstall after 
+# pulling the repo
+vim/bundle/*
