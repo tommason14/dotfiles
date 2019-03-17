@@ -29,9 +29,10 @@ set backspace=2 " backspace works like other editors
 set spell " spell-checker
 set visualbell " no beeps!
 set expandtab
+set ruler
 
 " Put plugins and dictionaries in this dir (also on Windows)
-let vimDir = '$HOME/.vim'
+let vimDir = '$HOME/dotfiles/.vim'
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
