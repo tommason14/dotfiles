@@ -17,7 +17,6 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-    alias backups='cd ~/Backups'
     alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
 fi
 
@@ -106,8 +105,10 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google_Drive'
+  alias backups='cd ~/Google_Drive/backups'
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
+  alias gtqcp='cd ~/Google_Drive/scripts/qcp'
 
   # monash
   alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
