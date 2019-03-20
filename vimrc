@@ -140,8 +140,6 @@ nnoremap <CR> :noh<CR>:<backspace>
 " Reapply the custom spellcheck look
 nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
 
-
-
 " Easy navigation through splits
 nnoremap <Leader>h <C-W><C-H>
 nnoremap <Leader>j <C-W><C-J>

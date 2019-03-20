@@ -1,0 +1,26 @@
+{
+	"deg": {
+		"prefix": "deg",
+		"body": "$^{\\circ}$C"
+	},
+	"micro": {
+		"prefix": "micro",
+		"body": "$\\mu$m"
+	},
+	"kj": {
+		"prefix": "kj",
+		"body": "kJ~mol$^{-1}$"
+	},
+	"gmol": {
+		"prefix": "gm",
+		"body": "g~mol$^{-1}$"
+	},
+	"tsub": {
+		"prefix": "tsub",
+		"body": "\\textsubscript{$1}"
+	},
+	"tsup": {
+		"prefix": "tsup",
+		"body": "\\textsuperscript{$1}"
+	}
+}

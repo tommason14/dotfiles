@@ -17,7 +17,6 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-    alias backups='cd ~/Backups'
     alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
 fi
 
@@ -39,7 +38,7 @@ fi
 if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
     export PATH=/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='qstat -u tm3124 | grep tm3124 | wc -l'
     alias automation='cd ~/monash_automation'
     
@@ -51,7 +50,7 @@ fi
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason | wc -l'
     alias automation='cd ~/monash_automation'
 fi
@@ -60,14 +59,14 @@ fi
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
 fi
 # m3
 if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason1 | wc -l'
     alias automation='cd ~/monash_automation'
 fi
@@ -83,7 +82,7 @@ alias dotfiles='cd ~/dotfiles'
 alias l='ls'
 alias ld='ls'
 alias lsa='ls -a'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias c='clear'
 alias mkdir='mkdir -p'
 
@@ -106,8 +105,12 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google_Drive'
+  alias backups='cd ~/Google_Drive/backups'
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
+  alias gtqcp='cd ~/Google_Drive/scripts/qcp'
+  
+  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.md' -- make pdf"
 
   # monash
   alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
@@ -116,7 +119,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias m3='ssh tmason1@m3.massive.org.au'
   # alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
   alias monarch='ssh -Y tmason1@monarch.erc.monash.edu.au'
-  alias stampede='ssh -X tmason@stampede2.tacc.utexas.edu'
+  alias stampede='ssh -Y tmason@stampede2.tacc.utexas.edu'
 
   alias lammps_dir='cd /usr/local/share/lammps'
   alias polymers='cd ~/Google\ Drive/Polymers'
