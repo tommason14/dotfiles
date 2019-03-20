@@ -109,6 +109,8 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
+  
+  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.md' -- make pdf"
 
   # monash
   alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
