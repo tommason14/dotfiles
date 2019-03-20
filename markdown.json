@@ -1,0 +1,10 @@
+{
+	"deg": {
+		"prefix": "deg",
+		"body": "$^{\\circ}$C"
+	},
+	"micro": {
+		"prefix": "micro",
+		"body": "$\\mu$m"
+	}
+}
