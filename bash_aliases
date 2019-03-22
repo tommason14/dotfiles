@@ -111,6 +111,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
   
   alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.md' -- make pdf"
+  alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
   # monash
   alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
@@ -140,6 +141,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
   alias paper='cd ~/Google_Drive/Hydrated_ILs/Publishing/Write_up/current/'
+  alias thesis='cd ~/Google_Drive/thesis/'
 fi
 
 
