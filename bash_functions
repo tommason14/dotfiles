@@ -1,14 +1,11 @@
 #!/usr/bin/env sh
 
-nohup_bg() {
-  nohup $1 < /dev/null > nohup_bg.log 2>&1 &
+pres_to_pdf() {
+  decktape reveal http://localhost:1948/$1 $2 -s "1200x800"
 }
 
-
-view_hessian() {
-  cwd=$(PWD)
-  cp ~/Google_Drive/Scripts/view_hessian_calculation.ipynb $cwd/
-  jupyter notebook view_hessian_calculation.ipynb
+nohup_bg() {
+  nohup $1 < /dev/null > nohup_bg.log 2>&1 &
 }
 
 latex_compile() { latexmk -pvc -pdfxe $1 & }

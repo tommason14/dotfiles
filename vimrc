@@ -29,9 +29,10 @@ set backspace=2 " backspace works like other editors
 set spell " spell-checker
 set visualbell " no beeps!
 set expandtab
+set ruler
 
 " Put plugins and dictionaries in this dir (also on Windows)
-let vimDir = '$HOME/.vim'
+let vimDir = '$HOME/dotfiles/.vim'
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
@@ -138,8 +139,6 @@ nnoremap <CR> :noh<CR>:<backspace>
 
 " Reapply the custom spellcheck look
 nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
-
-
 
 " Easy navigation through splits
 nnoremap <Leader>h <C-W><C-H>

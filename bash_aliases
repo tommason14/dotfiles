@@ -17,8 +17,6 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-    alias backups='cd ~/Backups'
-    alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
@@ -83,7 +81,7 @@ alias dotfiles='cd ~/dotfiles'
 alias l='ls'
 alias ld='ls'
 alias lsa='ls -a'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias c='clear'
 alias mkdir='mkdir -p'
 
@@ -106,8 +104,13 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google_Drive'
+  alias backups='cd ~/Google_Drive/backups'
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
+  alias gtqcp='cd ~/Google_Drive/scripts/qcp'
+  
+  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.md' -- make pdf"
+  alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
   # monash
   alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
@@ -116,8 +119,8 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias m3='ssh tmason1@m3.massive.org.au'
   # alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
   alias monarch='ssh -Y tmason1@monarch.erc.monash.edu.au'
-  alias stampede='ssh -X tmason@stampede2.tacc.utexas.edu'
-
+  alias stampede='ssh -Y tmason@stampede2.tacc.utexas.edu'
+  alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
   alias polymers='cd ~/Google\ Drive/Polymers'
 
@@ -137,6 +140,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
   alias paper='cd ~/Google_Drive/Hydrated_ILs/Publishing/Write_up/current/'
+  alias thesis='cd ~/Google_Drive/thesis/'
 fi
 
 
