@@ -33,4 +33,4 @@ for file in $files; do
 done
 
 # link VS code snippet files
-ls $dir/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
+ln -s $dir/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
