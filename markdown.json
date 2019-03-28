@@ -22,5 +22,12 @@
 	"tsup": {
 		"prefix": "tsup",
 		"body": "\\textsuperscript{$1}"
+	},
+  	"eq": {
+		"prefix": "eq",
+		"body": ["\\begin{equation} \\label{$1} \n",
+			"$2 \n",
+			"\\end{equation}"
+		]
 	}
 }
