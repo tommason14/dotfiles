@@ -146,6 +146,9 @@ nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 
+" Compile pandoc
+nnoremap <Leader>x :! pandoc --filter pandoc-citeproc % -o %:r.pdf<CR><CR>
+
 
 " Python  {{{1
 

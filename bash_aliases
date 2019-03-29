@@ -20,7 +20,7 @@ if [[ $PWD == *"tmas0023"* ]]; then
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:$PATH
+    export PATH=~/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:$PATH
     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
@@ -143,7 +143,9 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias thesis='cd ~/Google_Drive/thesis/'
 fi
 
-
+# plots everywhere
+alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot
+-p -e \"set terminal dumb; plot '-' with lines notitle\""
 
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
