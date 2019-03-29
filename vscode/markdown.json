@@ -25,8 +25,8 @@
 	},
   	"eq": {
 		"prefix": "eq",
-		"body": ["\\begin{equation} \\label{$1} \n",
-			"$2 \n",
+		"body": ["\\begin{equation} \\label{$1}",
+			"$2",
 			"\\end{equation}"
 		]
 	}
