@@ -124,11 +124,6 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias lammps_dir='cd /usr/local/share/lammps'
   alias polymers='cd ~/Google\ Drive/Polymers'
 
-
-  # submissions
-  alias rjn_sub='ssh tm3124@raijin.nci.org.au cat /home/565/tm3124/submissions.txt'
-  alias mgs_sub='ssh tmason@magnus.pawsey.org.au cat /home/tmason/submissions.txt'
-
   alias ga='git add .'
   alias gs='git status'
   alias gc='git commit'
@@ -141,12 +136,17 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
   alias paper='cd ~/Google_Drive/Hydrated_ILs/Publishing/Write_up/current/'
   alias thesis='cd ~/Google_Drive/thesis/'
+  alias wordcount='pandoc --lua-filter wordcount.lua source/*.md'
 fi
 
 # plots everywhere
 alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotmp2="grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotfmo="grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
+
+# sort energies
+alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr -k 2"
+
 
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'

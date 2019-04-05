@@ -11,6 +11,8 @@ Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
 Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 call vundle#end()
