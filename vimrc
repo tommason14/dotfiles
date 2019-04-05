@@ -230,7 +230,7 @@ au BufNewFile,BufRead *.md
     \ set expandtab |
     \ set shiftwidth=2 |
     \ set textwidth=79 |
-    \ set filetype=markdown |
+    " \ set filetype=markdown |
     \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
 
 au BufNewFile,BufRead *.txt 
