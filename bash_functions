@@ -142,7 +142,11 @@ force_push() {
 make_gif() {
 
 args="$@"
-
 convert -loop 0 -delay 20 image* run.gif
+
 }
 
+# scp from remote
+function scpstam {
+  scp tmason@stampede2.tacc.utexas.edu:$1 $2
+}
