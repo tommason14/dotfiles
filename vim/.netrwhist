@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/usr/local/Cellar/lammps/2017-08-11_4/share/lammps/examples/DIFFUSE'
 let g:netrw_dirhist_2='/Users/tommason/.config/base16-shell/realpath'
 let g:netrw_dirhist_3='/Users/tommason/Documents/Music'
 let g:netrw_dirhist_4='/Users/tommason/Documents/Web Design/sites/harp_blog'
 let g:netrw_dirhist_5='/Users/tommason/tnote'
 let g:netrw_dirhist_6='/Users/tmas0023/dotfiles/vscode'
+let g:netrw_dirhist_7='/home1/06233/tmason/.config/ranger'
+let g:netrw_dirhist_8='/scratch/06233/tmason/dopamine/check_dft_structures_vs_mp2/st1/st1-rerun'
+let g:netrw_dirhist_9='/scratch/06233/tmason/dopamine/dopamine_deprotonation/deprotonation_by_acetate/oh-oh/oh-oh-2/unknown/oh-oh-2/notConv/oh-oh-2'

@@ -150,3 +150,13 @@ convert -loop 0 -delay 20 image* run.gif
 function scpstam {
   scp tmason@stampede2.tacc.utexas.edu:$1 $2
 }
+
+# make dirs from xyz files- template in top directory (works for gaussian
+# for gamess; not necessary as new dir already created- pass in template file
+# i.e. make_subdirs template
+function make_subdirs {
+top_dir=$(pwd); for f in $(find . -path "*xyz"); do dir_name=$(dirname $f);
+base_name=$(basename $f); file_name=$(echo $base_name | cut -d . -f 1); cd
+$dir_name; mkdir $file_name; cd $file_name; cp $top_dir/$1 . ;
+cp $top_dir/$f .; cd $top_dir; done
+}

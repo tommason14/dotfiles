@@ -1,3 +1,5 @@
 # don't upload Vundle files to github. Just run :PluginInstall after 
 # pulling the repo
-vim/bundle/*
+vim/bundle/**
+vim/undodir/**
+.vim/undodir/**
