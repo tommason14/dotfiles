@@ -21,10 +21,10 @@ ${1%.md}.tex
 }
 
 tex() {
-  pdflatex $1
+  xelatex $1
   bibtex ${1%.tex}
-  pdflatex $1
-  pdflatex $1
+  xelatex $1
+  xelatex $1
   open ${1%.tex}.pdf
 }
 
