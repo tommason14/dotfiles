@@ -5,7 +5,7 @@ pres_to_pdf() {
 }
 
 nohup_bg() {
-  nohup $1 < /dev/null > nohup_bg.log 2>&1 &
+  nohup $1 < /dev/null > nohup_bg.log &
 }
 
 latex_compile() { latexmk -pvc -pdfxe $1 & }
@@ -21,10 +21,10 @@ ${1%.md}.tex
 }
 
 tex() {
-  pdflatex $1
+  xelatex $1
   bibtex ${1%.tex}
-  pdflatex $1
-  pdflatex $1
+  xelatex $1
+  xelatex $1
   open ${1%.tex}.pdf
 }
 
@@ -153,7 +153,8 @@ function scpstam {
 
 # make dirs from xyz files- template in top directory (works for gaussian
 # for gamess; not necessary as new dir already created- pass in template file
-# i.e. make_subdirs template
+# i.e. make_subdirs gauss.template
+# then run qcp from that dir
 function make_subdirs {
 top_dir=$(pwd); for f in $(find . -path "*xyz"); do dir_name=$(dirname $f);
 base_name=$(basename $f); file_name=$(echo $base_name | cut -d . -f 1); cd
