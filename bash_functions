@@ -160,3 +160,11 @@ base_name=$(basename $f); file_name=$(echo $base_name | cut -d . -f 1); cd
 $dir_name; mkdir $file_name; cd $file_name; cp $top_dir/$1 . ;
 cp $top_dir/$f .; cd $top_dir; done
 }
+
+function gamesstoxyz {
+base_name=$(echo $1 | cut -d . -f 1)
+num=$(cat $1 | wc -l | tr -s [:blank:])
+cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $base_name.xyz
+printf "$num\n\n" | cat - $base_name.xyz > /tmp/out
+mv /tmp/out $base_name.xyz
+}
