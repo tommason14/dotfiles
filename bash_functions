@@ -168,3 +168,10 @@ cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $b
 printf "$num\n\n" | cat - $base_name.xyz > /tmp/out
 mv /tmp/out $base_name.xyz
 }
+
+function calc {
+args=$(printf "$*" | tr -d [:blank:] | sed 's/\*/\\*/') #rm spaces, replace * with \*, so doesn't
+echo $args
+# print all files in dir- replace divide sign by /\
+python3 -c "print($args)"
+}
