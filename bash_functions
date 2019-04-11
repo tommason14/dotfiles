@@ -166,5 +166,5 @@ base_name=$(echo $1 | cut -d . -f 1)
 num=$(cat $1 | wc -l | tr -s [:blank:])
 cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $base_name.xyz
 printf "$num\n\n" | cat - $base_name.xyz > /tmp/out
-mv /tmp/out $base_name.xyz
+mv /tmp/out $base_name.xyz # avoids sed -i '' on mac/ sed -i on linux
 }
