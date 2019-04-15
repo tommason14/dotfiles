@@ -170,8 +170,8 @@ mv /tmp/out $base_name.xyz # avoids sed -i '' on mac/ sed -i on linux
 }
 
 function calc {
-args=$(printf "$*" | tr -d [:blank:] | sed 's/\*/\\*/') #rm spaces, replace * with \*, so doesn't
-echo $args
-# print all files in dir- replace divide sign by /\
+# fix- check and exit if no string
+# if [[ ! $1 == *"\'"* || ! $1 == *'\"'* ]]; then echo "Pass in a string"; fi
+args="$@"
 python3 -c "print($args)"
 }
