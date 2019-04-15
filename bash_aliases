@@ -104,6 +104,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google_Drive'
+  alias scripts='cd ~/Google_Drive/scripts'
   alias backups='cd ~/Google_Drive/backups'
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
