@@ -125,8 +125,6 @@ nnoremap <Leader>f :set ft=python<CR>i
 nnoremap <Leader>v :tabnew $MYVIMRC<CR>
 nnoremap sv :so $MYVIMRC<CR>
 
-vnoremap <Leader>a :Tabularize /&<CR><CR>
-
 " Format csv files in buffer
 nnoremap <Leader>r :Tabularize /,<CR>gg
 
@@ -284,6 +282,7 @@ au BufNewFile,BufRead *.cpp
     \ set shiftwidth=2 |
     \ set textwidth=79 |
     \ set filetype=cpp |
+    \ nnoremap <Leader>a :!g++ --std=c++17  % -o %:r <CR><CR>
 
 
 " Visuals {{{1
