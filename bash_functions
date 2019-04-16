@@ -166,12 +166,12 @@ base_name=$(echo $1 | cut -d . -f 1)
 num=$(cat $1 | wc -l | tr -s [:blank:])
 cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $base_name.xyz
 printf "$num\n\n" | cat - $base_name.xyz > /tmp/out
-mv /tmp/out $base_name.xyz
+mv /tmp/out $base_name.xyz # avoids sed -i '' on mac/ sed -i on linux
 }
 
 function calc {
-args=$(printf "$*" | tr -d [:blank:] | sed 's/\*/\\*/') #rm spaces, replace * with \*, so doesn't
-echo $args
-# print all files in dir- replace divide sign by /\
+# fix- check and exit if no string
+# if [[ ! $1 == *"\'"* || ! $1 == *'\"'* ]]; then echo "Pass in a string"; fi
+args="$@"
 python3 -c "print($args)"
 }

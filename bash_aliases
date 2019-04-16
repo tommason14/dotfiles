@@ -110,7 +110,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias jn='jupyter notebook'
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
   
-  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.md' -- make pdf"
+  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make all" 
   alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
   # monash
