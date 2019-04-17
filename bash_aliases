@@ -104,12 +104,13 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google_Drive'
+  alias scripts='cd ~/Google_Drive/scripts'
   alias backups='cd ~/Google_Drive/backups'
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
   
-  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.md' -- make pdf"
+  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make all" 
   alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
   # monash
