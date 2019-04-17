@@ -164,9 +164,9 @@ cp $top_dir/$f .; cd $top_dir; done
 
 function gamesstoxyz {
 base_name=$(echo $1 | cut -d . -f 1)
-num=$(cat $1 | wc -l | tr -s [:blank:])
+num_atoms=$(cat $1 | wc -l | tr -s [:blank:])
 cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $base_name.xyz
-printf "$num\n\n" | cat - $base_name.xyz > /tmp/out
+printf "$num_atoms\n\n" | cat - $base_name.xyz > /tmp/out
 mv /tmp/out $base_name.xyz # avoids sed -i '' on mac/ sed -i on linux
 }
 
@@ -175,4 +175,17 @@ function calc {
 # if [[ ! $1 == *"\'"* || ! $1 == *'\"'* ]]; then echo "Pass in a string"; fi
 args="$@"
 python3 -c "print($args)"
+}
+
+function gauss_freqs {
+if [[ $(tail $1 | grep 'Normal termination' | wc -l) -gt 0 ]]; then
+  imaginary=$(grep 'Frequencies --' $1 | tr -s [:blank:] | cut -d ' ' -f 4- | xargs printf '%s\n' | grep "-" | wc -l)
+  if [[ $imaginary -gt 0 ]]; then
+    echo "Imaginary frequencies found- not a ground state"
+  else
+    echo "No imaginary frequencies"
+  fi
+else
+  echo "Not a Gaussian freq calc OR error OR incomplete"
+fi
 }

@@ -149,9 +149,8 @@ alias plotgauss="grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -
 # sort energies
 alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr -k 2"
 
-# check gaussian freqs
-alias gauss_freqs="grep 'Frequencies --' | tr -s [:blank:] | cut -d ' ' -f 4- | xargs printf '%s\n'"
-alias check_gauss_freqs="for path in $(find . -path '*spec' | sed 's/spec//'); do echo $path*log ; cat $path*log | gauss_freqs | head; done"
+# gaussian frequencies
+alias check_gauss_freqs='find . -path "*log" | while read file; do echo "$file"; gauss_freqs "$file"; done'
 
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
