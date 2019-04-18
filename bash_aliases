@@ -20,7 +20,8 @@ if [[ $PWD == *"tmas0023"* ]]; then
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:$PATH
+    export PATH=~/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/psi4conda/bin:$PATH
+    export PSI_SCRATCH=~/Documents/Monash/psi4_scr
     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
