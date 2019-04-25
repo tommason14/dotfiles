@@ -70,11 +70,6 @@ autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/sn
 
 let mapleader = ","
 
-" Snippet placeholder
-inoremap ;; <Esc>/<++><Enter>"_c4l
-vnoremap ;; <Esc>/<++><Enter>"_c4l
-map ;; <Esc>/<++><Enter>"_c4l
-
 " Try out additional escape
 inoremap jj <Esc>
 
@@ -153,135 +148,118 @@ nnoremap <Leader>x :! pandoc --filter pandoc-citeproc % -o %:r.pdf<CR><CR>
 " Python  {{{1
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set expandtab |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=100 |
-    \ set filetype=python |
-
-autocmd FileType py inoremap ,info 
-autocmd FileType py inoremap #! #!/usr/bin/env python3<CR># -*- coding: utf-8 -*-
+    \ set tabstop=4                         |
+    \ set expandtab                         |
+    \ set softtabstop=4                     |
+    \ set shiftwidth=4                      |
+    \ set textwidth=100                     |
+    \ set filetype=python                   |
 
 " Jade, HTML, JS, CSS, Sass, SCSS {{{1
-au BufNewFile,BufRead *.jade 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=pug |
+au BufNewFile,BufRead *.jade
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=pug                      |
 
-au BufNewFile,BufRead *.html 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=html |
+au BufNewFile,BufRead *.html
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=html                     |
 
-au BufNewFile,BufRead *.js 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=js |
+au BufNewFile,BufRead *.js
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=javascript               |
 
-au BufNewFile,BufRead *.json 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=json |
+au BufNewFile,BufRead *.json
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=json                     |
 
-au BufNewFile,BufRead *.css 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=css |
+au BufNewFile,BufRead *.css
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=css                      |
 
-au BufNewFile,BufRead *.sass 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=sass |
+au BufNewFile,BufRead *.sass
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=sass                     |
 
-au BufNewFile,BufRead *.scss 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=scss |
+au BufNewFile,BufRead *.scss
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=scss                     |
 
 " Markdown/text files {{{1
 
-au BufNewFile,BufRead *.md 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    " \ set filetype=markdown |
+au BufNewFile,BufRead *.md
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
     \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
 
-au BufNewFile,BufRead *.txt 
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=plain |
+au BufNewFile,BufRead *.txt
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=plain                    |
 
-" LaTeX {{{1 
+" LaTeX {{{1
 
 au BufNewFile,BufRead *.tex
-    \ set formatoptions=tc        |
-    \ set tabstop=2               |
-    \ set softtabstop=2           |
-    \ set expandtab               |
-    \ set shiftwidth=2            |
-    \ set textwidth=79            |
-    \ set filetype=tex            |
-    \ set syntax=latex-rewrite    |
+    \ set formatoptions=tc                  |
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=tex                      |
+    \ set syntax=latex-rewrite              |
 
-autocmd FileType tex inoremap ,deg $^{\circ}$C
-autocmd FileType tex inoremap ,tm T\textsubscript{m}
-autocmd FileType tex inoremap ,sub \textsubscript{} <++><Esc>T{i
-autocmd FileType tex inoremap ,tsub \textsubscript{} <++><Esc>T{i
-autocmd FileType tex inoremap ,sup \textsuperscript{} <++><Esc>T{i
-autocmd FileType tex inoremap ,tsup \textsuperscript{} <++><Esc>T{i
-autocmd FileType tex inoremap ,one $^{-1}$
-autocmd FileType tex inoremap ,kj kJ~mol$^{-1}$
-autocmd FileType tex inoremap ,inm $  $ <++><Esc>2T$a
-autocmd FileType tex inoremap ,it \textit{} <++><Esc>T{i
-autocmd FileType tex inoremap ,bf \textbf{} <++><Esc>T{i
-autocmd FileType tex inoremap ,t \begin{table}[h]<CR>\small<CR>  \caption{}<CR>  \label{<++>}<CR>  \begin{tabular*}{0.48\textwidth}{@{\extracolsep{\fill}}${<++>}}<CR>    \hline<CR>    <++>     \\ % headers<CR>    \hline \\<CR>    <++> \\ % data<CR>     \hline<CR>  \end{tabular*}<CR>\end{table}<Esc>?caption<CR>wa
-
-" Bash {{{1
+ " Bash {{{1
 
 au BufNewFile,BufRead *.sh,bash*
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=sh |
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=sh                       |
 
-" C++ {{{1
+"  C++ {{{1
 au BufNewFile,BufRead *.cpp
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set expandtab |
-    \ set shiftwidth=2 |
-    \ set textwidth=79 |
-    \ set filetype=cpp |
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=cpp                      |
     \ nnoremap <Leader>a :!g++ --std=c++17  % -o %:r <CR><CR>
 
 
@@ -294,3 +272,6 @@ set relativenumber
 hi clear SpellBad
 hi SpellBad cterm=underline
 set spellcapcheck=""
+
+" Fold colour
+hi Folded ctermbg=DarkGrey
