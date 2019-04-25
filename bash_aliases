@@ -20,7 +20,7 @@ if [[ $PWD == *"tmas0023"* ]]; then
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=~/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/psi4conda/bin:$PATH
+    export PATH=$PATH:~/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/psi4conda/bin
     export PSI_SCRATCH=~/Documents/Monash/psi4_scr
     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -115,13 +115,13 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
   # monash
-  alias raijin='ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
-  alias magnus='ssh tmason@magnus.pawsey.org.au'
-  alias gaia='ssh -X tmas0011@msgln6.its.monash.edu.au'
-  alias m3='ssh tmason1@m3.massive.org.au'
+  alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
+  alias magnus='sshpass -f ~/dotfiles/sshfile ssh tmason@magnus.pawsey.org.au'
+  alias gaia='sshpass -f ~/dotfiles/sshfile ssh -X tmas0011@msgln6.its.monash.edu.au'
+  alias m3='sshpass -f ~/dotfiles/sshfile ssh tmason1@m3.massive.org.au'
   # alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
-  alias monarch='ssh -Y tmason1@monarch.erc.monash.edu.au'
-  alias stampede='ssh -Y tmason@stampede2.tacc.utexas.edu'
+  alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
+  alias stampede='~/dotfiles/sshstam'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
   alias polymers='cd ~/Google\ Drive/Polymers'
