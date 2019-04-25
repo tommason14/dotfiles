@@ -1,42 +1,21 @@
 # styling
 
-# show spheres
-# show sticks
-# set sphere_scale = 0.23
-# set stick_radius =  0.15
-# set ray_opaque_background, 0
-# set ray_shadows, 0
-# set spec_power, 1500
-# set sphere_scale, 0.3
-# set stick_h_scale, 1.0
-#
-# # colors 
-#
-# color tv_orange, (name C*)
-# color white, (name H*)
-# color tv_blue, (name N*)
-# color firebrick, (name O*)
-#
-# color slate, (name P*)
-#
-# color greencyan, (name S*)
+show spheres
+show sticks
+set sphere_scale = 0.23
+set stick_radius =  0.15
+set ray_opaque_background = 0
+set ray_shadows = 0
+set spec_power = 1500
+set sphere_scale = 0.3
+set stick_h_scale = 1.0
 
-# c tv_orange
-# h white
-# n tv_blue
-# o firebrick
-# p slate
-# s paleyellow
+# colors 
 
-from pymol import cmd
-# cmd.set('auto_show_classified', 0)
-cmd.show('spheres')
-cmd.show('sticks')
-cmd.set('sphere_scale', 0.23)
-cmd.set('stick_radius', 0.15)
-cmd.set('ray_opaque_background', 0)
-cmd.set('ray_shadows', 0)
-cmd.set('spec_power', 1500)
-cmd.set('sphere_scale', 0.3)
-cmd.set('stick_h_scale', 1.0)
+color tv_orange, (name C*)
+color white, (name H*)
+color tv_blue, (name N*)
+color firebrick, (name O*)
+color slate, (name P*)
+color greencyan, (name S*)
 
