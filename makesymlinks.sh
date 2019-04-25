@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_aliases bash_functions vim vimrc pymolrc"    # list of files/folders to symlink in homedir
+files="bash_aliases bash_functions vim vimrc pymolrc hyper.js"    # list of files/folders to symlink in homedir
 # removed bashrc as it is already present on stampede2, don't want to overwrite
 # settings
 
