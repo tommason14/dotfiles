@@ -13,6 +13,7 @@ Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 call vundle#end()
@@ -274,4 +275,4 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 
 " Fold colour
-hi Folded ctermbg=DarkGrey
+" hi Folded ctermbg=DarkGrey
