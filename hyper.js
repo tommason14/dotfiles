@@ -132,8 +132,8 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-  //'hyperterm-chesterish', // themes
-  'hyper-dracula',
+  'hyperterm-chesterish', // themes
+  //'hyper-dracula',
   //'hyper-darkmatter',
   //'hyper-spotify', // cool
   'hypercwd' // open new tab in same tab as previous one
