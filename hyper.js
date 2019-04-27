@@ -12,7 +12,7 @@ module.exports = {
     fontSize: 16,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+    fontFamily: '"Operator Mono", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
@@ -133,10 +133,9 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
   // themes
-  'hyper-chesterish', // no window controls 
+  'hyperterm-chesterish', // no window controls 
   //'hyper-firewatch',
   //'hyper-dracula',
-  //'hyper-darkmatter',
   //'hyper-spotify',
   'hypercwd' // open new tab in same tab as previous one
 ],
