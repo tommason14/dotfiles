@@ -275,4 +275,4 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 
 " Fold colour
-" hi Folded ctermbg=DarkGrey
+hi Folded ctermbg=DarkGrey
