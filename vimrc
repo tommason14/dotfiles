@@ -13,6 +13,7 @@ Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 call vundle#end()
@@ -29,6 +30,7 @@ set foldlevelstart=0
 set clipboard=unnamed " system-wide copy
 set backspace=2 " backspace works like other editors
 set spell " spell-checker
+set spelllang=en_gb
 set visualbell " no beeps!
 set expandtab
 set ruler
@@ -260,8 +262,9 @@ au BufNewFile,BufRead *.cpp
     \ set shiftwidth=2                      |
     \ set textwidth=79                      |
     \ set filetype=cpp                      |
-    \ nnoremap <Leader>a :!g++ --std=c++17  % -o %:r <CR><CR>
 
+" Compile when writing to a file
+au BufWritePost *.cpp !g++ --std=c++17  % -o %:r
 
 " Visuals {{{1
 
@@ -272,3 +275,6 @@ set relativenumber
 hi clear SpellBad
 hi SpellBad cterm=underline
 set spellcapcheck=""
+
+" Fold colour
+" hi Folded ctermbg=DarkGrey

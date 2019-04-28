@@ -1,7 +1,15 @@
 let g:netrw_dirhistmax  =10
+<<<<<<< HEAD
 let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/tommason/.config/base16-shell'
 let g:netrw_dirhist_2='/Users/tommason/.config/base16-shell/templates'
 let g:netrw_dirhist_3='/Users/tommason/.config/base16-shell'
 let g:netrw_dirhist_4='/Users/tommason/.config/base16-shell/scripts'
 let g:netrw_dirhist_5='/Users/tommason/.config'
+=======
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/tommason/.pubs'
+let g:netrw_dirhist_2='/Users/tommason/.pubs/meta'
+let g:netrw_dirhist_3='/Users/tommason/.pubs'
+let g:netrw_dirhist_4='/Users/tommason/.pubs/bib'
+>>>>>>> 894ebc1b18612d2fe60b626308d3f3774ba222ae
