@@ -133,8 +133,9 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
   // themes
-  'hyperterm-chesterish', // no window controls 
-  //'hyper-firewatch',
+  //'hyper-chesterish', // no window controls 
+  'hyper-firewatch',
+  //'hyper-material-theme',
   //'hyper-dracula',
   //'hyper-spotify',
   'hypercwd' // open new tab in same tab as previous one

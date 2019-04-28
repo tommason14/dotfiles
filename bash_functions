@@ -148,7 +148,25 @@ convert -loop 0 -delay 20 image* run.gif
 
 # scp from remote
 function scpstam {
-  scp tmason@stampede2.tacc.utexas.edu:$1 $2
+  if [ $# -lt 3 ]; then 
+    echo "Usage: scpstam [filetypes] [path on stampede relative to scratch] [local path]"
+    echo "e.g. scpstam *.log polymers/opts . -->"
+    echo "rsync -rav -e ssh --include='*/' --include='*.log' --exclude='*' \
+tmason@stampede2.tacc.utexas.edu:/scratch/06233/tmason/polymers/opts ."
+  else
+    # need to parse args: -1 as local path, -2 as remote path, rest as file
+    # types
+    args=("$@")
+    echo ${args[@]:-2}
+    echo ${args[@]:-1}
+    string="rsync -rav -e ssh --include='*/' ";
+    for var in "$@";
+    do
+        string+="--include='$var' ";
+    done;
+    string+="--exclude='*' tmason@stampede2.tacc.utexas.edu:"
+    #echo $string
+  fi
 }
 
 # make dirs from xyz files- template in top directory (works for gaussian

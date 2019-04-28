@@ -2,11 +2,11 @@
 CYAN='\[\033[0;36m\]'
 NO_COLOUR='\[\033[0m\]'
 if [[ $HOSTNAME == "MU00151959X" ]]; then
-  export PS1="${CYAN}Local \D{%d/%m} \W \n>> ${NO_COLOUR}"
+  export PS1="${CYAN}Local \W >> ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1="${CYAN}Stampede2 \D{%d/%m} \W \n>> ${NO_COLOUR}"
+  export PS1="Stampede2 \W >> "
 else
-  export PS1="${CYAN}\h \D{%d/%m} \W \n>> ${NO_COLOUR}"
+  export PS1="${CYAN}\h \W >> ${NO_COLOUR}"
 fi
 
 EDITOR=vim
@@ -28,7 +28,6 @@ if [[ $PWD == *"tommason"* ]]; then
     alias uni='ssh tmas0023@dyn-130-194-161-79.its.monash.edu.au'
 
     #static sites
-    alias hc='mv node_modules/ _node_modules/ && harp compile && mv _node_modules/ node_modules/'
     alias hs='harp server'
     alias js='jekyll serve'
 fi
@@ -61,7 +60,8 @@ if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
 fi
-# m3
+
+# monarch/massive
 if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
@@ -111,7 +111,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias jn='jupyter notebook'
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
   
-  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make all" 
+  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make compile" 
   alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
   # monash
