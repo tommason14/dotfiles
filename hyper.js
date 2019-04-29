@@ -134,9 +134,9 @@ module.exports = {
   plugins: [
   // themes
   //'hyper-chesterish', // no window controls 
-  'hyper-firewatch',
+  //'hyper-firewatch',
   //'hyper-material-theme',
-  //'hyper-dracula',
+  'hyper-dracula',
   //'hyper-spotify',
   'hypercwd' // open new tab in same tab as previous one
 ],

@@ -242,7 +242,7 @@ au BufNewFile,BufRead *.tex
     \ set shiftwidth=2                      |
     \ set textwidth=79                      |
     \ set filetype=tex                      |
-    \ set syntax=latex-rewrite              |
+    \ set syntax=tex                        |
     \ set spell spelllang=en_gb             |
 
  " Bash {{{1
@@ -276,6 +276,8 @@ set relativenumber
 hi clear SpellBad
 hi SpellBad cterm=underline
 set spellcapcheck=""
+hi clear SpellLocal
+hi clear Error 
 
 " Fold colour
 " hi Folded ctermbg=DarkGrey
