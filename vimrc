@@ -29,8 +29,6 @@ set foldmethod=marker
 set foldlevelstart=0
 set clipboard=unnamed " system-wide copy
 set backspace=2 " backspace works like other editors
-set spell " spell-checker
-set spelllang=en_gb
 set visualbell " no beeps!
 set expandtab
 set ruler
@@ -222,6 +220,7 @@ au BufNewFile,BufRead *.md
     \ set expandtab                         |
     \ set shiftwidth=2                      |
     \ set textwidth=79                      |
+    \ set spell spelllang=en_gb             |
     \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
 
 au BufNewFile,BufRead *.txt
@@ -230,6 +229,7 @@ au BufNewFile,BufRead *.txt
     \ set expandtab                         |
     \ set shiftwidth=2                      |
     \ set textwidth=79                      |
+    \ set spell spelllang=en_gb             |
     \ set filetype=plain                    |
 
 " LaTeX {{{1
@@ -243,6 +243,7 @@ au BufNewFile,BufRead *.tex
     \ set textwidth=79                      |
     \ set filetype=tex                      |
     \ set syntax=latex-rewrite              |
+    \ set spell spelllang=en_gb             |
 
  " Bash {{{1
 
