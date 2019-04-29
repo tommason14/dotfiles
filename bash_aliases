@@ -4,7 +4,7 @@ NO_COLOUR='\[\033[0m\]'
 if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}Local \W >> ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1="Stampede2 \W >> "
+  export PS1="${CYAN}Stampede2 \W >> ${NO_COLOUR}"
 else
   export PS1="${CYAN}\h \W >> ${NO_COLOUR}"
 fi
@@ -12,7 +12,7 @@ fi
 EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* ]]; then
-    export PATH=/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
+    export PATH=~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'

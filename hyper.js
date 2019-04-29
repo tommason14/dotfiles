@@ -62,11 +62,7 @@ module.exports = {
     // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
     // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
-<<<<<<< HEAD
-    showWindowControls: '',
-=======
     showWindowControls: true,
->>>>>>> 894ebc1b18612d2fe60b626308d3f3774ba222ae
 
     // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
@@ -140,20 +136,13 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-<<<<<<< HEAD
-  'hyperterm-chesterish',
-  //'hyper-dracula',
-  //'hyper-darkmatter',
-  'hyper-spotify'
-=======
   // themes
   //'hyper-chesterish', // no window controls 
-  'hyper-firewatch',
+  //'hyper-firewatch',
   //'hyper-material-theme',
-  //'hyper-dracula',
+  'hyper-dracula',
   //'hyper-spotify',
   'hypercwd' // open new tab in same tab as previous one
->>>>>>> 894ebc1b18612d2fe60b626308d3f3774ba222ae
 ],
 
   // in development, you can create a directory under
