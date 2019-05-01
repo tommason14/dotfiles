@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/tommason/.pubs'
 let g:netrw_dirhist_2='/Users/tommason/.pubs/meta'
 let g:netrw_dirhist_3='/Users/tommason/.pubs'
 let g:netrw_dirhist_4='/Users/tommason/.pubs/bib'
 let g:netrw_dirhist_5='/Users/tmas0023/Google_Drive/backups/stampede/dopamine/dft_opts/covalent_dimers/prod-oh-cc-dimer-radical/spec/prod-oh-cc-dimer-radical/root_7'
+let g:netrw_dirhist_6='/Users/tmas0023/Desktop/w3m-master/doc'

@@ -35,3 +35,9 @@ done
 
 # link VS code snippet files
 ln -s $dir/vscode/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
+
+# on remote machines, replace link to config/ranger/rc.conf with this
+#if [[ $HOSTNAME == "*...*" ]] # stampede
+#  then
+#  replace ...
+#fi

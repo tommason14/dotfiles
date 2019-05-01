@@ -242,7 +242,7 @@ au BufNewFile,BufRead *.tex
     \ set shiftwidth=2                      |
     \ set textwidth=79                      |
     \ set filetype=tex                      |
-    \ set syntax=tex                        |
+    \ set syntax=latex-rewrite              |
     \ set spell spelllang=en_gb             |
 
  " Bash {{{1
