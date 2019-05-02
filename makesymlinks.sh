@@ -8,7 +8,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bash_aliases bash_functions vim vimrc pymolrc hyper.js"    # list of files/folders to symlink in homedir
+files="bash_aliases bash_functions vim vimrc pymolrc hyper.js config/ranger/rc.conf"    
+# list of files/folders to symlink in homedir
 # removed bashrc as it is already present on stampede2, don't want to overwrite
 # settings
 
@@ -34,3 +35,9 @@ done
 
 # link VS code snippet files
 ln -s $dir/vscode/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
+
+# on remote machines, replace link to config/ranger/rc.conf with this
+#if [[ $HOSTNAME == "*...*" ]] # stampede
+#  then
+#  replace ...
+#fi
