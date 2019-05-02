@@ -194,16 +194,3 @@ function calc {
 args="$@"
 python3 -c "print($args)"
 }
-
-function gauss_freqs {
-if [[ $(tail $1 | grep 'Normal termination' | wc -l) -gt 0 ]]; then
-  imaginary=$(grep 'Frequencies --' $1 | tr -s [:blank:] | cut -d ' ' -f 4- | xargs printf '%s\n' | grep "-" | wc -l)
-  if [[ $imaginary -gt 0 ]]; then
-    echo "Imaginary frequencies found- not a ground state"
-  else
-    echo "No imaginary frequencies"
-  fi
-else
-  echo "Not a Gaussian freq calc OR error OR incomplete"
-fi
-}
