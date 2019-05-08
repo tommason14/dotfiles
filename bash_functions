@@ -194,3 +194,8 @@ function calc {
 args="$@"
 python3 -c "print($args)"
 }
+
+function check_references {
+cat ~/Google_Drive/thesis/library.bib | grep @article{$1 | sed 's/\@article{//' | sed 's/\,//' | sort
+}
+
