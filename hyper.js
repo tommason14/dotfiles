@@ -127,6 +127,10 @@ module.exports = {
     // bellSoundURL: 'http://example.com/bell.mp3',
 
     // for advanced config flags please refer to https://hyper.is/#cfg
+    hyperTabsMove: {
+      moveLeft: 'command+[',
+      moveRight: 'command+]'
+    }
   },
 
   // a list of plugins to fetch and install from npm
@@ -142,7 +146,8 @@ module.exports = {
   //'hyper-material-theme',
   'hyper-dracula',
   //'hyper-spotify',
-  'hypercwd' // open new tab in same tab as previous one
+  'hypercwd', // open new tab in same tab as previous one
+  'hyperterm-tabs'
 ],
 
   // in development, you can create a directory under
