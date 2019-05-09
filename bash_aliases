@@ -4,7 +4,7 @@ NO_COLOUR='\[\e[0m\]'
 if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}Local \W >> ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1='\u@\h \W\$ '
+  :
 else
   export PS1="${CYAN}\h \W >> ${NO_COLOUR}"
 fi
