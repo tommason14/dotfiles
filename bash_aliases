@@ -57,7 +57,7 @@ fi
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
-    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+    alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
 fi
 
@@ -158,3 +158,6 @@ alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
+
+# if vim shows up small
+alias resize_vim='eval $(resize)'
