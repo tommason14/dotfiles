@@ -290,3 +290,8 @@ hi clear Error
   " colo wal
 " endif
 
+" if ssh, set dark background
+let g:remoteSession = ($SSH_CLIENT != "")
+if g:remoteSession
+  set bg=dark
+endif
