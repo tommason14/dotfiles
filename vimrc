@@ -34,6 +34,7 @@ set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
 set expandtab
 set ruler
+set linebreak " don't break words when wrapping to new line
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/dotfiles/.vim'
