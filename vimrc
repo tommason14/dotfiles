@@ -286,7 +286,7 @@ hi clear Error
 " hi Folded ctermbg=DarkGrey
 
 " Colourscheme for use with pywal
-if system('HOSTNAME') =~ 'Toms-MBP'
-  colo wal
-endif
+" if system('HOSTNAME') =~ 'Toms-MBP'
+  " colo wal
+" endif
 

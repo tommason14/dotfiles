@@ -11,6 +11,6 @@ fi
 # [ -n "$PS1" ] && \
 #     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 #         eval "$("$BASE16_SHELL/profile_helper.sh")"
-if [[ $PWD == *"tommason"* ]]; then
-  cat ~/.cache/wal/sequences # load on new terminal sessions
-fi
+# if [[ $PWD == *"tommason"* ]]; then
+  # cat ~/.cache/wal/sequences # load on new terminal sessions
+# fi
