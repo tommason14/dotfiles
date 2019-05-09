@@ -16,6 +16,8 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
+Plugin 'scrooloose/nerdtree'
+Plugin 'dylanaraps/wal.vim'
 call vundle#end()
 
 " Basics {{{1
@@ -281,3 +283,9 @@ hi clear Error
 
 " Fold colour
 " hi Folded ctermbg=DarkGrey
+
+" Colourscheme for use with pywal
+if system('HOSTNAME') =~ 'Toms-MBP'
+  colo wal
+endif
+

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-CYAN='\[\033[0;36m\]'
-NO_COLOUR='\[\033[0m\]'
+CYAN='\[\e[0;36m\]'
+NO_COLOUR='\[\e[0m\]'
 if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}Local \W >> ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
@@ -20,7 +20,7 @@ if [[ $PWD == *"tmas0023"* ]]; then
 fi
 
 if [[ $PWD == *"tommason"* ]]; then
-    export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation
+    export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/.cargo/bin
     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
@@ -152,6 +152,9 @@ alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr
 
 # gaussian frequencies
 alias check_gauss_freqs='find . -path "*log" | while read file; do echo "$file"; gauss_freqs "$file"; done'
+
+# total file size of all files from find command
+alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
