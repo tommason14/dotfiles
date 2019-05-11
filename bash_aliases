@@ -25,7 +25,8 @@ if [[ $PWD == *"tommason"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
 
-    alias uni='ssh tmas0023@dyn-130-194-161-79.its.monash.edu.au'
+    alias chunkstart='brew services start chunkwm && brew services start skhd'
+    alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
     #static sites
     alias hs='harp server'
