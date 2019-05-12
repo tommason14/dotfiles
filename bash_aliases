@@ -170,9 +170,6 @@ alias plotgauss="grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -
 # sort energies
 alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr -k 2"
 
-# gaussian frequencies
-alias check_gauss_freqs='find . -path "*log" | while read file; do echo "$file"; gauss_freqs "$file"; done'
-
 # total file size of all files from find command
 alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
