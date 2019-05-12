@@ -82,7 +82,11 @@ if [[ $PWD == *"tmason1"* ]]; then
     alias automation='cd ~/monash_automation'
 fi
 
+# gaia {{{1
 
+if [[ $PWD == *"nfs"* ]]; then
+    alias ranger='python3 ~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+fi
 # local {{{1
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
