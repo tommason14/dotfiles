@@ -1,15 +1,20 @@
 #!/usr/bin/env sh
+# prompt {{{1
+
 CYAN='\[\e[0;36m\]'
 NO_COLOUR='\[\e[0m\]'
+DATE=$(date '+%d/%m')
 if [[ $HOSTNAME == "MU00151959X" ]]; then
-  export PS1="${CYAN}Local \W \$ ${NO_COLOUR}"
+  export PS1="${CYAN}${DATE} Local \W \$ ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1="${CYAN}Stampede \W \$ ${NO_COLOUR}"
+  export PS1="${CYAN}${DATE} Stampede \W \$ ${NO_COLOUR}"
 else
-  export PS1="${CYAN}\h \W \$ ${NO_COLOUR}"
+  export PS1="${CYAN}${DATE} \h \W \$ ${NO_COLOUR}"
 fi
 
 EDITOR=vim
+
+# uni mac {{{1
 
 if [[ $PWD == *"tmas0023"* ]]; then
     export PATH=~/Google_Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
@@ -19,20 +24,24 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
 fi
 
+# macbook {{{1
+
 if [[ $PWD == *"tommason"* ]]; then
     export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/.cargo/bin
     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
 
-    alias uni='ssh tmas0023@dyn-130-194-161-79.its.monash.edu.au'
+    alias chunkstart='brew services start chunkwm && brew services start skhd'
+    alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
     #static sites
     alias hs='harp server'
     alias js='jekyll serve'
 fi
 
-# raijin
+# raijin {{{1
+
 if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
     export PATH=/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
@@ -44,7 +53,8 @@ if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
     alias pspec='cp ~/monash_automation/chem_assistant/templates/psi_meta/spec/meta.py .'
 fi
 
-# magnus
+# magnus {{{1
+
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
@@ -53,7 +63,8 @@ if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
     alias automation='cd ~/monash_automation'
 fi
 
-#stampede2
+# stampede2 {{{1
+
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     export PATH=~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
@@ -61,7 +72,8 @@ if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     alias automation='cd ~/monash_automation'
 fi
 
-# monarch/massive
+# monarch/massive {{{1
+
 if [[ $PWD == *"tmason1"* ]]; then
     export PATH=~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
@@ -70,28 +82,8 @@ if [[ $PWD == *"tmason1"* ]]; then
     alias automation='cd ~/monash_automation'
 fi
 
-# edit dotfiles, but they are linked to the home directory, so source the home directory
-alias bashrc='vim ~/.bashrc && source ~/.bashrc'
-alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
-alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
-alias vimrc='vim ~/dotfiles/vimrc'
-alias dotfiles='cd ~/dotfiles'
-alias hyperjs='vim ~/dotfiles/hyper.js'
 
-# aliases for default commands
-alias l='ls'
-alias ld='ls'
-alias lsa='ls -a'
-alias ll='ls -lh'
-alias c='clear'
-alias mkdir='mkdir -p'
-
-alias cd..='cd ..'
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-
+# local {{{1
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 
@@ -106,6 +98,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias pc='cd ~/Pictures'
   alias google='cd ~/Google_Drive'
   alias scripts='cd ~/Google_Drive/scripts'
+  alias mccg='cd ~/Google_Drive/scripts/mccg'
   alias backups='cd ~/Google_Drive/backups'
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
@@ -140,6 +133,33 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias thesis='cd ~/Google_Drive/thesis/'
   alias wordcount='pandoc --lua-filter wordcount.lua source/*.md'
 fi
+
+# everywhere {{{1
+
+# edit dotfiles, but they are linked to the home directory, so source the home directory
+alias bashrc='vim ~/.bashrc && source ~/.bashrc'
+alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
+alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
+alias vimrc='vim ~/dotfiles/vimrc'
+alias dotfiles='cd ~/dotfiles'
+alias hyperjs='vim ~/dotfiles/hyper.js'
+alias chunkrc='vim ~/dotfiles/chunkwmrc'
+alias skhdrc='vim ~/dotfiles/skhdrc'
+
+# aliases for default commands
+alias l='ls'
+alias ld='ls'
+alias lsa='ls -a'
+alias ll='ls -lh'
+alias c='clear'
+alias mkdir='mkdir -p'
+
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+
 
 # plots everywhere
 alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
