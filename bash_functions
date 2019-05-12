@@ -198,3 +198,8 @@ python3 -c "print($args)"
 function check_references {
 cat ~/Google_Drive/thesis/library.bib | grep @article{$1 | sed 's/\@article{//' | sed 's/\,//' | sort
 }
+
+function wallpaper {
+DIR=~/Pictures/wallpapers
+sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$DIR/$1'" && killall Dock
+}

@@ -144,6 +144,9 @@ shift + alt - left   : chunkc tiling::window --grid-layout 1:2:0:0:1:1
 # make floating window fill right-half of screen
 shift + alt - right  : chunkc tiling::window --grid-layout 1:2:1:0:1:1
 
+# make floating window fill bottom-right
+shift + alt - down   : chunkc tiling::window --grid-layout 1:2:2:0:1:1
+
 # create desktop, move window and follow focus
 shift + cmd - n : chunkc tiling::desktop --create;\
                   id=$(chunkc tiling::query --desktops-for-monitor $(chunkc tiling::query --monitor-for-desktop $(chunkc tiling::query --desktop id)));\
