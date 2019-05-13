@@ -150,6 +150,8 @@ alias hyperjs='vim ~/dotfiles/hyper.js'
 alias chunkrc='vim ~/dotfiles/chunkwmrc'
 alias skhdrc='vim ~/dotfiles/skhdrc'
 
+alias rangerconf='vim ~/.config/ranger/rc.conf'
+
 # aliases for default commands
 alias l='ls'
 alias ld='ls'
