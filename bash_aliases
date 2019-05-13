@@ -82,7 +82,11 @@ if [[ $PWD == *"tmason1"* ]]; then
     alias automation='cd ~/monash_automation'
 fi
 
+# gaia {{{1
 
+if [[ $PWD == *"nfs"* ]]; then
+    alias ranger='python3 ~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
+fi
 # local {{{1
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
@@ -145,6 +149,8 @@ alias dotfiles='cd ~/dotfiles'
 alias hyperjs='vim ~/dotfiles/hyper.js'
 alias chunkrc='vim ~/dotfiles/chunkwmrc'
 alias skhdrc='vim ~/dotfiles/skhdrc'
+
+alias rangerconf='vim ~/.config/ranger/rc.conf'
 
 # aliases for default commands
 alias l='ls'
