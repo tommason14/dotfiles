@@ -32,8 +32,6 @@ if [[ $PWD == *"tommason"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
 
-    alias chunkstart='brew services start chunkwm && brew services start skhd'
-    alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
     #static sites
     alias hs='harp server'
@@ -110,6 +108,9 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   
   alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make compile" 
   alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
+
+  alias chunkstart='brew services start chunkwm && brew services start skhd'
+  alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
   # monash
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
