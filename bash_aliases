@@ -125,7 +125,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias stampede='~/dotfiles/sshstam'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
-  alias polymers='cd ~/Google\ Drive/Polymers'
+  alias polymers='cd ~/Google\ Drive/polymers'
 
   alias ga='git add .'
   alias gs='git status'
