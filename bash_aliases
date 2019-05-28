@@ -22,6 +22,9 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
+    function pymol { # used as an alias
+     /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
+    }
 fi
 
 # macbook {{{1
@@ -32,8 +35,6 @@ if [[ $PWD == *"tommason"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/Monash/monash_automation'
 
-    alias chunkstart='brew services start chunkwm && brew services start skhd'
-    alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
     #static sites
     alias hs='harp server'
@@ -111,6 +112,9 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make compile" 
   alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
+  alias chunkstart='brew services start chunkwm && brew services start skhd'
+  alias chunkstop='brew services stop chunkwm && brew services stop skhd'
+
   # monash
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh tmason@magnus.pawsey.org.au'
@@ -121,7 +125,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias stampede='~/dotfiles/sshstam'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
-  alias polymers='cd ~/Google\ Drive/Polymers'
+  alias polymers='cd ~/Google\ Drive/polymers'
 
   alias ga='git add .'
   alias gs='git status'
@@ -182,5 +186,6 @@ alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
+alias vim='vim -p' # automatically open in tabs
 # if vim shows up small
 alias resize_vim='eval $(resize)'
