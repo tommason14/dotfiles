@@ -22,9 +22,6 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-    function pymol { # used as an alias
-     /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
-    }
 fi
 
 # macbook {{{1
@@ -108,10 +105,11 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
-  
-  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make compile" 
-  alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
 
+  function pymol { # used as an alias
+   /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
+  }
+  
   alias chunkstart='brew services start chunkwm && brew services start skhd'
   alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
@@ -125,7 +123,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias stampede='~/dotfiles/sshstam'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
-  alias polymers='cd ~/Google\ Drive/Polymers'
+  alias polymers='cd ~/Google_Drive/Polymers'
 
   alias ga='git add .'
   alias gs='git status'
