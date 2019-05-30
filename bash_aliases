@@ -118,8 +118,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
   # monash
-  alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY
-tm3124@raijin.nci.org.au'
+  alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh tmason@magnus.pawsey.org.au'
   alias gaia='sshpass -f ~/dotfiles/sshfile ssh -X tmas0011@msgln6.its.monash.edu.au'
   alias m3='sshpass -f ~/dotfiles/sshfile ssh tmason1@m3.massive.org.au'
