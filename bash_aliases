@@ -22,9 +22,6 @@ if [[ $PWD == *"tmas0023"* ]]; then
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-    function pymol { # used as an alias
-     /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
-    }
 fi
 
 # macbook {{{1
@@ -108,38 +105,38 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
   alias gtqcp='cd ~/Google_Drive/scripts/qcp'
-  
-  alias compile_thesis="watchman -- trigger . make_pdf_file '**/*.tex' -- make compile" 
-  alias pandoc_citeproc='pandoc --filter pandoc-citeproc'
+  alias gd='cd ~/Google_Drive/Dopamine'
+  alias gp='cd ~/Google_Drive/polymers'
+  alias polymers='cd ~/Google_Drive/Polymers'
+  alias gq='cd ~/Google_Drive/scripts/qcp'
 
+  function pymol { # used as an alias
+   /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
+  }
+  
   alias chunkstart='brew services start chunkwm && brew services start skhd'
   alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
   # monash
-  alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au' # Y allows for displaying graphs- sets a $DISPLAY environment variable?
+  alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY
+tm3124@raijin.nci.org.au'
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh tmason@magnus.pawsey.org.au'
   alias gaia='sshpass -f ~/dotfiles/sshfile ssh -X tmas0011@msgln6.its.monash.edu.au'
   alias m3='sshpass -f ~/dotfiles/sshfile ssh tmason1@m3.massive.org.au'
-  # alias monarch='ssh -Y tmason1@monarch-login1.erc.monash.edu.au'
   alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
   alias stampede='~/dotfiles/sshstam'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
-  alias polymers='cd ~/Google\ Drive/polymers'
 
   alias ga='git add .'
-  alias gs='git status'
   alias gc='git commit'
   alias gca='git commit --amend'
   alias gp='git push'
   alias gpf='git push -f'
-  alias gd='git diff'
 
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
-  alias paper='cd ~/Google_Drive/Hydrated_ILs/Publishing/Write_up/current/'
   alias thesis='cd ~/Google_Drive/thesis/'
-  alias wordcount='pandoc --lua-filter wordcount.lua source/*.md'
 fi
 
 # everywhere {{{1
