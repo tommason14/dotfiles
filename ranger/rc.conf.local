@@ -526,7 +526,7 @@ map oz set sort=random
 map os chain set sort=size;      set sort_reverse=False
 map ob chain set sort=basename;  set sort_reverse=False
 map on chain set sort=natural;   set sort_reverse=False
-map om chain set sort=mtime;     set sort_reverse=False
+# map om chain set sort=mtime;     set sort_reverse=False
 map oc chain set sort=ctime;     set sort_reverse=False
 map oa chain set sort=atime;     set sort_reverse=False
 map ot chain set sort=type;      set sort_reverse=False
@@ -535,7 +535,7 @@ map oe chain set sort=extension; set sort_reverse=False
 map oS chain set sort=size;      set sort_reverse=True
 map oB chain set sort=basename;  set sort_reverse=True
 map oN chain set sort=natural;   set sort_reverse=True
-map oM chain set sort=mtime;     set sort_reverse=True
+# map oM chain set sort=mtime;     set sort_reverse=True
 map oC chain set sort=ctime;     set sort_reverse=True
 map oA chain set sort=atime;     set sort_reverse=True
 map oT chain set sort=type;      set sort_reverse=True
@@ -731,3 +731,6 @@ map gd cd ~/Desktop
 
 # polymer geometries
 map sc shell cat %s | csvsort -c 'HF/DFT' -d '|' > sorted.csv
+
+map om shell molden %s
+map yc shell cat %s | pbcopy

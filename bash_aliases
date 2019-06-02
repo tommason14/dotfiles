@@ -185,3 +185,6 @@ alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundl
 alias vim='vim -p' # automatically open in tabs
 # if vim shows up small
 alias resize_vim='eval $(resize)'
+
+# ssh
+alias remote='sshpass -f ~/dotfiles/sshfile'
