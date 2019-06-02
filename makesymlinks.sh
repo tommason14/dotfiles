@@ -10,7 +10,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
-  files="bash_aliases bash_functions vim vimrc pymolrc hyper.js config/ranger/rc.conf chunkwmrc skhdrc"    
+  files="bash_aliases bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc"    
   ln -s $dir/vscode/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
 else # remotes
   files="bash_aliases bash_functions vim vimrc"    
@@ -37,4 +37,25 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+#### ranger ####
+
+mv ~/.config/ranger/rc.conf ~/.config/ranger/rc.conf.bak
+
+if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
+  echo "Symlinking $dir/ranger/rc.conf.local --> ~/.config/ranger/rc.conf"
+  ln -s $dir/ranger/rc.conf.local ~/.config/ranger/rc.conf
+fi
+
+configs="raijin magnus m3 monarch stampede"
+
+for config in ${configs[@]}; do
+  if [[ $HOSTNAME == *"$config"* ]];
+    then
+    echo "Symlinking $dir/ranger/rc.conf.$config --> ~/.config/ranger/rc.conf"
+    ln -s $dir/ranger/rc.conf.$config ~/.config/ranger/rc.conf
+  fi
+done
+
+# if [[ $PWD == *"nfs"* ]]; then # gaia needs doing
 

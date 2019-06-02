@@ -119,9 +119,9 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
 
   # monash
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
-  alias magnus='sshpass -f ~/dotfiles/sshfile ssh tmason@magnus.pawsey.org.au'
-  alias gaia='sshpass -f ~/dotfiles/sshfile ssh -X tmas0011@msgln6.its.monash.edu.au'
-  alias m3='sshpass -f ~/dotfiles/sshfile ssh tmason1@m3.massive.org.au'
+  alias magnus='sshpass -f ~/dotfiles/sshfile ssh -Y tmason@magnus.pawsey.org.au'
+  alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y tmas0011@msgln6.its.monash.edu.au'
+  alias m3='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@m3.massive.org.au'
   alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
   alias stampede='~/dotfiles/sshstam'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
