@@ -507,7 +507,6 @@ map <A-Left>  tab_move -1
 map gt        tab_move 1
 map gT        tab_move -1
 map gn        tab_new
-map gc        tab_close
 map uq        tab_restore
 map <a-1>     tab_open 1
 map <a-2>     tab_open 2
