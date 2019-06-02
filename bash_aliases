@@ -85,6 +85,7 @@ fi
 if [[ $PWD == *"nfs"* ]]; then
     alias ranger='python3 ~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
 fi
+
 # local {{{1
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
@@ -138,9 +139,15 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias thesis='cd ~/Google_Drive/thesis/'
 fi
 
+# remote {{{1
+
+if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
+then
+  alias longpath="echo $USER@$HOSTNAME:$PWD"
+fi
+
 # everywhere {{{1
 
-# edit dotfiles, but they are linked to the home directory, so source the home directory
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
 alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
@@ -183,8 +190,7 @@ alias ra='ranger'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
 alias vim='vim -p' # automatically open in tabs
-# if vim shows up small
-alias resize_vim='eval $(resize)'
+alias resize_vim='eval $(resize)' # if vim shows up small
 
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
