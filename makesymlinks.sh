@@ -49,12 +49,13 @@ fi
 
 configs="raijin magnus m3 monarch stampede"
 
-for config in configs
-do
-  if [[ $HOSTNAME == *"$config"* ]]; then
+for config in ${configs[@]}; do
+  if [[ $HOSTNAME == *"$config"* ]];
+    then
     echo "Symlinking $dir/ranger/rc.conf.$config --> ~/.config/ranger/rc.conf"
-    ln -s $dir./ranger/rc.conf.$config ~/.config/ranger.rc.conf
+    ln -s $dir/ranger/rc.conf.$config ~/.config/ranger/rc.conf
   fi
 done
+
 # if [[ $PWD == *"nfs"* ]]; then # gaia needs doing
 
