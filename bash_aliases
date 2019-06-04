@@ -144,6 +144,7 @@ fi
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
   export longpath="$USER@$HOSTNAME:$PWD"
+  alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
 fi
 
 # everywhere {{{1
