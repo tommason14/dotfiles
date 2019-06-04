@@ -143,7 +143,7 @@ fi
 
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
-  alias longpath="echo $USER@$HOSTNAME:$PWD"
+  export longpath="$USER@$HOSTNAME:$PWD"
 fi
 
 # everywhere {{{1
