@@ -121,7 +121,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   # monash
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh -Y tmason@magnus.pawsey.org.au'
-  alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y tmas0011@msgln6.its.monash.edu.au'
+  alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y -t tmas0011@msgln6.its.monash.edu.au "cd /nfs/shares/pas-grp/TOM; bash"'
   alias m3='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@m3.massive.org.au'
   alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
   alias stampede='~/dotfiles/sshstam'
@@ -143,7 +143,8 @@ fi
 
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
-  alias longpath="echo $USER@$HOSTNAME:$PWD"
+  export longpath="$USER@$HOSTNAME:$PWD"
+  alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
 fi
 
 # everywhere {{{1
