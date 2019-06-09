@@ -734,3 +734,5 @@ map sc shell cat %s | csvsort -c 'HF/DFT' -d '|' > sorted.csv
 
 map om shell molden %s
 map yc shell cat %s | pbcopy
+
+map sp shell qlmanage -p %s
