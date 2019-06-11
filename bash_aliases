@@ -137,6 +137,10 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
   alias thesis='cd ~/Google_Drive/thesis/'
+
+  function preview {
+    qlmanage -p $1 2> /dev/null
+  }
 fi
 
 # remote {{{1

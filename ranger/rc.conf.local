@@ -715,6 +715,7 @@ copytmap <ESC> q Q w <C-c>
 
 # mac apps
 map <Enter> shell open %s
+map pr shell qlmanage -p %s 2> /dev/null
 
 # goto places
 map ga cd ~/Google_Drive/Dopamine/analysis
@@ -729,3 +730,6 @@ map sc shell cat %s | csvsort -c 'HF/DFT' -d '|' > sorted.csv
 
 map om shell molden %s
 map yc shell cat %s | pbcopy
+
+map q1 shell yes "" | qcp -t1
+map q3 shell yes "" | qcp -t3
