@@ -161,7 +161,7 @@ alias dotfiles='cd ~/dotfiles'
 alias hyperjs='vim ~/dotfiles/hyper.js'
 alias chunkrc='vim ~/dotfiles/chunkwmrc'
 alias skhdrc='vim ~/dotfiles/skhdrc'
-
+alias ipythonrc='vim ~/dotfiles/ipythonrc'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 
 # aliases for default commands

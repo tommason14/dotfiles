@@ -10,13 +10,6 @@ warnings.simplefilter('ignore')
 
 %config InlineBackend.figure_format = 'retina'
 
-# --- Fonts ---
-import matplotlib.font_manager as fm
-from os.path import expanduser
-fpath = expanduser('~/Library/Fonts/Ubuntu-R.ttf')
-font = fm.FontProperties(fname=fpath, size=12)
-
-
 # --- TD-DFT UV-VIS ---
 import scipy as sp
 import scipy.constants as cst
@@ -261,6 +254,16 @@ def bp(series, as_percent = False):
         return (exponent / summed) * 100
     return exponent / summed
 
+# --- PLOTTING ---
+
+# --- Fonts ---
+
+import matplotlib.font_manager as fm
+from os.path import expanduser
+fpath = expanduser('~/Library/Fonts/Ubuntu-R.ttf')
+font = fm.FontProperties(fname=fpath, size=12)
+
+# --- Aliases ---
 
 clear_x_axis = theme(axis_text_x = element_blank(),
                      axis_ticks_major_x = element_blank(),
@@ -268,11 +271,12 @@ clear_x_axis = theme(axis_text_x = element_blank(),
 clear_y_axis = theme(axis_text_y = element_blank(),
                      axis_ticks_major_y = element_blank(),
                      axis_title_y = element_blank())
+clear_grid   = theme(panel_grid_major = element_blank(),
+                     panel_grid_minor = element_blank())
+
+my_font      = theme(text = element_text(fontproperties = font)) 
 
 # Useful regex!
 
 # df = df >> mutate(Cation = X.Config.str.extract('(^[^_]+(?=_))'),
 #                   Anion = X.Config.str.extract('((?<=_)[^_]+(?=_))'))
-
-
-
