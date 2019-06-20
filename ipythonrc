@@ -273,7 +273,6 @@ clear_y_axis = theme(axis_text_y = element_blank(),
                      axis_title_y = element_blank())
 clear_grid   = theme(panel_grid_major = element_blank(),
                      panel_grid_minor = element_blank())
-
 my_font      = theme(text = element_text(fontproperties = font)) 
 
 # Useful regex!
