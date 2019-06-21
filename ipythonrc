@@ -1,0 +1,281 @@
+# INITIAL SETUP
+
+from dfply import *
+from plotnine import *
+import matplotlib.pyplot as plt
+import warnings
+warnings.simplefilter('ignore')
+
+# Hi-res output
+
+%config InlineBackend.figure_format = 'retina'
+
+# --- TD-DFT UV-VIS ---
+import scipy as sp
+import scipy.constants as cst
+from matplotlib.mlab import normpdf
+
+# needs vectorising!!!
+@dfpipe
+def create_new_wavelengths(df):
+    """
+    Takes the output of a td-DFT gaussian calculation and 
+    plots peaks smoothed by a Gaussian, with an area equal
+    to the oscillator strength (indicating the likelihood of
+    a transition).
+    Generates the new wavelengths in terms of energies in eV, 
+    create_new_ints() performs the same operations and returns
+    the new intensities.
+    """
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        sigma = 0.05
+        step  = 0.001
+        
+        # use these values in additional df
+        # need to add more rows to match length of smoothed data
+        conf = list(df['Config'])[0]
+        root = list(df['Root'])[0]
+        iteration = list(df['Iteration'])[0]
+        
+        strength = list(df['Oscillator Strength (eV)'])
+        intensity = list(df['Intensity (au)'])
+        # max and min transition energies
+        minval = min(strength) - 5.0 * sigma
+        maxval = max(strength) + 5.0 * sigma
+
+        # points
+        npts   = int((maxval - minval) / step) + 1
+
+        new_energies = sp.linspace(minval, maxval, npts)
+        new_waves = [cst.h * cst.c / (val * cst.e) * 1.e9 for val in new_energies]
+        additional = pd.DataFrame({'wavelengths_smoothed': new_waves,
+                                   'smoothed_config': conf,
+                                   'smoothed_root': root,
+                                   'smoothed_iter': iteration})
+
+        # different lengths- need new dataframe and concat-ing,
+        # can't add directly
+        # need to extend current configs, roots, 
+        # to match length of new column
+        df = pd.concat([df, additional], axis = 1)
+        
+        return df
+    
+@dfpipe
+def create_new_ints(df):
+    """
+    Takes the output of a td-DFT gaussian calculation and 
+    plots peaks smoothed by a Gaussian, with an area equal
+    to the oscillator strength (indicating the likelihood of
+    a transition).
+    Generates the new intensities, 
+    create_new_wavelengths() performs the same operations and returns
+    the new wavelengths in terms of eV.
+    """
+    with warnings.catch_warnings():
+        warnings.simplefilter('ignore')
+        sigma = 0.05
+        step  = 0.001
+
+        strength = list(df['Oscillator Strength (eV)'])
+        intensity = list(df['Intensity (au)'])
+        # max and min transition energies
+        minval = min(strength) - 5.0 * sigma
+        maxval = max(strength) + 5.0 * sigma
+
+        # points
+        npts   = int((maxval - minval) / step) + 1
+
+        # absice
+        eneval = sp.linspace(minval, maxval, npts)
+
+        spectra = sp.zeros(npts) # creating entire spectra
+        # overwriting some points that have data to include
+        for index, i in enumerate(intensity):
+            spectra += i * normpdf(eneval, strength[index], sigma)
+        
+        additional = pd.DataFrame({'intensities_smoothed': spectra})
+        df = pd.concat([df, additional], axis = 1) 
+        # different lengths- need new dataframe and concat-ing,
+        # can't add directly
+        
+        return df
+
+def uv_vis(df):
+    """
+    Takes the output of a td-DFT gaussian calculation and 
+    plots peaks smoothed by a Gaussian, with an area equal
+    to the oscillator strength (indicating the likelihood of
+    a transition).
+    
+    Calls create_new_wavelengths() and create_new_ints
+    in order to fit gaussians to each peak, using the 
+    oscillator strength of each transition.
+    
+    Input: CSV from qcp fluorescence
+    Returns: Dataframe to plot. Column names:   
+    config, root, iteration, smoothed_waves,
+    smoothed_ints, vert_waves, vert_ints.
+    
+    Smoothed waves = gaussian-fitted spectra
+    Smoothed ints  = gaussian intensities
+    Vert waves     = wavelengths from logfile
+    Vert ints      = intensities from logfile
+    """
+    df = (
+        df >> group_by(X.Config, X.Root, X.Iteration) >> 
+        create_new_wavelengths() >>
+        ungroup()
+    )
+    # can't do both in same pipe
+    # configs, roots and iterations made longer
+    # to match the length of wavelengths_smoothed
+    config          = df['smoothed_config']
+    root            = df['smoothed_root']
+    iteration       = df['smoothed_iter']
+    smooth_wave     = df['wavelengths_smoothed']
+    vertical_waves  = df['Wavelength (nm)']
+    vertical_ints   = df['Intensity (au)']
+
+    df = (
+        df >> group_by(X.Config, X.Root, X.Iteration) >> 
+        create_new_ints() >>
+        ungroup()
+    )
+    smooth_int = df['intensities_smoothed']
+
+    return pd.DataFrame(
+        {
+            'config'   : config,
+            'root'     : root,
+            'iteration': iteration,
+            'smoothed_waves': smooth_wave,
+            'smoothed_ints': smooth_int,
+            'vert_waves': vertical_waves,
+            'vert_ints': vertical_ints
+        }
+    )
+
+# example usage
+# df = pd.read_csv('fluorescence.csv')
+# df = uv_vis(df)
+# plot = (
+#
+#     ggplot(df) +
+#     geom_line(aes('smoothed_waves', 'smoothed_ints'), color = 'red') +
+#     geom_segment(aes(x = 'vert_waves', xend = 'vert_waves',
+#                      y = 0, yend = 'vert_ints'), color = 'blue') +
+#     theme_seaborn() +
+#     theme(text = element_text(fontproperties = font)) +
+#     labs(x = 'Wavelength (nm)', y = 'Intensity (au)') +
+#     facet_wrap('~iteration', nrow = 4) 
+# )
+# --- END OF TD-DFT UV-VIS ---
+
+
+# --- HELPER FUNCTIONS ---
+
+def rename_cations(series, d = None):
+    if d is not None:
+        return series.replace(d)
+    return series.replace({'c4mim': 'C$_{\\mathrm{4}}$mim',
+                           'choline': 'Choline'})
+
+def rename_anions(series, d = None):
+    if d is not None:
+        return series.replace(d)
+    return series.replace({'acetate': 'Acetate',
+                           'dhp': 'DHP',
+                           'mes': 'Mesylate'})
+
+def conditional_mutate(df, value, col, new_col, new_value):
+    df.loc[df[col].str.contains(value), new_col] = new_value
+    return df
+
+@pipe
+def rename_ions(df):
+    vals = {'Cation': {'ch': 'Choline', 'c4mim': 'C$_{\\mathrm{4}}$mim'},
+            'Anion': {'ac': 'Acetate', 'dhp': 'DHP', 'mes': 'Mesylate'}
+           }
+
+    for new_col, d in vals.items():
+        for string, new_value in d.items():
+            df = conditional_mutate(df, string, new_col, new_col, new_value)
+    return df
+
+@pipe
+def make_IL_column(df):
+
+    def add_il(row):
+
+        d = [{'Cation': 'ch', 'Anion': 'ac', 'IL': '[ch][ac]'},
+             {'Cation': 'ch', 'Anion': 'dhp', 'IL': '[ch][dhp]'},
+             {'Cation': 'ch', 'Anion': 'mes', 'IL': '[ch][mes]'},
+             {'Cation': 'c$_{\\mathrm{4}}$mim', 'Anion': 'ac', 'IL': '[C$_{\\mathrm{4}}$mim][ac]'},
+             {'Cation': 'c$_{\\mathrm{4}}$mim', 'Anion': 'dhp', 'IL': '[C$_{\\mathrm{4}}$mim][dhp]'},
+             {'Cation': 'c$_{\\mathrm{4}}$mim', 'Anion': 'mes', 'IL': '[C$_{\\mathrm{4}}$mim][mes]'}]
+
+        for item in d:
+            if item['Cation'] in row['Cation'].lower() and item['Anion'] in row['Anion'].lower():
+                return item['IL']
+
+    df = df.assign(IL = df.apply(add_il, axis = 1))
+    return df
+
+@make_symbolic
+def confidence(column):
+    """
+    95% confidence intervals defined as:
+        1.96 * standard deviation from the mean / sqrt(number of items)
+
+    1.96 assumes a normal distribution.
+
+    https://www.itl.nist.gov/div898/handbook/prc/section1/prc14.htm
+    http://sphweb.bumc.bu.edu/otlt/MPH-Modules/BS/BS704_Confidence_Intervals/BS704_Confidence_Intervals_print.html
+    """
+    return 1.96 * sd(column) * (n(column) ** -0.5)
+
+@make_symbolic
+def order_column(series):
+    return pd.Categorical(series, categories = series.unique(), ordered = True)
+
+@make_symbolic
+def bp(series, as_percent = False):
+    """
+    Takes in energies in kJ/mol, produces
+    probabilities according to a Boltzmann distribution
+    """
+    R = 8.3145
+    T = 298.15
+    exponent = np.exp((-1 * series * 1000) / (R * T))
+    summed = exponent.sum()
+    if as_percent:
+        return (exponent / summed) * 100
+    return exponent / summed
+
+# --- PLOTTING ---
+
+# --- Fonts ---
+
+import matplotlib.font_manager as fm
+from os.path import expanduser
+fpath = expanduser('~/Library/Fonts/Ubuntu-R.ttf')
+font = fm.FontProperties(fname=fpath, size=12)
+
+# --- Aliases ---
+
+clear_x_axis = theme(axis_text_x = element_blank(),
+                     axis_ticks_major_x = element_blank(),
+                     axis_title_x = element_blank())
+clear_y_axis = theme(axis_text_y = element_blank(),
+                     axis_ticks_major_y = element_blank(),
+                     axis_title_y = element_blank())
+clear_grid   = theme(panel_grid_major = element_blank(),
+                     panel_grid_minor = element_blank())
+my_font      = theme(text = element_text(fontproperties = font)) 
+
+# Useful regex!
+
+# df = df >> mutate(Cation = X.Config.str.extract('(^[^_]+(?=_))'),
+#                   Anion = X.Config.str.extract('((?<=_)[^_]+(?=_))'))

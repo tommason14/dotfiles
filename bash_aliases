@@ -88,7 +88,7 @@ fi
 
 # local {{{1
 
-if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
+if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
   alias ls='ls -G'
   alias desktop='cd ~/Desktop'
@@ -161,7 +161,7 @@ alias dotfiles='cd ~/dotfiles'
 alias hyperjs='vim ~/dotfiles/hyper.js'
 alias chunkrc='vim ~/dotfiles/chunkwmrc'
 alias skhdrc='vim ~/dotfiles/skhdrc'
-
+alias ipythonrc='vim ~/dotfiles/ipythonrc'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 
 # aliases for default commands
