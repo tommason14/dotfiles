@@ -50,6 +50,3 @@ for config in ${configs[@]}; do
     ln -s $dir/ranger/rc.conf.$config ~/.config/ranger/rc.conf
   fi
 done
-
-# if [[ $PWD == *"nfs"* ]]; then # gaia needs doing
-

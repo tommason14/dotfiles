@@ -88,7 +88,7 @@ fi
 
 # local {{{1
 
-if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
+if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
   alias ls='ls -G'
   alias desktop='cd ~/Desktop'
