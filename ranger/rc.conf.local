@@ -344,7 +344,6 @@ map S shell $SHELL
 
 map :  console
 map ;  console
-map !  console shell%space
 map @  console -p6 shell  %%s
 map #  console shell -p%space
 map s  console shell%space
@@ -733,3 +732,5 @@ map yc shell cat %s | pbcopy
 
 map q1 shell yes "" | qcp -t1
 map q3 shell yes "" | qcp -t3
+
+map !  console shell -w%space
