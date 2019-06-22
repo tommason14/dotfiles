@@ -14,24 +14,24 @@ fi
 
 EDITOR=vim
 
-# uni mac {{{1
+# uni mac or macbook {{{1
 
-if [[ $PWD == *"tmas0023"* ]]; then
-    export PATH=~/Google_Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:/Users/tmas0023/Documents/monash_automation:$PATH
+if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+    export PATH=$PATH:~/bin:~/Google_Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
     alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-fi
-
-# macbook {{{1
-
-if [[ $PWD == *"tommason"* ]]; then
-    export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/.cargo/bin
-    export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
-    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-    alias automation='cd ~/Documents/Monash/monash_automation'
-
+# fi
+#
+# # macbook {{{1
+#
+# if [[ $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+#     export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/.cargo/bin
+#     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
+#     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+#     alias automation='cd ~/Documents/Monash/monash_automation'
+#
 
     #static sites
     alias hs='harp server'
@@ -128,6 +128,8 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 
+  export filestream='/Volumes/GoogleDrive'
+
   alias ga='git add .'
   alias gc='git commit'
   alias gca='git commit --amend'
@@ -147,7 +149,7 @@ fi
 
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
-  export longpath="$USER@$HOSTNAME:$PWD"
+  # export longpath="$USER@$HOSTNAME:$PWD"
   alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
 fi
 
@@ -199,3 +201,9 @@ alias resize_vim='eval $(resize)' # if vim shows up small
 
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
+export raijin='tm3124@raijin.nci.org.au'
+export magnus='tmason@magnus.pawsey.org.au'
+export gaia='tmas0011@msgln6.its.monash.edu.au'
+export m3='tmason1@m3.massive.org.au'
+export monarch='tmason1@monarch.erc.monash.edu.au'
+export stm='tmason@stampede2.tacc.utexas.edu'
