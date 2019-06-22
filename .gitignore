@@ -7,6 +7,8 @@ vim/.netrwhist
 
 sshfile
 sshstam
+update_dotfiles.sh
+update_dotfiles_stm.expect
 
 ### macOS ###
 # General

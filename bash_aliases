@@ -17,7 +17,7 @@ EDITOR=vim
 # uni mac or macbook {{{1
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-    export PATH=$PATH:~/bin:~/Google_Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
+    export PATH=$PATH:~/bin:/Volumes/GoogleDrive/My\ Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
@@ -99,17 +99,17 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias dc='cd ~/Documents'
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
-  alias google='cd ~/Google_Drive'
-  alias scripts='cd ~/Google_Drive/scripts'
-  alias mccg='cd ~/Google_Drive/scripts/mccg'
-  alias backups='cd ~/Google_Drive/backups'
-  alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
-  alias jn='jupyter notebook'
-  alias gtqcp='cd ~/Google_Drive/scripts/qcp'
-  alias gd='cd ~/Google_Drive/Dopamine'
-  alias gp='cd ~/Google_Drive/polymers'
-  alias polymers='cd ~/Google_Drive/Polymers'
-  alias gq='cd ~/Google_Drive/scripts/qcp'
+  alias google="cd $filestream"
+  alias scripts="cd $filestream/scripts"
+  alias mccg="cd $filestream/scripts/mccg"
+  alias backups="cd $filestream/backups"
+  alias analysis="cd $filestream/Hydrated_ILs/Analysis"
+  alias jn="jupyter notebook"
+  alias gtqcp="cd $filestream/scripts/qcp"
+  alias gd="cd $filestream/Dopamine"
+  alias gp="cd $filestream/polymers"
+  alias polymers="cd $filestream/Polymers"
+  alias gq="cd $filestream/scripts/qcp"
 
   function pymol { # used as an alias
    /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
@@ -128,7 +128,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 
-  export filestream='/Volumes/GoogleDrive'
+  export filestream="/Volumes/GoogleDrive/My\ Drive"
 
   alias ga='git add .'
   alias gc='git commit'
