@@ -717,11 +717,14 @@ map <Enter> shell open %s
 map pr shell qlmanage -p %s 2> /dev/null
 
 # goto places
-map ga cd ~/Google_Drive/Dopamine/analysis
-map gs cd ~/Google_Drive/backups/stampede/dopamine
-map gt cd ~/Google_Drive/thesis
-map gm cd ~/Google_Drive/Meetings
-map gp cd ~/Google_Drive/polymers
+
+map go cd /Volumes/GoogleDrive/My Drive
+map ga cd /Volumes/GoogleDrive/My Drive/Dopamine/analysis
+map gs cd /Volumes/GoogleDrive/My Drive/backups/stampede/dopamine
+map gt cd /Volumes/GoogleDrive/My Drive/thesis
+map gm cd /Volumes/GoogleDrive/My Drive/Meetings
+map gp cd /Volumes/GoogleDrive/My Drive/polymers
+map gc cd /Volumes/GoogleDrive/My Drive/Hydrated_ILs
 map gd cd ~/Desktop
 
 # polymer geometries

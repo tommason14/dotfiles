@@ -21,17 +21,10 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
-    alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-# fi
-#
-# # macbook {{{1
-#
-# if [[ $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-#     export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/.cargo/bin
-#     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
-#     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-#     alias automation='cd ~/Documents/Monash/monash_automation'
-#
+    if [[ $HOSTNAME != *"MBP"* ]] 
+    then
+      alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
+    fi
 
     #static sites
     alias hs='harp server'
@@ -68,6 +61,7 @@ if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
+    alias job_count='squeue | grep tmason | wc -l'
 fi
 
 # monarch/massive {{{1
@@ -90,7 +84,7 @@ fi
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
-  export filestream="/Volumes/GoogleDrive/My\ Drive"
+  export filestream="/Volumes/GoogleDrive/My Drive"
   alias ls='ls -G'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
@@ -100,17 +94,17 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias dc='cd ~/Documents'
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
-  alias google="cd $filestream"
-  alias scripts="cd $filestream/scripts"
-  alias mccg="cd $filestream/scripts/mccg"
-  alias backups="cd $filestream/backups"
-  alias analysis="cd $filestream/Hydrated_ILs/Analysis"
-  alias jn="jupyter notebook"
-  alias gtqcp="cd $filestream/scripts/qcp"
-  alias gd="cd $filestream/Dopamine"
-  alias gp="cd $filestream/polymers"
-  alias polymers="cd $filestream/Polymers"
-  alias gq="cd $filestream/scripts/qcp"
+  alias google='cd "$filestream"'
+  alias scripts='cd "$filestream"/scripts'
+  alias mccg='cd "$filestream"/scripts/mccg'
+  alias backups='cd "$filestream"/backups'
+  alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
+  alias jn='jupyter notebook'
+  alias gtqcp='cd "$filestream"/scripts/qcp'
+  alias gd='cd "$filestream"/Dopamine'
+  alias gp='cd "$filestream"/polymers'
+  alias polymers='cd "$filestream"/Polymers'
+  alias gq='cd "$filestream"/scripts/qcp'
 
   function pymol { # used as an alias
    /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
@@ -137,7 +131,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
 
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
-  alias thesis='cd ~/Google_Drive/thesis/'
+  alias thesis='cd "$filestream"/thesis/'
 
   function preview {
     qlmanage -p $1 2> /dev/null

@@ -184,8 +184,8 @@ function gamesstoxyz {
 base_name=$(echo $1 | cut -d . -f 1)
 num_atoms=$(cat $1 | wc -l | tr -s [:blank:])
 cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $base_name.xyz
-printf "$num_atoms\n\n" | cat - $base_name.xyz > /tmp/out
-mv /tmp/out $base_name.xyz # avoids sed -i '' on mac/ sed -i on linux
+printf "$num_atoms\n\n" | cat - $base_name.xyz > temp
+mv temp $base_name.xyz 
 }
 
 function calc {
@@ -196,7 +196,11 @@ python3 -c "print($args)"
 }
 
 function check_references {
-cat ~/Google_Drive/thesis/library.bib | grep @article{$1 | sed 's/\@article{//' | sed 's/\,//' | sort
+# grep -i @article{$1 ~/Google_Drive/thesis/library.bib | sed 's/\@article{//' | sed 's/\,//' | sort
+grep -i @article{$1 "$filestream"/thesis/library.bib |\
+sed 's/\@article{//' |\
+sed 's/\,//' |\
+sort
 }
 
 function wallpaper {

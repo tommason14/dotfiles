@@ -724,6 +724,7 @@ copytmap <ESC> q Q w <C-c>
 map gs cd /scratch/pawsey0197/tmason
 map gh cd ~
 map gd cd /scratch/pawsey0197/tmason/dopamine
+map gc cd /scratch/pawsey0197/tmason/Hydrated_ILs
 # map gp cd /scratch/06233/tmason/polymers/polymerisation_rates
 map gw cd /group/pawsey0197
 map gq cd /group/pawsey0197/apps/source/qcp
