@@ -17,21 +17,14 @@ EDITOR=vim
 # uni mac or macbook {{{1
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-    export PATH=$PATH:~/bin:~/Google_Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
+    export PATH=$PATH:~/bin:/Volumes/GoogleDrive/My\ Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
-    alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
-# fi
-#
-# # macbook {{{1
-#
-# if [[ $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-#     export PATH=$PATH:~/bin:~/Google_Drive/bin:~/dotfiles/python_wrappers:~/Documents/Monash/monash_automation:~/.cargo/bin
-#     export PYTHONPATH=~/Documents/Monash/monash_automation:$PYTHONPATH
-#     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-#     alias automation='cd ~/Documents/Monash/monash_automation'
-#
+    if [[ $HOSTNAME != *"MBP"* ]] 
+    then
+      alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
+    fi
 
     #static sites
     alias hs='harp server'
@@ -68,6 +61,7 @@ if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
+    alias job_count='squeue | grep tmason | wc -l'
 fi
 
 # monarch/massive {{{1
@@ -90,6 +84,7 @@ fi
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
+  export filestream="/Volumes/GoogleDrive/My Drive"
   alias ls='ls -G'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
@@ -99,17 +94,17 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias dc='cd ~/Documents'
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
-  alias google='cd ~/Google_Drive'
-  alias scripts='cd ~/Google_Drive/scripts'
-  alias mccg='cd ~/Google_Drive/scripts/mccg'
-  alias backups='cd ~/Google_Drive/backups'
-  alias analysis='cd ~/Google_Drive/Hydrated_ILs/Analysis'
+  alias google='cd "$filestream"'
+  alias scripts='cd "$filestream"/scripts'
+  alias mccg='cd "$filestream"/scripts/mccg'
+  alias backups='cd "$filestream"/backups'
+  alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
   alias jn='jupyter notebook'
-  alias gtqcp='cd ~/Google_Drive/scripts/qcp'
-  alias gd='cd ~/Google_Drive/Dopamine'
-  alias gp='cd ~/Google_Drive/polymers'
-  alias polymers='cd ~/Google_Drive/Polymers'
-  alias gq='cd ~/Google_Drive/scripts/qcp'
+  alias gtqcp='cd "$filestream"/scripts/qcp'
+  alias gd='cd "$filestream"/Dopamine'
+  alias gp='cd "$filestream"/polymers'
+  alias polymers='cd "$filestream"/Polymers'
+  alias gq='cd "$filestream"/scripts/qcp'
 
   function pymol { # used as an alias
    /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
@@ -128,8 +123,6 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 
-  export filestream='/Volumes/GoogleDrive'
-
   alias ga='git add .'
   alias gc='git commit'
   alias gca='git commit --amend'
@@ -138,11 +131,17 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
 
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
-  alias thesis='cd ~/Google_Drive/thesis/'
+  alias thesis='cd "$filestream"/thesis/'
 
   function preview {
     qlmanage -p $1 2> /dev/null
   }
+
+  alias hyperjs='vim ~/dotfiles/hyper.js'
+  alias chunkrc='vim ~/dotfiles/chunkwmrc'
+  alias skhdrc='vim ~/dotfiles/skhdrc'
+  alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
+
 fi
 
 # remote {{{1
@@ -160,10 +159,6 @@ alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
 alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
 alias vimrc='vim ~/dotfiles/vimrc'
 alias dotfiles='cd ~/dotfiles'
-alias hyperjs='vim ~/dotfiles/hyper.js'
-alias chunkrc='vim ~/dotfiles/chunkwmrc'
-alias skhdrc='vim ~/dotfiles/skhdrc'
-alias ipythonrc='vim ~/dotfiles/ipythonrc'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 
 # aliases for default commands
