@@ -90,6 +90,7 @@ fi
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
+  export filestream="/Volumes/GoogleDrive/My\ Drive"
   alias ls='ls -G'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
@@ -128,8 +129,6 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 
-  export filestream="/Volumes/GoogleDrive/My\ Drive"
-
   alias ga='git add .'
   alias gc='git commit'
   alias gca='git commit --amend'
@@ -143,6 +142,12 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   function preview {
     qlmanage -p $1 2> /dev/null
   }
+
+  alias hyperjs='vim ~/dotfiles/hyper.js'
+  alias chunkrc='vim ~/dotfiles/chunkwmrc'
+  alias skhdrc='vim ~/dotfiles/skhdrc'
+  alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
+
 fi
 
 # remote {{{1
@@ -160,10 +165,6 @@ alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
 alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
 alias vimrc='vim ~/dotfiles/vimrc'
 alias dotfiles='cd ~/dotfiles'
-alias hyperjs='vim ~/dotfiles/hyper.js'
-alias chunkrc='vim ~/dotfiles/chunkwmrc'
-alias skhdrc='vim ~/dotfiles/skhdrc'
-alias ipythonrc='vim ~/dotfiles/ipythonrc'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 
 # aliases for default commands
