@@ -734,6 +734,7 @@ map om shell molden %s
 map yc shell cat %s | pbcopy
 
 map q1 shell yes "" | qcp -t1
+map q2 shell -w qcp -t2
 map q3 shell yes "" | qcp -t3
 
 map !  console shell -w%space

@@ -738,6 +738,7 @@ map sq shell squeue -u tmason
 # aliases
 map qc shell yes "" | qcp -t1
 map q1 shell yes "" | qcp -t1
+map q2 shell -w qcp -t2
 map q3 shell yes "" | qcp -t3
 map qu shell -w squeue -u tmason1 -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
 map ql shell -w squeue -u tmason1 -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C %.12l %.12L %.6D %.16S %R"
