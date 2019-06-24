@@ -739,6 +739,7 @@ map sq shell qstat -u tm3124
 map qc shell yes "" | qcp -t1
 map q1 shell yes "" | qcp -t1
 map q3 shell yes "" | qcp -t3
-
+map qu shell qstat -u tm3124
+map ql shell nqstat
 
 map !  console shell -w%space

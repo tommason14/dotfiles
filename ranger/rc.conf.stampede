@@ -735,10 +735,12 @@ map ga cd ~/monash_automation/
 map sb shell sbatch %s
 map sq shell squeue -u tmason
 
-# qcp
+# aliases
 map qc shell yes "" | qcp -t1
 map q1 shell yes "" | qcp -t1
 map q3 shell yes "" | qcp -t3
-
+map qu shell -w squeue -u tmason -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
+map ql shell -w squeue -u tmason -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C %.12l %.12L %.6D %.16S %R"
+map qo shell -w squeue -u tmason -o "%10i %30j %130Z"
 
 map !  console shell -w%space
