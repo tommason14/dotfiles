@@ -738,8 +738,13 @@ map sq shell qstat -u tm3124
 # qcp
 map qc shell yes "" | qcp -t1
 map q1 shell yes "" | qcp -t1
+map q2 shell -w qcp -t2
 map q3 shell yes "" | qcp -t3
 map qu shell qstat -u tm3124
 map ql shell nqstat
 
 map !  console shell -w%space
+
+# fluorescence
+map qf shell qcp_fluorescence
+map qfa shell qcp_fluorescence_all

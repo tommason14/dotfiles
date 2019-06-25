@@ -17,7 +17,7 @@ EDITOR=vim
 # uni mac or macbook {{{1
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-    export PATH=$PATH:~/bin:/Volumes/GoogleDrive/My\ Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
+    export PATH=$PATH:~/bin:/Volumes/GoogleDrive/My\ Drive/scripts:/Volumes/GoogleDrive/My\ Drive/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
