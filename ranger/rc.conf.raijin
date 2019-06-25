@@ -744,3 +744,7 @@ map qu shell qstat -u tm3124
 map ql shell nqstat
 
 map !  console shell -w%space
+
+# fluorescence
+map qf shell qcp_fluorescence
+map qfa shell qcp_fluorescence_all

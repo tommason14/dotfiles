@@ -105,14 +105,19 @@ pull_repos() {
   pushd ~/dotfiles
   echo "Updating dotfiles..."
   git pull && source ~/.bashrc #if error, no reload of bashrc
-  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* ]]; then
+  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
     cd ~/monash_automation
-  elif [[ $PWD == *"tommason"* ]]; then # MacBook
-    cd ~/Documents/Monash/monash_automation
-  elif [[ $PWD == *"tmas0023"* ]]; then # Uni
+  elif [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then # Uni
     cd ~/Documents/monash_automation
   fi
   echo "Updating monash_automation..." 
+  git pull
+  if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+    cd "$filestream"/scripts/qcp
+  elif [[ $HOSTNAME == *"stampede"* ]]; then
+    cd /work/06233/tmason/stampede2/qcp
+  fi
+  echo "Updating qcp"
   git pull
   popd
 }
@@ -121,14 +126,19 @@ push_repos() {
   pushd ~/dotfiles
   echo "Pushing dotfiles to master..."
   git add . && git commit && git push
-  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* ]]; then
+  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
     cd ~/monash_automation
-  elif [[ $PWD == *"tommason"* ]]; then # MacBook
-    cd ~/Documents/Monash/monash_automation
-  elif [[ $PWD == *"tmas0023"* ]]; then # Uni
+  elif [[ $PWD == *"tmas0023"*  || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then # Uni
     cd ~/Documents/monash_automation
   fi
   echo "Pushing monash_automation to master..." 
+  git add . && git commit && git push
+  if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+    cd "$filestream"/scripts/qcp
+  elif [[ $HOSTNAME == *"stampede"* ]]; then
+    cd /work/06233/tmason/stampede2/qcp
+  fi
+  echo "Pushing qcp to master..."
   git add . && git commit && git push
   popd
 }

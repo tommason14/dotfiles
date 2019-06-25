@@ -727,8 +727,7 @@ map gp cd /Volumes/GoogleDrive/My Drive/polymers
 map gc cd /Volumes/GoogleDrive/My Drive/Hydrated_ILs
 map gd cd ~/Desktop
 
-# polymer geometries
-map sc shell cat %s | csvsort -c 'HF/DFT' -d '|' > sorted.csv
+# utilities
 
 map om shell molden %s
 map yc shell cat %s | pbcopy
@@ -738,3 +737,8 @@ map q2 shell -w qcp -t2
 map q3 shell yes "" | qcp -t3
 
 map !  console shell -w%space
+
+# fluorescence
+map qf shell qcp_fluorescence
+map qfa shell qcp_fluorescence_all
+map pf shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py %s 

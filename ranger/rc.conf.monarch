@@ -745,3 +745,7 @@ map qo shell -w squeue -u tmason1 -o "%10i %30j %130Z"
 
 
 map !  console shell -w%space
+
+# fluorescence
+map qf shell qcp_fluorescence
+map qfa shell qcp_fluorescence_all
