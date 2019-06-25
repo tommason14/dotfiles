@@ -741,4 +741,6 @@ map !  console shell -w%space
 # fluorescence
 map qf shell qcp_fluorescence
 map qfa shell qcp_fluorescence_all
-map pf shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py %s 
+map pfl console shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s%space
+# defaults
+map pfd shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s
