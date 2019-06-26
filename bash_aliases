@@ -62,6 +62,10 @@ if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
     alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
     alias job_count='squeue | grep tmason | wc -l'
+    function pf {
+    smooth_fluorescence_data.py -f $1
+    cat spectra.data | awk -F "," '{print $4, $5}' | sed '1d' | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+    }
 fi
 
 # monarch/massive {{{1
