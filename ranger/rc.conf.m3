@@ -749,3 +749,6 @@ map !  console shell -w%space
 # fluorescence
 map qf shell qcp_fluorescence
 map qfa shell qcp_fluorescence_all
+
+# chmod 
+map cx shell chmod +x %s
