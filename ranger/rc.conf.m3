@@ -733,7 +733,7 @@ map gc cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 
 # submission
 map sb shell sbatch %s
-map sq shell squeue -u tmason
+map sq shell squeue -u tmason1
 
 # aliases
 map qc shell yes "" | qcp -t1

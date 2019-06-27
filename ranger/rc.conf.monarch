@@ -732,7 +732,7 @@ map ga cd ~/monash_automation/
 
 # submission
 map sb shell sbatch %s
-map sq shell squeue -u tmason
+map sq shell squeue -u tmason1
 
 # qcp
 map qc shell yes "" | qcp -t1

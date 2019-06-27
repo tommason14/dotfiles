@@ -729,7 +729,7 @@ map gc cd /Volumes/GoogleDrive/My Drive/Hydrated_ILs
 map dk cd ~/Desktop
 
 # utilities
-
+map o. shell open .
 map om shell molden %s
 map yc shell cat %s | pbcopy
 
@@ -745,6 +745,7 @@ map qfa shell qcp_fluorescence_all
 map pfl console shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s%space
 # defaults
 map pfd shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s
+map pfn shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter_noshow.py -f %s
 
 # chmod 
 map cx shell chmod +x %s
