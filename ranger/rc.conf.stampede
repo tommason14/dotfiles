@@ -750,7 +750,7 @@ map !  console shell -w%space
 map qf shell qcp_fluorescence
 map qfa shell qcp_fluorescence_all
 
-map pf shell -w smooth_fluorescence_data.py -f %s && cat spectra.data | awk -F "," '{print $4, $5}' | sed '1d' | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+map pfl shell -w smooth_fluorescence_data.py -f %s && cat spectra.data | awk -F "," '{print $4, $5}' | sed '1d' | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 
 # chmod 
 map cx shell chmod +x %s
