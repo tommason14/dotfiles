@@ -739,9 +739,9 @@ map qc shell yes "" | qcp -t1
 map q1 shell yes "" | qcp -t1
 map q2 shell -w qcp -t2
 map q3 shell yes "" | qcp -t3
-map qu shell -w squeue -u tmason -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
-map ql shell -w squeue -u tmason -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C %.12l %.12L %.6D %.16S %R"
-map qo shell -w squeue -u tmason -o "%10i %30j %130Z"
+map qu shell -w squeue -u tmason -o "%%%%.18i %%%%.9P %%%%.30j %%%%.8u %%%%.2t %%%%.10M %%%%.6D"
+map ql shell -w squeue -u tmason -o "%%%%.10i %%%%.50Z %%%%.10P %%%%.15j %%%%.8u %%%%8Q %%%%.8T %%%%.10M %%%%.4C %%%%.12l %%%%.12L %%%%.6D %%%%.16S %%%%R"
+map qo shell -w squeue -u tmason -o "%%%%10i %%%%30j %%%%130Z"
 
 map !  console shell -w%space
 
@@ -751,3 +751,13 @@ map qfa shell qcp_fluorescence_all
 
 # chmod 
 map cx shell chmod +x %s
+
+# plotting in gnuplot
+
+# MP2
+map pm shell -w cat %s | grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+# FMO 
+map pfo shell -w cat %s | grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+# Gaussian
+map pg shell -w cat %s | grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+

@@ -746,6 +746,18 @@ map pfl console shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_u
 # defaults
 map pfd shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s
 map pfn shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter_noshow.py -f %s
+# trimmed
+map pft shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s -l 180 -m 500
 
 # chmod 
 map cx shell chmod +x %s
+
+# plotting in gnuplot
+
+# MP2
+map pm shell -w cat %s | grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+# FMO 
+map pfo shell -w cat %s | grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+# Gaussian
+map pg shell -w cat %s | grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+
