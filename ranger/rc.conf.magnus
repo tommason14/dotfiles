@@ -751,3 +751,13 @@ map qfa shell qcp_fluorescence_all
 
 # chmod 
 map cx shell chmod +x %s
+
+# plotting in gnuplot
+
+# MP2
+map pm shell -w cat %s | grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+# FMO 
+map pfo shell -w cat %s | grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+# Gaussian
+map pg shell -w cat %s | grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+
