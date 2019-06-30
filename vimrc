@@ -102,9 +102,6 @@ inoremap <Up> <C-o>gk
 " Spell check - offer replacement
 nnoremap <Leader><Space> z=
 
-" set no spell
-" nnoremap <Leader>s :set nospell<CR>
-
 " Run python in vim
 
 " Run on selected text

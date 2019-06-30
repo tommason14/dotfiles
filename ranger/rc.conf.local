@@ -746,9 +746,12 @@ map pfl console shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_u
 # defaults
 map pfd shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s
 map pfn shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter_noshow.py -f %s
+# trimmed
+map pft shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f %s -l 180 -m 500
 
-# chmod 
+# utilities
 map cx shell chmod +x %s
+map yc shell cat %s | pbcopy
 
 # plotting in gnuplot
 
