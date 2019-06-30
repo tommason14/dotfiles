@@ -750,8 +750,9 @@ map !  console shell -w%space
 map qf shell qcp_fluorescence
 map qfa shell qcp_fluorescence_all
 
-# chmod 
+# utilities 
 map cx shell chmod +x %s
+map yc shell cat %s | pbcopy
 
 # plotting in gnuplot
 

@@ -752,8 +752,9 @@ map qfa shell qcp_fluorescence_all
 
 map pfl shell -w smooth_fluorescence_data.py -f %s && cat spectra.data | awk -F "," '{print $4, $5}' | sed '1d' | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 
-# chmod 
+# utilities
 map cx shell chmod +x %s
+map yc shell cat %s | pbcopy
 
 # plotting in gnuplot
 
