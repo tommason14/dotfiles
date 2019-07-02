@@ -4,6 +4,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/dotfiles/vim/bundle')
 
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
+" Plugin 'nvie/vim-flake8'                 " Python formatting
+Plugin 'tell-k/vim-autopep8'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
 Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
@@ -148,12 +150,16 @@ nnoremap <Leader>l <C-W><C-L>
 " Python  {{{1
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4                         |
-    \ set expandtab                         |
-    \ set softtabstop=4                     |
-    \ set shiftwidth=4                      |
-    \ set textwidth=100                     |
-    \ set filetype=python                   |
+    \ set tabstop=4                                  |
+    \ set expandtab                                  |
+    \ set softtabstop=4                              |
+    \ set shiftwidth=4                               |
+    \ set textwidth=100                              |
+    \ let g:autopep8_max_line_length = 79            |
+    \ let g:autopep8_on_save = 1                     |
+    \ set filetype=python                            |
+
+" autocmd BufWritePost *.py call Flake8()
 
 " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
