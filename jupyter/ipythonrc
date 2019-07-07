@@ -236,9 +236,13 @@ def confidence(column):
     """
     return 1.96 * sd(column) * (n(column) ** -0.5)
 
-@make_symbolic
-def order_column(series):
-    return pd.Categorical(series, categories = series.unique(), ordered = True)
+def order_column(df, series, order_by=None, ascending=False):
+    """
+    Sorts a column of the dataframe, `series`, by the column given by
+    `order_by`.
+    """
+    vals = df.sort_values(order_by, ascending=ascending)[series].values
+    return pd.Categorical(df[series], categories=vals, ordered=True)
 
 @make_symbolic
 def bp(series, as_percent = False):
