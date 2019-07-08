@@ -17,7 +17,8 @@ EDITOR=vim
 # uni mac or macbook {{{1
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-    export PATH=$PATH:"$filestream"/chem_scripts:"$filestream"/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
+    export filestream="/Volumes/GoogleDrive/My Drive"
+    export PATH="$filestream"/chem_scripts:"$filestream"/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
     export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation='cd ~/Documents/monash_automation'
@@ -89,7 +90,6 @@ fi
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
-  export filestream="/Volumes/GoogleDrive/My Drive"
   alias ls='ls -G'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
