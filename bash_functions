@@ -109,11 +109,23 @@ change_to_chem_assistant() {
   fi
 }
 
-change_to_qcp() {
+pull_qcp() {
   if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     cd "$filestream"/scripts/qcp
+    git pull
   elif [[ $HOSTNAME == *"stampede"* ]]; then
     cd /work/06233/tmason/stampede2/qcp
+    git pull
+  fi
+}
+
+push_qcp() {
+  if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+    cd "$filestream"/scripts/qcp
+    git add . && git commit && git push
+  elif [[ $HOSTNAME == *"stampede"* ]]; then
+    cd /work/06233/tmason/stampede2/qcp
+    git add . && git commit && git push
   fi
 }
 
@@ -132,11 +144,10 @@ pull_repos() {
   change_to_chem_assistant
   echo "Updating monash_automation..." 
   git pull
-  change_to_qcp
-  echo "Updating qcp"
-  git pull
+  echo "Updating qcp..."
+  pull_qcp
   change_to_chem_scripts
-  echo "Updating chem scripts"
+  echo "Updating chem scripts..."
   git pull 
   popd
 }
@@ -148,9 +159,8 @@ push_repos() {
   change_to_chem_assistant
   echo "Pushing monash_automation to master..." 
   git add . && git commit && git push
-  change_to_qcp
   echo "Pushing qcp to master..."
-  git add . && git commit && git push
+  push_qcp
   change_to_chem_scripts
   echo "Pushing chem scripts to master..."
   git add . && git commit && git push
