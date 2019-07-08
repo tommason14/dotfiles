@@ -755,6 +755,7 @@ map pfl shell -w smooth_fluorescence_data.py -f %s && cat spectra.data | awk -F 
 # utilities
 map cx shell chmod +x %s
 map yc shell cat %s | pbcopy
+map g2m shell gamess_to_molden.py %s
 
 # plotting in gnuplot
 

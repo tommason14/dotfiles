@@ -753,6 +753,7 @@ map qfa shell qcp_fluorescence_all
 # utilities 
 map cx shell chmod +x %s
 map yc shell cat %s | pbcopy
+map g2m shell gamess_to_molden.py %s
 
 # plotting in gnuplot
 
