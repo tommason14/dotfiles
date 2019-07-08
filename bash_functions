@@ -129,16 +129,14 @@ pull_repos() {
   pushd ~/dotfiles
   echo "Updating dotfiles..."
   git pull && source ~/.bashrc 
-  # chem_assistant
   change_to_chem_assistant
   echo "Updating monash_automation..." 
   git pull
-  # qcp
   change_to_qcp
   echo "Updating qcp"
   git pull
-  # chem_scripts
   change_to_chem_scripts
+  echo "Updating chem scripts"
   git pull 
   popd
 }
@@ -147,16 +145,14 @@ push_repos() {
   pushd ~/dotfiles
   echo "Pushing dotfiles to master..."
   git add . && git commit && git push
-  # monash_automation
   change_to_chem_assistant
   echo "Pushing monash_automation to master..." 
   git add . && git commit && git push
-  # qcp
   change_to_qcp
   echo "Pushing qcp to master..."
   git add . && git commit && git push
-  # chem_scripts
   change_to_chem_scripts
+  echo "Pushing chem scripts to master..."
   git add . && git commit && git push
   popd
 }

@@ -35,7 +35,7 @@ fi
 # raijin {{{1
 
 if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
-    export PATH=/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
+    export PATH=~/chem_scripts:/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='qstat -u tm3124 | grep tm3124 | wc -l'
@@ -48,7 +48,7 @@ fi
 # magnus {{{1
 
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
-    export PATH=~/monash_automation:$PATH
+    export PATH=~/chem_scripts:~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason | wc -l'
@@ -58,7 +58,7 @@ fi
 # stampede2 {{{1
 
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
-    export PATH=~/monash_automation:$PATH
+    export PATH=~/chem_scripts:~/monash_automation:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
@@ -72,7 +72,7 @@ fi
 # monarch/massive {{{1
 
 if [[ $PWD == *"tmason1"* ]]; then
-    export PATH=~/monash_automation/:$PATH
+    export PATH=~/chem_scripts:~/monash_automation/:$PATH
     export PYTHONPATH=~/monash_automation/chem_assistant:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason1 | wc -l'
@@ -153,7 +153,6 @@ fi
 
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
-  # export longpath="$USER@$HOSTNAME:$PWD"
   alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
 fi
 
