@@ -753,6 +753,7 @@ map pft shell /Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_la
 map cx shell chmod +x %s
 map yc shell cat %s | pbcopy
 map g2m shell gamess_to_molden.py %s
+map moc shell cat %s | awk '{OFS=","; print $1,$2}' > tmp && mv tmp %s 
 
 # plotting in gnuplot
 
@@ -762,4 +763,3 @@ map pm shell -w cat %s | grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d
 map pfo shell -w cat %s | grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 # Gaussian
 map pg shell -w cat %s | grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
-

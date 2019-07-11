@@ -110,6 +110,10 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias gp='cd "$filestream"/polymers'
   alias polymers='cd "$filestream"/Polymers'
   alias gq='cd "$filestream"/scripts/qcp'
+  
+  function molden_output_to_csv { 
+    cat $1 | awk '{OFS=","; print $1,$2}' > tmp && mv tmp $1 
+  }
 
   function pymol { # used as an alias
    /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
