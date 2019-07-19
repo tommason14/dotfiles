@@ -118,6 +118,8 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   function pymol { # used as an alias
    /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
   }
+
+  alias ia="open -a /Applications/iA\ Writer.app/"
   
   alias chunkstart='brew services start chunkwm && brew services start skhd'
   alias chunkstop='brew services stop chunkwm && brew services stop skhd'
