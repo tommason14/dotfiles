@@ -763,3 +763,5 @@ map pfo shell -w cat %s | grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -
 # Gaussian
 map pg shell -w cat %s | grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 
+map sp shell cp ~/monash_automation/settings_files/gamess_spec.py .
+map ds shell chem_assist -ds *py # find way to select which python script?
