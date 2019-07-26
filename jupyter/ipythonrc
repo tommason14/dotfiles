@@ -247,12 +247,16 @@ def order_column(df, series, order_by=None, ascending=False):
 @make_symbolic
 def bp(series, as_percent = False):
     """
-    Takes in energies in kJ/mol, produces
-    probabilities according to a Boltzmann distribution
+    Takes in energies in Hartrees, produces
+    probabilities according to a Boltzmann distribution.
+    Also works with group by objects.
     """
     R = 8.3145
     T = 298.15
-    exponent = np.exp((-1 * series * 1000) / (R * T))
+    h_to_kJ = 2625.5
+    series = series * h_to_kJ
+    diffs = series - series.min()
+    exponent = np.exp((-1 * diffs * 1000) / (R * T))
     summed = exponent.sum()
     if as_percent:
         return (exponent / summed) * 100
@@ -277,7 +281,12 @@ clear_y_axis = theme(axis_text_y = element_blank(),
                      axis_title_y = element_blank())
 clear_grid   = theme(panel_grid_major = element_blank(),
                      panel_grid_minor = element_blank())
-my_font      = theme(text = element_text(fontproperties = font)) 
+my_theme     = (
+               theme_seaborn() +
+               theme(text = element_text(fontproperties = font)) +
+               scale_color_brewer(type='qual', palette='Dark2') +
+               scale_fill_brewer(type='qual', palette='Dark2')
+               )
 
 # Useful regex!
 

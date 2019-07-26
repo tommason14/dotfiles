@@ -723,9 +723,6 @@ copytmap <ESC> q Q w <C-c>
 
 map gs cd /short/k96/tm3124
 map gh cd ~
-# map gd cd /scratch/06233/tmason/dopamine
-# map gt cd /scratch/06233/tmason/tests
-# map gp cd /scratch/06233/tmason/polymers/polymerisation_rates
 map gw cd /short/k96/apps
 map gq cd /short/k96/apps/qcp
 map ga cd ~/monash_automation/
@@ -734,14 +731,18 @@ map gc cd /short/k96/tm3124/hydrated_ils_choline
 # submission
 map sb shell qsub %s
 map sq shell qstat -u tm3124
+map qu shell qstat -u tm3124
+map qo shell nqstat
+map ql shell nqstat
 
-# qcp
+# creating jobs
 map qc shell yes "" | qcp -t1
 map q1 shell yes "" | qcp -t1
 map q2 shell -w qcp -t2
 map q3 shell yes "" | qcp -t3
-map qu shell qstat -u tm3124
-map ql shell nqstat
+map sp shell cp ~/monash_automation/settings_files/gamess_spec.py .
+map he shell cp ~/monash_automation/settings_files/gamess_hess.py .
+map ds shell chem_assist -ds *py # find way to select which python script?
 
 map !  console shell -w%space
 
