@@ -104,7 +104,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias mccg='cd "$filestream"/scripts/mccg'
   alias backups='cd "$filestream"/backups'
   alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
-  alias jn='jupyter notebook'
+  alias jl='jupyter-lab'
   alias gtqcp='cd "$filestream"/scripts/qcp'
   alias gd='cd "$filestream"/Dopamine'
   alias gp='cd "$filestream"/polymers'
