@@ -162,7 +162,18 @@ then
   alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
 fi
 
-# everywhere {{{1
+if [[ $HOSTNAME == *"magnus"* || $HOSTNAME == *"monarch"* || $HOSTNAME == *"m3"* || $HOSTNAME == *"stampede"* ]]; then
+  submit_jobs() {
+    cwd=$(pwd)
+    for f in $(find . -path "*job") 
+    do 
+      cd $(dirname $f)
+      sbatch $(basename $f)
+      cd $cwd
+    done
+  }
+fi
+# everywhere {{{1 
 
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
