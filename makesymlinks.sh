@@ -5,7 +5,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-  files="bash_aliases bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc"    
+  files="bash_aliases bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile"    
   ln -s $dir/vscode/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
   ln -s $dir/jupyter/ipythonrc  ~/.ipython/profile_default/startup/start.ipy
   ln -s $dir/jupyter/custom.css ~/.jupyter/custom/custom.css
