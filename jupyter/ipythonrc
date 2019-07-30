@@ -283,11 +283,10 @@ clear_grid   = theme(panel_grid_major = element_blank(),
                      panel_grid_minor = element_blank())
 my_theme     = (
                theme_seaborn() +
-               theme(text = element_text(fontproperties = font)) +
-               scale_color_brewer(type='qual', palette='Dark2') +
-               scale_fill_brewer(type='qual', palette='Dark2')
+               theme(text = element_text(fontproperties = font))
                )
-
+my_colour = scale_color_brewer(type='qual', palette='Dark2')
+my_fill  = scale_fill_brewer(type='qual', palette='Dark2')
 # Useful regex!
 
 # df = df >> mutate(Cation = X.Config.str.extract('(^[^_]+(?=_))'),
