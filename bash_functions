@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+use() {
+  program=$(ls /Applications/ | grep -i "$1.app" | head -n 1)
+  open -a /Applications/"$program" $2
+}
+
 pres_to_pdf() {
   decktape reveal http://localhost:1948/$1 $2 -s "1200x800"
 }
