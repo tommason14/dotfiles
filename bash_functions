@@ -1,47 +1,63 @@
 #!/usr/bin/env sh
 
-use() {
-  program=$(ls /Applications/ | grep -i "$1.app" | head -n 1)
-  open -a /Applications/"$program" $2
-}
+if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+  use() {
+    program=$(ls /Applications/ | grep -i "$1.app" | head -n 1)
+    open -a /Applications/"$program" $2
+  }
 
-pres_to_pdf() {
-  decktape reveal http://localhost:1948/$1 $2 -s "1200x800"
-}
+  pres_to_pdf() {
+    decktape reveal http://localhost:1948/$1 $2 -s "1200x800"
+  }
+
+  latex_compile() { latexmk -pvc -pdfxe $1 & }
+
+  make_pdf() {
+  pandoc $1 --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
+  open ${1%.md}.pdf
+  }
+
+  make_tex() {
+  pandoc $1 --biblatex --pdf-engine=xelatex --filter=pandoc-citeproc -o
+  ${1%.md}.tex
+  }
+
+  tex() {
+    xelatex $1
+    bibtex ${1%.tex}
+    xelatex $1
+    xelatex $1
+    open ${1%.tex}.pdf
+  }
+
+  clean_tex() {
+    args="bbl blg log synctex.gz fls fdb_latexmk out"
+    for arg in $args
+    do
+      if [ -f $1.$arg ]; then
+        rm $1.$arg
+      fi
+    done
+  }
+
+  function check_references {
+  grep -i @article{$1 "$filestream"/thesis/library.bib |\
+  sed 's/\@article{//' |\
+  sed 's/\,//' |\
+  sort
+  }
+
+  function wallpaper {
+  DIR=~/Pictures/wallpapers
+  sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$DIR/$1'" && killall Dock
+  }
+
+fi
 
 nohup_bg() {
   nohup $1 < /dev/null > nohup_bg.log &
 }
 
-latex_compile() { latexmk -pvc -pdfxe $1 & }
-
-make_pdf() {
-pandoc $1 --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
-open ${1%.md}.pdf
-}
-
-make_tex() {
-pandoc $1 --biblatex --pdf-engine=xelatex --filter=pandoc-citeproc -o
-${1%.md}.tex
-}
-
-tex() {
-  xelatex $1
-  bibtex ${1%.tex}
-  xelatex $1
-  xelatex $1
-  open ${1%.tex}.pdf
-}
-
-clean_tex() {
-  args="bbl blg log synctex.gz fls fdb_latexmk out"
-  for arg in $args
-  do
-    if [ -f $1.$arg ]; then
-      rm $1.$arg
-    fi
-  done
-}
 
 
 gitall() {
@@ -234,15 +250,3 @@ args="$@"
 python3 -c "print($args)"
 }
 
-function check_references {
-# grep -i @article{$1 ~/Google_Drive/thesis/library.bib | sed 's/\@article{//' | sed 's/\,//' | sort
-grep -i @article{$1 "$filestream"/thesis/library.bib |\
-sed 's/\@article{//' |\
-sed 's/\,//' |\
-sort
-}
-
-function wallpaper {
-DIR=~/Pictures/wallpapers
-sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$DIR/$1'" && killall Dock
-}
