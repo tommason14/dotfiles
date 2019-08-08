@@ -250,3 +250,6 @@ args="$@"
 python3 -c "print($args)"
 }
 
+copy() {
+  cat $1 | pbcopy
+}
