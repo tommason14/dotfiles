@@ -186,6 +186,9 @@ push_repos() {
   echo "Pushing chem scripts to master..."
   git add . && git commit && git push
   popd
+
+  # add this
+  # cwd=$(pwd); for f in $(find ~/Documents/repos -path "*.git"); do echo $f | sed 's/.git/'; cd $(dirname $f); git pull; git add . && git commit && git push; cd $cwd; done
 }
 
 force_push() {
