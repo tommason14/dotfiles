@@ -26,7 +26,8 @@ map dc cd ~/Documents
 map dw cd ~/Downloads
 map go cd /Volumes/GoogleDrive/My\ Drive
 map gc cd /Volumes/GoogleDrive/My\ Drive/hydrated_ils
-map gdp cd ~/Documents/repos/dopamine/dopamine_paper
+map dp cd ~/Documents/repos/dopamine/dopamine_paper
+map mc cd ~/Documents/repos/mccg
 
 # File opening
 # maybe should use mime for this
@@ -70,8 +71,10 @@ map pg !cat "$f" | grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot
 # new files
 
 cmd new_rmd ${{
+  # write bach func to take in argument
   echo "Making new Rmarkdown file"
+  cp ~/Documents/repos/templates/template.rmd "./$title.rmd" && sed -i '' "s/title/$title/" "$title.rmd"
 }}
 
-# map nr :read new_rmd # 
+# map nr :read new_rmd #want to enter command mode to enter filename
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
