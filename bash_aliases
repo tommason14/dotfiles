@@ -156,6 +156,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias chunkrc='vim ~/dotfiles/chunkwmrc'
   alias skhdrc='vim ~/dotfiles/skhdrc'
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
+  alias rprofile='vim ~/dotfiles/Rprofile'
 
 fi
 
@@ -185,6 +186,7 @@ alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
 alias vimrc='vim ~/dotfiles/vimrc'
 alias dotfiles='cd ~/dotfiles'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
+alias lfrc='vim ~/.config/lf/lfrc'
 
 # aliases for default commands
 alias l='ls'

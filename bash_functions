@@ -2,7 +2,7 @@
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
   use() {
-    program=$(ls /Applications/ | grep -i "$1.app" | head -n 1)
+    program=$(ls /Applications/ | grep -i "$1" | head -n 1)
     open -a /Applications/"$program" $2
   }
 
@@ -243,13 +243,21 @@ printf "$num_atoms\n\n" | cat - $base_name.xyz > temp
 mv temp $base_name.xyz 
 }
 
-function calc {
-# fix- check and exit if no string
-# if [[ ! $1 == *"\'"* || ! $1 == *'\"'* ]]; then echo "Pass in a string"; fi
-args="$@"
-python3 -c "print($args)"
-}
-
 copy() {
   cat $1 | pbcopy
 }
+
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        if [ -d "$dir" ]; then
+            if [ "$dir" != "$(pwd)" ]; then
+                cd "$dir"
+            fi
+        fi
+    fi
+}
+

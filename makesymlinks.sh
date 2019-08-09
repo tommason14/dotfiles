@@ -35,11 +35,12 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-#### ranger ####
+#### ranger/lf ####
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
   echo "Symlinking $dir/ranger/rc.conf.local --> ~/.config/ranger/rc.conf"
   ln -s $dir/ranger/rc.conf.local ~/.config/ranger/rc.conf
+  ln -s $dir/lf/lfrc ~/.config/lf/lfrc
 fi
 
 configs="raijin magnus m3 monarch stampede"

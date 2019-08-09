@@ -162,6 +162,16 @@ au BufNewFile,BufRead *.py
 
 " autocmd BufWritePost *.py call Flake8()
 
+" R {{{1
+
+au BufNewFile,BufRead *.R,*Rprofile
+    \ set tabstop=2                                  |
+    \ set expandtab                                  |
+    \ set softtabstop=2                              |
+    \ set shiftwidth=2                               |
+    \ set textwidth=80                               |
+    \ set filetype=R
+
 " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
     \ set tabstop=2                         |
@@ -285,14 +295,6 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
-
-" Fold colour
-" hi Folded ctermbg=DarkGrey
-
-" Colourscheme for use with pywal
-" if system('HOSTNAME') =~ 'Toms-MBP'
-  " colo wal
-" endif
 
 " if ssh, set dark background
 let g:remoteSession = ($SSH_CLIENT != "")
