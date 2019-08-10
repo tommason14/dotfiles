@@ -264,7 +264,7 @@ au BufNewFile,BufRead *.tex
 
  " Bash {{{1
 
-au BufNewFile,BufRead *.sh,bash*
+au BufNewFile,BufRead *.sh,bash*,*lfrc*
     \ set tabstop=2                         |
     \ set softtabstop=2                     |
     \ set expandtab                         |

@@ -35,20 +35,46 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
-#### ranger/lf ####
+#### lf ####
 
-if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
-  echo "Symlinking $dir/ranger/rc.conf.local --> ~/.config/ranger/rc.conf"
-  ln -s $dir/ranger/rc.conf.local ~/.config/ranger/rc.conf
-  ln -s $dir/lf/lfrc ~/.config/lf/lfrc
+[ -d ~/.config/ranger ] || mkdir ~/.config/ranger
+[ -d ~/.config/lf ] || mkdir ~/.config/lf
+
+lf_symlink=~/.config/lf/lfrc
+ranger_symlink=~/.config/ranger/rc.conf
+
+if [[ $PWD == *"tommason"* ]]; then
+  echo "Symlinking $dir/lf/lfrc.macbook --> $lf_symlink"
+  ln -s $dir/lf/lfrc.macbook $lf_symlink
+  echo "Symlinking $dir/ranger/rc.conf.macbook --> $ranger_symlink"
+  ln -s $dir/ranger/rc.conf.macbook $ranger_symlink
 fi
 
-configs="raijin magnus m3 monarch stampede"
+configs="raijin magnus m3 monarch stampede MU1045595"
 
 for config in ${configs[@]}; do
-  if [[ $HOSTNAME == *"$config"* ]];
-    then
-    echo "Symlinking $dir/ranger/rc.conf.$config --> ~/.config/ranger/rc.conf"
-    ln -s $dir/ranger/rc.conf.$config ~/.config/ranger/rc.conf
+  if [[ $HOSTNAME == *"$config"* ]]; then
+    echo "Symlinking $dir/lf/lfrc.$config --> $lf_symlink"
+    ln -s $dir/lf/lfrc.$config $lf_symlink
+    echo "Symlinking $dir/ranger/rc.conf.$config --> $ranger_symlink"
+    ln -s $dir/ranger/rc.conf.$config $ranger_symlink
   fi
 done
+
+# #### ranger ####
+#
+# if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]; then
+#   echo "Symlinking $dir/ranger/rc.conf.local --> ~/.config/ranger/rc.conf"
+#   ln -s $dir/ranger/rc.conf.local ~/.config/ranger/rc.conf
+#   ln -s $dir/lf/lfrc ~/.config/lf/lfrc
+# fi
+
+# configs="raijin magnus m3 monarch stampede"
+#
+# for config in ${configs[@]}; do
+#   if [[ $HOSTNAME == *"$config"* ]];
+#     then
+#     echo "Symlinking $dir/ranger/rc.conf.$config --> ~/.config/ranger/rc.conf"
+#     ln -s $dir/ranger/rc.conf.$config ~/.config/ranger/rc.conf
+#   fi
+# done

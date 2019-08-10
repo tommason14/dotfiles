@@ -8,6 +8,8 @@ set ifs "\n"
 
 # custom commands {{{1
 
+# lf commands {{{2
+
 cmd bulk-rename ${{
 	index=$(mktemp /tmp/lf-bulk-rename-index.XXXXXXXXXX)
 	if [ -n "${fs}" ]; then
@@ -36,7 +38,7 @@ cmd bulk-rename ${{
 	rm $index $index_edit
 }}
 
-# gnuplots
+# gnuplots {{{2
 
 cmd plotmp2 !{{ 
    cat "$f" |\
@@ -55,7 +57,6 @@ cmd plotfmo !{{
   gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 }}
 
-# Gaussian
 cmd plotgauss !{{
   cat "$f" |\
   grep 'SCF Done' |\
@@ -88,8 +89,9 @@ map dc cd ~/Documents
 map dw cd ~/Downloads
 map go cd /Volumes/GoogleDrive/My\ Drive
 map gc cd /Volumes/GoogleDrive/My\ Drive/hydrated_ils
-map dp cd ~/Documents/repos/dopamine/dopamine_paper
-map mc cd ~/Documents/repos/mccg
+map mr cd ~/Documents/Monash/repos
+map dp cd ~/Documents/Monash/repos/dopamine/dopamine_paper
+map mc cd ~/Documents/Monash/repos/mccg
 
 # File opening {{{2
 # maybe should use mime for this
@@ -122,22 +124,23 @@ map pfn $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot.gnuplot.sh "$f
 # trimmed
 map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f "$f" -l 180 -m 500
 
-# gnuplots
+# gnuplots {{{2
 
-map pm plotmp2
-map pfo plotfmo 
-map pg plotgauss
+map pm plotmp2 "$f"
+map pfo plotfmo "$f"
+map pg plotgauss "$f"
 
 # new files
 
 cmd new_rmd %{{
   # write bach func to take in argument
   echo "Making new Rmarkdown file"
-  cp ~/Documents/repos/templates/template.rmd ./new.rmd
+  cp ~/Documents/Monash/repos/templates/template.rmd ./new.rmd
   rename new.rmd
 }}
 
 map nr new_rmd 
+
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
 
 
