@@ -71,9 +71,36 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 autocmd Filetype tex nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/tex.snippets<CR>
 autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/python.snippets<CR>
+
+" LF command {{{1
+
+function! LF()
+    let temp = tempname()
+    exec 'silent !lf -selection-path=' . shellescape(temp)
+    if !filereadable(temp)
+        redraw!
+        return
+    endif
+    let names = readfile(temp)
+    if empty(names)
+        redraw!
+        return
+    endif
+    exec 'edit ' . fnameescape(names[0])
+    for name in names[1:]
+        exec 'argadd ' . fnameescape(name)
+    endfor
+    redraw!
+endfunction
+command! -bar LF call LF()
+
 " Remapping {{{1
 
 let mapleader = ","
+
+" LF key mapping
+
+nnoremap <Leader>l :LF<CR>
 
 " Try out additional escape
 inoremap jj <Esc>
@@ -136,12 +163,6 @@ nnoremap <CR> :noh<CR>:<backspace>
 
 " Reapply the custom spellcheck look
 nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
-
-" Easy navigation through splits
-nnoremap <Leader>h <C-W><C-H>
-nnoremap <Leader>j <C-W><C-J>
-nnoremap <Leader>k <C-W><C-K>
-nnoremap <Leader>l <C-W><C-L>
 
 " Compile pandoc
 " nnoremap <Leader>x :! pandoc --filter pandoc-citeproc % -o %:r.pdf<CR><CR>
