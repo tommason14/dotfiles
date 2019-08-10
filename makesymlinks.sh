@@ -39,6 +39,7 @@ done
 
 [ -d ~/.config/ranger ] || mkdir ~/.config/ranger
 [ -d ~/.config/lf ] || mkdir ~/.config/lf
+[[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]] && ln -s $dir/lf/scope.sh ~/.config/lf/scope.sh
 
 lf_symlink=~/.config/lf/lfrc
 ranger_symlink=~/.config/ranger/rc.conf

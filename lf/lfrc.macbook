@@ -5,6 +5,7 @@
 set shell sh
 set shellopts '-eu'
 set ifs "\n"
+# set previewer ~/.config/lf/scope.sh
 
 # custom commands {{{1
 
@@ -106,12 +107,28 @@ map dp cd ~/Documents/Monash/repos/dopamine/dopamine_paper
 map mc cd ~/Documents/Monash/repos/mccg
 
 # File opening {{{2
-# maybe should use mime for this
 map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
-map <enter> open-file "$f" # default programs
+# map <enter> open-file "$f" # default programs
+
+# dedicated keys for file opener actions
+#map o &mimeopen $f
+map o &rifle $f
+map O $mimeopen --ask $f
+
+# define a custom 'open' command
+# This command is called when current file is not a directory. You may want to
+# use either file extensions and/or mime types here. Below uses an editor for
+# text files and a file opener for the rest.
+cmd open ${{
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
 
 # Shell utilities {{{2
 map g2m $gamess_to_molden.py "$f"
