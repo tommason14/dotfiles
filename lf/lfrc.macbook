@@ -39,8 +39,7 @@ cmd bulk-rename ${{ # {{{3
 }}
 
 cmd open-file ${{ # {{{3
-  set -f
-  file -i $f | grep 'text\|regular' && vim $f || open $f
+  file -i $f | grep -q 'text\|regular' && vim $f || open $f
   # case $f in
   #   *.md|*.txt|*.py|*.js|*.sh|*.yaml|*.f|*.src|*.cpp|*.c|*.) vim $f;;
   #   *.png|*.jpg) open $f;;
@@ -112,7 +111,6 @@ map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
-# map <enter> $open "$f" # default programs
 map <enter> open-file "$f" # default programs
 
 # Shell utilities {{{2
@@ -143,7 +141,7 @@ map pm plotmp2 "$f"
 map pfo plotfmo "$f"
 map pg plotgauss "$f"
 
-# new files
+# new files {{{2
 
 cmd new_rmd %{{
   # write bach func to take in argument
@@ -152,11 +150,10 @@ cmd new_rmd %{{
   rename new.rmd
 }}
 
-map nr new_rmd 
-
+# map nr new_rmd 
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
 
-
+# renaming {{{2
 map br bulk-rename "$fs"
 
 map I :{{
