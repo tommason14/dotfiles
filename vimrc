@@ -14,6 +14,7 @@ Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 " Plugin 'vim-pandoc/vim-pandoc'
+" Plugin 'vim-pandoc/vim-rmarkdown'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
@@ -191,7 +192,15 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set softtabstop=2                              |
     \ set shiftwidth=2                               |
     \ set textwidth=80                               |
-    \ set filetype=R
+    \ set filetype=R                                 |
+
+au BufNewFile,BufRead *.Rmd,*.rmd
+    \ set tabstop=2                                  |
+    \ set expandtab                                  |
+    \ set softtabstop=2                              |
+    \ set shiftwidth=2                               |
+    \ set textwidth=80                               |
+    \ nnoremap <Leader>m :!Rscript -e "require(rmarkdown); render('%')"<CR>
 
 " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade

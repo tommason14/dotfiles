@@ -93,6 +93,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
 
   alias ls='ls -G'
   alias grep='grep --color'
+  alias ccat='highlight --out-format=ansi'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
   alias downloads='cd ~/Downloads'
@@ -149,6 +150,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
   alias rprofile='vim ~/dotfiles/Rprofile'
   alias update_repos='cd $repos && sh update_repos.sh && cd -'
+  alias ur='cd $repos && sh update_repos.sh && cd -'
 
 fi
 
@@ -174,6 +176,7 @@ fi
 
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
+alias ba='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
 alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
 alias vimrc='vim ~/dotfiles/vimrc'
 alias dotfiles='cd ~/dotfiles'
