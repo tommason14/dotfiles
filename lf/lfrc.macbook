@@ -11,6 +11,8 @@ set ifs "\n"
 
 # lf commands {{{2
 
+cmd q quit
+
 cmd bulk-rename ${{ # {{{3
 	index=$(mktemp /tmp/lf-bulk-rename-index.XXXXXXXXXX)
 	if [ -n "${fs}" ]; then
@@ -114,8 +116,7 @@ map og $gmolden "$f"
 # map <enter> open-file "$f" # default programs
 
 # dedicated keys for file opener actions
-#map o &mimeopen $f
-map o &rifle $f
+# map o &rifle $f
 map O $mimeopen --ask $f
 
 # define a custom 'open' command
@@ -163,7 +164,7 @@ map pg plotgauss "$f"
 cmd new_rmd %{{
   # write bach func to take in argument
   echo "Making new Rmarkdown file"
-  cp ~/Documents/Monash/repos/templates/template.rmd ./new.rmd
+  cp ~/Documents/repos/templates/template.rmd ./new.rmd
   rename new.rmd
 }}
 

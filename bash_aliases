@@ -18,11 +18,11 @@ EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     export filestream="/Volumes/GoogleDrive/My Drive"
-    export PATH="$filestream"/chem_scripts:"$filestream"/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/monash_automation:$PATH
-    export PYTHONPATH=~/Documents/monash_automation/:$PYTHONPATH
+    export PATH="$filestream"/chem_scripts:"$filestream"/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/repos/monash_automation:$PATH
+    export PYTHONPATH=~/Documents/repos/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-    alias automation='cd ~/Documents/monash_automation'
-    export automation="$HOME/Documents/monash_automation"
+    alias automation='cd ~/Documents/repos/monash_automation'
+    export automation="$HOME/Documents/repos/monash_automation"
     if [[ $HOSTNAME != *"MBP"* ]] 
     then
       alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
