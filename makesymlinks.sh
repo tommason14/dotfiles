@@ -9,6 +9,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == *"/Volumes/GoogleD
   ln -s $dir/vscode/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
   ln -s $dir/jupyter/ipythonrc  ~/.ipython/profile_default/startup/start.ipy
   ln -s $dir/jupyter/custom.css ~/.jupyter/custom/custom.css
+  ln -s $dir/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
 else # remotes
   files="bash_aliases bash_functions vim vimrc"    
 fi

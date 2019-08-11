@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
- 
+
+git pull 
 git add .
 git commit
 git push
