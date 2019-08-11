@@ -61,66 +61,42 @@ nohup_bg() {
 
 
 gitall() {
-
-git add .
-git commit
-git push
+  git pull # just in case
+  git add .
+  git commit
+  git push
 }
 
 mkcd() {
-
-mkdir -p $1 
-cd $1
+  mkdir -p $1 
+  cd $1
 }
 
 cdl() {
-cd $1
-ls
+  cd $1
+  ls
 }
 
 gitserve() {
-cd ~/Documents/web-design/sites/harp-blog
-harp compile
-cp www #to somewhere
-rm -r www
-cd #somewhere
-gitall
+  cd ~/Documents/web-design/sites/harp-blog
+  harp compile
+  cp www #to somewhere
+  rm -r www
+  cd #somewhere
+  gitall
 }
 
 bulk_rename() {
-for f in *.$1; do mv $f `basename $f .$1`.$2; done;
+  for f in *.$1
+  do 
+    mv $f $(basename $f .$1).$2
+  done
 }
 
 zipall(){
-zip $1 -r * -x "*.DS_Store"
+  zip $1 -r * -x "*.DS_Store"
 }
 
-
-if [[ $PWD == *"565"* ]]; then
-
-  sub() {
-     pwd >> ~/submissions.txt
-     qsub $1 2>&1 | tee -a ~/submissions.txt     
-  }
-
-  addtosub() {
-    echo "$@" >> ~/submissions.txt
-  }
-
-fi
-
-if [[ $PWD == *"tmason"* ]]; then
-
-  sub() {
-     pwd >> ~/submissions.txt
-     sbatch $1 2>&1 | tee -a ~/submissions.txt     
-  }
-
-  addtosub() {
-    echo "$@" >> ~/submissions.txt
-  }
-
-fi
 
 change_to_chem_assistant() {
   if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
@@ -186,9 +162,6 @@ push_repos() {
   echo "Pushing chem scripts to master..."
   git add . && git commit && git push
   popd
-
-  # add this
-  # cwd=$(pwd); for f in $(find ~/Documents/repos -path "*.git"); do echo $f | sed 's/.git/'; cd $(dirname $f); git pull; git add . && git commit && git push; cd $cwd; done
 }
 
 force_push() {
@@ -198,33 +171,8 @@ force_push() {
 }
 
 make_gif() {
-
-args="$@"
-convert -loop 0 -delay 20 image* run.gif
-
-}
-
-# scp from remote
-function scpstam {
-  if [ $# -lt 3 ]; then 
-    echo "Usage: scpstam [filetypes] [path on stampede relative to scratch] [local path]"
-    echo "e.g. scpstam *.log polymers/opts . -->"
-    echo "rsync -rav -e ssh --include='*/' --include='*.log' --exclude='*' \
-tmason@stampede2.tacc.utexas.edu:/scratch/06233/tmason/polymers/opts ."
-  else
-    # need to parse args: -1 as local path, -2 as remote path, rest as file
-    # types
-    args=("$@")
-    echo ${args[@]:-2}
-    echo ${args[@]:-1}
-    string="rsync -rav -e ssh --include='*/' ";
-    for var in "$@";
-    do
-        string+="--include='$var' ";
-    done;
-    string+="--exclude='*' tmason@stampede2.tacc.utexas.edu:"
-    #echo $string
-  fi
+  args="$@"
+  convert -loop 0 -delay 20 image* run.gif
 }
 
 # make dirs from xyz files- template in top directory (works for gaussian
@@ -232,18 +180,18 @@ tmason@stampede2.tacc.utexas.edu:/scratch/06233/tmason/polymers/opts ."
 # i.e. make_subdirs gauss.template
 # then run qcp from that dir
 function make_subdirs {
-top_dir=$(pwd); for f in $(find . -path "*xyz"); do dir_name=$(dirname $f);
-base_name=$(basename $f); file_name=$(echo $base_name | cut -d . -f 1); cd
-$dir_name; mkdir $file_name; cd $file_name; cp $top_dir/$1 . ;
-cp $top_dir/$f .; cd $top_dir; done
+  top_dir=$(pwd); for f in $(find . -path "*xyz"); do dir_name=$(dirname $f);
+  base_name=$(basename $f); file_name=$(echo $base_name | cut -d . -f 1); cd
+  $dir_name; mkdir $file_name; cd $file_name; cp $top_dir/$1 . ;
+  cp $top_dir/$f .; cd $top_dir; done
 }
 
 function gamesstoxyz {
-base_name=$(echo $1 | cut -d . -f 1)
-num_atoms=$(cat $1 | wc -l | tr -s [:blank:])
-cat $1 | tr -s [:blank:] | cut -d ' ' -f 1,3- | sed 's/ /   /g' | column -t > $base_name.xyz
-printf "$num_atoms\n\n" | cat - $base_name.xyz > temp
-mv temp $base_name.xyz 
+  base_name=$(echo $1 | cut -d . -f 1)
+  num_atoms=$(cat $1 | wc -l | tr -s [:blank:])
+  cat $1 | awk 'BEGIN {OFS="\t"}; {print $1, $3, $4, $5}' | column -t > $base_name.xyz
+  printf "$num_atoms\n\n" | cat - $base_name.xyz > temp
+  mv temp $base_name.xyz 
 }
 
 copy() {
