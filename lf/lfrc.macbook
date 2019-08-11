@@ -5,7 +5,7 @@
 set shell sh
 set shellopts '-eu'
 set ifs "\n"
-# set previewer ~/.config/lf/scope.sh
+set previewer ~/.config/lf/scope.sh
 
 # custom commands {{{1
 
@@ -113,11 +113,12 @@ map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
-# map <enter> open-file "$f" # default programs
+map oi $open -a /Applications/iA\ Writer.app/ "$f"
+map <enter> $open "$f" # default programs
 
 # dedicated keys for file opener actions
 # map o &rifle $f
-map O $mimeopen --ask $f
+# map O $mimeopen --ask $f
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
@@ -146,7 +147,6 @@ map yq3 $yes "" | qcp -t3
 # fluorescence
 map yqf $qcp_fluorescence
 map yqfa $qcp_fluorescence_all
-map pfl :/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f "$f" 
 # defaults
 map pfd $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f "$f"
 map pfn $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot.gnuplot.sh "$f"
@@ -161,14 +161,13 @@ map pg plotgauss "$f"
 
 # new files {{{2
 
+# templates
 cmd new_rmd %{{
-  # write bach func to take in argument
-  echo "Making new Rmarkdown file"
-  cp ~/Documents/repos/templates/template.rmd ./new.rmd
-  rename new.rmd
+  cp ~/Documents/repos/templates/template.rmd $1
+  sed -i "" "s/Title/${@:2}/" $1
 }}
 
-# map nr new_rmd 
+map nr push :new_rmd<space>
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
 
 # renaming {{{2

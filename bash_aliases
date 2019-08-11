@@ -18,11 +18,12 @@ EDITOR=vim
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     export filestream="/Volumes/GoogleDrive/My Drive"
-    export PATH="$filestream"/chem_scripts:"$filestream"/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:~/Documents/repos/monash_automation:$PATH
-    export PYTHONPATH=~/Documents/repos/monash_automation/:$PYTHONPATH
+    export repos="$HOME/Documents/repos"
+    export PATH=$repos/chem_scripts:$repos/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
+    export PYTHONPATH=$repos/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-    alias automation='cd ~/Documents/repos/monash_automation'
-    export automation="$HOME/Documents/repos/monash_automation"
+    alias automation="$repos/monash_automation"
+    export automation="$repos/monash_automation"
     if [[ $HOSTNAME != *"MBP"* ]] 
     then
       alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
@@ -91,6 +92,7 @@ fi
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
   alias ls='ls -G'
+  alias grep='grep --color'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
   alias downloads='cd ~/Downloads'
@@ -101,20 +103,15 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias pc='cd ~/Pictures'
   alias google='cd "$filestream"'
   alias scripts='cd "$filestream"/scripts'
-  alias mccg='cd "$filestream"/scripts/mccg'
+  alias mccg='cd $repos/mccg'
   alias backups='cd "$filestream"/backups'
   alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
   alias jl='jupyter-lab'
-  alias gtqcp='cd "$filestream"/scripts/qcp'
   alias gd='cd "$filestream"/Dopamine'
   alias gp='cd "$filestream"/polymers'
   alias polymers='cd "$filestream"/Polymers'
-  alias gq='cd "$filestream"/scripts/qcp'
+  alias gq='cd $repos/qcp'
   
-  function molden_output_to_csv { 
-    cat $1 | awk '{OFS=","; print $1,$2}' > tmp && mv tmp $1 
-  }
-
   ### open applications
 
   function pymol { # used as an alias
@@ -138,15 +135,9 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 
-  alias ga='git add .'
-  alias gc='git commit'
-  alias gca='git commit --amend'
-  alias gp='git push'
-  alias gpf='git push -f'
-
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
-  alias thesis='cd "$filestream"/thesis/'
+  alias thesis='cd $repos/thesis'
 
   function preview {
     qlmanage -p $1 2> /dev/null
@@ -157,6 +148,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias skhdrc='vim ~/dotfiles/skhdrc'
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
   alias rprofile='vim ~/dotfiles/Rprofile'
+  alias update_repos='cd $repos && sh update_repos.sh && cd -'
 
 fi
 

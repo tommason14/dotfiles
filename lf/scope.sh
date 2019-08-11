@@ -65,12 +65,12 @@ handle_extension() {
             exit 1;;
 
         # HTML
-        htm|html|xhtml)
-            # Preview as text conversion
-            w3m -dump "${FILE_PATH}"
-            lynx -dump -- "${FILE_PATH}"
-            elinks -dump "${FILE_PATH}" 
-            ;; # Continue with next handler on failure
+        # htm|html|xhtml)
+        #     # Preview as text conversion
+        #     w3m -dump "${FILE_PATH}"
+        #     lynx -dump -- "${FILE_PATH}"
+        #     elinks -dump "${FILE_PATH}" 
+        #     ;; # Continue with next handler on failure
     esac
 }
 
