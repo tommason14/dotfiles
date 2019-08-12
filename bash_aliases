@@ -22,7 +22,7 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     export PATH=$repos/chem_scripts:$repos/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
     export PYTHONPATH=$repos/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-    alias automation="$repos/monash_automation"
+    alias automation="cd $repos/monash_automation"
     export automation="$repos/monash_automation"
     if [[ $HOSTNAME != *"MBP"* ]] 
     then
