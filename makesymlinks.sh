@@ -52,7 +52,7 @@ if [[ $PWD == *"tommason"* ]]; then
   ln -s $dir/ranger/rc.conf.macbook $ranger_symlink
 fi
 
-configs="raijin magnus m3 monarch stampede MU1045595"
+configs="raijin magnus m3 monarch stampede MU00151959X"
 
 for config in ${configs[@]}; do
   if [[ $HOSTNAME == *"$config"* ]]; then
