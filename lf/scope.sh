@@ -64,6 +64,9 @@ handle_extension() {
             odt2txt "${FILE_PATH}"
             exit 1;;
 
+        ipynb)
+            jupyter-lab "${FILE_PATH}"    
+
         # HTML
         # htm|html|xhtml)
         #     # Preview as text conversion

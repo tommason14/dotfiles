@@ -20,5 +20,13 @@ df_with_ci <- function(path) {
   return(df)
 }
 
+dopamine_theming <- theme_light() +
+                theme(panel.grid = element_blank(),
+                 panel.spacing = unit(0.6, 'cm'),
+                 text = element_text(size = 14),
+                 axis.title.y = element_text(margin = margin(c(0,0.4,0,0), unit='cm')),
+                 axis.title.x = element_text(margin = margin(c(0.4,0,0,0), unit='cm')))
+
+
 cat("\nThis is the last line of .Rprofile.\n")
 

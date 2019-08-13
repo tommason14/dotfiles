@@ -87,7 +87,6 @@ map d
 map m
 map p
 map y
-map n 
 
 # Ranger-like {{{2
 map yy copy
@@ -167,7 +166,7 @@ cmd new_rmd %{{
   sed -i "" "s/Title/${@:2}/" $1
 }}
 
-map nr push :new_rmd<space>
+map tr push :new_rmd<space>
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
 
 # renaming {{{2
@@ -179,3 +178,7 @@ map I :{{
 }}
 
 map A rename 
+
+# Settings {{{1
+
+set info size
