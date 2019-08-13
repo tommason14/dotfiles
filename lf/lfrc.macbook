@@ -12,6 +12,9 @@ set previewer ~/.config/lf/scope.sh
 # lf commands {{{2
 
 cmd q quit
+cmd touch $touch $1
+cmd mkdir $mkdir -p $1
+cmd mv $mv "$f" $1
 
 cmd bulk-rename ${{ # {{{3
 	index=$(mktemp /tmp/lf-bulk-rename-index.XXXXXXXXXX)
@@ -95,6 +98,7 @@ map pp paste
 map dD delete
 map dt $mv "$fx" ~/.trash # bin for accidental deletion
 map <bs2> set hidden!
+cmap <esc> cmd-escape
 
 # Movement {{{2
 
