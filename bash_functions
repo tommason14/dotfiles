@@ -175,6 +175,24 @@ make_gif() {
   convert -loop 0 -delay 20 image* run.gif
 }
 
+
+submit_jobs() {
+  if [[ $HOSTNAME =~ (magnus|monarch|m3|stampede) ]]
+  then
+    submit=sbatch
+  elif [[ $HOSTNAME == *"raijin"* ]]
+  then
+    submit=qsub
+  fi
+  cwd=$(pwd)
+  for f in $(find . -path "*job") 
+  do 
+    cd $(dirname $f)
+    $submit $(basename $f)    
+    cd $cwd
+  done
+}
+
 # make dirs from xyz files- template in top directory (works for gaussian
 # for gamess; not necessary as new dir already created- pass in template file
 # i.e. make_subdirs gauss.template
