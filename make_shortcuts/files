@@ -1,0 +1,5 @@
+ba: ~/dotfiles/bash_aliases
+bf: ~/dotfiles/bash_functions
+ip: ~/dotfiles/jupyter/ipythonrc
+rp: ~/dotfiles/Rprofile
+v: ~/dotfiles/vimrc
