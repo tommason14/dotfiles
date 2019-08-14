@@ -40,7 +40,6 @@ done
 
 [ -d ~/.config/ranger ] || mkdir ~/.config/ranger
 [ -d ~/.config/lf ] || mkdir ~/.config/lf
-[[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]] && ln -s $dir/lf/scope.sh ~/.config/lf/scope.sh
 
 lf_symlink=~/.config/lf/lfrc
 ranger_symlink=~/.config/ranger/rc.conf
@@ -50,6 +49,10 @@ if [[ $PWD == *"tommason"* ]]; then
   ln -s $dir/lf/lfrc.macbook $lf_symlink
   echo "Symlinking $dir/ranger/rc.conf.macbook --> $ranger_symlink"
   ln -s $dir/ranger/rc.conf.macbook $ranger_symlink
+fi
+
+if [[ $PWD == *"tommason"* || $HOSTNAME == *"MU00151959X"* ]]; then
+  ln -s $dir/lf/previewer.sh ~/.config/lf/previewer.sh
 fi
 
 configs="raijin magnus m3 monarch stampede MU00151959X"
