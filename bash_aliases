@@ -161,17 +161,6 @@ then
   alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
 fi
 
-if [[ $HOSTNAME == *"magnus"* || $HOSTNAME == *"monarch"* || $HOSTNAME == *"m3"* || $HOSTNAME == *"stampede"* ]]; then
-  submit_jobs() {
-    cwd=$(pwd)
-    for f in $(find . -path "*job") 
-    do 
-      cd $(dirname $f)
-      sbatch $(basename $f)
-      cd $cwd
-    done
-  }
-fi
 # everywhere {{{1 
 
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
@@ -184,6 +173,7 @@ alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias lfrc='vim ~/.config/lf/lfrc'
 
 # aliases for default commands
+alias v='vim'
 alias l='ls'
 alias ld='ls'
 alias lsa='ls -a'
@@ -225,3 +215,4 @@ export gaia='tmas0011@msgln6.its.monash.edu.au'
 export m3='tmason1@m3.massive.org.au'
 export monarch='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
+export df="$HOME/dotfiles"
