@@ -115,6 +115,10 @@ nnoremap <Space> za
 " Re-wrap paragraph
 nnoremap <silent> gq gqip
 
+" Format whole document but skip yaml
+" Currently ruins table formatting...
+" nnoremap <silent> fw gg/---<CR>jVGgq 
+
 " Easy save
 nnoremap <leader>w :w<CR>
 

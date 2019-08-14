@@ -27,6 +27,7 @@ dopamine_theming <- theme_light() +
                  axis.title.y = element_text(margin = margin(c(0,0.4,0,0), unit='cm')),
                  axis.title.x = element_text(margin = margin(c(0.4,0,0,0), unit='cm')))
 
+no_bg <- theme(panel.grid = element_blank())
 
 cat("\nThis is the last line of .Rprofile.\n")
 
