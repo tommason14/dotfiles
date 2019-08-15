@@ -16,8 +16,9 @@ rp: ~/Documents/repos
 sc: /Volumes/GoogleDrive/My\ Drive/scripts
 th: ~/Documents/repos/thesis
 
-# magnus 
-...
 
-# rjn
-...
+mgs-s: /scratch/pawsey0197/tmason
+mgs-g: /group/pawsey0197/
+
+
+rjn-s: /short/k96/tm3124
