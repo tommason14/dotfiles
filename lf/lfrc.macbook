@@ -106,9 +106,9 @@ map dc cd ~/Documents
 map dw cd ~/Downloads
 map go cd /Volumes/GoogleDrive/My\ Drive
 map gc cd /Volumes/GoogleDrive/My\ Drive/hydrated_ils
-map mr cd ~/Documents/Monash/repos
-map dp cd ~/Documents/Monash/repos/dopamine/dopamine_paper
-map mc cd ~/Documents/Monash/repos/mccg
+map mr cd ~/Documents/repos
+map dp cd ~/Documents/repos/dopamine/dopamine_paper
+map mc cd ~/Documents/repos/mccg
 
 # File opening {{{2
 map o. $open .
