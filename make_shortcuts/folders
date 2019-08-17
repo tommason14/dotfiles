@@ -1,13 +1,14 @@
-ca: /Volumes/GoogleDrive/My\ Drive/Hydrated_ILs/Analysis
 au: /Users/tommason/Documents/repos/monash_automation
 bk: /Volumes/GoogleDrive/My\ Drive/backups
 dc: ~/Documents
 dk: ~/Desktop
 df: ~/dotfiles
 dw: ~/Downloads
-gd: /Volumes/GoogleDrive/My\ Drive/Dopamine
-go: /Volumes/GoogleDrive/My\ Drive
-gp: /Volumes/GoogleDrive/My\ Drive/polymers
+# filetream
+ca: /Volumes/GoogleDrive/My\ Drive/Hydrated_ILs/Analysis
+fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
+fo: /Volumes/GoogleDrive/My\ Drive
+fp: /Volumes/GoogleDrive/My\ Drive/polymers
 qc: ~/Documents/repos/qcp
 mc: ~/Documents/repos/mccg
 mo: ~/Movies
@@ -16,9 +17,15 @@ rp: ~/Documents/repos
 sc: /Volumes/GoogleDrive/My\ Drive/scripts
 th: ~/Documents/repos/thesis
 
-
+# Magnus
 mgs-s: /scratch/pawsey0197/tmason
-mgs-g: /group/pawsey0197/
+mgs-a: /group/pawsey0197/
 
-
+# Raijin
 rjn-s: /short/k96/tm3124
+
+# Monarch
+
+# Massive
+
+# Stampede
