@@ -220,8 +220,8 @@ export df="$HOME/dotfiles"
 
 # files {{{1
 
-alias oba='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
-alias obf='vim ~/dotfiles/bash_functions && source ~/.bashrc'
+alias oba='vim ~/.bash_aliases && source ~/.bashrc'
+alias obf='vim ~/.bash_functions && source ~/.bashrc'
 alias obp='vim ~/.bash_profile && source ~/.bashrc'
 alias obr='vim ~/.bashrc && source ~/.bashrc'
 alias oip='vim ~/dotfiles/jupyter/ipythonrc'
