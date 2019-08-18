@@ -11,7 +11,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == *"/Volumes/GoogleD
   ln -s $dir/jupyter/custom.css ~/.jupyter/custom/custom.css
   # ln -s $dir/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
 else # remotes
-  files="bash_aliases bash_functions vim vimrc"    
+  files="bash_functions vim vimrc"    
 fi
 
 # removed bashrc as it is already present on stampede2, don't want to overwrite
@@ -53,10 +53,6 @@ if [[ $PWD == *"tommason"* ]]; then
   ln -s $dir/lf/lfrc.macbook $lf_symlink
   echo "Symlinking $dir/ranger/rc.conf.macbook --> $ranger_symlink"
   ln -s $dir/ranger/rc.conf.macbook $ranger_symlink
-fi
-
-if [[ $PWD == *"tommason"* || $HOSTNAME == *"MU00151959X"* ]]; then
-  ln -s $dir/lf/previewer.sh ~/.config/lf/previewer.sh
 fi
 
 configs="raijin magnus m3 monarch stampede MU00151959X"
