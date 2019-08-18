@@ -1,6 +1,7 @@
 ba: ~/dotfiles/bash_aliases && source ~/.bashrc
 bf: ~/dotfiles/bash_functions && source ~/.bashrc
+bp: ~/.bash_profile && source ~/.bashrc
+br: ~/.bashrc && source ~/.bashrc
 ip: ~/dotfiles/jupyter/ipythonrc
 rp: ~/dotfiles/Rprofile
 v: ~/dotfiles/vimrc
-bp: ~/.bash_profile && source ~/.bashrc

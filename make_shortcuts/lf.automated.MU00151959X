@@ -6,8 +6,6 @@ set shell sh
 set shellopts '-eu'
 set ifs "\n"
 
-# Settings {{{1
-
 set info size
 set previewer ~/.config/lf/previewer.sh
 
@@ -177,15 +175,32 @@ map I :{{
 
 map A rename 
 
-# slurm {{{2
-map sb $sbatch "$f"
-map sq !squeue -u tmason1
-map qu !squeue -u tmason1 -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
-map ql shell -w squeue -u tmason1 -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
-%.12l %.12L %.6D %.16S %R"
-map qo shell -w squeue -u tmason1 -o "%10i %30j
-%130Z"
+# files {{{2
 
+map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
+map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map obp $vim ~/.bash_profile && source ~/.bashrc
+map obr $vim ~/.bashrc && source ~/.bashrc
+map oip $vim ~/dotfiles/jupyter/ipythonrc
+map orp $vim ~/dotfiles/Rprofile
+map ov $vim ~/dotfiles/vimrc
 
 # movement {{{2
 
+map gbk $cd /Volumes/GoogleDrive/My\ Drive/backups
+map gca $cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
+map gdc $cd ~/Documents
+map gdf $cd ~/dotfiles
+map gdk $cd ~/Desktop
+map gdp $cd ~/Documents/repos/dopamine/dopamine_paper
+map gdw $cd ~/Downloads
+map gfd $cd /Volumes/GoogleDrive/My\ Drive/Dopamine
+map gfo $cd /Volumes/GoogleDrive/My\ Drive
+map gfp $cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gmc $cd ~/Documents/repos/mccg
+map gmo $cd ~/Movies
+map gpc $cd ~/Pictures
+map gqc $cd ~/Documents/repos/qcp
+map grp $cd ~/Documents/repos
+map gsc $cd /Volumes/GoogleDrive/My\ Drive/scripts
+map gth $cd ~/Documents/repos/thesis

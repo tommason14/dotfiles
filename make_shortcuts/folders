@@ -1,18 +1,19 @@
 au: /Users/tommason/Documents/repos/monash_automation
 bk: /Volumes/GoogleDrive/My\ Drive/backups
 dc: ~/Documents
-dk: ~/Desktop
 df: ~/dotfiles
+dk: ~/Desktop
+dp: ~/Documents/repos/dopamine/dopamine_paper
 dw: ~/Downloads
-# filetream
-ca: /Volumes/GoogleDrive/My\ Drive/Hydrated_ILs/Analysis
+# filestream
+ca: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
 fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
 fo: /Volumes/GoogleDrive/My\ Drive
 fp: /Volumes/GoogleDrive/My\ Drive/polymers
-qc: ~/Documents/repos/qcp
 mc: ~/Documents/repos/mccg
 mo: ~/Movies
 pc: ~/Pictures
+qc: ~/Documents/repos/qcp
 rp: ~/Documents/repos
 sc: /Volumes/GoogleDrive/My\ Drive/scripts
 th: ~/Documents/repos/thesis

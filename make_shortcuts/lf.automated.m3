@@ -6,6 +6,8 @@ set shell sh
 set shellopts '-eu'
 set ifs "\n"
 
+# Settings {{{1
+
 set info size
 set previewer ~/.config/lf/previewer.sh
 
@@ -175,14 +177,23 @@ map I :{{
 
 map A rename 
 
-# Movement {{{2
+# slurm {{{2
+map sb $sbatch "$f"
+map sq !squeue -u tmason1
+map qu !squeue -u tmason1 -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
+map ql shell -w squeue -u tmason1 -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
+%.12l %.12L %.6D %.16S %R"
+map qo shell -w squeue -u tmason1 -o "%10i %30j %130Z"
 
-map dk cd ~/Desktop
-map dc cd ~/Documents
-map dw cd ~/Downloads
-map go cd /Volumes/GoogleDrive/My\ Drive
-map gc cd /Volumes/GoogleDrive/My\ Drive/hydrated_ils
-map mr cd ~/Documents/repos
-map dp cd ~/Documents/repos/dopamine/dopamine_paper
-map mc cd ~/Documents/repos/mccg
+# files {{{2
+
+map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
+map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map obp $vim ~/.bash_profile && source ~/.bashrc
+map obr $vim ~/.bashrc && source ~/.bashrc
+map oip $vim ~/dotfiles/jupyter/ipythonrc
+map orp $vim ~/dotfiles/Rprofile
+map ov $vim ~/dotfiles/vimrc
+
+# movement {{{2
 
