@@ -64,6 +64,7 @@
     "shortcut_name" : "MoveToRightHalf"
   },
   {
+<<<<<<< HEAD
     "shortcut_key_binding" : "ctrl+alt+left",
     "shortcut_name" : "MoveToPreviousThird"
   },
@@ -72,3 +73,13 @@
     "shortcut_name" : "MoveToLowerRight"
   }
 ]
+=======
+    "shortcut_key_binding" : "ctrl+cmd+left",
+    "shortcut_name" : "MoveToUpperLeft"
+  },
+  { 
+    "shortcut_key_binding" : "ctrl+alt+cmd+right",
+    "shortcut_name" : "MoveToLowerRight"
+  },
+]
+>>>>>>> 0d8bd34c5010566ec9792e4f2309e2c7fce24165

@@ -1,4 +1,5 @@
-# shell opts {{{1
+# Shell opts {{{1
+
 # NB: $ = shell command, ! = shell command and wait for user to enter
 # $f = current file
 
@@ -6,9 +7,15 @@ set shell sh
 set shellopts '-eu'
 set ifs "\n"
 
-# custom commands {{{1
+# Settings {{{1
 
-# lf commands {{{2
+set info size
+set previewer ~/dotfiles/lf/previewer.sh
+
+
+# Custom commands {{{1
+
+# LF commands {{{2
 
 cmd q quit
 cmd touch $touch $1
@@ -55,7 +62,7 @@ cmd open-file ${{ # {{{3
   # esac
 }}
 
-# gnuplots {{{2
+# Gnuplots {{{2
 
 cmd plotmp2 !{{ 
    cat "$f" |\
@@ -85,12 +92,14 @@ cmd plotgauss !{{
 # Mappings {{{1
 
 # Remove defaults {{{2 
+
 map d
 map m
 map p
 map y
 
 # Ranger-like {{{2
+
 map yy copy
 map dd cut
 map pp paste
@@ -99,19 +108,8 @@ map dt $mv "$fx" ~/.trash # bin for accidental deletion
 map <bs2> set hidden!
 cmap <esc> cmd-escape
 
-# Movement {{{2
-
-map dc cd ~/Documents
-map df cd ~/dotfiles
-map dk cd ~/Desktop
-map dp cd ~/Documents/repos/dopamine/dopamine_paper
-map dw cd ~/Downloads
-map gc cd /Volumes/GoogleDrive/My\ Drive/hydrated_ils
-map go cd /Volumes/GoogleDrive/My\ Drive
-map mc cd ~/Documents/repos/mccg
-map mr cd ~/Documents/repos
-
 # File opening {{{2
+
 map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
@@ -136,6 +134,7 @@ cmd open ${{
 
 
 # Shell utilities {{{2
+
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
@@ -156,13 +155,13 @@ map pfn $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot.gnuplot.sh "$f
 # trimmed
 map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f "$f" -l 180 -m 500
 
-# gnuplots {{{2
+# Gnuplots {{{2
 
 map pm plotmp2 "$f"
 map pfo plotfmo "$f"
 map pg plotgauss "$f"
 
-# new files {{{2
+# New files {{{2
 
 # templates
 cmd new_rmd %{{
@@ -173,7 +172,8 @@ cmd new_rmd %{{
 map tr push :new_rmd<space>
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
 
-# renaming {{{2
+# Renaming {{{2
+
 map br bulk-rename "$fs"
 
 map I :{{
@@ -183,7 +183,32 @@ map I :{{
 
 map A rename 
 
-# Settings {{{1
+# Files {{{2
 
-set info size
-set previewer ~/.config/lf/previewer.sh
+map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
+map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map obp $vim ~/.bash_profile && source ~/.bashrc
+map obr $vim ~/.bashrc && source ~/.bashrc
+map oip $vim ~/dotfiles/jupyter/ipythonrc
+map orp $vim ~/dotfiles/Rprofile
+map ov $vim ~/dotfiles/vimrc
+
+# Movement {{{2
+
+map gbk $cd /Volumes/GoogleDrive/My\ Drive/backups
+map gca $cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
+map gdc $cd ~/Documents
+map gdf $cd ~/dotfiles
+map gdk $cd ~/Desktop
+map gdp $cd ~/Documents/repos/dopamine/dopamine_paper
+map gdw $cd ~/Downloads
+map gfd $cd /Volumes/GoogleDrive/My\ Drive/Dopamine
+map gfo $cd /Volumes/GoogleDrive/My\ Drive
+map gfp $cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gmc $cd ~/Documents/repos/mccg
+map gmo $cd ~/Movies
+map gpc $cd ~/Pictures
+map gq $cd ~/Documents/repos/qcp
+map grp $cd ~/Documents/repos
+map gsc $cd /Volumes/GoogleDrive/My\ Drive/scripts
+map gth $cd ~/Documents/repos/thesis

@@ -5,11 +5,11 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-  files="bash_aliases bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile"    
+  files="bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile"    
   ln -s $dir/vscode/markdown.json ~/Library/Application\ Support/Code/User/snippets/markdown.json
   ln -s $dir/jupyter/ipythonrc  ~/.ipython/profile_default/startup/start.ipy
   ln -s $dir/jupyter/custom.css ~/.jupyter/custom/custom.css
-  ln -s $dir/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
+  # ln -s $dir/spectacle.json ~/Library/Application\ Support/Spectacle/Shortcuts.json
 else # remotes
   files="bash_aliases bash_functions vim vimrc"    
 fi
@@ -41,10 +41,14 @@ done
 [ -d ~/.config/ranger ] || mkdir ~/.config/ranger
 [ -d ~/.config/lf ] || mkdir ~/.config/lf
 
+alias_symlink=~/.bash_aliases
 lf_symlink=~/.config/lf/lfrc
 ranger_symlink=~/.config/ranger/rc.conf
 
 if [[ $PWD == *"tommason"* ]]; then
+  echo "Symlinking $dir/aliases/aliases.macbook --> $alias_symlink"
+  ln -s $dir/aliases/aliases.macbook $alias_symlink
+  ln -s $dir/lf/lfrc.macbook $lf_symlink
   echo "Symlinking $dir/lf/lfrc.macbook --> $lf_symlink"
   ln -s $dir/lf/lfrc.macbook $lf_symlink
   echo "Symlinking $dir/ranger/rc.conf.macbook --> $ranger_symlink"
@@ -59,6 +63,8 @@ configs="raijin magnus m3 monarch stampede MU00151959X"
 
 for config in ${configs[@]}; do
   if [[ $HOSTNAME == *"$config"* ]]; then
+    echo "Symlinking $dir/aliases/aliases.$config --> $alias_symlink"
+    ln -s $dir/aliases/aliases.$config $alias_symlink
     echo "Symlinking $dir/lf/lfrc.$config --> $lf_symlink"
     ln -s $dir/lf/lfrc.$config $lf_symlink
     echo "Symlinking $dir/ranger/rc.conf.$config --> $ranger_symlink"

@@ -1,3 +1,4 @@
+# Locals
 au: /Users/tommason/Documents/repos/monash_automation
 bk: /Volumes/GoogleDrive/My\ Drive/backups
 dc: ~/Documents
@@ -13,20 +14,48 @@ fp: /Volumes/GoogleDrive/My\ Drive/polymers
 mc: ~/Documents/repos/mccg
 mo: ~/Movies
 pc: ~/Pictures
-qc: ~/Documents/repos/qcp
+q: ~/Documents/repos/qcp
 rp: ~/Documents/repos
 sc: /Volumes/GoogleDrive/My\ Drive/scripts
 th: ~/Documents/repos/thesis
 
 # Magnus
+mgs-a: ~/monash_automation/
+mgs-c: /scratch/pawsey0197/tmason/Hydrated_ILs
+mgs-d: /scratch/pawsey0197/tmason/dopamine
+mgs-q: /group/pawsey0197/apps/source/qcp
 mgs-s: /scratch/pawsey0197/tmason
-mgs-a: /group/pawsey0197/
+mgs-w: /group/pawsey0197
 
 # Raijin
+rjn-a: ~/monash_automation/
+rjn-c: /short/k96/tm3124/hydrated_ils_choline
+rjn-q: /short/k96/apps/qcp
 rjn-s: /short/k96/tm3124
+rjn-w: /short/k96/apps
 
 # Monarch
+mon-a: ~/monash_automation/
+mon-c: /home/tmason1/scratch/hydrated_ils
+mon-d: /home/tmason1/scratch/dopamine
+mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
+mon-q: /home/tmason1/sn29/apps/qcp
+mon-s: /home/tmason1/scratch
+mon-w: /home/tmason1/sn29
 
 # Massive
+mas-a: ~/monash_automation/
+mas-c: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
+mas-q: /home/tmason1/sn29/apps/qcp
+mas-s: /home/tmason1/sn29_scratch/tmason1
+mas-w: /home/tmason1/sn29
 
 # Stampede
+stm-a: ~/monash_automation/
+stm-c: /scratch/06233/tmason/hydrated_ils
+stm-d: /scratch/06233/tmason/dopamine
+stm-p: /scratch/06233/tmason/polymers/polymerisation_rates
+stm-q: /work/06233/tmason/stampede2/qcp
+stm-s: /scratch/06233/tmason
+stm-t: /scratch/06233/tmason/tests
+stm-w: /work/06233/tmason/stampede2
