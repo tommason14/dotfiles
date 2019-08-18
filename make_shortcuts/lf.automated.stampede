@@ -6,6 +6,12 @@ set shell sh
 set shellopts '-eu'
 set ifs "\n"
 
+# Settings {{{1
+
+set info size
+set previewer ~/.config/lf/previewer.sh
+
+
 # custom commands {{{1
 
 # lf commands {{{2
@@ -99,18 +105,6 @@ map dt $mv "$fx" ~/.trash # bin for accidental deletion
 map <bs2> set hidden!
 cmap <esc> cmd-escape
 
-# Movement {{{2
-
-map dc cd ~/Documents
-map df cd ~/dotfiles
-map dk cd ~/Desktop
-map dp cd ~/Documents/repos/dopamine/dopamine_paper
-map dw cd ~/Downloads
-map gc cd /Volumes/GoogleDrive/My\ Drive/hydrated_ils
-map go cd /Volumes/GoogleDrive/My\ Drive
-map mc cd ~/Documents/repos/mccg
-map mr cd ~/Documents/repos
-
 # File opening {{{2
 map o. $open .
 map ov $vim "$f"
@@ -183,7 +177,23 @@ map I :{{
 
 map A rename 
 
-# Settings {{{1
+# slurm {{{2
+map sb $sbatch "$f"
+map sq !squeue -u tmason1
+map qu !squeue -u tmason1 -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
+map ql shell -w squeue -u tmason1 -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
+%.12l %.12L %.6D %.16S %R"
+map qo shell -w squeue -u tmason1 -o "%10i %30j %130Z"
 
-set info size
-set previewer ~/.config/lf/previewer.sh
+# files {{{2
+
+map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
+map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map obp $vim ~/.bash_profile && source ~/.bashrc
+map obr $vim ~/.bashrc && source ~/.bashrc
+map oip $vim ~/dotfiles/jupyter/ipythonrc
+map orp $vim ~/dotfiles/Rprofile
+map ov $vim ~/dotfiles/vimrc
+
+# movement {{{2
+

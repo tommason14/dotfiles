@@ -163,23 +163,24 @@ fi
 
 # everywhere {{{1 
 
-alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias bash_aliases='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
-alias ba='vim ~/dotfiles/bash_aliases && source ~/.bashrc'
 alias bash_functions='vim ~/dotfiles/bash_functions && source ~/.bashrc'
-alias vimrc='vim ~/dotfiles/vimrc'
+alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias dotfiles='cd ~/dotfiles'
-alias rangerconf='vim ~/.config/ranger/rc.conf'
+alias dots='cd ~/dotfiles'
 alias lfrc='vim ~/.config/lf/lfrc'
+alias rangerconf='vim ~/.config/ranger/rc.conf'
+alias vimrc='vim ~/dotfiles/vimrc'
 
 # aliases for default commands
-alias v='vim'
+alias c='clear'
 alias l='ls'
 alias ld='ls'
-alias lsa='ls -a'
 alias ll='ls -lh'
-alias c='clear'
+alias lsa='ls -a'
 alias mkdir='mkdir -p'
+alias s='source'
+alias v='vim'
 
 alias cd..='cd ..'
 alias ..='cd ..'
