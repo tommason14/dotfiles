@@ -1,4 +1,5 @@
-# shell opts {{{1
+# Shell opts {{{1
+
 # NB: $ = shell command, ! = shell command and wait for user to enter
 # $f = current file
 
@@ -9,12 +10,12 @@ set ifs "\n"
 # Settings {{{1
 
 set info size
-set previewer ~/.config/lf/previewer.sh
+set previewer ~/dotfiles/lf/previewer.sh
 
 
-# custom commands {{{1
+# Custom commands {{{1
 
-# lf commands {{{2
+# LF commands {{{2
 
 cmd q quit
 cmd touch $touch $1
@@ -61,7 +62,7 @@ cmd open-file ${{ # {{{3
   # esac
 }}
 
-# gnuplots {{{2
+# Gnuplots {{{2
 
 cmd plotmp2 !{{ 
    cat "$f" |\
@@ -91,12 +92,14 @@ cmd plotgauss !{{
 # Mappings {{{1
 
 # Remove defaults {{{2 
+
 map d
 map m
 map p
 map y
 
 # Ranger-like {{{2
+
 map yy copy
 map dd cut
 map pp paste
@@ -106,6 +109,7 @@ map <bs2> set hidden!
 cmap <esc> cmd-escape
 
 # File opening {{{2
+
 map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
@@ -130,6 +134,7 @@ cmd open ${{
 
 
 # Shell utilities {{{2
+
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
@@ -150,13 +155,13 @@ map pfn $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot.gnuplot.sh "$f
 # trimmed
 map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f "$f" -l 180 -m 500
 
-# gnuplots {{{2
+# Gnuplots {{{2
 
 map pm plotmp2 "$f"
 map pfo plotfmo "$f"
 map pg plotgauss "$f"
 
-# new files {{{2
+# New files {{{2
 
 # templates
 cmd new_rmd %{{
@@ -167,7 +172,8 @@ cmd new_rmd %{{
 map tr push :new_rmd<space>
 map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
 
-# renaming {{{2
+# Renaming {{{2
+
 map br bulk-rename "$fs"
 
 map I :{{
@@ -177,7 +183,8 @@ map I :{{
 
 map A rename 
 
-# pbs {{{2
+# PBS {{{2
+
 map sb shell qsub %s
 map sq shell qstat -u tm3124
 map qu shell qstat -u tm3124
