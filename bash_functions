@@ -40,16 +40,15 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     done
   }
 
-  function check_references {
-  grep -i @article{$1 "$filestream"/thesis/library.bib |\
-  sed 's/\@article{//' |\
-  sed 's/\,//' |\
-  sort
+  check_references(){
+    grep -i @article{$1 "$filestream"/thesis/library.bib |\
+    sed 's/\@article{//' |\
+    sed 's/\,//' |\
+    sort
   }
 
-  function wallpaper {
-  DIR=~/Pictures/wallpapers
-  sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$DIR/$1'" && killall Dock
+  wl(){
+    wal -i "$1"
   }
 
 fi
