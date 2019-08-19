@@ -50,17 +50,6 @@ cmd bulk-rename ${{ # {{{3
 	rm $index $index_edit
 }}
 
-cmd open-file ${{ # {{{3
-  file -i $f | grep -q 'text\|regular' && vim $f || open $f
-  # case $f in
-  #   *.md|*.txt|*.py|*.js|*.sh|*.yaml|*.f|*.src|*.cpp|*.c|*.) vim $f;;
-  #   *.png|*.jpg) open $f;;
-  #   *.tar.xz|*.txz) tar xJvf $f;;
-  #   *.zip) unzip $f;;
-  #   *.rar) unrar x $f;;
-  #   *.7z) 7z x $f;;
-  # esac
-}}
 
 # Gnuplots {{{2
 
@@ -115,18 +104,12 @@ map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
-map oi $open -a /Applications/iA\ Writer.app/ "$f"
+map oia $open -a /Applications/iA\ Writer.app/ "$f"
+map oiq $open -a /Applications/iQmol.app/ "$f"
+map oav $open -a /Applications/Avogadro.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f"
 
-# dedicated keys for file opener actions
-# map o &rifle $f
-# map O $mimeopen --ask $f
-
-# define a custom 'open' command
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
 cmd open ${{
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
