@@ -18,11 +18,11 @@ delete_blanks(){
 }
 
 rm_supercomps(){
-  sed '/mgs/d' |\
-  sed '/rjn/d' |\
-  sed '/mas/d' |\
-  sed '/mon/d' |\
-  sed '/stm/d'
+  sed '/^mgs/d' |\
+  sed '/^rjn/d' |\
+  sed '/^mas/d' |\
+  sed '/^mon/d' |\
+  sed '/^stm/d'
 }
 
 clean(){
@@ -43,7 +43,13 @@ make_supercomp_configs(){
     cat files | sort | clean | sed -e 's/^/map o/' -e 's/:/ $vim/' >> ../lf/lfrc.$long_hostname
     printf "\n# Movement {{{2\n\n" >> ../lf/lfrc.$long_hostname
     cat folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
-    sed -e "s/^$f-/map g/" -e 's/:/ $cd/' >> ../lf/lfrc.$long_hostname
+    sed -e "s/^$f-/map g/" -e 's/:/ cd/' >> ../lf/lfrc.$long_hostname
+    cp ../aliases/aliases.base ../aliases/aliases.$long_hostname
+    printf "\n# files {{{1\n\n" >> ../aliases/aliases.$long_hostname
+    cat files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
+    printf "\n# movement {{{1\n\n" >> ../aliases/aliases.$long_hostname
+    cat folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
+    sed -e "s/^$f-/alias g/" -e "s/:/='cd/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
   done
 }
 
@@ -55,8 +61,13 @@ make_local_configs(){
     printf "\n# Files {{{2\n\n" >> ../lf/lfrc.$long_hostname
     cat files | sort | clean  | sed -e 's/^/map o/' -e 's/:/ $vim/' >> ../lf/lfrc.$long_hostname
     printf "\n# Movement {{{2\n\n" >> ../lf/lfrc.$long_hostname
-    cat folders | sort | clean | sed 's/^/map g/;s/:/ $cd/' >> ../lf/lfrc.$long_hostname
-  done 
+    cat folders | sort | clean | sed 's/^/map g/;s/:/ cd/' >> ../lf/lfrc.$long_hostname
+    cp ../aliases/aliases.base ../aliases/aliases.$long_hostname
+    printf "\n# files {{{1\n\n" >> ../aliases/aliases.$long_hostname
+    cat files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
+    printf "\n# movement {{{1\n\n" >> ../aliases/aliases.$long_hostname
+    cat folders | sort | clean | sed -e 's/^/alias g/' -e "s/:/='cd/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
+done 
 }
 
 make_bash_aliases(){
@@ -73,7 +84,6 @@ main(){
   make_local_configs ${locals[@]}
   make_supercomp_configs 'slurm' ${slurm[@]}
   make_supercomp_configs 'pbs' ${pbs[@]}
-  make_bash_aliases
 }
 
 main

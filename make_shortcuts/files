@@ -1,5 +1,5 @@
-ba: ~/dotfiles/bash_aliases && source ~/.bashrc
-bf: ~/dotfiles/bash_functions && source ~/.bashrc
+ba: ~/.bash_aliases && source ~/.bashrc
+bf: ~/.bash_functions && source ~/.bashrc
 bp: ~/.bash_profile && source ~/.bashrc
 br: ~/.bashrc && source ~/.bashrc
 ip: ~/dotfiles/jupyter/ipythonrc

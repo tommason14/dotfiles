@@ -188,14 +188,14 @@ map A rename
 map sb $sbatch "$f"
 map sq !squeue -u tmason1
 map qu !squeue -u tmason1 -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D"
-map ql shell -w squeue -u tmason1 -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
+map ql !squeue -u tmason1 -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
 %.12l %.12L %.6D %.16S %R"
-map qo shell -w squeue -u tmason1 -o "%10i %30j %130Z"
+map qo !squeue -u tmason1 -o "%10i %30j %130Z"
 
 # Files {{{2
 
-map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
-map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map oba $vim ~/.bash_aliases && source ~/.bashrc
+map obf $vim ~/.bash_functions && source ~/.bashrc
 map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc
 map oip $vim ~/dotfiles/jupyter/ipythonrc
@@ -204,8 +204,8 @@ map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 
-map ga $cd ~/monash_automation/
-map gc $cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
-map gq $cd /home/tmason1/sn29/apps/qcp
-map gs $cd /home/tmason1/sn29_scratch/tmason1
-map gw $cd /home/tmason1/sn29
+map ga cd ~/monash_automation/
+map gc cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
+map gq cd /home/tmason1/sn29/apps/qcp
+map gs cd /home/tmason1/sn29_scratch/tmason1
+map gw cd /home/tmason1/sn29

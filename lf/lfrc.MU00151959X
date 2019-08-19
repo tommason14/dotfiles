@@ -96,6 +96,7 @@ cmd plotgauss !{{
 map d
 map m
 map p
+map w
 map y
 
 # Ranger-like {{{2
@@ -116,6 +117,7 @@ map om $molden "$f"
 map og $gmolden "$f"
 map oi $open -a /Applications/iA\ Writer.app/ "$f"
 map <enter> $open "$f" # default programs
+map pr $qlmanage -p "$f"
 
 # dedicated keys for file opener actions
 # map o &rifle $f
@@ -183,10 +185,14 @@ map I :{{
 
 map A rename 
 
+# Wallpaper {{{2
+map wl $wal -i "$f"
+
+
 # Files {{{2
 
-map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
-map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map oba $vim ~/.bash_aliases && source ~/.bashrc
+map obf $vim ~/.bash_functions && source ~/.bashrc
 map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc
 map oip $vim ~/dotfiles/jupyter/ipythonrc
@@ -195,20 +201,21 @@ map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 
-map gbk $cd /Volumes/GoogleDrive/My\ Drive/backups
-map gca $cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
-map gdc $cd ~/Documents
-map gdf $cd ~/dotfiles
-map gdk $cd ~/Desktop
-map gdp $cd ~/Documents/repos/dopamine/dopamine_paper
-map gdw $cd ~/Downloads
-map gfd $cd /Volumes/GoogleDrive/My\ Drive/Dopamine
-map gfo $cd /Volumes/GoogleDrive/My\ Drive
-map gfp $cd /Volumes/GoogleDrive/My\ Drive/polymers
-map gmc $cd ~/Documents/repos/mccg
-map gmo $cd ~/Movies
-map gpc $cd ~/Pictures
-map gq $cd ~/Documents/repos/qcp
-map grp $cd ~/Documents/repos
-map gsc $cd /Volumes/GoogleDrive/My\ Drive/scripts
-map gth $cd ~/Documents/repos/thesis
+map gau cd ~/Documents/repos/monash_automation
+map gbk cd /Volumes/GoogleDrive/My\ Drive/backups
+map gca cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
+map gdc cd ~/Documents
+map gdf cd ~/dotfiles
+map gdk cd ~/Desktop
+map gdp cd ~/Documents/repos/dopamine/dopamine_paper
+map gdw cd ~/Downloads
+map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine
+map gfo cd /Volumes/GoogleDrive/My\ Drive
+map gfp cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gmc cd ~/Documents/repos/mccg
+map gmo cd ~/Movies
+map gpc cd ~/Pictures
+map gq cd ~/Documents/repos/qcp
+map grp cd ~/Documents/repos
+map gsc cd /Volumes/GoogleDrive/My\ Drive/scripts
+map gth cd ~/Documents/repos/thesis

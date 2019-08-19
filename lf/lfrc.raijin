@@ -185,16 +185,16 @@ map A rename
 
 # PBS {{{2
 
-map sb shell qsub %s
-map sq shell qstat -u tm3124
-map qu shell qstat -u tm3124
-map qo shell nqstat
-map ql shell nqstat
+map sb $qsub %s
+map sq !qstat -u tm3124
+map qu !qstat -u tm3124
+map qo !nqstat
+map ql !nqstat
 
 # Files {{{2
 
-map oba $vim ~/dotfiles/bash_aliases && source ~/.bashrc
-map obf $vim ~/dotfiles/bash_functions && source ~/.bashrc
+map oba $vim ~/.bash_aliases && source ~/.bashrc
+map obf $vim ~/.bash_functions && source ~/.bashrc
 map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc
 map oip $vim ~/dotfiles/jupyter/ipythonrc
@@ -203,8 +203,8 @@ map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 
-map ga $cd ~/monash_automation/
-map gc $cd /short/k96/tm3124/hydrated_ils_choline
-map gq $cd /short/k96/apps/qcp
-map gs $cd /short/k96/tm3124
-map gw $cd /short/k96/apps
+map ga cd ~/monash_automation/
+map gc cd /short/k96/tm3124/hydrated_ils_choline
+map gq cd /short/k96/apps/qcp
+map gs cd /short/k96/tm3124
+map gw cd /short/k96/apps

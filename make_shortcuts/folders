@@ -1,5 +1,5 @@
 # Locals
-au: /Users/tommason/Documents/repos/monash_automation
+au: ~/Documents/repos/monash_automation
 bk: /Volumes/GoogleDrive/My\ Drive/backups
 dc: ~/Documents
 df: ~/dotfiles
