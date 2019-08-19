@@ -186,10 +186,9 @@ map A rename
 # PBS {{{2
 
 map sb $qsub %s
-map sq !qstat -u tm3124
-map qu !qstat -u tm3124
-map qo !nqstat
-map ql !nqstat
+map squ !qstat -u tm3124
+map sqo !nqstat
+map sql !nqstat
 
 # Files {{{2
 
