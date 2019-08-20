@@ -50,18 +50,6 @@ cmd bulk-rename ${{ # {{{3
 	rm $index $index_edit
 }}
 
-cmd make_wallpaper ${{ # {{{3
-  if [[ $USER == "tommason" ]]
-  then
-    wal -i "$f"
-  else
-    wal -ni "$f"
-    /usr/bin/osascript << END
-    tell application "Finder" to set desktop picture to POSIX file "$f"
-    END
-}}
-
-
 # Gnuplots {{{2
 
 cmd plotmp2 !{{ 
@@ -181,5 +169,4 @@ map A rename
 
 # Wallpaper {{{2
 
-# map wl $wal -i "$f" #works on mac, not uni comp
-map wl make_wallpaper
+map wl $~/dotfiles/lf/wallpaper.sh "$f"

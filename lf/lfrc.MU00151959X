@@ -50,7 +50,6 @@ cmd bulk-rename ${{ # {{{3
 	rm $index $index_edit
 }}
 
-
 # Gnuplots {{{2
 
 cmd plotmp2 !{{ 
@@ -170,15 +169,7 @@ map A rename
 
 # Wallpaper {{{2
 
-cmd wallpaper ${{
-  FILE="$f"
-  osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$FILE"'
-  wal -ni "$f"
-}}
-
-# map wl $wal -i "$f"
-
-map wl wallpaper
+map wl $~/dotfiles/lf/wallpaper.sh "$f"
 
 # Files {{{2
 

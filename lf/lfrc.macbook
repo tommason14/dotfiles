@@ -50,7 +50,6 @@ cmd bulk-rename ${{ # {{{3
 	rm $index $index_edit
 }}
 
-
 # Gnuplots {{{2
 
 cmd plotmp2 !{{ 
@@ -169,8 +168,8 @@ map I :{{
 map A rename 
 
 # Wallpaper {{{2
-map wl $wal -i "$f"
 
+map wl $~/dotfiles/lf/wallpaper.sh "$f"
 
 # Files {{{2
 
