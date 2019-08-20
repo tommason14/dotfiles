@@ -323,7 +323,8 @@ au BufWritePost *.cpp !g++ --std=c++17  % -o %:r
 set number
 set relativenumber
 
-colo slate
+" colo slate
+colo wal
 hi Normal ctermbg=none " Use terminal background 
 
 " Changes style of highlighting

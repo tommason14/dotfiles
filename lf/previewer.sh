@@ -4,7 +4,7 @@
 
 FILE="${1}"
 HEIGHT="${2}"
-if [[ $PWD == *"tommason"* || $HOSTNAME == "MU00151959X" ]] 
+if [[ $USER =~ (tommason|tmas0023) ]]
 then
   case "$1" in
       *.tar*) tar tf "$1";;
