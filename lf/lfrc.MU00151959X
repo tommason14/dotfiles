@@ -169,8 +169,16 @@ map I :{{
 map A rename 
 
 # Wallpaper {{{2
-map wl $wal -i "$f"
 
+cmd wallpaper ${{
+  FILE="$f"
+  osascript -e 'tell application "Finder" to set desktop picture to POSIX file "$FILE"'
+  wal -ni "$f"
+}}
+
+# map wl $wal -i "$f"
+
+map wl wallpaper
 
 # Files {{{2
 
