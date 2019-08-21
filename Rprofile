@@ -17,6 +17,7 @@ df_with_ci <- function(path) {
     gather('CI_type', 'CI', Electro_CI, Dispersion_CI)
 
   df <- cbind(en_long, ci_long)
+  df <- df %>% ungroup()
   return(df)
 }
 
