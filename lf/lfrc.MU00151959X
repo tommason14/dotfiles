@@ -170,6 +170,7 @@ map A rename
 # Wallpaper {{{2
 
 map wl $~/dotfiles/lf/wallpaper.sh "$f"
+map wr $~/Documents/repos/wallpapers/random_wallpaper.sh
 
 # Files {{{2
 
@@ -201,4 +202,4 @@ map gq cd ~/Documents/repos/qcp
 map grp cd ~/Documents/repos
 map gsc cd /Volumes/GoogleDrive/My\ Drive/scripts
 map gth cd ~/Documents/repos/thesis
-map gw cd ~/Pictures/wallpapers
+map gw cd ~/Documents/repos/wallpapers
