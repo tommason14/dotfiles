@@ -91,27 +91,27 @@ fi
 
 if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
 
-  alias ls='ls -G'
-  alias grep='grep --color'
+  alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
+  alias backups='cd "$filestream"/backups'
   alias ccat='highlight --out-format=ansi'
+  alias dc='cd ~/Documents'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
+  alias documents='cd ~/Documents'
   alias downloads='cd ~/Downloads'
   alias dw='cd ~/Downloads'
-  alias documents='cd ~/Documents'
-  alias dc='cd ~/Documents'
+  alias gd='cd "$filestream"/Dopamine'
+  alias google='cd "$filestream"'
+  alias gp='cd "$filestream"/polymers'
+  alias gq='cd $repos/qcp'
+  alias grep='grep --color'
+  alias jl='jupyter-lab'
+  alias ls='ls -G'
+  alias mccg='cd $repos/mccg'
   alias mo='cd ~/Movies'
   alias pc='cd ~/Pictures'
-  alias google='cd "$filestream"'
-  alias scripts='cd "$filestream"/scripts'
-  alias mccg='cd $repos/mccg'
-  alias backups='cd "$filestream"/backups'
-  alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
-  alias jl='jupyter-lab'
-  alias gd='cd "$filestream"/Dopamine'
-  alias gp='cd "$filestream"/polymers'
   alias polymers='cd "$filestream"/Polymers'
-  alias gq='cd $repos/qcp'
+  alias scripts='cd "$filestream"/scripts'
   
   ### open applications
 
@@ -151,6 +151,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias rprofile='vim ~/dotfiles/Rprofile'
   alias update_repos='cd $repos && sh update_repos.sh && cd -'
   alias ur='cd $repos && sh update_repos.sh && cd -'
+  alias wr='$repos/wallpapers/random_wallpaper.sh'
 
 fi
 
@@ -168,6 +169,7 @@ alias bash_functions='vim ~/.bash_functions && source ~/.bashrc'
 alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias dotfiles='cd ~/dotfiles'
 alias dots='cd ~/dotfiles'
+alias shortcuts='cd ~/dotfiles/shortcuts'
 alias lfrc='vim ~/.config/lf/lfrc'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
