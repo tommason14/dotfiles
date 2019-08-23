@@ -170,7 +170,7 @@ nnoremap <CR> :noh<CR>:<backspace>
 nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
 
 " Compile pandoc
-" nnoremap <Leader>x :! pandoc --filter pandoc-citeproc % -o %:r.pdf<CR><CR>
+au FileType markdown nnoremap <Leader>r :w<CR>:! pandoc --filter pandoc-crossref --filter pandoc-citeproc --filter pandoc-mustache --pdf-engine xelatex % -o %:r.pdf<CR><CR>
 
 
 " Python  {{{1
