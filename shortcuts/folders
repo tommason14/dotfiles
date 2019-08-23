@@ -48,6 +48,7 @@ mon-w: /home/tmason1/sn29
 # Massive
 mas-a: ~/monash_automation/
 mas-c: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
+mas-d: /home/tmason1/sn29_scratch/tmason1/dopamine
 mas-q: /home/tmason1/sn29/apps/qcp
 mas-s: /home/tmason1/sn29_scratch/tmason1
 mas-w: /home/tmason1/sn29

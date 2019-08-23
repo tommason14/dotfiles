@@ -234,6 +234,7 @@ alias ov='vim ~/dotfiles/vimrc'
 
 alias ga='cd ~/monash_automation/'
 alias gc='cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils'
+alias gd='cd /home/tmason1/sn29_scratch/tmason1/dopamine'
 alias gq='cd /home/tmason1/sn29/apps/qcp'
 alias gs='cd /home/tmason1/sn29_scratch/tmason1'
 alias gw='cd /home/tmason1/sn29'
