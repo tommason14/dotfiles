@@ -30,5 +30,19 @@ dopamine_theming <- theme_light() +
 
 no_bg <- theme(panel.grid = element_blank())
 
+bp <- function(series) {
+  # Takes in energies in Hartrees, returns
+  # probabilities according to a Boltzmann distribution,
+  # in kJ/mol. Also works with group by objects.
+    R = 8.3145
+    T = 298.15
+    h_to_kJ = 2625.5
+    series = series * h_to_kJ
+    diffs = series - min(series)
+    exponent = exp((-1 * diffs * 1000) / (R * T))
+    summed = sum(exponent)
+    return(exponent / summed)
+}
+
 cat("\nThis is the last line of .Rprofile.\n")
 

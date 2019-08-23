@@ -14,6 +14,7 @@ then
       *.pdf) pdftotext "$1" -;;
       # *.jpg) feh --borderless "$1";;
       *lf*|*rc*|*sh) highlight -O ansi "$1" --syntax sh;;
+      *.xyz) cat "$1";;
       *) highlight -O ansi "$1" || cat "$1";;
   esac
 fi

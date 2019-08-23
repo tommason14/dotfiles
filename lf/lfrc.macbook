@@ -200,5 +200,6 @@ map gpc cd ~/Pictures
 map gq cd ~/Documents/repos/qcp
 map grp cd ~/Documents/repos
 map gsc cd /Volumes/GoogleDrive/My\ Drive/scripts
+map gsu cd ~/Documents/repos/dopamine/dopamine_paper/supp_info
 map gth cd ~/Documents/repos/thesis
 map gw cd ~/Pictures/wallpapers
