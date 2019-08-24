@@ -17,4 +17,6 @@ then
       *.xyz) cat "$1";;
       *) highlight -O ansi "$1" || cat "$1";;
   esac
+else
+  highlight -O ansi "$1" || cat "$1";;
 fi

@@ -5,3 +5,6 @@ br: ~/.bashrc && source ~/.bashrc
 ip: ~/dotfiles/jupyter/ipythonrc
 rp: ~/dotfiles/Rprofile
 v: ~/dotfiles/vimrc
+tdd: ~/Documents/repos/daily_log/dopamine.md
+tdm: ~/Documents/repos/daily_log/membranes.md
+tdc: ~/Documents/repos/daily_log/choline.md

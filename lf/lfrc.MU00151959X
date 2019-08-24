@@ -180,6 +180,9 @@ map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc
 map oip $vim ~/dotfiles/jupyter/ipythonrc
 map orp $vim ~/dotfiles/Rprofile
+map otdc $vim ~/Documents/repos/daily_log/choline.md
+map otdd $vim ~/Documents/repos/daily_log/dopamine.md
+map otdm $vim ~/Documents/repos/daily_log/membranes.md
 map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
@@ -190,6 +193,7 @@ map gca cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
 map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
+map gdl cd ~/Documents/repos/daily_log
 map gdp cd ~/Documents/repos/dopamine/dopamine_paper
 map gdw cd ~/Downloads
 map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine

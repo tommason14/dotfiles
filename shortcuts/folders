@@ -4,9 +4,9 @@ bk: /Volumes/GoogleDrive/My\ Drive/backups
 dc: ~/Documents
 df: ~/dotfiles
 dk: ~/Desktop
+dl: ~/Documents/repos/daily_log
 dp: ~/Documents/repos/dopamine/dopamine_paper
 dw: ~/Downloads
-# filestream
 ca: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
 fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
 fo: /Volumes/GoogleDrive/My\ Drive

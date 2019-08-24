@@ -229,6 +229,9 @@ alias obp='vim ~/.bash_profile && source ~/.bashrc'
 alias obr='vim ~/.bashrc && source ~/.bashrc'
 alias oip='vim ~/dotfiles/jupyter/ipythonrc'
 alias orp='vim ~/dotfiles/Rprofile'
+alias otdc='vim ~/Documents/repos/daily_log/choline.md'
+alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
+alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
 alias ov='vim ~/dotfiles/vimrc'
 
 # movement {{{1

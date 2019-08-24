@@ -198,6 +198,9 @@ map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc
 map oip $vim ~/dotfiles/jupyter/ipythonrc
 map orp $vim ~/dotfiles/Rprofile
+map otdc $vim ~/Documents/repos/daily_log/choline.md
+map otdd $vim ~/Documents/repos/daily_log/dopamine.md
+map otdm $vim ~/Documents/repos/daily_log/membranes.md
 map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
