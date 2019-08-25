@@ -232,6 +232,7 @@ alias orp='vim ~/dotfiles/Rprofile'
 alias otdc='vim ~/Documents/repos/daily_log/choline.md'
 alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
 alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
+alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
 alias ov='vim ~/dotfiles/vimrc'
 
 # movement {{{1

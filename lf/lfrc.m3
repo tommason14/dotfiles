@@ -201,6 +201,7 @@ map orp $vim ~/dotfiles/Rprofile
 map otdc $vim ~/Documents/repos/daily_log/choline.md
 map otdd $vim ~/Documents/repos/daily_log/dopamine.md
 map otdm $vim ~/Documents/repos/daily_log/membranes.md
+map otdp $vim ~/Documents/repos/daily_log/membranes.md
 map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
