@@ -149,6 +149,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias skhdrc='vim ~/dotfiles/skhdrc'
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
   alias rprofile='vim ~/dotfiles/Rprofile'
+  alias pymolrc='vim ~/dotfiles/pymolrc'
   alias update_repos='cd $repos && sh update_repos.sh && cd -'
   alias ur='cd $repos && sh update_repos.sh && cd -'
   alias wr='$repos/wallpapers/random_wallpaper.sh'

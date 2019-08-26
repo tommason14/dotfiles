@@ -77,6 +77,11 @@ cmd plotgauss !{{
   gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 }}
 
+cmd molden2csv ${{
+  (echo 'Wave,Int' && cat "$f" | awk '{OFS=","; print $1,$2}' ) > tmp.out.csv
+  mv tmp.out.csv "$f"
+}}
+
 # Mappings {{{1
 
 # Remove defaults {{{2 
@@ -120,6 +125,7 @@ cmd open ${{
 # Shell utilities {{{2
 
 map g2m $gamess_to_molden.py "$f"
+map moc molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
 
@@ -190,7 +196,12 @@ map ov $vim ~/dotfiles/vimrc
 
 map gau cd ~/Documents/repos/monash_automation
 map gbk cd /Volumes/GoogleDrive/My\ Drive/backups
-map gca cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs/Analysis
+map gbm3 cd /Volumes/GoogleDrive/My\ Drive/backups/massive
+map gbma cd /Volumes/GoogleDrive/My\ Drive/backups/magnus
+map gbmo cd /Volumes/GoogleDrive/My\ Drive/backups/monarch
+map gbr cd /Volumes/GoogleDrive/My\ Drive/backups/raijin
+map gbs cd /Volumes/GoogleDrive/My\ Drive/backups/stampede
+map gch cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
 map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop

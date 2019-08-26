@@ -77,6 +77,11 @@ cmd plotgauss !{{
   gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 }}
 
+cmd molden2csv ${{
+  (echo 'Wave,Int' && cat "$f" | awk '{OFS=","; print $1,$2}' ) > tmp.out.csv
+  mv tmp.out.csv "$f"
+}}
+
 # Mappings {{{1
 
 # Remove defaults {{{2 
@@ -120,6 +125,7 @@ cmd open ${{
 # Shell utilities {{{2
 
 map g2m $gamess_to_molden.py "$f"
+map moc molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
 
