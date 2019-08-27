@@ -86,6 +86,7 @@ cmd molden2csv ${{
 
 # Remove defaults {{{2 
 
+map c
 map d
 map m
 map p
@@ -94,6 +95,7 @@ map y
 
 # Ranger-like {{{2
 
+map cl clear
 map yy copy
 map dd cut
 map pp paste
@@ -131,6 +133,10 @@ map yc $cat "$f" | pbcopy
 
 # utilities
 cmap <C-c> cmd-escape
+
+map cae $chem_assist -e
+map car $chem_assist -r 
+map cat $chem_assist -t
 
 map yq1 $yes "" | qcp -t1
 map yq2 !qcp -t2

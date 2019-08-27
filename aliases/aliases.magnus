@@ -89,7 +89,7 @@ fi
 
 # local {{{1
 
-if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDrive"* ]]; then
+if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
   alias backups='cd "$filestream"/backups'
@@ -133,6 +133,7 @@ if [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* || $PWD == "/Volumes/GoogleDr
   alias m3='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@m3.massive.org.au'
   alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
   alias stampede='~/dotfiles/sshstam'
+  alias vault='sshpass -f ~/dotfiles/sshfile ssh tmason1@118.138.242.229'
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 

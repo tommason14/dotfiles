@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
+if [[ $USER =~ (tommason|tmas0023) ]]; then
   use() {
     program=$(ls /Applications/ | grep -i "$1" | head -n 1)
     open -a /Applications/"$program" $2
@@ -49,6 +49,10 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
 
   wl(){
     wal -i "$1"
+  }
+
+  mr(){
+    Rscript -e "require(rmarkdown); render(\"$1\")"
   }
 
 fi
