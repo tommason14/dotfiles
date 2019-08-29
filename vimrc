@@ -204,7 +204,8 @@ au BufNewFile,BufRead *.Rmd,*.rmd
     \ set softtabstop=2                              |
     \ set shiftwidth=2                               |
     \ set textwidth=80                               |
-    \ nnoremap <Leader>r :w<CR>:!Rscript -e "require(rmarkdown); render('%')"<CR>
+    \ set spell spelllang=en_gb                      |
+    \ nnoremap <Leader>r :w<CR>:!Rscript -e "require(rmarkdown); render('%')"<CR> |
 
 " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
