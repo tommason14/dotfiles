@@ -13,9 +13,6 @@ Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
 Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
-" Plugin 'vim-pandoc/vim-pandoc'
-" Plugin 'vim-pandoc/vim-rmarkdown'
-" Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
@@ -95,7 +92,7 @@ function! LF()
 endfunction
 command! -bar LF call LF()
 
-" Remapping {{{1
+" Remapping {{{1 
 
 let mapleader = ","
 
@@ -169,11 +166,14 @@ nnoremap <CR> :noh<CR>:<backspace>
 " Reapply the custom spellcheck look
 nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
 
-" Compile pandoc
+
+" Compiling
 au FileType markdown nnoremap <Leader>r :w<CR>:! pandoc --filter pandoc-crossref --filter pandoc-citeproc --filter pandoc-mustache --pdf-engine xelatex % -o %:r.pdf<CR><CR>
 
+au FileType rmd nnoremap <Leader>r :w<CR>:!Rscript -e "require(rmarkdown); render('%')"<CR>
 
-" Python  {{{1
+
+" Python  {{{1 
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4                                  |
@@ -190,6 +190,15 @@ au BufNewFile,BufRead *.py
 
 " R {{{1
 
+au BufNewFile,BufRead *.Rmd,*.rmd
+    \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
+    \ set tabstop=2                                  |
+    \ set expandtab                                  |
+    \ set softtabstop=2                              |
+    \ set shiftwidth=2                               |
+    \ set spell spelllang=en_gb                      |
+    \ set textwidth=80                               |
+
 au BufNewFile,BufRead *.R,*Rprofile
     \ set tabstop=2                                  |
     \ set expandtab                                  |
@@ -198,15 +207,8 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set textwidth=80                               |
     \ set filetype=R                                 |
 
-au BufNewFile,BufRead *.Rmd,*.rmd
-    \ set tabstop=2                                  |
-    \ set expandtab                                  |
-    \ set softtabstop=2                              |
-    \ set shiftwidth=2                               |
-    \ set textwidth=80                               |
-    \ nnoremap <Leader>r :w<CR>:!Rscript -e "require(rmarkdown); render('%')"<CR>
 
-" Jade, HTML, JS, CSS, Sass, SCSS {{{1
+ " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
     \ set tabstop=2                         |
     \ set softtabstop=2                     |
