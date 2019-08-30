@@ -207,7 +207,6 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set textwidth=80                               |
     \ set filetype=R                                 |
 
-
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
     \ set tabstop=2                         |
