@@ -12,7 +12,8 @@ set stick_h_scale = 1.0
 
 # colors 
 
-color grey, (name C*)
+# color grey, (name C*)
+color tv_orange, (name C*)
 color white, (name H*)
 color tv_blue, (name N*)
 color firebrick, (name O*)

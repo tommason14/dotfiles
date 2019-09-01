@@ -27,6 +27,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
     bibtex ${1%.tex}
     xelatex $1
     xelatex $1
+    rm *.bbl *.log *.blg *.out *.lof *.lot *.toc *.aux
     open ${1%.tex}.pdf
   }
 

@@ -97,6 +97,7 @@ map d
 map m
 map p
 map y
+map c
 
 # Ranger-like {{{2
 
@@ -145,6 +146,10 @@ cmap <C-c> cmd-escape
 map yq1 $yes "" | qcp -t1
 map yq2 !qcp -t2
 map yq3 $yes "" | qcp -t3
+
+map cae $chem_assist -e
+map car $chem_assist -r
+map cat $chem_assist -t
 
 # fluorescence
 map yqf $qcp_fluorescence
