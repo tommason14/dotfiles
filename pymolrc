@@ -7,13 +7,14 @@ set stick_radius =  0.15
 set ray_opaque_background = 0
 set ray_shadows = 0
 set spec_power = 1500
-set sphere_scale = 0.3
+set sphere_scale = 0.2
+# set sphere_scale = 0.3
 set stick_h_scale = 1.0
 
 # colors 
 
-# color grey, (name C*)
-color tv_orange, (name C*)
+color grey, (name C*)
+# color tv_orange, (name C*)
 color white, (name H*)
 color tv_blue, (name N*)
 color firebrick, (name O*)
