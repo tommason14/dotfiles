@@ -109,9 +109,10 @@ map o. $open .
 map ov $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
+map oav $open -a /Applications/Avogadro.app/ "$f"
 map oia $open -a /Applications/iA\ Writer.app/ "$f"
 map oiq $open -a /Applications/iQmol.app/ "$f"
-map oav $open -a /Applications/Avogadro.app/ "$f"
+map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f"
 
