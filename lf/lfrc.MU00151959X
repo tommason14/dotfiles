@@ -201,13 +201,14 @@ map ov $vim ~/dotfiles/vimrc
 # Movement {{{2
 
 map gau cd ~/Documents/repos/monash_automation
+map gbch cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
 map gbk cd /Volumes/GoogleDrive/My\ Drive/backups
 map gbm3 cd /Volumes/GoogleDrive/My\ Drive/backups/massive
 map gbma cd /Volumes/GoogleDrive/My\ Drive/backups/magnus
 map gbmo cd /Volumes/GoogleDrive/My\ Drive/backups/monarch
 map gbr cd /Volumes/GoogleDrive/My\ Drive/backups/raijin
 map gbs cd /Volumes/GoogleDrive/My\ Drive/backups/stampede
-map gch cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
+map gch cd ~/Documents/repos/hydrated_ils
 map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
