@@ -1,12 +1,13 @@
 # Locals
 au: ~/Documents/repos/monash_automation
+bch: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
 bk: /Volumes/GoogleDrive/My\ Drive/backups
 bm3: /Volumes/GoogleDrive/My\ Drive/backups/massive
 bma: /Volumes/GoogleDrive/My\ Drive/backups/magnus
 bmo: /Volumes/GoogleDrive/My\ Drive/backups/monarch
 br: /Volumes/GoogleDrive/My\ Drive/backups/raijin
 bs: /Volumes/GoogleDrive/My\ Drive/backups/stampede
-ch: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
+ch: ~/Documents/repos/hydrated_ils
 dc: ~/Documents
 df: ~/dotfiles
 dk: ~/Desktop

@@ -191,13 +191,13 @@ au BufNewFile,BufRead *.py
 " R {{{1
 
 au BufNewFile,BufRead *.Rmd,*.rmd
-    \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
     \ set tabstop=2                                  |
     \ set expandtab                                  |
     \ set softtabstop=2                              |
     \ set shiftwidth=2                               |
     \ set spell spelllang=en_gb                      |
     \ set textwidth=80                               |
+    \ set filetype=rmd                               |
 
 au BufNewFile,BufRead *.R,*Rprofile
     \ set tabstop=2                                  |
