@@ -16,7 +16,8 @@ dp: ~/Documents/repos/dopamine/dopamine_paper
 dw: ~/Downloads
 fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
 fo: /Volumes/GoogleDrive/My\ Drive
-fp: /Volumes/GoogleDrive/My\ Drive/polymers
+fpo: /Volumes/GoogleDrive/My\ Drive/polymers
+fpd: /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 mc: ~/Documents/repos/mccg
 mo: ~/Movies
 pc: ~/Pictures

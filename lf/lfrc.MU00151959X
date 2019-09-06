@@ -217,7 +217,8 @@ map gdp cd ~/Documents/repos/dopamine/dopamine_paper
 map gdw cd ~/Downloads
 map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine
 map gfo cd /Volumes/GoogleDrive/My\ Drive
-map gfp cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gfpd cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
+map gfpo cd /Volumes/GoogleDrive/My\ Drive/polymers
 map gmc cd ~/Documents/repos/mccg
 map gmo cd ~/Movies
 map gpc cd ~/Pictures
