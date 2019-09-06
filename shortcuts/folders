@@ -1,22 +1,24 @@
 # Locals
 au: ~/Documents/repos/monash_automation
+bch: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
 bk: /Volumes/GoogleDrive/My\ Drive/backups
 bm3: /Volumes/GoogleDrive/My\ Drive/backups/massive
 bma: /Volumes/GoogleDrive/My\ Drive/backups/magnus
 bmo: /Volumes/GoogleDrive/My\ Drive/backups/monarch
 br: /Volumes/GoogleDrive/My\ Drive/backups/raijin
 bs: /Volumes/GoogleDrive/My\ Drive/backups/stampede
+ch: ~/Documents/repos/hydrated_ils
 dc: ~/Documents
 df: ~/dotfiles
 dk: ~/Desktop
 dl: ~/Documents/repos/daily_log
 dp: ~/Documents/repos/dopamine/dopamine_paper
 dw: ~/Downloads
-bch: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
 ch: ~/Documents/repos/hydrated_ils
 fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
 fo: /Volumes/GoogleDrive/My\ Drive
-fp: /Volumes/GoogleDrive/My\ Drive/polymers
+fpo: /Volumes/GoogleDrive/My\ Drive/polymers
+fpd: /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 mc: ~/Documents/repos/mccg
 mo: ~/Movies
 pc: ~/Pictures

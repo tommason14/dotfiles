@@ -112,6 +112,7 @@ map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"
 map oia $open -a /Applications/iA\ Writer.app/ "$f"
 map oiq $open -a /Applications/iQmol.app/ "$f"
+map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f"
@@ -209,6 +210,7 @@ map gbmo cd /Volumes/GoogleDrive/My\ Drive/backups/monarch
 map gbr cd /Volumes/GoogleDrive/My\ Drive/backups/raijin
 map gbs cd /Volumes/GoogleDrive/My\ Drive/backups/stampede
 map gch cd ~/Documents/repos/hydrated_ils
+map gch cd ~/Documents/repos/hydrated_ils
 map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
@@ -217,7 +219,8 @@ map gdp cd ~/Documents/repos/dopamine/dopamine_paper
 map gdw cd ~/Downloads
 map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine
 map gfo cd /Volumes/GoogleDrive/My\ Drive
-map gfp cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gfpd cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
+map gfpo cd /Volumes/GoogleDrive/My\ Drive/polymers
 map gmc cd ~/Documents/repos/mccg
 map gmo cd ~/Movies
 map gpc cd ~/Pictures
