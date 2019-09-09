@@ -199,15 +199,7 @@ alias plotmp2="grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 
 alias plotfmo="grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotgauss="grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotgamessfreqs="sed -n '/FREQ(CM\*\*-1)/,/^$/{//!p;}' | awk '{print $2,$NF}' | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-# plotgaussfreqs(){
-#   # need stdin twice
-#   input=$(cat)
-#   grep 'Frequencies' $input
-#   # printf "%s\n" $input
-#   # freqs=$(grep Frequencies | awk '{OFS="\n"; print $3,$4,$5}')
-#   
-# }
-#"tee >(grep Frequencies | awk '{OFS="\n"; print $3,$4,$5}' > fone) >(grep 'IR Inten' | awk '{OFS="\n"; print $4,$5,$6}' > ftwo ) &> /dev/null && paste fone ftwo | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\" && rm fone ftwo"
+alias plotgaussfreqs="tee >(grep Frequencies | awk '{OFS=\"\n\"; print $3,$4,$5}' > fone) >(grep 'IR Inten' | awk '{OFS=\"\n\"; print $4,$5,$6}' > ftwo ) &> /dev/null && paste fone ftwo | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\" && rm fone ftwo"
 
 # sort energies
 alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr -k 2"
@@ -217,6 +209,7 @@ alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
 alias ra='ranger'
 alias fm='lfcd'
+alias rfm='eval $(resize) && lfcd'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
 alias vim='vim -p' # automatically open in tabs

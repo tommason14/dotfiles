@@ -209,6 +209,7 @@ alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
 alias ra='ranger'
 alias fm='lfcd'
+alias rfm='eval $(resize) && lfcd'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
 alias vim='vim -p' # automatically open in tabs
