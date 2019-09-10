@@ -243,6 +243,7 @@ alias ov='vim ~/dotfiles/vimrc'
 
 alias ga='cd ~/monash_automation/'
 alias gc='cd /short/k96/tm3124/hydrated_ils_choline'
+alias gdf='cd ~/dotfiles'
 alias gq='cd /short/k96/apps/qcp'
 alias gs='cd /short/k96/tm3124'
 alias gw='cd /short/k96/apps'
