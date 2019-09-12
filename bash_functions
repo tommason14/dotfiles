@@ -42,7 +42,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   check_references(){
-    grep -i @article{$1 "$filestream"/thesis/library.bib |\
+    grep -i @article{$1 $repos/thesis/refs.bib |\
     sed 's/\@article{//' |\
     sed 's/\,//' |\
     sort
