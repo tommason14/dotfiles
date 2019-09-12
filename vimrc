@@ -188,6 +188,17 @@ au BufNewFile,BufRead *.py
 
 " autocmd BufWritePost *.py call Flake8()
 
+" Perl {{{1
+
+au BufNewFile,BufRead *.pl
+    \ set tabstop=4  |
+    \ set expandtab  |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=100 |
+    \ set filetype=perl |
+    \ nnoremap <Leader>r :!perl %<CR>
+
 " R {{{1
 
 au BufNewFile,BufRead *.Rmd,*.rmd
