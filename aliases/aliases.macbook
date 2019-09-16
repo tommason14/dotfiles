@@ -93,7 +93,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
   alias backups='cd "$filestream"/backups'
-  alias ccat='highlight --out-format=ansi'
+  # alias ccat='highlight --out-format=ansi'
   alias dc='cd ~/Documents'
   alias desktop='cd ~/Desktop'
   alias dk='cd ~/Desktop'
