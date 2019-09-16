@@ -29,7 +29,13 @@ dopamine_theming <- theme_light() +
                  axis.title.y = element_text(margin = margin(c(0,0.4,0,0), unit='cm')),
                  axis.title.x = element_text(margin = margin(c(0.4,0,0,0), unit='cm')))
 
-no_bg <- theme(panel.grid = element_blank())
+no_grid <- theme(panel.grid = element_blank())
+
+no_x <- theme(axis.text.x = element_blank(),
+              axis.ticks.x = element_blank())
+
+no_y <- theme(axis.text.y = element_blank(),
+              axis.ticks.y = element_blank())
 
 bp <- function(series) {
   # Takes in energies in Hartrees, returns
@@ -44,6 +50,22 @@ bp <- function(series) {
     summed = sum(exponent)
     return(exponent / summed)
 }
+
+my_red <- '#B22121'
+my_blue <- '#4545E5'
+
+
+theme_default <- theme_bw() +
+  theme(
+  legend.title = element_blank(),
+  legend.background = element_blank(),
+  legend.key=element_rect(colour=NA, fill =NA),
+  text = element_text(size = 14),
+  axis.title = element_text(size=12),
+  legend.text.align = 0) +
+  no_grid
+
+
 
 cat("\nThis is the last line of .Rprofile.\n")
 
