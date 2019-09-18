@@ -6,6 +6,7 @@
 set shell sh
 set shellopts '-eu'
 set ifs "\n"
+set filesep " "
 
 # Settings {{{1
 
@@ -21,6 +22,10 @@ cmd q quit
 cmd touch $touch $1
 cmd mkdir $mkdir -p $1
 cmd mv $mv "$f" $1
+
+cmd pymol ${{
+  eval "/Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc""
+}}
 
 cmd bulk-rename ${{ # {{{3
 	index=$(mktemp /tmp/lf-bulk-rename-index.XXXXXXXXXX)
@@ -112,6 +117,7 @@ map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"
 map oia $open -a /Applications/iA\ Writer.app/ "$f"
 map oiq $open -a /Applications/iQmol.app/ "$f"
+map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
