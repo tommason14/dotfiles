@@ -228,9 +228,11 @@ map gfo cd /Volumes/GoogleDrive/My\ Drive
 map gfpd cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 map gfpo cd /Volumes/GoogleDrive/My\ Drive/polymers
 map gmc cd ~/Documents/repos/mccg
+map gmm cd ~/Documents/repos/membranes
 map gmo cd ~/Movies
 map gpc cd ~/Pictures
 map gq cd ~/Documents/repos/qcp
+map grm cd ~/Documents/repos/membranes
 map grp cd ~/Documents/repos
 map gsc cd /Volumes/GoogleDrive/My\ Drive/scripts
 map gsu cd ~/Documents/repos/dopamine/dopamine_paper/supp_info

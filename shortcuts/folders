@@ -20,9 +20,11 @@ fo: /Volumes/GoogleDrive/My\ Drive
 fpo: /Volumes/GoogleDrive/My\ Drive/polymers
 fpd: /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 mc: ~/Documents/repos/mccg
+mm: ~/Documents/repos/membranes
 mo: ~/Movies
 pc: ~/Pictures
 q: ~/Documents/repos/qcp
+rm: ~/Documents/repos/membranes
 rp: ~/Documents/repos
 sc: /Volumes/GoogleDrive/My\ Drive/scripts
 su: ~/Documents/repos/dopamine/dopamine_paper/supp_info
