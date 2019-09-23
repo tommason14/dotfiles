@@ -16,7 +16,6 @@ Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
-Plugin 'scrooloose/nerdtree'
 Plugin 'dylanaraps/wal.vim'
 call vundle#end()
 
