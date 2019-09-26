@@ -208,6 +208,7 @@ au BufNewFile,BufRead *.Rmd,*.rmd
     \ set spell spelllang=en_gb                      |
     \ set textwidth=80                               |
     \ set filetype=rmd                               |
+    \ nnoremap <Leader>o :!open %:r.html<CR>         |
 
 au BufNewFile,BufRead *.R,*Rprofile
     \ set tabstop=2                                  |
