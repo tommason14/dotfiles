@@ -212,6 +212,7 @@ map ov $vim ~/dotfiles/vimrc
 # Movement {{{2
 
 map ga cd ~/monash_automation/
+map gba cd /home/tmason1/scratch/Battery_electrolytes
 map gc cd /home/tmason1/scratch/hydrated_ils
 map gd cd /home/tmason1/scratch/dopamine
 map gdf cd ~/dotfiles

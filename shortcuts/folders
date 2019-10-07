@@ -50,6 +50,7 @@ rjn-w: /short/k96/apps
 
 # Monarch
 mon-a: ~/monash_automation/
+mon-ba: /home/tmason1/scratch/Battery_electrolytes
 mon-c: /home/tmason1/scratch/hydrated_ils
 mon-d: /home/tmason1/scratch/dopamine
 mon-df: ~/dotfiles
