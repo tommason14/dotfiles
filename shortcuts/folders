@@ -7,7 +7,8 @@ bma: /Volumes/GoogleDrive/My\ Drive/backups/magnus
 bmo: /Volumes/GoogleDrive/My\ Drive/backups/monarch
 br: /Volumes/GoogleDrive/My\ Drive/backups/raijin
 bs: /Volumes/GoogleDrive/My\ Drive/backups/stampede
-ch: ~/Documents/repos/hydrated_ils
+cha: ~/Documents/repos/hydrated_ils/hydrated_il_analysis
+chp: ~/Documents/repos/hydrated_ils/hydrated_il_paper
 dc: ~/Documents
 df: ~/dotfiles
 dk: ~/Desktop
