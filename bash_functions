@@ -32,11 +32,14 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   clean_tex() {
+    TEX=$(ls | grep tex$)
+    TEX=${TEX%.*}
     args="bbl blg log synctex.gz fls fdb_latexmk out"
     for arg in $args
     do
-      if [ -f $1.$arg ]; then
-        rm $1.$arg
+      if [ -f $TEX.$arg ]; then
+        echo "Removing $TEX.$arg"
+        rm $TEX.$arg
       fi
     done
   }

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+SHORTCUTS="$HOME/dotfiles/shortcuts"
+DOTS="$HOME/dotfiles"
+
 declare -A conversion
 conversion["mgs"]="magnus"
 conversion["rjn"]="raijin"
@@ -38,18 +41,18 @@ make_supercomp_configs(){
   for f in $supercomps
   do
     long_hostname=${conversion[$f]}
-    cp ../lf/lfrc.base.$scheduler ../lf/lfrc.$long_hostname
-    printf "\n# Files {{{2\n\n" >> ../lf/lfrc.$long_hostname
-    cat files | sort | clean | sed -e 's/^/map o/' -e 's/:/ $vim/' >> ../lf/lfrc.$long_hostname
-    printf "\n# Movement {{{2\n\n" >> ../lf/lfrc.$long_hostname
-    cat folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
-    sed -e "s/^$f-/map g/" -e 's/:/ cd/' >> ../lf/lfrc.$long_hostname
-    cp ../aliases/aliases.base ../aliases/aliases.$long_hostname
-    printf "\n# files {{{1\n\n" >> ../aliases/aliases.$long_hostname
-    cat files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
-    printf "\n# movement {{{1\n\n" >> ../aliases/aliases.$long_hostname
-    cat folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
-    sed -e "s/^$f-/alias g/" -e "s/:/='cd/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
+    cp $DOTS/lf/lfrc.base.$scheduler $DOTS/lf/lfrc.$long_hostname
+    printf "\n# Files {{{2\n\n" >> $DOTS/lf/lfrc.$long_hostname
+    cat $SHORTCUTS/files | sort | clean | sed -e 's/^/map o/' -e 's/:/ $vim/' >> $DOTS/lf/lfrc.$long_hostname
+    printf "\n# Movement {{{2\n\n" >> $DOTS/lf/lfrc.$long_hostname
+    cat $SHORTCUTS/folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
+    sed -e "s/^$f-/map g/" -e 's/:/ cd/' >> $DOTS/lf/lfrc.$long_hostname
+    cp $DOTS/aliases/aliases.base $DOTS/aliases/aliases.$long_hostname
+    printf "\n# files {{{1\n\n" >> $DOTS/aliases/aliases.$long_hostname
+    cat $SHORTCUTS/files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> $DOTS/aliases/aliases.$long_hostname
+    printf "\n# movement {{{1\n\n" >> $DOTS/aliases/aliases.$long_hostname
+    cat $SHORTCUTS/folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
+    sed -e "s/^$f-/alias g/" -e "s/:/='cd/" -e "s/$/'/" >> $DOTS/aliases/aliases.$long_hostname
   done
 }
 
@@ -57,24 +60,24 @@ make_local_configs(){
   for f in $@
   do
     long_hostname=${conversion[$f]}
-    cp ../lf/lfrc.base.local ../lf/lfrc.$long_hostname
-    printf "\n# Files {{{2\n\n" >> ../lf/lfrc.$long_hostname
-    cat files | sort | clean  | sed -e 's/^/map o/' -e 's/:/ $vim/' >> ../lf/lfrc.$long_hostname
-    printf "\n# Movement {{{2\n\n" >> ../lf/lfrc.$long_hostname
-    cat folders | sort | clean | sed 's/^/map g/;s/:/ cd/' >> ../lf/lfrc.$long_hostname
-    cp ../aliases/aliases.base ../aliases/aliases.$long_hostname
-    printf "\n# files {{{1\n\n" >> ../aliases/aliases.$long_hostname
-    cat files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
-    printf "\n# movement {{{1\n\n" >> ../aliases/aliases.$long_hostname
-    cat folders | sort | clean | sed -e 's/^/alias g/' -e "s/:/='cd/" -e "s/$/'/" >> ../aliases/aliases.$long_hostname
+    cp $DOTS/lf/lfrc.base.local $DOTS/lf/lfrc.$long_hostname
+    printf "\n# Files {{{2\n\n" >> $DOTS/lf/lfrc.$long_hostname
+    cat $SHORTCUTS/files | sort | clean  | sed -e 's/^/map o/' -e 's/:/ $vim/' >> $DOTS/lf/lfrc.$long_hostname
+    printf "\n# Movement {{{2\n\n" >> $DOTS/lf/lfrc.$long_hostname
+    cat $SHORTCUTS/folders | sort | clean | sed 's/^/map g/;s/:/ cd/' >> $DOTS/lf/lfrc.$long_hostname
+    cp $DOTS/aliases/aliases.base $DOTS/aliases/aliases.$long_hostname
+    printf "\n# files {{{1\n\n" >> $DOTS/aliases/aliases.$long_hostname
+    cat $SHORTCUTS/files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> $DOTS/aliases/aliases.$long_hostname
+    printf "\n# movement {{{1\n\n" >> $DOTS/aliases/aliases.$long_hostname
+    cat $SHORTCUTS/folders | sort | clean | sed -e 's/^/alias g/' -e "s/:/='cd/" -e "s/$/'/" >> $DOTS/aliases/aliases.$long_hostname
 done 
 }
 
 make_bash_aliases(){
   printf "\n# Files {{{2\n\n" > bash_aliases
-  cat files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> bash_aliases
+  cat $SHORTCUTS/files | sort | clean | sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> bash_aliases
   printf "\n# Movement {{{2\n\n" >> bash_aliases
-  cat folders | sort | clean | sed -e 's/^/alias g/' -e "s/:/='cd/" -e "s/$/'/" >> bash_aliases
+  cat $SHORTCUTS/folders | sort | clean | sed -e 's/^/alias g/' -e "s/:/='cd/" -e "s/$/'/" >> bash_aliases
 }
 
 main(){
