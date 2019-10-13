@@ -90,7 +90,7 @@ fi
 # local {{{1
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-
+  shopt -s direxpand
   alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
   alias backups='cd "$filestream"/backups'
   alias ccat='highlight --out-format=ansi'
