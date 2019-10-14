@@ -6,7 +6,8 @@
 set shell sh
 set shellopts '-eu'
 set ifs "\n"
-set filesep " "
+# set filesep " "
+set filesep "\n"
 
 # Settings {{{1
 
