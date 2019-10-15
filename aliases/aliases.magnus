@@ -242,8 +242,8 @@ alias ov='vim ~/dotfiles/vimrc'
 
 # movement {{{1
 
-alias ga='cd ~/monash_automation/'
-alias gc='cd /scratch/pawsey0197/tmason/Hydrated_ILs'
+alias gau='cd ~/monash_automation/'
+alias gch='cd /scratch/pawsey0197/tmason/Hydrated_ILs'
 alias gd='cd /scratch/pawsey0197/tmason/dopamine'
 alias gdf='cd ~/dotfiles'
 alias gq='cd /group/pawsey0197/apps/source/qcp'

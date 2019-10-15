@@ -33,8 +33,8 @@ th: ~/Documents/repos/thesis
 w: ~/Documents/repos/wallpapers
 
 # Magnus
-mgs-a: ~/monash_automation/
-mgs-c: /scratch/pawsey0197/tmason/Hydrated_ILs
+mgs-au: ~/monash_automation/
+mgs-ch: /scratch/pawsey0197/tmason/Hydrated_ILs
 mgs-d: /scratch/pawsey0197/tmason/dopamine
 mgs-df: ~/dotfiles
 mgs-q: /group/pawsey0197/apps/source/qcp
@@ -42,17 +42,17 @@ mgs-s: /scratch/pawsey0197/tmason
 mgs-w: /group/pawsey0197
 
 # Raijin
-rjn-a: ~/monash_automation/
-rjn-c: /short/k96/tm3124/hydrated_ils_choline
+rjn-au: ~/monash_automation/
+rjn-ch: /short/k96/tm3124/hydrated_ils_choline
 rjn-df: ~/dotfiles
 rjn-q: /short/k96/apps/qcp
 rjn-s: /short/k96/tm3124
 rjn-w: /short/k96/apps
 
 # Monarch
-mon-a: ~/monash_automation/
+mon-au: ~/monash_automation/
 mon-ba: /home/tmason1/scratch/Battery_electrolytes
-mon-c: /home/tmason1/scratch/hydrated_ils
+mon-ch: /home/tmason1/scratch/hydrated_ils
 mon-d: /home/tmason1/scratch/dopamine
 mon-df: ~/dotfiles
 mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
@@ -61,8 +61,8 @@ mon-s: /home/tmason1/scratch
 mon-w: /home/tmason1/sn29
 
 # Massive
-mas-a: ~/monash_automation/
-mas-c: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
+mas-au: ~/monash_automation/
+mas-ch: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 mas-d: /home/tmason1/sn29_scratch/tmason1/dopamine
 mas-df: ~/dotfiles
 mas-q: /home/tmason1/sn29/apps/qcp
@@ -70,8 +70,8 @@ mas-s: /home/tmason1/sn29_scratch/tmason1
 mas-w: /home/tmason1/sn29
 
 # Stampede
-stm-a: ~/monash_automation/
-stm-c: /scratch/06233/tmason/hydrated_ils
+stm-au: ~/monash_automation/
+stm-ch: /scratch/06233/tmason/hydrated_ils
 stm-d: /scratch/06233/tmason/dopamine
 stm-df: ~/dotfiles
 stm-p: /scratch/06233/tmason/polymers/polymerisation_rates

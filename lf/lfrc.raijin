@@ -218,8 +218,8 @@ map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 
-map ga cd ~/monash_automation/
-map gc cd /short/k96/tm3124/hydrated_ils_choline
+map gau cd ~/monash_automation/
+map gch cd /short/k96/tm3124/hydrated_ils_choline
 map gdf cd ~/dotfiles
 map gq cd /short/k96/apps/qcp
 map gs cd /short/k96/tm3124
