@@ -22,6 +22,12 @@ cmd touch $touch $1
 cmd mkdir $mkdir -p $1
 cmd mv $mv "$f" $1
 
+cmd chem_assist_ds ${{
+settings_file=$(ls *.py | sort | head -n 1)
+chem_assist -ds $settings_file
+[[ -d __pycache__ ]] && rm -r __pycache__
+}}
+
 cmd bulk-rename ${{ # {{{3
 	index=$(mktemp /tmp/lf-bulk-rename-index.XXXXXXXXXX)
 	if [ -n "${fs}" ]; then
@@ -147,6 +153,7 @@ map yq1 $yes "" | qcp -t1
 map yq2 !qcp -t2
 map yq3 $yes "" | qcp -t3
 
+map cad chem_assist_ds
 map cae $chem_assist -e
 map car $chem_assist -r
 map cat $chem_assist -t
