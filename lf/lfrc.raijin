@@ -12,7 +12,6 @@ set ifs "\n"
 set info size
 set previewer ~/dotfiles/lf/previewer.sh
 
-
 # Custom commands {{{1
 
 # LF commands {{{2
