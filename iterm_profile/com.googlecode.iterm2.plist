@@ -3020,11 +3020,13 @@
 	<integer>524288</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles/iterm_profile</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<true/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{799, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -3067,22 +3069,26 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
-	<key>NSWindow Frame NSColorPanel</key>
-	<string>0 176 224 275 0 0 2560 1417 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1596 374 664 231 0 0 2560 1417 </string>
+	<string>914 257 445 77 0 0 1440 877 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>412 544 616 174 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 790 620 392 0 0 2560 1417 </string>
+	<string>410 383 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 152 606 469 0 0 2560 1417 </string>
+	<string>1683 372 606 469 1440 132 1360 745 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1249 894 796 486 0 0 2560 1417 </string>
+	<string>516 378 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>564 600 730 517 0 0 2560 1417 </string>
+	<string>4 0 712 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>21 118 1250 1274 0 0 2560 1417 </string>
+	<string>332 168 810 572 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1240 450 730 452 0 0 2560 1417 </string>
+	<string>723 454 714 442 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>3 454 714 442 0 0 1440 900 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>239 350 810 527 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3721,7 +3727,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FantasqueSansMono-Regular 18</string>
+			<string>Iosevka-Light 18</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4552,76 +4558,74 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.20190616-nightly</string>
-		<string>3.3.20190908-nightly</string>
-		<string>3.3.20190814-nightly</string>
-		<string>3.3.20190904-nightly</string>
-		<string>3.3.20190810-nightly</string>
-		<string>3.3.20190912-nightly</string>
-		<string>3.3.20190801-nightly</string>
-		<string>3.3.20190829-nightly</string>
-		<string>3.3.20190825-nightly</string>
-		<string>3.3.20190808-nightly</string>
-		<string>3.3.20190813-nightly</string>
-		<string>3.3.20190731-nightly</string>
-		<string>3.3.20190920-nightly</string>
-		<string>3.3.20190911-nightly</string>
-		<string>3.3.20190828-nightly</string>
-		<string>3.3.20190623-nightly</string>
-		<string>3.3.20190722-nightly</string>
-		<string>3.3.20190606-nightly</string>
-		<string>3.3.20190717-nightly</string>
-		<string>3.3.20190816-nightly</string>
-		<string>3.3.20190906-nightly</string>
-		<string>3.3.20190812-nightly</string>
-		<string>3.3.20190820-nightly</string>
-		<string>3.3.20190729-nightly</string>
-		<string>3.3.20190914-nightly</string>
-		<string>3.3.20190626-nightly</string>
-		<string>3.3.20190725-nightly</string>
-		<string>3.3.20190617-nightly</string>
-		<string>3.3.20190610-nightly</string>
-		<string>3.3.20190917-nightly</string>
-		<string>3.3.20190613-nightly</string>
-		<string>3.3.20190905-nightly</string>
-		<string>3.3.20190802-nightly</string>
+		<string>3.3.20190807-nightly</string>
 		<string>3.3.20190818-nightly</string>
+		<string>3.3.20190808-nightly</string>
 		<string>3.3.20190625-nightly</string>
+		<string>3.3.20190919-nightly</string>
+		<string>3.3.20190626-nightly</string>
+		<string>3.3.20190617-nightly</string>
+		<string>3.3.20190905-nightly</string>
+		<string>3.3.20190906-nightly</string>
+		<string>3.3.20190823-nightly</string>
+		<string>3.3.20190724-nightly</string>
+		<string>3.3.20190725-nightly</string>
+		<string>3.3.20190715-nightly</string>
+		<string>3.3.20190604-nightly</string>
+		<string>3.3.20190909-nightly</string>
+		<string>3.3.20191004-nightly</string>
+		<string>3.3.20190717-nightly</string>
+		<string>3.3.20190920-nightly</string>
+		<string>3.3.20190810-nightly</string>
+		<string>3.3.20190729-nightly</string>
+		<string>3.3.20190829-nightly</string>
+		<string>3.3.20190812-nightly</string>
+		<string>3.3.20190802-nightly</string>
+		<string>3.3.20190815-nightly</string>
+		<string>3.3.20190816-nightly</string>
+		<string>3.3.20190806-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
 		<string>Fantasque Sans Mono</string>
-		<string>Monaco</string>
-		<string>Operator Mono</string>
+		<string>Iosevka</string>
+		<string>SF Mono</string>
+		<string>Roboto Mono</string>
 	</array>
 	<key>NoSyncFrame_SessionsPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{269, 626}</string>
+		<string>{269, 623}</string>
 	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {2560, 1440}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{271, 1267}</string>
+		<string>{796, 671}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>88EA2A9D-2A2C-430E-BB6A-0AE0BA7A8E82</string>
+	<string>D850C0D1-3E5B-4C7F-BC18-3BE862E2677A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>148</integer>
-	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
+	<integer>214</integer>
+	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
-	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux_selection</key>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncNewTabFromTmuxOpensTmux</key>
+	<true/>
+	<key>NoSyncNewTabFromTmuxOpensTmux_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>578620613.43045199</real>
+	<real>578581200.99776602</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -5016,14 +5020,6 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentTab.tmuxWindowName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
 				<string>currentTab.currentSession.terminalWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5033,14 +5029,6 @@
 				<true/>
 				<key>name</key>
 				<string>currentTab.currentSession.terminalIconName</string>
-				<key>nonterminalContext</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<true/>
-				<key>name</key>
-				<string>currentTab.currentSession.tmuxPaneTitle</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -5227,6 +5215,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentSession.jobPid</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>tmuxWindowName</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -5388,12 +5384,14 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
+	<true/>
 	<key>NoSyncSearchHistory2</key>
 	<array>
-		<string>charge</string>
+		<string>berl</string>
 	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>566443122.18532395</real>
+	<real>560716082.15643001</real>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
@@ -5432,7 +5430,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/tmas0023/dotfiles/iterm_profile</string>
+	<string>/Users/tommason/dotfiles/iterm_profile</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -5444,11 +5442,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=58</string>
+	<string>https://iterm2.com/appcasts/nightly_new.xml?shard=17</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-10T23:16:48Z</date>
+	<date>2019-10-13T22:56:53Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5472,6 +5470,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20190920-nightly</string>
+	<string>3.3.20191004-nightly</string>
 </dict>
 </plist>
