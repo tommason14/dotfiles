@@ -153,7 +153,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias rprofile='vim ~/dotfiles/Rprofile'
   alias pymolrc='vim ~/dotfiles/pymolrc'
   alias update_repos='cd $repos && sh update_repos.sh && cd -'
-  alias ur='cd $repos && sh update_repos.sh && cd -'
+  alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
   alias wr='$repos/wallpapers/random_wallpaper.sh'
 
 fi
