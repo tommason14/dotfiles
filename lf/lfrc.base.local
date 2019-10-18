@@ -152,7 +152,7 @@ map yq3 $yes "" | qcp -t3
 map cad chem_assist_ds
 map cae $chem_assist -e
 map car $chem_assist -r
-map cat $chem_assist -t
+map cat :chem_assist -t -m 1
 
 # fluorescence
 map yqf $qcp_fluorescence
