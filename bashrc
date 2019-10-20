@@ -10,3 +10,5 @@ fi
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   cat ~/.cache/wal/sequences # load on new terminal sessions
 fi
+
+export EDITOR=vim

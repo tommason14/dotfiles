@@ -12,8 +12,6 @@ else
   export PS1="${CYAN}${DATE} \h \W \$ ${NO_COLOUR}"
 fi
 
-EDITOR=vim
-
 # uni mac or macbook {{{1
 
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
