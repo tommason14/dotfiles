@@ -6,7 +6,7 @@ case "$1" in
     *.rar) unrar l "$1";;
     *.7z) 7z l "$1";;
     *.pdf) pdftotext "$1" -;;
-    *lf*|*rc*) highlight -O ansi "$1" --syntax sh;;
+    *lf*|*rc*|*.sh|*.inp|*.ok|*.job) highlight -O ansi "$1" --syntax sh;;
     *.xyz) cat "$1";;
     *) highlight -O ansi "$1" || cat "$1";;
 esac

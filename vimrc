@@ -330,6 +330,14 @@ au BufNewFile,BufRead *.cpp
 " Compile when writing to a file
 au BufWritePost *.cpp !g++ --std=c++17  % -o %:r
 
+" Chem files {{{1
+au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set filetype=sh                       | 
+
 " Visuals {{{1
 
 set number

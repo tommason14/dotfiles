@@ -196,7 +196,7 @@ map A rename
 
 # PBS {{{2
 
-map sb $qsub %s
+map sb $qsub $f
 map squ !qstat -u tm3124
 map sqo !nqstat
 map sql !nqstat
