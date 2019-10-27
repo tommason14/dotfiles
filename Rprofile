@@ -91,9 +91,10 @@ smooth_with_gaussians <- function(df, sigma, step){
   min_transition_energy = min(df$`Oscillator Strength (eV)`) - (5 * sigma)
   max_transition_energy = max(df$`Oscillator Strength (eV)`) + (5 * sigma)
 
-  # create new wavelength data
+  # create new energy scale based on transition energies
+  # (makes sense; no transition = no absorbance = no peak)
   new_energies = seq(min_transition_energy, max_transition_energy, step)
-  # convert to wavelengths
+  # convert to wavelengths (eV -> nm)
   new_waves = (h * c * 1e9 / (new_energies * e))
   
   # take number of x values, set to 0, then move along the 
@@ -102,8 +103,7 @@ smooth_with_gaussians <- function(df, sigma, step){
   
   new_ints = rep(0, length(new_waves))
   
-  for(i in 1:length(df$`Intensity (au)`)){ #want the index
-    # print(df$`Intensity (au)`[i])
+  for(i in 1:length(df$`Intensity (au)`)){ # want the index
     new_ints = new_ints + df$`Intensity (au)`[i] * normpdf(new_energies, 
                                                          df$`Oscillator Strength (eV)`[i],
                                                          sigma)
@@ -127,10 +127,10 @@ add_gaussians <- function(original_df, sigma, step) {
 plot_gaussians <- function(df){
   return(
     ggplot(df) +
-    theme_bw() +
+    theme_default +
     geom_line(aes(new_waves, new_ints), color='red') +
     geom_segment(aes(x = raw_waves, xend = raw_waves,
-                y = 0, yend = raw_ints), color = 'blue') +
+                     y = 0, yend = raw_ints), color = 'blue') +
     labs(x = 'Wavelength (nm)', y = 'Intensity (au)') +
     facet_wrap(.~Config)
   )
