@@ -221,6 +221,7 @@ map gau cd ~/monash_automation/
 map gch cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 map gd cd /home/tmason1/sn29_scratch/tmason1/dopamine
 map gdf cd ~/dotfiles
+map gp cd /home/tmason1/sn29_scratch/tmason1/polymers
 map gq cd /home/tmason1/sn29/apps/qcp
 map gs cd /home/tmason1/sn29_scratch/tmason1
 map gw cd /home/tmason1/sn29

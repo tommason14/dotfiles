@@ -119,7 +119,6 @@ add_gaussians <- function(original_df, sigma, step) {
   )
   # extend original df to make it the same length as the new one
   rows_to_add <-  nrow(ret) - nrow(original_df)
-  # ret$Config <- c(original_df$Config, rep(original_df$Config[1], rows_to_add))
   ret$raw_waves <- c(original_df$`Wavelength (nm)`, rep(NA, rows_to_add))
   ret$raw_ints <- c(original_df$`Intensity (au)`, rep(NA, rows_to_add))
   return(ret)

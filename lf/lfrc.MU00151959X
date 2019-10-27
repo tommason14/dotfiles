@@ -227,6 +227,7 @@ map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
 map gdl cd ~/Documents/repos/daily_log
+map gdp cd ~/Documents/repos/dopamine/dopamine_analysis
 map gdp cd ~/Documents/repos/dopamine/dopamine_paper
 map gdw cd ~/Downloads
 map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine
