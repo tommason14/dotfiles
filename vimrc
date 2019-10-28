@@ -111,10 +111,6 @@ nnoremap <Space> za
 " Re-wrap paragraph
 nnoremap <silent> gq gqip
 
-" Format whole document but skip yaml
-" Currently ruins table formatting...
-" nnoremap <silent> fw gg/---<CR>jVGgq 
-
 " Easy save
 nnoremap <leader>w :w<CR>
 
@@ -153,7 +149,9 @@ nnoremap sv :so $MYVIMRC<CR>
 " Format csv files in buffer
 nnoremap <Leader>r :Tabularize /,<CR>gg
 
-nnoremap <Leader>x ggVG:s/\s//g<CR>gg
+" Remove spaces.
+" For first line, remove double space ,\s or \s, but not between words
+nnoremap <Leader>x ggV:s/\s\s//g<CR>V:s/,\s/,/g<CR>V:s/\s,/,/g<CR>jVG:s/\s//g<CR>gg
 
 " Toggle comments - <Command>-/ mapped to ,c in iterm2
 noremap <silent> <Leader>c :TComment<CR>

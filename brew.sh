@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # bash utils
+brew install open-babel
 brew install entr
 brew install gnuplot
 brew install imagemagick
