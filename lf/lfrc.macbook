@@ -223,11 +223,11 @@ map gbs cd /Volumes/GoogleDrive/My\ Drive/backups/stampede
 map gcha cd ~/Documents/repos/hydrated_ils/hydrated_il_analysis
 map gchp cd ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
 map gcs cd ~/Documents/repos/chem_scripts
+map gda cd ~/Documents/repos/dopamine/dopamine_analysis
 map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
 map gdl cd ~/Documents/repos/daily_log
-map gdp cd ~/Documents/repos/dopamine/dopamine_analysis
 map gdp cd ~/Documents/repos/dopamine/dopamine_paper
 map gdw cd ~/Downloads
 map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine

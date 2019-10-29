@@ -77,12 +77,6 @@ normpdf <- function(x, mu, sigma){
 }
 
 smooth_with_gaussians <- function(df, sigma, step){
-  if (missing(sigma)) {
-    sigma=0.05
-  }
-  if (missing(step)) {
-    step=0.01
-  }
 
   h = 6.62607004e-34
   c = 299792458
@@ -103,7 +97,7 @@ smooth_with_gaussians <- function(df, sigma, step){
   
   new_ints = rep(0, length(new_waves))
   
-  for(i in 1:length(df$`Intensity (au)`)){ # want the index
+  for(i in 1:length(df$`Intensity (au)`)){ # want the index for osc. strength
     new_ints = new_ints + df$`Intensity (au)`[i] * normpdf(new_energies, 
                                                          df$`Oscillator Strength (eV)`[i],
                                                          sigma)
@@ -112,16 +106,31 @@ smooth_with_gaussians <- function(df, sigma, step){
 }
 
 add_gaussians <- function(original_df, sigma, step) {
-  new <- smooth_with_gaussians(original_df, sigma, step)
-  ret <- data.frame(
-    new_waves=new$new_waves,
-    new_ints=new$new_ints
-  )
-  # extend original df to make it the same length as the new one
-  rows_to_add <-  nrow(ret) - nrow(original_df)
-  ret$raw_waves <- c(original_df$`Wavelength (nm)`, rep(NA, rows_to_add))
-  ret$raw_ints <- c(original_df$`Intensity (au)`, rep(NA, rows_to_add))
-  return(ret)
+
+  if (missing(sigma)) {
+    sigma=0.05
+  }
+  if (missing(step)) {
+    step=0.01
+  }
+
+  smooth_groupwise <- function(original_df, sigma, step) {
+    new <- smooth_with_gaussians(original_df, sigma, step)
+    ret <- data.frame(
+      new_waves=new$new_waves,
+      new_ints=new$new_ints
+    )
+    # extend original df to make it the same length as the new one
+    rows_to_add <-  nrow(ret) - nrow(original_df)
+    ret$Config <- c(original_df$Config, rep(original_df$Config[1], rows_to_add))
+    ret$raw_waves <- c(original_df$`Wavelength (nm)`, rep(NA, rows_to_add))
+    ret$raw_ints <- c(original_df$`Intensity (au)`, rep(NA, rows_to_add))
+    return(ret)
+  }
+  # now smooth_groupwise acts on each group, with the do command
+  # instead of df %>% group_by(Config) %>% do(add_gaussians(.)) ...
+  # and the user call is just df %>% add_gaussians() ...
+  return(original_df %>% group_by(Config) %>% do(smooth_groupwise(., sigma, step)) %>% ungroup())
 }
 
 plot_gaussians <- function(df){
@@ -136,7 +145,7 @@ plot_gaussians <- function(df){
 
 # Call it:
 # df <- read_csv('uv-vis.csv')
-# df %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)
+# df %>% group_by(Config) %>% add_gaussians() %>% plot_gaussians() + facet_wrap(.~Config)
 
 cat("\nThis is the last line of .Rprofile.\n")
 
