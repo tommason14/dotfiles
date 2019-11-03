@@ -357,5 +357,3 @@ let g:remoteSession = ($SSH_CLIENT != "")
 if g:remoteSession
   set bg=dark
 endif
-
-nnoremap <Leader>d :%norm WWdW<CR>
