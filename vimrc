@@ -139,6 +139,14 @@ vnoremap <Leader>n y`]o<Esc>p`[v`]:!python3<CR>
 " Run on entire buffer
 nnoremap <Leader>p :norm ggVG$,p<CR>
 
+" Run R in vim
+
+" Run on selected text
+vnoremap <Leader>E y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!Rscript <CR>
+
+" Run on entire buffer
+nnoremap <Leader>R :norm ggVG$,E<CR>
+
 " Set filetype to allow above command whenever
 nnoremap <Leader>f :set ft=python<CR>i
 

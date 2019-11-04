@@ -1,6 +1,7 @@
 library(reticulate)
 use_python(Sys.which('python3'), required = TRUE)
 library(tidyverse)
+library(magrittr)
 library(readxl)
 library(latex2exp) 
 dfilter <- dplyr::filter # namespace issues- base stats overrides dplyr filter 
@@ -49,6 +50,21 @@ bp <- function(series) {
     exponent = exp((-1 * diffs * 1000) / (R * T))
     summed = sum(exponent)
     return(exponent / summed)
+}
+
+# formatting strings for ggplot graphs
+
+formatted <- function(...){
+  vals <- c(...)
+  replacements <- c()
+  for (val in vals) {
+    val = str_replace_all(val, '_(?=\\{?\\d)', '$_') # subscripts followed by digit, _4_ -> $_4_
+    val = str_replace_all(val, '(?<=\\d\\}?)_', '$') # subscripts preceeded by digit, $_4_ -> $_4$
+    val = str_replace_all(val, '\\[', '\\\\[')
+    val = str_replace_all(val, '\\]', '\\\\]')
+    replacements <- c(replacements, parse(text=TeX(val))) # add to vector
+  }
+  return(replacements)
 }
 
 my_red <- '#B22121'
