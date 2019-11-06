@@ -192,6 +192,7 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
 
 " autocmd BufWritePost *.py call Flake8()
+au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Perl {{{1
 
