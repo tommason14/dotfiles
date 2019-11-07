@@ -223,6 +223,7 @@ export m3='tmason1@m3.massive.org.au'
 export monarch='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
+export vault="tmason1@118.138.242.229"
 
 # files {{{1
 
