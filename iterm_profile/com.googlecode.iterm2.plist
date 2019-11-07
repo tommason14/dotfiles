@@ -3080,9 +3080,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>516 378 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 0 712 900 0 0 1440 900 </string>
+	<string>4 9 712 433 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>332 168 810 572 0 0 1440 900 </string>
+	<string>4 0 712 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>723 454 714 442 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -3095,7 +3095,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<true/>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -4564,11 +4564,13 @@
 		<string>3.3.20190625-nightly</string>
 		<string>3.3.20190919-nightly</string>
 		<string>3.3.20190626-nightly</string>
+		<string>3.3.20191023-nightly</string>
 		<string>3.3.20190617-nightly</string>
 		<string>3.3.20190905-nightly</string>
 		<string>3.3.20190906-nightly</string>
 		<string>3.3.20190823-nightly</string>
 		<string>3.3.20190724-nightly</string>
+		<string>3.3.20191013-nightly</string>
 		<string>3.3.20190725-nightly</string>
 		<string>3.3.20190715-nightly</string>
 		<string>3.3.20190604-nightly</string>
@@ -4579,6 +4581,7 @@
 		<string>3.3.20190810-nightly</string>
 		<string>3.3.20190729-nightly</string>
 		<string>3.3.20190829-nightly</string>
+		<string>3.3.20191016-nightly</string>
 		<string>3.3.20190812-nightly</string>
 		<string>3.3.20190802-nightly</string>
 		<string>3.3.20190815-nightly</string>
@@ -4613,7 +4616,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D850C0D1-3E5B-4C7F-BC18-3BE862E2677A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>214</integer>
+	<integer>225</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -5446,7 +5449,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-13T22:56:53Z</date>
+	<date>2019-11-03T11:33:14Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5470,6 +5473,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20191004-nightly</string>
+	<string>3.3.20191023-nightly</string>
 </dict>
 </plist>
