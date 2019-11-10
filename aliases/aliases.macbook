@@ -191,6 +191,17 @@ alias ...='cd ../../'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# chem assist
+
+chem_assist_ds() {
+settings_file=$(ls *.py | sort | head -n 1)
+chem_assist -ds $settings_file
+[[ -d __pycache__ ]] && rm -r __pycache__
+}
+
+alias cad='chem_assist_ds'
+alias cae='chem_assist -e'
+alias car='chem_assist -r'
 
 # plots everywhere
 alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
