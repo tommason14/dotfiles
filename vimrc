@@ -314,6 +314,7 @@ au BufNewFile,BufRead *.tex
     \ set filetype=tex                      |
     \ set syntax=latex-rewrite              |
     \ set spell spelllang=en_gb             |
+    \ nnoremap <Leader>r :!xelatex % <CR>   |
 
  " Bash {{{1
 
