@@ -3080,9 +3080,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>516 378 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>725 0 712 900 0 0 1440 900 </string>
+	<string>4 0 892 900 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4 0 712 900 0 0 1440 900 </string>
+	<string>4 299 730 601 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>723 454 714 442 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -4617,7 +4617,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D850C0D1-3E5B-4C7F-BC18-3BE862E2677A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>233</integer>
+	<integer>235</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -5450,13 +5450,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-16T03:17:36Z</date>
+	<date>2019-11-17T11:23:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
