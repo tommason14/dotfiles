@@ -171,7 +171,6 @@ nnoremap <CR> :noh<CR>:<backspace>
 " Reapply the custom spellcheck look
 nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
 
-
 " Compiling
 au FileType markdown nnoremap <Leader>r :w<CR>:! pandoc --filter pandoc-crossref --filter pandoc-citeproc --filter pandoc-mustache --pdf-engine xelatex % -o %:r.pdf<CR><CR>
 

@@ -59,6 +59,17 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
     Rscript -e "require(rmarkdown); render(\"$1\")"
   }
 
+  transparent(){
+    fuzz_amount=${2-20}
+    output="${1%.*}_transparent.${1##*.}"
+    convert $1 -transparent white -fuzz $fuzz_amount% $output
+  }
+
+  vertical(){
+    convert ${@:1:$#-1} -gravity center -append ${@: -1} 
+    # ${@: -1} only works with arguments
+  }
+
 fi
 
 nohup_bg() {
