@@ -17,7 +17,7 @@ fi
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
-    export PATH=$repos/chem_scripts:$repos/scripts:"$filestream"/bin:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
+    export PATH=$repos/chem_scripts:$repos/scripts:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
     export PYTHONPATH=$repos/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation="cd $repos/monash_automation"
@@ -126,6 +126,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
   # monash
+  alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi.nci.org.au'
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh -Y tmason@magnus.pawsey.org.au'
   alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y -t tmas0011@msgln6.its.monash.edu.au "cd /nfs/shares/pas-grp/TOM; bash"'
@@ -227,6 +228,7 @@ alias resize_vim='eval $(resize)' # if vim shows up small
 
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
+export gadi='tm3124@gadi.nci.org.au'
 export raijin='tm3124@raijin.nci.org.au'
 export magnus='tmason@magnus.pawsey.org.au'
 export gaia='tmas0011@msgln6.its.monash.edu.au'
