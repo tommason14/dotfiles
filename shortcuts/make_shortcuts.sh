@@ -6,6 +6,7 @@ DOTS="$HOME/dotfiles"
 declare -A conversion
 conversion["mgs"]="magnus"
 conversion["rjn"]="raijin"
+conversion["gadi"]="gadi"
 conversion["mon"]="monarch"
 conversion["mas"]="m3"
 conversion["stm"]="stampede"
@@ -23,6 +24,7 @@ delete_blanks(){
 rm_supercomps(){
   sed '/^mgs/d' |\
   sed '/^rjn/d' |\
+  sed '/^gadi/d' |\
   sed '/^mas/d' |\
   sed '/^mon/d' |\
   sed '/^stm/d'
@@ -83,7 +85,7 @@ make_bash_aliases(){
 main(){
   locals="uni home"
   slurm="mgs mas mon stm"
-  pbs="rjn"
+  pbs="rjn gadi"
   make_local_configs ${locals[@]}
   make_supercomp_configs 'slurm' ${slurm[@]}
   make_supercomp_configs 'pbs' ${pbs[@]}
