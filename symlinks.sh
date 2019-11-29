@@ -45,7 +45,7 @@ if [[ $USER == "tommason" ]]; then
   make_links "macbook"
 fi
 
-configs="raijin magnus m3 monarch stampede MU00151959X"
+configs="gadi raijin magnus m3 monarch stampede MU00151959X"
 
 for config in ${configs[@]}; do
   if [[ $HOSTNAME == *"$config"* ]]; then
