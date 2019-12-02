@@ -10,10 +10,11 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
 Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
 Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
+" Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
-Plugin 'matze/vim-tex-fold'
+" Plugin 'matze/vim-tex-fold' 
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
