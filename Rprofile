@@ -67,6 +67,8 @@ formatted <- function(...){
   return(replacements)
 }
 
+# theming
+
 my_red <- '#B22121'
 my_blue <- '#4545E5'
 
@@ -153,6 +155,54 @@ plot_gaussians <- function(df){
 # Call it:
 # df <- read_csv('uv-vis.csv')
 # df %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)
+
+
+# IR spectra
+# Adding lorentzians
+
+lorentz <- function(rel_offset) {
+  return(1.0 / (1.0 + rel_offset * rel_offset))
+}
+
+gauss <- function(rel_offset) {
+  nln2 = -log(2.0)
+  return(exp(nln2 * rel_offset * rel_offset))
+}
+
+
+fit_lorentzians <- function(old_spectra, xvals, half_width){
+  ints = rep(0, length(xvals))
+  # need to reference intensity and frequencies at same time; use numerical index
+  for (i in 1:length(xvals)) { 
+    intensity = 0.0
+    # Fit a lorentzian to every peak, and sum up intensity at each new wavelength,
+    # with the offset from the original wavelength describing the new intensity
+    for (j in 1:length(old_spectra$Freq)) {
+      rel_offset = (xvals[i] - old_spectra$Freq[j]) / half_width
+      intensity = intensity + old_spectra$Intensity[j] * lorentz(rel_offset) 
+    }
+    ints[i] = intensity
+  }
+  return(ints)
+}
+
+ir_with_lorentzians <- function(orig_df, half_width, npts){
+  
+  if (missing(npts)) {
+    npts=4000
+  }
+  
+  if (missing(half_width)) {
+    half_width=20
+  }
+  
+  new_wavenumbers <- seq(0, npts, 1)
+  new_df <- data.frame(
+    Wave = new_wavenumbers,
+    Int = fit_lorentzians(orig_df, new_wavenumbers, half_width)
+  )
+  return(new_df)
+}
 
 cat("\nThis is the last line of .Rprofile.\n")
 
