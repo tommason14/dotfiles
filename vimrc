@@ -7,14 +7,11 @@ Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
 Plugin 'nvie/vim-flake8'                 " Python formatting
 Plugin 'tell-k/vim-autopep8'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'garbas/vim-snipmate'             " Tab for snippets, UltiSnipsExpandTrigger
-Plugin 'MarcWeber/vim-addon-mw-utils'    " Snipmate dependency
-Plugin 'tomtom/tlib_vim'                 " Snipmate dependency
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
-" Plugin 'matze/vim-tex-fold' 
+Plugin 'matze/vim-tex-fold' 
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
@@ -58,6 +55,7 @@ set incsearch  " search as you type
 
 " Ultisnips {{{1
 
+let g:UltiSnipsUsePythonVersion = 3"
 let g:snips_author="Tom Mason"
 let g:snips_email="tommason14@gmail.com"
 let g:snips_github="https:github.com/tommason14"
@@ -66,6 +64,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+" let g:snips_trigger_key = '<tab>'
+" let g:snips_trigger_key_backwards = '<s-tab>'
 
 autocmd Filetype tex nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/tex.snippets<CR>
 autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/python.snippets<CR>
