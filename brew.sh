@@ -1,20 +1,24 @@
 #!/usr/bin/env sh
 
 # bash utils
-brew install open-babel
 brew install entr
+brew install git
 brew install gnuplot
 brew install imagemagick
 brew install lf
+brew install open-babel
 brew install pandoc
 brew install pandoc-citeproc
 brew install pandoc-crossref
 brew install python
 brew install r
 brew install ranger
-brew install tree
 brew install tmux
+brew install tree
+brew install vim # should find +python3 with vim --version
 
+# Avoid Ultisnips issues
+git config --global core.editor "/usr/local/bin/vim"
 
 # gui programs
 brew cask install google-drive-file-stream
