@@ -4,12 +4,13 @@
 CYAN='\[\e[0;36m\]'
 NO_COLOUR='\[\e[0m\]'
 DATE=$(date '+%d/%m')
-if [[ $HOSTNAME == "MU00151959X" ]]; then
+if [[ $USER =~ (tommason|tmas0023) ]]; then
+# if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}${DATE} Local \W \$ ${NO_COLOUR}"
-elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1="${CYAN}${DATE} Stampede \W \$ ${NO_COLOUR}"
-else
-  export PS1="${CYAN}${DATE} \h \W \$ ${NO_COLOUR}"
+# elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
+#   export PS1="${CYAN}${DATE} Stampede \W \$ ${NO_COLOUR}"
+# else
+#   export PS1="${CYAN}${DATE} \h \W \$ ${NO_COLOUR}"
 fi
 
 # uni mac or macbook {{{1
