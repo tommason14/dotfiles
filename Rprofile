@@ -38,6 +38,11 @@ no_x <- theme(axis.text.x = element_blank(),
 no_y <- theme(axis.text.y = element_blank(),
               axis.ticks.y = element_blank())
 
+y_scale <- function(y){
+  c(0, floor(max(y)) / 2, floor(max(y)))
+}
+
+
 bp <- function(series) {
   # Takes in energies in Hartrees, returns
   # probabilities according to a Boltzmann distribution,
