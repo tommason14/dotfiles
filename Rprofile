@@ -91,7 +91,7 @@ theme_default <- theme_bw() +
 
 # UV-Vis/Fluorescence
 # Note that functions are expecting output from chem_assist/qcp, in the form
-# Config,Root,Iteration,Oscillator Strength (eV),Wavelength (nm),Intensity (au)
+# Config,Root,Iteration,Transition Energies (eV),Wavelength (nm),Intensity (au)
 
 normpdf <- function(x, mu, sigma){
     u = (x-mu)/abs(sigma)
@@ -111,8 +111,8 @@ smooth_with_gaussians <- function(df, sigma, step){
   c = 299792458
   e = 1.6021766208e-19
   
-  min_transition_energy = min(df$`Oscillator Strength (eV)`) - (5 * sigma)
-  max_transition_energy = max(df$`Oscillator Strength (eV)`) + (5 * sigma)
+  min_transition_energy = min(df$`Transition Energies (eV)`) - (5 * sigma)
+  max_transition_energy = max(df$`Transition Energies (eV)`) + (5 * sigma)
 
   # create new energy scale based on transition energies
   # (makes sense; no transition = no absorbance = no peak)
@@ -128,7 +128,7 @@ smooth_with_gaussians <- function(df, sigma, step){
   
   for(i in 1:length(df$`Intensity (au)`)){ # want the index
     new_ints = new_ints + df$`Intensity (au)`[i] * normpdf(new_energies, 
-                                                         df$`Oscillator Strength (eV)`[i],
+                                                         df$`Transition Energies (eV)`[i],
                                                          sigma)
   }
   return(list(new_waves = new_waves, new_ints=new_ints))

@@ -254,3 +254,10 @@ open Rplots.pdf
 sleep 3 
 rm Rplots.pdf
 }
+
+plot_uv() {
+Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)" &> /dev/null
+open Rplots.pdf
+sleep 3 
+rm Rplots.pdf
+}

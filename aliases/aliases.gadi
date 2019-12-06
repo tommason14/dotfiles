@@ -7,10 +7,10 @@ DATE=$(date '+%d/%m')
 if [[ $USER =~ (tommason|tmas0023) ]]; then
 # if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}${DATE} Local \W \$ ${NO_COLOUR}"
-# elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-#   export PS1="${CYAN}${DATE} Stampede \W \$ ${NO_COLOUR}"
-# else
-#   export PS1="${CYAN}${DATE} \h \W \$ ${NO_COLOUR}"
+elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
+  export PS1="${DATE} Stampede \W \$ "
+else
+  export PS1="${DATE} \h \W \$ "
 fi
 
 # uni mac or macbook {{{1
@@ -179,6 +179,7 @@ alias vimrc='vim ~/dotfiles/vimrc'
 
 # aliases for default commands
 alias c='clear'
+alias i='less'
 alias l='ls'
 alias ld='ls'
 alias ll='ls -lh'
