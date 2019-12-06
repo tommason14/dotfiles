@@ -8,9 +8,9 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 # if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}${DATE} Local \W \$ ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-  export PS1="${DATE} Stampede \W \$ "
+  export PS1="[${DATE} Stampede \W \$] "
 else
-  export PS1="${DATE} \h \W \$ "
+  export PS1="[${DATE} \h \W \$] "
 fi
 
 # uni mac or macbook {{{1
