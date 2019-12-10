@@ -106,6 +106,11 @@ inoremap jj <Esc>
 " Sort selected text alphabetically
 vnoremap <Leader>s :sort<CR>
 
+" Copy/paste to/from clipboard
+
+nnoremap <Leader>y "*y
+nnoremap <Leader>b "*p
+
 " Toggle folds
 nnoremap <Space> za
 
@@ -367,3 +372,7 @@ let g:remoteSession = ($SSH_CLIENT != "")
 if g:remoteSession
   set bg=dark
 endif
+
+" set list listchars=eol:$
+" hi NonText ctermfg=DarkGrey
+
