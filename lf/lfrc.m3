@@ -225,4 +225,5 @@ map gdf cd ~/dotfiles
 map gp cd /home/tmason1/sn29_scratch/tmason1/polymers
 map gq cd /home/tmason1/sn29/apps/qcp
 map gs cd /home/tmason1/sn29_scratch/tmason1
+map gt cd /home/tmason1/sn29_scratch/tmason1/tests
 map gw cd /home/tmason1/sn29

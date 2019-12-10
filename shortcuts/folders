@@ -65,6 +65,7 @@ mon-df: ~/dotfiles
 mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
 mon-q: /home/tmason1/sn29/apps/qcp
 mon-s: /home/tmason1/scratch
+mon-t: /home/tmason1/scratch/tests
 mon-w: /home/tmason1/sn29
 
 # Massive
@@ -73,6 +74,7 @@ mas-ch: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 mas-d: /home/tmason1/sn29_scratch/tmason1/dopamine
 mas-df: ~/dotfiles
 mas-p: /home/tmason1/sn29_scratch/tmason1/polymers
+mas-t: /home/tmason1/sn29_scratch/tmason1/tests
 mas-q: /home/tmason1/sn29/apps/qcp
 mas-s: /home/tmason1/sn29_scratch/tmason1
 mas-w: /home/tmason1/sn29
