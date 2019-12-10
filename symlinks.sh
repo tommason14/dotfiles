@@ -5,12 +5,18 @@ dir=~/dotfiles
 vscode_md=~/Library/Application\ Support/Code/User/snippets/markdown.json
 ipython=~/.ipython/profile_default/startup/start.ipy
 jupyter_css=~/.jupyter/custom/custom.css
+yabairc=~/.config/yabai/yabairc
+skhdrc=~/.config/skhd/skhdrc
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  files="bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile"    
+  files="bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
+amethyst"    
   [[ -L $vscode_md ]] || (echo "Linking markdown.json" && ln -s $dir/vscode/markdown.json $vscode_md)
   [[ -L $ipython ]] || (echo "Linking ipythonrc" && ln -s $dir/jupyter/ipythonrc $ipython)
-  [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s $dir/jupyter/custom.css)
+  [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s
+$dir/jupyter/custom.css $jupyter_css)
+  [[ -L $yabairc ]] || (echo "Linking yabairc" && ln -s $dir/yabairc $yabairc)
+  [[ -L $skhdrc ]] || (echo "Linking skhdrc" && ln -s $dir/skhdrc $skhdrc)
 else # remotes
   files="bash_functions vim vimrc"    
 fi
