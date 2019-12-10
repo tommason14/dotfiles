@@ -179,7 +179,7 @@ alias vimrc='vim ~/dotfiles/vimrc'
 
 # aliases for default commands
 alias c='clear'
-alias i='less'
+alias i='less -i'
 alias l='ls'
 alias ld='ls'
 alias ll='ls -lh'

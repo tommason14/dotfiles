@@ -182,17 +182,18 @@ fit_lorentzians <- function(old_spectra, xvals, half_width){
     intensity = 0.0
     # Fit a lorentzian to every peak, and sum up intensity at each new wavelength,
     # with the offset from the original wavelength describing the new intensity
-    for (j in 1:length(old_spectra$Freq)) {
-      rel_offset = (xvals[i] - old_spectra$Freq[j]) / half_width
-      intensity = intensity + old_spectra$Intensity[j] * lorentz(rel_offset) 
+    for (j in 1:length(old_spectra$Frequencies)) {
+      rel_offset = (xvals[i] - old_spectra$Frequencies[j]) / half_width
+      intensity = intensity + old_spectra$Intensities[j] * lorentz(rel_offset) 
     }
     ints[i] = intensity
   }
-  return(ints)
+  return(list(new_freqs = xvals, new_ints = ints))
 }
 
 ir_with_lorentzians <- function(orig_df, half_width, npts){
-  
+  # Expects a dataframe with headers of File, Frequencies, Intensities  
+
   if (missing(npts)) {
     npts=4000
   }
@@ -202,11 +203,27 @@ ir_with_lorentzians <- function(orig_df, half_width, npts){
   }
   
   new_wavenumbers <- seq(0, npts, 1)
-  new_df <- data.frame(
-    Wave = new_wavenumbers,
-    Int = fit_lorentzians(orig_df, new_wavenumbers, half_width)
+  new_df <- fit_lorentzians(orig_df, new_wavenumbers, half_width)
+
+  ret <- data.frame(
+    Wavenumber = new_df$new_freqs,
+    Intensity  = new_df$new_ints
   )
-  return(new_df)
+
+  # extend original df to make it the same length as the new one
+  rows_to_add <-  nrow(ret) - nrow(orig_df)
+  ret$raw_freqs <- c(orig_df$`Frequencies`, rep(NA, rows_to_add))
+  ret$raw_ints <- c(orig_df$`Intensities`, rep(NA, rows_to_add))
+  return(ret)
+}
+
+plot_ir_spectra <- function(df){
+  return(
+    ggplot(df) +
+    aes(Wavenumber, Intensity, color=File) +
+    geom_line(show.legend=F) +
+    facet_wrap(File~.)
+  )
 }
 
 cat("\nThis is the last line of .Rprofile.\n")

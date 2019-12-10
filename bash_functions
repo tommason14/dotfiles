@@ -255,6 +255,14 @@ sleep 3
 rm Rplots.pdf
 }
 
+plot_ir_from_csv() {
+Rscript -e "read_csv('$1') %>% group_by(File) %>% do(ir_with_lorentzians(.))\
+            %>% plot_ir_spectra() + facet_wrap(File~.)" &> /dev/null
+open Rplots.pdf
+sleep 3 
+rm Rplots.pdf
+}
+
 plot_uv() {
 Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)" &> /dev/null
 open Rplots.pdf
