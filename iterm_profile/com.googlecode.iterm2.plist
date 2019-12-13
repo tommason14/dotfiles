@@ -2891,6 +2891,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>A4429B99-BA98-4152-8321-5F3D0455365C</string>
+	<key>FocusFollowsMouse</key>
+	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
 		<key>0x19-0x60000</key>
@@ -3082,11 +3084,11 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>516 378 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>687 209 730 617 0 0 1440 900 </string>
+	<string>710 252 730 617 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4 459 712 433 0 0 1440 900 </string>
+	<string>30 459 676 410 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>4 9 712 433 0 0 1440 900 </string>
+	<string>725 34 676 410 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>381 36 325 387 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
@@ -4709,7 +4711,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D850C0D1-3E5B-4C7F-BC18-3BE862E2677A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>255</integer>
+	<integer>258</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -5538,7 +5540,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-05T22:52:10Z</date>
+	<date>2019-12-10T11:24:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
