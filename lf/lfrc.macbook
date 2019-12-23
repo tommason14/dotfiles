@@ -249,3 +249,20 @@ map gta cd ~/Documents/repos/talks/confirmation_talk
 map gth cd ~/Documents/repos/thesis
 map gw cd ~/Documents/repos/wallpapers
 map gzz cd ~/Desktop
+
+# Copy across volumes, say from google drive to local mac
+
+cmd mycopy ${{
+COPIED=$fs
+}}
+
+cmd mypaste !{{
+for i in $COPIED
+do
+echo "$i -> $PWD"
+cp $i $PWD/
+done
+}}
+
+map mc mycopy
+map mp mypaste

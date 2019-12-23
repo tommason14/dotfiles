@@ -1,5 +1,5 @@
 # # opens iTerm2
-# alt - return : "${HOME}"/.config/yabai/scripts/open_iterm2.sh
+alt - return : "${HOME}"/dotfiles/yabai_scripts/open_lf.sh
 #
 # # Show system statistics
 # fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
@@ -7,6 +7,7 @@
 # fn + lalt - 3 : "${HOME}"/.config/yabai/scripts/show_bat.sh
 # fn + lalt - 4 : "${HOME}"/.config/yabai/scripts/show_disk.sh
 # fn + lalt - 5 : "${HOME}"/.config/yabai/scripts/show_song.sh
+
 
 # Navigation
 alt - left : yabai -m window --focus west

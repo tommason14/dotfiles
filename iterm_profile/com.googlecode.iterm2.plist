@@ -3084,15 +3084,15 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>516 378 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>710 252 730 617 0 0 1440 900 </string>
+	<string>30 43 1378 826 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>30 459 676 410 0 0 1440 900 </string>
+	<string>725 18 650 426 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>725 34 676 410 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>381 36 325 387 0 0 1440 900 </string>
+	<string>725 34 334 410 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 4</key>
-	<string>381 33 325 180 0 0 1440 900 </string>
+	<string>725 264 334 180 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 5</key>
 	<string>556 33 145 180 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 6</key>
@@ -3812,7 +3812,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Iosevka-Light 18</string>
+			<string>UbuntuMono-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -4643,12 +4643,14 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.20191111-nightly</string>
 		<string>3.3.20190715-nightly</string>
 		<string>3.3.20190604-nightly</string>
 		<string>3.3.20191016-nightly</string>
 		<string>3.3.20191127-nightly</string>
 		<string>3.3.20190810-nightly</string>
 		<string>3.3.20191118-nightly</string>
+		<string>3.3.20191213-nightly</string>
 		<string>3.3.20190829-nightly</string>
 		<string>3.3.20191204-nightly</string>
 		<string>3.3.20190919-nightly</string>
@@ -4656,12 +4658,14 @@
 		<string>3.3.20190920-nightly</string>
 		<string>3.3.20191023-nightly</string>
 		<string>3.3.20191117-nightly</string>
+		<string>3.3.20191212-nightly</string>
 		<string>3.3.20190717-nightly</string>
 		<string>3.3.20190816-nightly</string>
 		<string>3.3.20190807-nightly</string>
 		<string>3.3.20190906-nightly</string>
 		<string>3.3.20190812-nightly</string>
 		<string>3.3.20190729-nightly</string>
+		<string>3.3.20191215-nightly</string>
 		<string>3.3.20190626-nightly</string>
 		<string>3.3.20190725-nightly</string>
 		<string>3.3.20190617-nightly</string>
@@ -4674,17 +4678,18 @@
 		<string>3.3.20191120-nightly</string>
 		<string>3.3.20191004-nightly</string>
 		<string>3.3.20190802-nightly</string>
+		<string>3.3.20191214-nightly</string>
 		<string>3.3.20190818-nightly</string>
 		<string>3.3.20190625-nightly</string>
-		<string>3.3.20191111-nightly</string>
+		<string>3.3.20191210-nightly</string>
 		<string>3.3.20190724-nightly</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Fantasque Sans Mono</string>
-		<string>Iosevka</string>
-		<string>SF Mono</string>
-		<string>Roboto Mono</string>
+		<string>Andale Mono</string>
+		<string>Ubuntu Mono</string>
+		<string>Ubuntu Condensed</string>
+		<string>Ubuntu</string>
 	</array>
 	<key>NoSyncConfirmRunOpenFile</key>
 	<true/>
@@ -4702,7 +4707,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{153, 699}</string>
+		<string>{153, 700}</string>
 	</dict>
 	<key>NoSyncHaveRequestedFullDiskAccess</key>
 	<true/>
@@ -4711,7 +4716,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>D850C0D1-3E5B-4C7F-BC18-3BE862E2677A</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>258</integer>
+	<integer>265</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -5540,7 +5545,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-10T11:24:30Z</date>
+	<date>2019-12-21T08:42:36Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -5564,6 +5569,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.20191204-nightly</string>
+	<string>3.3.20191215-nightly</string>
 </dict>
 </plist>

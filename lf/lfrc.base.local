@@ -195,3 +195,15 @@ map A rename
 
 map wl $~/dotfiles/lf/wallpaper.sh "$f"
 map wr $~/Documents/repos/wallpapers/random_wallpaper.sh
+
+
+# Copy across volumes, say from google drive to local mac
+
+
+# Store all copied 
+cmd myc !{{
+echo $fs #  ↓ replacing space in string   ↓ add newline to count
+echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g' 
+# export COPIED=$fs
+}}
+

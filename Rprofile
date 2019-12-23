@@ -201,7 +201,6 @@ ir_with_lorentzians <- function(orig_df, half_width, npts){
   if (missing(half_width)) {
     half_width=20
   }
-  
   new_wavenumbers <- seq(0, npts, 1)
   new_df <- fit_lorentzians(orig_df, new_wavenumbers, half_width)
 
@@ -216,6 +215,9 @@ ir_with_lorentzians <- function(orig_df, half_width, npts){
   ret$raw_ints <- c(orig_df$`Intensities`, rep(NA, rows_to_add))
   return(ret)
 }
+
+raw_frequencies <- geom_segment(aes(x=raw_freqs, xend=raw_freqs,
+                              y=0, yend=raw_ints), color=my_blue)
 
 plot_ir_spectra <- function(df){
   return(

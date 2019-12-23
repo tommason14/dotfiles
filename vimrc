@@ -4,9 +4,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/dotfiles/vim/bundle')
 
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
-Plugin 'nvie/vim-flake8'                 " Python formatting
-Plugin 'tell-k/vim-autopep8'
-Plugin 'Chiel92/vim-autoformat'
+" Plugin 'nvie/vim-flake8'                 " Python formatting
+" Plugin 'tell-k/vim-autopep8'
+" Plugin 'Chiel92/vim-autoformat'
+Plugin 'psf/black'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
@@ -192,11 +193,11 @@ au BufNewFile,BufRead *.py
     \ set shiftwidth=4                               |
     \ set textwidth=100                              |
     \ let g:syntastic_python_checkers = ['python3']  |
-    " \ let g:autopep8_max_line_length = 79            |
-    " \ let g:autopep8_on_save = 1                     |
+    \ let g:autopep8_max_line_length = 79            |
+    \ let g:autopep8_on_save = 1                     |
     \ set filetype=python                            |
 
-" autocmd BufWritePost *.py call Flake8()
+autocmd BufWritePost *.py :Black
 au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Perl {{{1
@@ -319,7 +320,7 @@ au BufNewFile,BufRead *.tex
     \ set filetype=tex                      |
     \ set syntax=latex-rewrite              |
     \ set spell spelllang=en_gb             |
-    \ nnoremap <Leader>r :!xelatex % <CR>   |
+    \ nnoremap <Leader>r :!compile_latex % <CR>   |
 
  " Bash {{{1
 

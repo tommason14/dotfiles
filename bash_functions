@@ -256,7 +256,8 @@ rm Rplots.pdf
 }
 
 plot_ir_from_csv() {
-Rscript -e "read_csv('$1') %>% group_by(File) %>% do(ir_with_lorentzians(.))\
+half_width=${2:-20}
+Rscript -e "read_csv('$1') %>% group_by(File) %>% do(ir_with_lorentzians(., $half_width))\
             %>% plot_ir_spectra() + facet_wrap(File~.)" &> /dev/null
 open Rplots.pdf
 sleep 3 
