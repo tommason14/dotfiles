@@ -198,7 +198,7 @@ submit_jobs() {
   if [[ $HOSTNAME =~ (magnus|monarch|m3|stampede) ]]
   then
     submit=sbatch
-  elif [[ $HOSTNAME == *"raijin"* ]]
+  elif [[ $HOSTNAME =~ (raijin|gadi) ]]
   then
     submit=qsub
   fi
@@ -206,7 +206,8 @@ submit_jobs() {
   for f in $(find . -path "*job") 
   do 
     cd $(dirname $f)
-    $submit $(basename $f)    
+    logs=$(ls *log 2>/dev/null | wc -l)
+    [[ $logs -eq 0 ]] && $submit $(basename $f)    
     cd $cwd
   done
 }
