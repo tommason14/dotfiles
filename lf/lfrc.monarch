@@ -144,6 +144,7 @@ cmd open ${{
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
+map py $python3 $f
 
 # utilities
 cmap <C-c> cmd-escape

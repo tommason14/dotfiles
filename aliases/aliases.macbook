@@ -88,12 +88,7 @@ fi
 
 # local {{{1
 
-if [[ $USER == "tommason" ]] ; then 
-  shopt -s direxpand
-  alias yb="brew services start yabai && brew services start skhd"
-  alias ybr="brew services restart yabai && brew services restart skhd"
-  alias ybs="brew services stop yabai && brew services stop skhd"
-fi
+[[ $USER == "tommason" ]] && shopt -s direxpand
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'

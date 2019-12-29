@@ -141,6 +141,7 @@ map g2m $gamess_to_molden.py "$f"
 map moc molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
+map py $python3 $f
 
 # utilities
 cmap <C-c> cmd-escape
@@ -196,6 +197,18 @@ map A rename
 map wl $~/dotfiles/lf/wallpaper.sh "$f"
 map wr $~/Documents/repos/wallpapers/random_wallpaper.sh
 
+
+# Copy across volumes, say from google drive to local mac
+
+
+# Store all copied 
+cmd myc !{{
+echo $fs #  ↓ replacing space in string   ↓ add newline to count
+echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g' 
+# export COPIED=$fs
+}}
+
+
 # Files {{{2
 
 map oba $vim ~/.bash_aliases && source ~/.bashrc
@@ -249,20 +262,3 @@ map gta cd ~/Documents/repos/talks/confirmation_talk
 map gth cd ~/Documents/repos/thesis
 map gw cd ~/Documents/repos/wallpapers
 map gzz cd ~/Desktop
-
-# Copy across volumes, say from google drive to local mac
-
-cmd mycopy ${{
-COPIED=$fs
-}}
-
-cmd mypaste !{{
-for i in $COPIED
-do
-echo "$i -> $PWD"
-cp $i $PWD/
-done
-}}
-
-map mc mycopy
-map mp mypaste
