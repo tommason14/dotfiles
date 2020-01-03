@@ -344,6 +344,16 @@ au BufNewFile,BufRead *.cpp
 " Compile when writing to a file
 au BufWritePost *.cpp !g++ --std=c++17  % -o %:r
 
+" Config with Makefiles {{{1
+
+function Compile_on_save()
+  if filereadable('Makefile')
+    ! make install
+  endif
+endfunction
+
+au BufWritePost config.h call Compile_on_save()
+
 " Chem files {{{1
 au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
     \ set tabstop=2                         |
@@ -376,4 +386,3 @@ endif
 
 " set list listchars=eol:$
 " hi NonText ctermfg=DarkGrey
-

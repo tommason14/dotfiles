@@ -156,6 +156,12 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
   alias wr='$repos/wallpapers/random_wallpaper.sh'
 
+  # window management
+  alias yb='brew services start yabai && brew services start skhd'
+  alias ybr='brew services restart yabai && brew services restart skhd'
+  alias ybs='brew services stop yabai && brew services stop skhd'
+  
+
 fi
 
 # remote {{{1
@@ -163,6 +169,7 @@ fi
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
   alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
+  alias remove_orca_temps="ls -1 | sed '/inp/d;/job/d;/xyz/d' | xargs rm"
 fi
 
 # everywhere {{{1 
@@ -292,4 +299,3 @@ alias gsu='cd ~/Documents/repos/dopamine/dopamine_paper/supp_info'
 alias gta='cd ~/Documents/repos/talks/confirmation_talk'
 alias gth='cd ~/Documents/repos/thesis'
 alias gw='cd ~/Documents/repos/wallpapers'
-alias gzz='cd ~/Desktop'
