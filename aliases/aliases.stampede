@@ -169,7 +169,7 @@ fi
 if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
 then
   alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
-  alias remove_orca_temps="ls -1 | sed '/inp/d;/job/d;/xyz/d' | xargs rm"
+  alias remove_orca_temps="ls -1 | sed '/inp/d;/job/d;/log/d;/xyz/d' | xargs rm"
 fi
 
 # everywhere {{{1 

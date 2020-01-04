@@ -17,7 +17,7 @@ set previewer ~/dotfiles/lf/previewer.sh
 # LF commands {{{2
 
 cmd remove_orca_temps ${{
-  ls -1 | sed '/inp/d;/job/d;/xyz/d' | xargs rm
+  ls -1 | sed '/inp/d;/job/d;/log/d;/xyz/d' | xargs rm
 }}
 
 cmd q quit

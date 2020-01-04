@@ -22,6 +22,7 @@ git config --global core.editor "/usr/local/bin/vim"
 
 # gui programs
 brew cask install google-drive-file-stream
+brew cask install deckset
 
 brew cask install spectacle
 curl https://gist.githubusercontent.com/tommason14/324cb37dd7803f3b06b39f53d38301f6/raw/spectacle.json
@@ -29,3 +30,12 @@ curl https://gist.githubusercontent.com/tommason14/324cb37dd7803f3b06b39f53d3830
 
 brew cask install visual-studio-code 
 brew cask install zotero
+
+# System setup
+
+brew install yabai
+brew install skhd
+
+# Writing
+
+# brew install mactex
