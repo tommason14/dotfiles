@@ -16,6 +16,10 @@ set previewer ~/dotfiles/lf/previewer.sh
 
 # LF commands {{{2
 
+cmd remove_orca_temps ${{
+  ls -1 | sed '/inp/d;/job/d;/xyz/d' | xargs rm
+}}
+
 cmd q quit
 cmd touch $touch $1
 cmd mkdir $mkdir -p $1
@@ -98,11 +102,12 @@ cmd plotgauss !{{
 
 # Remove defaults {{{2 
 
+map c
 map d
 map m
 map p
+map r
 map y
-map c
 
 # Ranger-like {{{2
 
@@ -112,6 +117,7 @@ map pp paste
 map dD delete
 map dt $mv "$fx" ~/.trash # bin for accidental deletion
 map <bs2> set hidden!
+map re rename
 cmap <esc> cmd-escape
 
 # File opening {{{2
@@ -144,6 +150,7 @@ cmd open ${{
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
+map rot remove_orca_temps
 map py $python3 $f
 
 # utilities

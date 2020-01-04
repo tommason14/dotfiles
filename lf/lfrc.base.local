@@ -16,6 +16,10 @@ set previewer ~/dotfiles/lf/previewer.sh
 
 # LF commands {{{2
 
+cmd remove_orca_temps ${{
+  ls -1 | sed '/inp/d;/job/d;/xyz/d' | xargs rm
+}}
+
 cmd q quit
 cmd touch $touch $1
 cmd mkdir $mkdir -p $1
@@ -95,12 +99,13 @@ cmd molden2csv ${{
 
 # Remove defaults {{{2 
 
+map c
 map d
 map m
 map p
+map r
 map w
 map y
-map c
 
 # Ranger-like {{{2
 
@@ -110,6 +115,7 @@ map pp paste
 map dD delete
 map dt $mv "$fx" ~/.trash # bin for accidental deletion
 map <bs2> set hidden!
+map re rename
 cmap <esc> cmd-escape
 
 # File opening {{{2
@@ -142,6 +148,7 @@ map moc molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
 map py $python3 $f
+map rot remove_orca_temps
 
 # utilities
 cmap <C-c> cmd-escape
