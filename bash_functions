@@ -266,6 +266,11 @@ rm Rplots.pdf
 }
 
 plot_uv() {
+
+[[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
+
+sigma=${2:-0.05}
+step=${3:-0.01}
 Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)" &> /dev/null
 open Rplots.pdf
 sleep 3 

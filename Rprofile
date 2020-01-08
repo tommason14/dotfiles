@@ -161,6 +161,10 @@ plot_gaussians <- function(df){
 # df <- read_csv('uv-vis.csv')
 # df %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)
 
+# To add different sigma and step values:
+# sigma = 0.06
+# step = 0.1
+# df %>% group_by(Config) %>% do(add_gaussians(., sigma, step)) %>% plot_gaussians() + facet_wrap(.~Config)
 
 # IR spectra
 # Adding lorentzians
