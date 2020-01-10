@@ -200,6 +200,10 @@ au BufNewFile,BufRead *.py
 autocmd BufWritePost *.py :Black
 au FileType python nnoremap <Leader>r :!python3 %<CR>
 
+" Need to get snippets working again
+inoremap <Leader>ca from chem_assistant import
+
+
 " Perl {{{1
 
 au BufNewFile,BufRead *.pl
