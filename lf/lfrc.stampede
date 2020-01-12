@@ -152,6 +152,7 @@ map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
 map rot remove_orca_temps
 map py $python3 $f
+map gfr !gauss_freqs
 
 # utilities
 cmap <C-c> cmd-escape
