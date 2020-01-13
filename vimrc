@@ -192,7 +192,7 @@ au BufNewFile,BufRead *.py
     \ let g:black_linelength = 110                   |
     \ set filetype=python                            |
 
-" autocmd BufWritePost *.py :Black
+autocmd BufWritePost *.py :Black
 au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Need to get snippets working again
