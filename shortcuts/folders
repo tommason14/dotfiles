@@ -88,3 +88,8 @@ stm-q: /work/06233/tmason/stampede2/qcp
 stm-s: /scratch/06233/tmason
 stm-t: /scratch/06233/tmason/tests
 stm-w: /work/06233/tmason/stampede2
+
+# Gadi
+gadi-au: ~/monash_automation
+gadi-df: ~/dotfiles
+gadi-s: /scratch/k96/tm3124

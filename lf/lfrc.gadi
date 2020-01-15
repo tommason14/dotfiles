@@ -227,4 +227,7 @@ map ov $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 
+map gau cd ~/monash_automation
 map gdf cd ~/dotfiles
+map gdf cd ~/dotfiles
+map gs cd /scratch/k96/tm3124
