@@ -94,6 +94,10 @@ command! -bar LF call LF()
 
 let mapleader = ","
 
+" Tabnew 
+
+nnoremap <Leader>t :tabnew 
+
 " LF key mapping
 
 nnoremap <Leader>l :LF<CR>
