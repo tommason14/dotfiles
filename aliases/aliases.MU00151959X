@@ -213,6 +213,13 @@ alias cad='chem_assist_ds'
 alias cae='chem_assist -e'
 alias car='chem_assist -r'
 
+if [[ $USER =~ (tmason|tm3124) ]] 
+then
+  export settings="$HOME/monash_automation/settings_files" # remotes
+else
+  export settings="$HOME/Documents/repos/monash_automation/settings_files"
+fi
+
 # plots everywhere
 alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotmp2="grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""

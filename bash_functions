@@ -271,7 +271,7 @@ plot_uv() {
 
 sigma=${2:-0.05}
 step=${3:-0.01}
-Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config)" &> /dev/null
+Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, scales='free_y')" &> /dev/null
 open Rplots.pdf
 sleep 3 
 rm Rplots.pdf
@@ -283,7 +283,7 @@ plot_uv_vertical() {
 
 sigma=${2:-0.05}
 step=${3:-0.01}
-Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, ncol=1)" &> /dev/null
+Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, ncol=1, scales='free_y')" &> /dev/null
 open Rplots.pdf
 sleep 3 
 rm Rplots.pdf
