@@ -196,7 +196,11 @@ au BufNewFile,BufRead *.py
     \ let g:black_linelength = 110                   |
     \ set filetype=python                            |
 
-autocmd BufWritePost *.py :Black
+" autocmd BufWritePre *molecule.py let b:molecule=1
+" if !exists("b:molecule")
+"     autocmd BufWritePost *.py :Black
+" endif
+
 au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Need to get snippets working again
