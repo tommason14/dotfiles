@@ -52,9 +52,6 @@ rjn-q: /short/k96/apps/qcp
 rjn-s: /short/k96/tm3124
 rjn-w: /short/k96/apps
 
-# Gadi
-gadi-df: ~/dotfiles
-
 # Monarch
 mon-au: ~/monash_automation/
 mon-ba: /home/tmason1/scratch/Battery_electrolytes
@@ -93,3 +90,4 @@ stm-w: /work/06233/tmason/stampede2
 gadi-au: ~/monash_automation
 gadi-df: ~/dotfiles
 gadi-s: /scratch/k96/tm3124
+gadi-wg: /home/565/zlz565/.local/gamess19-srs # work gamess

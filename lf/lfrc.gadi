@@ -229,5 +229,5 @@ map ov $vim ~/dotfiles/vimrc
 
 map gau cd ~/monash_automation
 map gdf cd ~/dotfiles
-map gdf cd ~/dotfiles
 map gs cd /scratch/k96/tm3124
+map gwg cd /home/565/zlz565/.local/gamess19-srs # work gamess
