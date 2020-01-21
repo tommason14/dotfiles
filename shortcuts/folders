@@ -90,4 +90,4 @@ stm-w: /work/06233/tmason/stampede2
 gadi-au: ~/monash_automation
 gadi-df: ~/dotfiles
 gadi-s: /scratch/k96/tm3124
-gadi-wg: /home/565/zlz565/.local/gamess19-srs # work gamess
+gadi-wg: /home/565/zls565/.local/gamess19-srs # work gamess
