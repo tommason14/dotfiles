@@ -28,7 +28,9 @@ set clipboard=unnamed " system-wide copy
 set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
 set expandtab
+" set title " filename in title of terminal
 set ruler
+set laststatus=2 " always show filename and ruler
 set linebreak " don't break words when wrapping to new line
 
 " Put plugins and dictionaries in this dir (also on Windows)
