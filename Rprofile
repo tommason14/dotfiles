@@ -74,7 +74,9 @@ formatted <- function(...){
 
 # theming
 
+my_orange <- '#EF8A62'
 my_red <- '#B22121'
+my_light_blue <- '#67A9CF'
 my_blue <- '#4545E5'
 
 
