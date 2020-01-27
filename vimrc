@@ -1,12 +1,13 @@
 " Plugins {{{1
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin('~/dotfiles/vim/bundle')
+call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
 Plugin 'psf/black'
 Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'              " Stores all snippets in xxx.snippets
+Plugin 'tommason14/vim-snippets'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'matze/vim-tex-fold' 
@@ -28,13 +29,11 @@ set clipboard=unnamed " system-wide copy
 set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
 set expandtab
-" set title " filename in title of terminal
 set ruler
-set laststatus=2 " always show filename and ruler
 set linebreak " don't break words when wrapping to new line
 
 " Put plugins and dictionaries in this dir (also on Windows)
-let vimDir = '$HOME/dotfiles/.vim'
+let vimDir = '$HOME/.vim'
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
@@ -55,7 +54,18 @@ set incsearch  " search as you type
 
 " Ultisnips {{{1
 
-let g:UltiSnipsUsePythonVersion = 3"
+let g:UltiSnipsUsePythonVersion = 3
+
+" Load snippets
+
+function Snippets()
+  if $USER == "tommason" || $USER == "tmas0023"
+    execute "tabnew ~/Documents/repos/vim-snippets/snippets/".&ft.".snippets"
+  else
+    execute "tabnew ~/vim-snippets/snippets/".&ft.".snippets" " remote machines
+  endif
+endfunction
+
 let g:snips_author="Tom Mason"
 let g:snips_email="tommason14@gmail.com"
 let g:snips_github="https:github.com/tommason14"
@@ -64,11 +74,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-" let g:snips_trigger_key = '<tab>'
-" let g:snips_trigger_key_backwards = '<s-tab>'
-
-autocmd Filetype tex nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/tex.snippets<CR>
-autocmd Filetype python nnoremap <Leader>s :tabnew ~/.vim/bundle/vim-snippets/snippets/python.snippets<CR>
+au BufWritePost *.snippets !update_snippets.sh 
 
 " LF command {{{1
 
@@ -95,6 +101,10 @@ command! -bar LF call LF()
 " Remapping {{{1 
 
 let mapleader = ","
+
+" Snippets
+
+nnoremap <Leader>s :call Snippets()<CR>
 
 " Tabnew 
 
@@ -195,19 +205,11 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4                              |
     \ set shiftwidth=4                               |
     \ set textwidth=100                              |
-    \ let g:black_linelength = 110                   |
+    \ let g:black_linelength = 90                   |
     \ set filetype=python                            |
 
-" autocmd BufWritePre *molecule.py let b:molecule=1
-" if !exists("b:molecule")
-"     autocmd BufWritePost *.py :Black
-" endif
-
+au BufWritePost *.py :Black
 au FileType python nnoremap <Leader>r :!python3 %<CR>
-
-" Need to get snippets working again
-inoremap <Leader>ca from chem_assistant import
-
 
 " Perl {{{1
 
@@ -341,7 +343,7 @@ au BufNewFile,BufRead *.sh,bash*,*lfrc*
     \ set textwidth=79                      |
     \ set filetype=sh                       |
 
-"  C++ {{{1
+"  C++ {{{
 au BufNewFile,BufRead *.cpp
     \ set tabstop=2                         |
     \ set softtabstop=2                     |

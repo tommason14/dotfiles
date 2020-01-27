@@ -9,7 +9,7 @@ yabairc=~/.config/yabai/yabairc
 skhdrc=~/.config/skhd/skhdrc
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  files="bash_functions vim vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
+  files="bash_functions vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
 amethyst"    
   [[ -L $vscode_md ]] || (echo "Linking markdown.json" && ln -s $dir/vscode/markdown.json $vscode_md)
   [[ -L $ipython ]] || (echo "Linking ipythonrc" && ln -s $dir/jupyter/ipythonrc $ipython)
@@ -18,7 +18,7 @@ $dir/jupyter/custom.css $jupyter_css)
   [[ -L $yabairc ]] || (echo "Linking yabairc" && ln -s $dir/yabairc $yabairc)
   [[ -L $skhdrc ]] || (echo "Linking skhdrc" && ln -s $dir/skhdrc $skhdrc)
 else # remotes
-  files="bash_functions vim vimrc"    
+  files="bash_functions vimrc"    
 fi
 
 cd $dir
