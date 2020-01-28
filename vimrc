@@ -102,6 +102,12 @@ command! -bar LF call LF()
 
 let mapleader = ","
 
+" Autocomplete - could clash with Ultisnips?
+" inoremap <Leader><Tab> <C-n>
+" " if in autocomplete, tab through
+" inoremap <expr> <Tab> pumvisible ? "<C-n>" : "<Tab>"  
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
+
 " Snippets
 
 nnoremap <Leader>s :call Snippets()<CR>
