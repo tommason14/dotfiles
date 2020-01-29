@@ -14,6 +14,9 @@ Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
+if $USER == "tommason" || $USER == "tmas0023"
+  Plugin 'xuhdev/vim-latex-live-preview'
+endif
 call vundle#end()
 
 " Basics {{{1
@@ -337,6 +340,10 @@ au BufNewFile,BufRead *.tex
     \ set filetype=tex                      |
     \ set spell spelllang=en_gb             |
     \ nnoremap <Leader>r :!compile_latex % <CR>   |
+
+au Filetype tex setl updatetime=1
+let g:livepreview_previewer = 'open -a Skim'
+let g:livepreview_engine = 'xelatex'
 
  " Bash {{{1
 
