@@ -221,6 +221,7 @@ else
 fi
 
 # plots everywhere
+alias lastcol="awk '{print \$NF}'"
 alias plotgnu="gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotmp2="grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
@@ -228,6 +229,7 @@ alias plotfmo="grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnup
 alias plotgauss="grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotgamessfreqs="sed -n '/FREQ(CM\*\*-1)/,/^$/{//!p;}' | awk '{print $2,$NF}' | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
 alias plotgaussfreqs="tee >(grep Frequencies | awk '{OFS=\"\n\"; print $3,$4,$5}' > fone) >(grep 'IR Inten' | awk '{OFS=\"\n\"; print $4,$5,$6}' > ftwo ) &> /dev/null && paste fone ftwo | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\" && rm fone ftwo"
+alias plotrmsgamess='grep "R.M.S.=" | lastcol | plotgnu'
 
 # sort energies
 alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr -k 2"
