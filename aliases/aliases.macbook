@@ -274,6 +274,7 @@ alias ov='vim ~/dotfiles/vimrc'
 
 alias gau='cd ~/Documents/repos/monash_automation'
 alias gbch='cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs'
+alias gbg='cd /Volumes/GoogleDrive/My\ Drive/backups/gadi'
 alias gbk='cd /Volumes/GoogleDrive/My\ Drive/backups'
 alias gbm3='cd /Volumes/GoogleDrive/My\ Drive/backups/massive'
 alias gbma='cd /Volumes/GoogleDrive/My\ Drive/backups/magnus'

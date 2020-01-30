@@ -112,7 +112,7 @@ smooth_with_gaussians <- function(df, sigma, step){
   h = 6.62607004e-34
   c = 299792458
   e = 1.6021766208e-19
-  
+
   min_transition_energy = min(df$`Transition Energies (eV)`) - (5 * sigma)
   max_transition_energy = max(df$`Transition Energies (eV)`) + (5 * sigma)
 
@@ -121,13 +121,13 @@ smooth_with_gaussians <- function(df, sigma, step){
   new_energies = seq(min_transition_energy, max_transition_energy, step)
   # convert to wavelengths (eV -> nm)
   new_waves = (h * c * 1e9 / (new_energies * e))
-  
+
   # take number of x values, set to 0, then move along the 
   # line and fill values of intensity as you go, using the index of the 
   # intensity list to find the oscillator strength.
-  
+
   new_ints = rep(0, length(new_waves))
-  
+
   for(i in 1:length(df$`Intensity (au)`)){ # want the index
     new_ints = new_ints + df$`Intensity (au)`[i] * normpdf(new_energies, 
                                                          df$`Transition Energies (eV)`[i],
@@ -203,7 +203,7 @@ ir_with_lorentzians <- function(orig_df, half_width, npts){
   if (missing(npts)) {
     npts=4000
   }
-  
+
   if (missing(half_width)) {
     half_width=20
   }
