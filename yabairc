@@ -42,10 +42,10 @@ yabai -m config status_bar_clock_icon        
 
 yabai -m signal --add event=space_changed action="bash ~/dotfiles/yabai_scripts/autodestroy.sh"
 
-# refresh primary display workspaces
-yabai -m signal --add event=space_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-
-# refresh secondary display workspaces
-yabai -m signal --add event=space_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+# # refresh primary display workspaces
+# yabai -m signal --add event=space_changed \
+#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+#
+# # refresh secondary display workspaces
+# yabai -m signal --add event=space_changed \
+#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
