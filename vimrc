@@ -242,6 +242,7 @@ au BufNewFile,BufRead *.Rmd,*.rmd
     \ set textwidth=80                               |
     \ set filetype=rmd                               |
     \ nnoremap <Leader>o :!open %:r.html<CR>         |
+    \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
 
 au BufNewFile,BufRead *.R,*Rprofile
     \ set tabstop=2                                  |
@@ -250,6 +251,7 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set shiftwidth=2                               |
     \ set textwidth=80                               |
     \ set filetype=R                                 |
+    \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
 
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
@@ -407,5 +409,6 @@ if g:remoteSession
   set bg=dark
 endif
 
-" set list listchars=eol:$
+set list
+set listchars=tab:→\ ,eol:↲
 " hi NonText ctermfg=DarkGrey

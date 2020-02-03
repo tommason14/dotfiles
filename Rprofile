@@ -234,5 +234,13 @@ plot_ir_spectra <- function(df){
   )
 }
 
+plot_ir_spectra_no_colour <- function(df){
+  return(
+    ggplot(df) +
+    aes(Wavenumber, Intensity) +
+    geom_line(show.legend=F)
+  )
+}
+
 cat("\nThis is the last line of .Rprofile.\n")
 
