@@ -341,7 +341,8 @@ au BufNewFile,BufRead *.tex
     \ set textwidth=79                      |
     \ set filetype=tex                      |
     \ set spell spelllang=en_gb             |
-    \ nnoremap <Leader>r :!compile_latex % <CR>   |
+    \ nnoremap <Leader>r :!compile_latex % <CR> |
+    \ nnoremap <Leader>o :!open %:r.pdf <CR> |
 
 au Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Skim'

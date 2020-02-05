@@ -150,6 +150,7 @@ map yc $cat "$f" | pbcopy
 map py $python3 $f
 map rot remove_orca_temps
 map gfr !gauss_freqs
+map cl !compile_latex $(basename "$f")
 
 # utilities
 cmap <C-c> cmd-escape
