@@ -252,6 +252,7 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set textwidth=80                               |
     \ set filetype=R                                 |
     \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
+    \ nnoremap <Leader>r :w<CR> :!Rscript % <CR>|
 
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
