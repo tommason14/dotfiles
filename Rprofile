@@ -1,5 +1,5 @@
 library(reticulate)
-use_python(Sys.which('python3'), required = TRUE)
+use_python('/usr/local/bin/python3', required = TRUE)
 library(tidyverse)
 library(magrittr)
 library(readxl)
