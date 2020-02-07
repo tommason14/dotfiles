@@ -252,7 +252,7 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set textwidth=80                               |
     \ set filetype=R                                 |
     \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
-    \ nnoremap <Leader>r :w<CR> :!Rscript % <CR>|
+    \ nnoremap <Leader>r :w<CR>:!Rscript % <CR>:!open Rplots.pdf &<CR><CR> |
 
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
@@ -411,6 +411,6 @@ if g:remoteSession
   set bg=dark
 endif
 
-set list
-set listchars=tab:→\ ,eol:↲
-" hi NonText ctermfg=DarkGrey
+" set list
+" set listchars=tab:→\ ,eol:↲
+" " hi NonText ctermfg=DarkGrey
