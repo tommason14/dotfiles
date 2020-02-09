@@ -65,7 +65,7 @@ function Snippets()
   if $USER == "tommason" || $USER == "tmas0023"
     execute "tabnew ~/Documents/repos/vim-snippets/snippets/".&ft.".snippets"
   else
-    execute "tabnew ~/vim-snippets/snippets/".&ft.".snippets" " remote machines
+    execute "tabnew ~/vim-snippets/snippets/".&ft.".snippets"
   endif
 endfunction
 
