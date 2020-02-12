@@ -90,6 +90,11 @@ cmd plotfmo !{{
   gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 }}
 
+cmd plotrmsgamess !{{
+  grep 'R.M.S.=' "$f" | awk '{print $NF}' |\
+  gnuplot -e "set terminal dumb; plot '-' with lines notitle"
+}}
+
 cmd plotgauss !{{
   cat "$f" |\
   grep 'SCF Done' |\
@@ -179,7 +184,8 @@ map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_it
 
 map pm plotmp2 "$f"
 map pfo plotfmo "$f"
-map pg plotgauss "$f"
+map pgr plotrmsgamess "$f"
+map pga plotgauss "$f"
 
 # New files {{{2
 
