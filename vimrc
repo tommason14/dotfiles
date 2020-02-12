@@ -394,8 +394,12 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
 set number
 set relativenumber
 
-" colo slate
-colo wal
+if $USER == "tm3124"
+  colo slate
+else
+  colo wal
+endif
+
 hi Normal ctermbg=none " Use terminal background 
 
 " Changes style of highlighting
