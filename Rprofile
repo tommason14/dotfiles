@@ -6,6 +6,8 @@ library(readxl)
 library(latex2exp) 
 dfilter <- dplyr::filter # namespace issues- base stats overrides dplyr filter 
 
+`%notin%` = function(x,y) !(x %in% y)
+
 df_with_ci <- function(path) {
   # select rows, convert to long format, then join
   # maybe should pass order_by?
