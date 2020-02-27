@@ -249,8 +249,8 @@ lfcd () {
     fi
 }
 
-plot_ir() {
-Rscript -e "read_tsv('$1') %>% ir_with_lorentzians() %>% ggplot() + aes(Wave, Int) + geom_line()" &> /dev/null
+plot_individual_ir() {
+Rscript -e "read_csv('$1') %>% ir_with_lorentzians() %>% ggplot() + aes(Wave, Int) + geom_line()" &> /dev/null
 open Rplots.pdf
 sleep 3 
 rm Rplots.pdf
