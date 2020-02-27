@@ -1,0 +1,26 @@
+"*":
+  core:
+    disabledPackages: [
+      "language-python"
+      "language-gfm"
+    ]
+    telemetryConsent: "limited"
+    useTreeSitterParsers: false
+  editor:
+    fontSize: 19
+    scrollPastEnd: true
+    showIndentGuide: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+  "exception-reporting":
+    userId: "15f1fea1-ce22-4d8c-8888-3d2c5c5a45dd"
+  kite:
+    showWelcomeNotificationOnStartup: false
+  pigments:
+    markerType: "native-dot"
+    sassShadeAndTintImplementation: "bourbon"
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false

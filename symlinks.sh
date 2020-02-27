@@ -58,3 +58,18 @@ for config in ${configs[@]}; do
     make_links $config
   fi
 done
+
+# atom symlinks on local
+
+if [[ $USER =~ (tmas0023|tommason) ]]
+then
+for f in $(ls $dir/atom/)
+do
+  orig="$dir/atom/$f"
+  linked="$HOME/.atom/$f"
+  if ! [[ -L $linked ]]; then
+    echo "Symlinking $orig to $linked"
+    ln -s $orig $linked
+  fi
+done
+fi
