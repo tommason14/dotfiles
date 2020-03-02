@@ -212,6 +212,7 @@ map A rename
 # SLURM {{{2
 
 map sb $sbatch "$f"
+map sj $submit_jobs
 map squ !squeue -u $USER -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D %R"
 map sql !squeue -u $USER -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C %.12l %.12L %.6D %.16S %R"
 map sqo !squeue -u $USER -o "%10i %30j %130Z"

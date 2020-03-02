@@ -212,6 +212,7 @@ map A rename
 # PBS {{{2
 
 map sb $qsub $f
+map sj $submit_jobs
 map squ !qstat -u tm3124
 map sqo !nqstat
 map sql !nqstat
