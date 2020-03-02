@@ -1,4 +1,6 @@
 "*":
+  Hydrogen:
+    startDir: "dirOfFile"
   core:
     disabledPackages: [
       "language-python"
