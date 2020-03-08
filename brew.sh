@@ -21,8 +21,9 @@ brew install vim # should find +python3 with vim --version
 git config --global core.editor "/usr/local/bin/vim"
 
 # gui programs
-brew cask install google-drive-file-stream
 brew cask install deckset
+brew cask install google-drive-file-stream
+brew cask install notion
 
 brew cask install spectacle
 curl https://gist.githubusercontent.com/tommason14/324cb37dd7803f3b06b39f53d38301f6/raw/spectacle.json
