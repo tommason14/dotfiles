@@ -63,7 +63,7 @@ mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
 mon-q: /home/tmason1/sn29/apps/qcp
 mon-s: /home/tmason1/scratch
 mon-t: /home/tmason1/scratch/tests
-mon-w: /home/tmason1/sn29
+mon-w: /home/tmason1/p2015120004
 
 # Massive
 mas-au: ~/monash_automation/

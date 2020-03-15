@@ -127,8 +127,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
   # monash
-  # alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi-login-01.nci.org.au'
-  alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi.nci.org.au'
+  alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi-login-01.nci.org.au'
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh -Y tmason@magnus.pawsey.org.au'
   alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y -t tmas0011@msgln6.its.monash.edu.au "cd /nfs/shares/pas-grp/TOM; bash"'
