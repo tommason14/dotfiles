@@ -8,6 +8,7 @@ warnings.simplefilter('ignore')
 
 # Hi-res output
 
+%matplotlib inline
 %config InlineBackend.figure_format = 'retina'
 
 # --- TD-DFT UV-VIS ---

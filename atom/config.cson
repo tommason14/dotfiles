@@ -9,7 +9,7 @@
     telemetryConsent: "limited"
     useTreeSitterParsers: false
   editor:
-    fontSize: 19
+    fontSize: 13
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
@@ -21,6 +21,7 @@
   pigments:
     markerType: "native-dot"
     sassShadeAndTintImplementation: "bourbon"
+  "python-black": {}
   "tree-view":
     hideIgnoredNames: true
     hideVcsIgnoredFiles: true

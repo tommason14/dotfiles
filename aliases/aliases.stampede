@@ -136,6 +136,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
   alias stampede='~/dotfiles/sshstam'
   alias vault='sshpass -f ~/dotfiles/sshfile ssh tmason1@118.138.242.229'
+  alias chem06="ssh -XY chem06@monarch.erc.monash.edu"
   alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
   alias lammps_dir='cd /usr/local/share/lammps'
 
