@@ -59,6 +59,7 @@ mon-ba: /home/tmason1/scratch/Battery_electrolytes
 mon-ch: /home/tmason1/scratch/hydrated_ils
 mon-d: /home/tmason1/scratch/dopamine
 mon-df: ~/dotfiles
+mon-ow: /home/tmason1/sn29
 mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
 mon-q: /home/tmason1/sn29/apps/qcp
 mon-s: /home/tmason1/scratch
