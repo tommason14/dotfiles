@@ -56,6 +56,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
     cp $HOME/.cache/wal/colors-atom-syntax $HOME/.atom/packages/wal-syntax/styles/colors.less
     cp $HOME/.cache/wal/spicetify_colours.ini $HOME/spicetify_data/Themes/pywal/color.ini 
     sed -i '' 's/\#//' $HOME/spicetify_data/Themes/pywal/color.ini
+    spicetify update
   }
 
   mr(){
