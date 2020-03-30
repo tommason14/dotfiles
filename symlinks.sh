@@ -7,6 +7,7 @@ ipython=~/.ipython/profile_default/startup/start.ipy
 jupyter_css=~/.jupyter/custom/custom.css
 yabairc=~/.config/yabai/yabairc
 skhdrc=~/.config/skhd/skhdrc
+wal=~/.config/wal/templates
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   files="bash_functions vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
@@ -17,6 +18,10 @@ amethyst"
 $dir/jupyter/custom.css $jupyter_css)
   [[ -L $yabairc ]] || (echo "Linking yabairc" && ln -s $dir/yabairc $yabairc)
   [[ -L $skhdrc ]] || (echo "Linking skhdrc" && ln -s $dir/skhdrc $skhdrc)
+  # pywal atom theme
+  # uses a package found here: https://github.com/ClydeDroid/dotfiles/tree/master/.atom/packages/wal-syntax
+  [[ ! -d $wal ]] && mkdir -p $wal
+  [[ ! -L "$wal/colors-atom-syntax" ]] && ln -s $dir/wal/colors-atom-syntax $wal/colors-atom-syntax
 else # remotes
   files="bash_functions vimrc"    
 fi

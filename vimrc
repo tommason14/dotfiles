@@ -28,7 +28,7 @@ syntax enable
 set encoding=utf-8 
 set foldmethod=marker
 set foldlevelstart=0
-set clipboard=unnamed " system-wide copy
+" set clipboard=unnamed " system-wide copy
 set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
 set expandtab

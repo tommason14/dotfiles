@@ -8,7 +8,7 @@ if [ -f ~/.bash_functions ]; then
 fi
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  # cat ~/.cache/wal/sequences # load on new terminal sessions
+  cat ~/.cache/wal/sequences # load on new terminal sessions
   export EDITOR=/usr/local/bin/vim # explicitly declare brew-installed vim
 else
   export EDITOR=vim

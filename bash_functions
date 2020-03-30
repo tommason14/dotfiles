@@ -53,6 +53,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   wl(){
     wal -i "$1"
+    cp $HOME/.cache/wal/colors-atom-syntax $HOME/.atom/packages/wal-syntax/styles/colors.less
   }
 
   mr(){

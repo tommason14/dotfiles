@@ -7,9 +7,13 @@
       "language-gfm"
     ]
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "wal-syntax"
+    ]
     useTreeSitterParsers: false
   editor:
-    fontSize: 13
+    fontSize: 17
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
