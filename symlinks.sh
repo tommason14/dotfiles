@@ -23,7 +23,7 @@ $dir/jupyter/custom.css $jupyter_css)
   [[ ! -d $wal ]] && mkdir -p $wal
   [[ ! -L "$wal/colors-atom-syntax" ]] && ln -s $dir/wal/colors-atom-syntax $wal/colors-atom-syntax
   # spicetify
-  [[ ! -L "$wal/spicetify_colours.ini" ]] && ln -s $dir/wal/spicetify_colours.ini $wal/colors-atom-syntax
+  [[ ! -L "$wal/spicetify_colours.ini" ]] && ln -s $dir/wal/spicetify_colours.ini $wal/spicetify_colours.ini
   mkdir -p $HOME/spicetify_data/Themes/pywal && touch $HOME/spicetify_data/Themes/pywal/user.css
   # pywal makes the theme and wl/make_wallpaper.sh copies the theme into the
   # spicetify directory
