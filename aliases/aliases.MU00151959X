@@ -144,6 +144,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
   alias thesis='cd $repos/thesis'
 
+  alias feh='feh -F -d'
   function preview {
     qlmanage -p $1 2> /dev/null
   }
