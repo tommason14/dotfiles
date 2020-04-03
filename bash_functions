@@ -52,7 +52,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   wl(){
-    $HOME/Documents/repos/wallpapers/make_wallpaper.sh $1
+    $HOME/Documents/repos/wallpapers/make_wallpaper.sh "$@"
   }
 
   mr(){

@@ -106,6 +106,7 @@ cmd molden2csv ${{
 
 map c
 map d
+map l
 map m
 map p
 map r
@@ -210,8 +211,10 @@ map A rename
 
 # Wallpaper {{{2
 
-map wl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f"
+map wl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" 
+map lwl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" -l
 map wr $~/Documents/repos/wallpapers/random_wallpaper.sh
+map lwr $~/Documents/repos/wallpapers/random_wallpaper.sh -l
 
 
 # Copy across volumes, say from google drive to local mac

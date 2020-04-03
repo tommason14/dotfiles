@@ -122,9 +122,6 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias avo="open -a /Applications/Avogadro.app/"
   alias iqmol="open -a /Applications/IQmol.app/"
   alias deckset="open -a /Applications/Deckset.app/"
-  
-  alias chunkstart='brew services start chunkwm && brew services start skhd'
-  alias chunkstop='brew services stop chunkwm && brew services stop skhd'
 
   # monash
   # alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi-login-01.nci.org.au'
@@ -150,7 +147,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   alias hyperjs='vim ~/dotfiles/hyper.js'
-  alias chunkrc='vim ~/dotfiles/chunkwmrc'
+  alias yabairc='vim ~/dotfiles/yabairc'
   alias skhdrc='vim ~/dotfiles/skhdrc'
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
   alias rprofile='vim ~/dotfiles/Rprofile'
@@ -158,6 +155,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias update_repos='cd $repos && sh update_repos.sh && cd -'
   alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
   alias wr='$repos/wallpapers/random_wallpaper.sh'
+  export walls="$repos/wallpapers"
 
   # window management
   alias yb='brew services start yabai && brew services start skhd'
