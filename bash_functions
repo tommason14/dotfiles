@@ -119,8 +119,8 @@ zipall(){
 change_to_chem_assistant() {
   if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
     cd ~/monash_automation
-  elif [[ $PWD == *"tmas0023"*  || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then # Uni
-    cd ~/Documents/monash_automation
+  elif [[ $PWD == *"tmas0023"*  || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then 
+    cd "$repos/monash_automation"
   fi
 }
 
@@ -146,7 +146,7 @@ push_qcp() {
 
 change_to_chem_scripts() {
   if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-    cd "$filestream"/chem_scripts
+    cd "$repos/chem_scripts"
   elif [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
     cd ~/chem_scripts
   fi
