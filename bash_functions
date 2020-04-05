@@ -18,8 +18,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   make_tex() {
-  pandoc $1 --biblatex --pdf-engine=xelatex --filter=pandoc-citeproc -o
-  ${1%.md}.tex
+  pandoc $1 --biblatex --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.tex
   }
 
   tex() {
@@ -52,6 +51,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   wl(){
+    [[ "$#" -eq 0 ]] && echo "Syntax: wl wallpaper_file options" && return 1
     $HOME/Documents/repos/wallpapers/make_wallpaper.sh "$@"
   }
 
