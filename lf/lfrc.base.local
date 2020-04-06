@@ -10,6 +10,7 @@ set ifs "\n"
 # Settings {{{1
 
 set info size
+set icons
 set previewer ~/dotfiles/lf/previewer.sh
 
 # Custom commands {{{1
