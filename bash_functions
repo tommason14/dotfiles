@@ -50,6 +50,10 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
     sort
   }
 
+  pymol() { # used as an alias
+   /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
+  }
+
   wl(){
     [[ "$#" -eq 0 ]] && echo "Syntax: wl wallpaper_file options" && return 1
     $HOME/Documents/repos/wallpapers/make_wallpaper.sh "$@"

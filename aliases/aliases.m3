@@ -5,7 +5,6 @@ CYAN='\[\e[0;36m\]'
 NO_COLOUR='\[\e[0m\]'
 DATE=$(date '+%d/%m')
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-# if [[ $HOSTNAME == "MU00151959X" ]]; then
   export PS1="${CYAN}${DATE} Local \W \$ ${NO_COLOUR}"
 elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
   export PS1="[${DATE} Stampede \W \$] "
@@ -341,7 +340,15 @@ alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias dotfiles='cd ~/dotfiles'
 alias dots='cd ~/dotfiles'
 alias shortcuts='cd ~/dotfiles/shortcuts'
-alias lfrc='vim ~/.config/lf/lfrc'
+# lfrc is different for slurm/pbs/local
+if [[ $USER =~ (tommason|tmas0023) ]]; then
+  lf_conf="~/dotfiles/lf/lfrc.base.local"
+elif [[ $USER =~ "tmason" ]]; then
+  lf_conf="~/dotfiles/lf/lfrc.base.slurm"
+else
+  lf_conf="~/dotfiles/lf/lfrc.base.pbs"
+fi
+alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null"
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
 
@@ -400,7 +407,6 @@ alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr
 alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
 alias ra='ranger'
-# alias fm='lfcd'
 alias fm='eval $(resize) && lfcd'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
@@ -421,7 +427,7 @@ export vault="tmason1@118.138.242.229"
 
 # files {{{1
 
-alias oba='vim ~/.bash_aliases && source ~/.bashrc'
+alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null'
 alias obf='vim ~/.bash_functions && source ~/.bashrc'
 alias obp='vim ~/.bash_profile && source ~/.bashrc'
 alias obr='vim ~/.bashrc && source ~/.bashrc'

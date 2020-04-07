@@ -227,4 +227,3 @@ echo $fs #  ↓ replacing space in string   ↓ add newline to count
 echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g' 
 # export COPIED=$fs
 }}
-

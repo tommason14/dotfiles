@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 # prompt {{{1
 
 CYAN='\[\e[0;36m\]'
@@ -90,33 +90,13 @@ fi
 [[ $USER == "tommason" ]] && shopt -s direxpand
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
-  alias backups='cd "$filestream"/backups'
   alias ccat='highlight --out-format=ansi'
-  alias dc='cd ~/Documents'
-  alias desktop='cd ~/Desktop'
-  alias dk='cd ~/Desktop'
-  alias documents='cd ~/Documents'
-  alias downloads='cd ~/Downloads'
-  alias dw='cd ~/Downloads'
-  alias gd='cd "$filestream"/Dopamine'
-  alias google='cd "$filestream"'
-  alias gp='cd "$filestream"/polymers'
-  alias gq='cd $repos/qcp'
   alias grep='grep --color'
   alias jl='jupyter-lab'
   alias ls='ls -G'
-  alias mccg='cd $repos/mccg'
-  alias mo='cd ~/Movies'
-  alias pc='cd ~/Pictures'
-  alias polymers='cd "$filestream"/Polymers'
-  alias scripts='cd "$filestream"/scripts'
   
   ### open applications
 
-  function pymol { # used as an alias
-   /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
-  }
   alias ia="open -a /Applications/iA\ Writer.app/"
   alias avo="open -a /Applications/Avogadro.app/"
   alias iqmol="open -a /Applications/IQmol.app/"
@@ -340,15 +320,7 @@ alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias dotfiles='cd ~/dotfiles'
 alias dots='cd ~/dotfiles'
 alias shortcuts='cd ~/dotfiles/shortcuts'
-# lfrc is different for slurm/pbs/local
-if [[ $USER =~ (tommason|tmas0023) ]]; then
-  lf_conf="~/dotfiles/lf/lfrc.base.local"
-elif [[ $USER =~ "tmason" ]]; then
-  lf_conf="~/dotfiles/lf/lfrc.base.slurm"
-else
-  lf_conf="~/dotfiles/lf/lfrc.base.pbs"
-fi
-alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null"
+alias lfrc='vim ~/.config/lf/lfrc'
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
 
@@ -425,31 +397,58 @@ export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
 
-# files {{{1
+# movement
 
-alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null'
-alias obf='vim ~/.bash_functions && source ~/.bashrc'
-alias obp='vim ~/.bash_profile && source ~/.bashrc'
-alias obr='vim ~/.bashrc && source ~/.bashrc'
-alias oip='vim ~/dotfiles/jupyter/ipythonrc'
-alias orp='vim ~/dotfiles/Rprofile'
-alias otdc='vim ~/Documents/repos/daily_log/choline.md'
-alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
-alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
-alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
-alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
-alias ov='vim ~/dotfiles/vimrc'
+if [[ $USER =~ (tommason|tmas0023) ]]; then
+  alias gau="$repos/monash_automation"
+  alias gbch="$filestream/hydrated_ILs"
+  alias gbg="$filestream/backups/gadi"
+  alias gbk="$filestream/backups"
+  alias gbm3="$filestream/backups/massive"
+  alias gbma="$filestream/backups/magnus"
+  alias gbmo="$filestream/backups/monarch"
+  alias gbr="$filestream/backups/raijin"
+  alias gbs="$filestream/backups/stampede"
+  alias gcha="$repos/hydrated_ils/hydrated_il_analysis"
+  alias gchp="$repos/hydrated_ils/hydrated_il_paper/aug_19"
+  alias gcs="$repos/chem_scripts"
+  alias gdc="~/Documents"
+  alias gdf="~/dotfiles"
+  alias gdk="~/Desktop"
+  alias gdl="$repos/daily_log"
+  alias gda="$repos/dopamine/dopamine_analysis"
+  alias gdp="$repos/dopamine/dopamine_paper"
+  alias gdr="~/Dropbox"
+  alias gdw="~/Downloads"
+  alias gfd="$filestream/Dopamine"
+  alias gfo="$filestream"
+  alias gfpo="$filestream/polymers"
+  alias gfpd="$filestream/zotero/pdfs"
+  alias gmc="$repos/mccg"
+  alias gmm="$repos/membranes"
+  alias gmo="~/Movies"
+  alias gpc="~/Pictures"
+  alias gq="$repos/qcp"
+  alias grm="$repos/membranes"
+  alias grp="$repos"
+  alias gsc="$filestream/scripts"
+  alias gsu="$repos/dopamine/dopamine_paper/supp_info"
+  alias gta="$repos/talks/confirmation_talk"
+  alias gth="$repos/thesis"
+  alias gw="$repos/wallpapers"
 
-# movement {{{1
+  # files 
 
-alias gau='cd ~/monash_automation/'
-alias gba='cd /home/tmason1/scratch/Battery_electrolytes'
-alias gch='cd /home/tmason1/scratch/hydrated_ils'
-alias gd='cd /home/tmason1/scratch/dopamine'
-alias gdf='cd ~/dotfiles'
-alias gow='cd /home/tmason1/sn29'
-alias gp='cd /home/tmason1/scratch/polymers/polymerisation_rates'
-alias gq='cd /home/tmason1/sn29/apps/qcp'
-alias gs='cd /home/tmason1/scratch'
-alias gt='cd /home/tmason1/scratch/tests'
-alias gw='cd /home/tmason1/p2015120004'
+  alias oba="~/.bash_aliases && source ~/.bashrc"
+  alias obf="~/.bash_functions && source ~/.bashrc"
+  alias obp="~/.bash_profile && source ~/.bashrc"
+  alias obr="~/.bashrc && source ~/.bashrc"
+  alias oip="~/dotfiles/jupyter/ipythonrc"
+  alias orp="~/dotfiles/Rprofile"
+  alias ov="~/dotfiles/vimrc"
+  alias otdc="~/Documents/repos/daily_log/choline.md"
+  alias otdd="~/Documents/repos/daily_log/dopamine.md"
+  alias otdm="~/Documents/repos/daily_log/membranes.md"
+  alias otdp="~/Documents/repos/daily_log/membranes.md"
+  alias otdj="~/Documents/repos/daily_log/subd_jobs.md"
+fi

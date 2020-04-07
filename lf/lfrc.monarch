@@ -219,7 +219,7 @@ map sqo !squeue -u $USER -o "%10i %30j %130Z"
 
 # Files {{{2
 
-map oba $vim ~/.bash_aliases && source ~/.bashrc
+map oba $vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null
 map obf $vim ~/.bash_functions && source ~/.bashrc
 map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc

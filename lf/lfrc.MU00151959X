@@ -228,10 +228,9 @@ echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g'
 # export COPIED=$fs
 }}
 
-
 # Files {{{2
 
-map oba $vim ~/.bash_aliases && source ~/.bashrc
+map oba $vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null
 map obf $vim ~/.bash_functions && source ~/.bashrc
 map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc
