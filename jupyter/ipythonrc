@@ -1,15 +1,15 @@
 # INITIAL SETUP
 
 from dfply import *
-from plotnine import *
+# from plotnine import *
 import matplotlib.pyplot as plt
 import warnings
 warnings.simplefilter('ignore')
 
 # Hi-res output
 
-%matplotlib inline
-%config InlineBackend.figure_format = 'retina'
+# %matplotlib inline
+# %config InlineBackend.figure_format = 'retina'
 
 # --- TD-DFT UV-VIS ---
 import scipy as sp
