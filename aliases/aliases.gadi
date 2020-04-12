@@ -17,13 +17,16 @@ fi
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
-    export PATH=$repos/chem_scripts:$repos/scripts:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
+    export PATH=$repos/chem_scripts:$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
     export PYTHONPATH=$repos/monash_automation/:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation="cd $repos/monash_automation"
     export automation="$repos/monash_automation"
-    if [[ $HOSTNAME != *"MBP"* ]] 
+    if [[ $HOSTNAME == *"MBP"* ]] 
     then
+      alias vmd='/Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64'
+    else
+      # uni desktop
       alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
     fi
 
