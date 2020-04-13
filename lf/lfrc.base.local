@@ -128,12 +128,23 @@ cmap <esc> cmd-escape
 # File opening {{{2
 
 map o. $open .
-map ov $vim "$f"
+map oiv $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"
 map oia $open -a /Applications/iA\ Writer.app/ "$f"
 map oiq $open -a /Applications/iQmol.app/ "$f"
+
+cmd vmd ${{
+if [ $USER == "tmas0023" ]
+then
+  /Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86 "$f"
+else
+  /Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64 "$f"
+fi
+}}
+
+map ovm vmd "$f"
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"

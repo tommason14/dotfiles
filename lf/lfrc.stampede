@@ -230,7 +230,7 @@ map otdd $vim ~/Documents/repos/daily_log/dopamine.md
 map otdj $vim ~/Documents/repos/daily_log/subd_jobs.md
 map otdm $vim ~/Documents/repos/daily_log/membranes.md
 map otdp $vim ~/Documents/repos/daily_log/membranes.md
-map ov $vim ~/dotfiles/vimrc
+map ovi $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 

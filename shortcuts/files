@@ -4,7 +4,7 @@ bp: ~/.bash_profile && source ~/.bashrc
 br: ~/.bashrc && source ~/.bashrc
 ip: ~/dotfiles/jupyter/ipythonrc
 rp: ~/dotfiles/Rprofile
-v: ~/dotfiles/vimrc
+vi: ~/dotfiles/vimrc
 tdc: ~/Documents/repos/daily_log/choline.md
 tdd: ~/Documents/repos/daily_log/dopamine.md
 tdm: ~/Documents/repos/daily_log/membranes.md

@@ -441,7 +441,7 @@ alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
 alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
 alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
 alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
-alias ov='vim ~/dotfiles/vimrc'
+alias ovi='vim ~/dotfiles/vimrc'
 
 # movement {{{1
 
