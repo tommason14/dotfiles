@@ -1,0 +1,72 @@
+{
+	"data science": {
+		"prefix": "data",
+		"body": [
+			"%matplotlib inline",
+			"%config InlineBackend.figure_format = 'retina'",
+			"import numpy as np",
+			"import pandas as pd",
+			"import seaborn as sns",
+			"import matplotlib.pyplot as plt",
+		]
+	},
+	"documentation": {
+		"prefix": "docs",
+		"body": [
+			"\"\"\"",
+			"File: $TM_FILENAME",
+			"Author: Tom Mason",
+			"Email: tom.mason14@gmail.com",
+			"Github: tommason14",
+			"Description: ${0}",
+			"\"\"\""
+		]
+	},
+	"chem_assistant": {
+		"prefix": "ca",
+		"body": "from chem_assistant import ${0:blah}"
+	},
+	"chem_assistant settings": {
+		"prefix": "cs",
+		"body": "from chem_assistant import Settings"
+	},
+	"gaussian job": {
+		"prefix": "gauss",
+		"body": "GaussJob('${0:xyz}', settings=sett)"
+	},
+	"gamess job": {
+		"prefix": "gauss",
+		"body": "GamessJob('${1:xyz}', fmo=${2:True}, settings=sett)"
+	},
+	"psi4 job": {
+		"prefix": "psi",
+		"body": "PsiJob('${0:xyz}', settings=sett)"
+	},
+	"orca job": {
+		"prefix": "orca",
+		"body": "OrcaJob('${0:xyz}', settings=sett)"
+	},
+	"namedtuples": {
+		"prefix": "nt",
+		"body": "from collections import namedtuple"
+	},
+	"glob": {
+		"prefix": "gl",
+		"body": "from glob import glob"
+	},
+	"plotnine": {
+		"prefix": "pn",
+		"body": "from plotnine import *"
+	},
+	"dfply": {
+		"prefix": "dfply",
+		"body": "from dfply import *"
+	},
+	"ifmain": {
+		"prefix": "ifmain",
+		"body": [
+			"if __name__ == \"__main__\":",
+			"	main()"
+		]
+	}
+}

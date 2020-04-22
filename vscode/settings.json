@@ -1,0 +1,71 @@
+{
+    "workbench.colorTheme": "Wal",
+    "latex-workshop.message.update.show": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "window.zoomLevel": 3,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "xelatex -> bibtex -> xelatex*2",
+        "tools": [
+          "xelatex",
+          "bibtex",
+          "xelatex",
+          "xelatex"
+        ]
+      }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+          "name": "latexmk",
+          "command": "/usr/local/texlive/2018/bin/x86_64-darwin/latexmk",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-pdf",
+            "%DOC%"
+          ]
+        },
+        {
+          "name": "xelatex",
+          "command": "/usr/local/texlive/2018/bin/x86_64-darwin/xelatex",
+          "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "%DOC%"
+          ]
+        },
+        {
+          "name": "bibtex",
+          "command": "/usr/local/texlive/2018/bin/x86_64-darwin/bibtex",
+          "args": [
+            "%DOCFILE%"
+          ]
+        }
+      ],
+      "latex-workshop.intellisense.unimathsymbols.enabled": true,
+      "cSpell.language": "en-GB",
+      "pandoc.pdfOptString": "--pdf-engine=xelatex --filter=pandoc-citeproc",
+      "python.pythonPath": "/usr/local/bin/python3",
+      "latex-workshop.latex.autoBuild.run": "never",
+      "[markdown]": {
+        "editor.quickSuggestions": true
+    },
+    "cSpell.checkLimit": 20000000,
+    "vim.disableExtension": true,
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "latex-workshop.synctex.synctexjs.enabled": false,
+    "rewrap.autoWrap.enabled": true,
+    "rewrap.wrappingColumn": 80,
+    "editor.wordWrapColumn": 100,
+    "files.associations": {
+      "*.rmd": "markdown"
+    },
+    "latex-workshop.latex.external.build.args": [
+      "xelatex"
+    ],
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+}

@@ -2,7 +2,6 @@
 
 dir=~/dotfiles
 
-vscode_md=~/Library/Application\ Support/Code/User/snippets/markdown.json
 ipython=~/.ipython/profile_default/startup/start.ipy
 jupyter_css=~/.jupyter/custom/custom.css
 yabairc=~/.config/yabai/yabairc
@@ -12,7 +11,6 @@ wal=~/.config/wal/templates
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   files="bash_functions vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
 amethyst"    
-  [[ -L $vscode_md ]] || (echo "Linking markdown.json" && ln -s $dir/vscode/markdown.json $vscode_md)
   [[ -L $ipython ]] || (echo "Linking ipythonrc" && ln -s $dir/jupyter/ipythonrc $ipython)
   [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s
 $dir/jupyter/custom.css $jupyter_css)
@@ -73,13 +71,21 @@ done
 
 if [[ $USER =~ (tmas0023|tommason) ]]
 then
-for f in $(ls $dir/atom/)
+for f in $(find $dir/atom -type f)
 do
+  base=$(basename $f)
   orig="$dir/atom/$f"
-  linked="$HOME/.atom/$f"
-  if ! [[ -L $linked ]]; then
-    echo "Symlinking $orig to $linked"
-    ln -s $orig $linked
+  target="$HOME/.atom/$base"
+  if [[ ! -L $target ]]; then
+    echo "Linking $base for atom"
+    ln -s "$orig" "$target"
   fi
 done
+
+# vscode symlinks on local
+vsdir="$HOME/Library/Application Support/Code/User"
+[[ ! -L "$vsdir/settings.json" ]] && ln -s "$dir/vscode/settings.json" "$vsdir/settings.json"
+[[ ! -L "$vsdir/keybindings.json" ]] && ln -s "$dir/vscode/keybindings.json" "$vsdir/keybindings.json"
+[[ ! -d "$vsdir/snippets" ]] && ln -s "$dir/vscode/snippets/" "$vsdir"
+
 fi

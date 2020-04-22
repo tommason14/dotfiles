@@ -1,0 +1,48 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "alt+b",
+        "command": "markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
+    },
+    {
+        "key": "alt+s",
+        "command": "editor.action.insertSnippet",
+        "args": {"snippet": "\\textsubscript{$1}$0"}
+    },
+    {
+        "key": "alt+shift+s",
+        "command": "editor.action.insertSnippet",
+        "args": {"snippet": "\\textsuperscript{$1}$0"}
+    },
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "shift+cmd+b",
+        "command": "workbench.action.tasks.build"
+    },
+    {
+        "key": "shift+cmd+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "ctrl+shift+cmd+m",
+        "command": "workbench.actions.view.problems"
+    },
+    {
+        "key": "shift+cmd+m",
+        "command": "editor.action.insertSnippet",
+        "args": {"snippet": " %>% "},
+    },
+]
