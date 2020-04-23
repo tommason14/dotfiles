@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Wal",
+    "workbench.colorTheme": "Solarized Dark",
     "latex-workshop.message.update.show": false,
     "editor.wordWrap": "wordWrapColumn",
     "window.zoomLevel": 3,
@@ -68,4 +68,9 @@
     ],
     "python.formatting.provider": "black",
     "editor.formatOnSave": true,
+    "editor.fontFamily": "'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace",
+    "workbench.fontAliasing": "antialiased",
+    "cSpell.userWords": [
+      "cyclisation"
+    ],
 }
