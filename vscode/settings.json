@@ -1,8 +1,8 @@
 {
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Wal Bordered",
     "latex-workshop.message.update.show": false,
     "editor.wordWrap": "wordWrapColumn",
-    "window.zoomLevel": 3,
+    "window.zoomLevel": 4,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
       {
@@ -61,16 +61,19 @@
     "rewrap.wrappingColumn": 80,
     "editor.wordWrapColumn": 100,
     "files.associations": {
-      "*.rmd": "markdown"
+      "*.rmd": "rmd"
     },
     "latex-workshop.latex.external.build.args": [
       "xelatex"
     ],
     "python.formatting.provider": "black",
-    "editor.formatOnSave": true,
     "editor.fontFamily": "'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace",
     "workbench.fontAliasing": "antialiased",
     "cSpell.userWords": [
       "cyclisation"
     ],
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.python"
+    },
+    "editor.formatOnSave": true,
 }
