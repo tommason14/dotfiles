@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Wal Bordered",
     "latex-workshop.message.update.show": false,
     "editor.wordWrap": "wordWrapColumn",
-    "window.zoomLevel": 4,
+    "window.zoomLevel": 2,
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.latex.recipes": [
       {
@@ -70,10 +70,11 @@
     "editor.fontFamily": "'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace",
     "workbench.fontAliasing": "antialiased",
     "cSpell.userWords": [
-      "cyclisation"
+      "cyclisation",
+      "tuples"
     ],
     "[python]": {
       "editor.defaultFormatter": "ms-python.python"
     },
-    "editor.formatOnSave": true,
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
 }
