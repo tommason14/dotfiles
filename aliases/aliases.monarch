@@ -19,8 +19,8 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
     export PATH=$repos/chem_scripts:$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
-    # export PATH="$repos/monash_automation/bin:$PATH"
-    # export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
+    export PATH="$repos/monash_automation/bin:$PATH"
+    export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation="cd $repos/monash_automation"
     export automation="$repos/monash_automation"
@@ -37,10 +37,10 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     alias js='jekyll serve'
 fi
 
-# raijin {{{1
+# raijin/gadi {{{1
 
 if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
-    export PATH=~/chem_scripts:/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation:$PATH
+    export PATH=~/chem_scripts:/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation/bin:$PATH
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='qstat -u tm3124 | grep tm3124 | wc -l'
@@ -53,7 +53,7 @@ fi
 # magnus {{{1
 
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
-    export PATH=~/chem_scripts:~/monash_automation:$PATH
+    export PATH=~/chem_scripts:~/monash_automation/bin:$PATH
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason | wc -l'
@@ -63,7 +63,7 @@ fi
 # stampede2 {{{1
 
 if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
-    export PATH=~/chem_scripts:~/monash_automation:$PATH
+    export PATH=~/chem_scripts:~/monash_automation/bin:$PATH
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
     alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias automation='cd ~/monash_automation'
@@ -77,8 +77,8 @@ fi
 # monarch/massive {{{1
 
 if [[ $PWD == *"tmason1"* ]]; then
-    # export PATH=~/chem_scripts:~/monash_automation/:$PATH
-    # export PYTHONPATH=~/monash_automation:$PYTHONPATH
+    export PATH=~/chem_scripts:~/monash_automation/bin:$PATH
+    export PYTHONPATH=~/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason1 | wc -l'
     alias automation='cd ~/monash_automation'
