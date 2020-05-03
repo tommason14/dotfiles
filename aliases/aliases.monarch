@@ -18,8 +18,9 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     export LAMMPS_EXEC="/usr/local/bin/lmp_serial" # pysimm
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
-    export PATH=$repos/chem_scripts:$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$repos/monash_automation:$PATH
-    export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
+    export PATH=$repos/chem_scripts:$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
+    # export PATH="$repos/monash_automation/bin:$PATH"
+    # export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     alias automation="cd $repos/monash_automation"
     export automation="$repos/monash_automation"
@@ -76,8 +77,8 @@ fi
 # monarch/massive {{{1
 
 if [[ $PWD == *"tmason1"* ]]; then
-    export PATH=~/chem_scripts:~/monash_automation/:$PATH
-    export PYTHONPATH=~/monash_automation:$PYTHONPATH
+    # export PATH=~/chem_scripts:~/monash_automation/:$PATH
+    # export PYTHONPATH=~/monash_automation:$PYTHONPATH
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
     alias job_count='squeue | grep tmason1 | wc -l'
     alias automation='cd ~/monash_automation'

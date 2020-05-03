@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Wal",
+    "workbench.colorTheme": "Chester Atom",
     "latex-workshop.message.update.show": false,
     "editor.wordWrap": "wordWrapColumn",
     "window.zoomLevel": 2,
@@ -67,7 +67,7 @@
       "xelatex"
     ],
     "python.formatting.provider": "black",
-    "editor.fontFamily": "'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'Fira Code', 'Ubuntu Mono', Menlo, Monaco, 'Courier New', monospace",
     "workbench.fontAliasing": "antialiased",
     "cSpell.userWords": [
       "cyclisation",
