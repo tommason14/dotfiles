@@ -449,6 +449,7 @@ alias ovi='vim ~/dotfiles/vimrc'
 
 alias gau='cd ~/monash_automation/'
 alias gch='cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils'
+alias gcs='cd ~/chem_scripts'
 alias gd='cd /home/tmason1/sn29_scratch/tmason1/dopamine'
 alias gdf='cd ~/dotfiles'
 alias gp='cd /home/tmason1/sn29_scratch/tmason1/polymers'

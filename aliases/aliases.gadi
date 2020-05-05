@@ -448,6 +448,7 @@ alias ovi='vim ~/dotfiles/vimrc'
 # movement {{{1
 
 alias gau='cd ~/monash_automation'
+alias gcs='cd ~/chem_scripts'
 alias gdf='cd ~/dotfiles'
 alias gs='cd /scratch/k96/tm3124'
 alias gwg='cd /home/565/zls565/.local/gamess19-srs # work gamess'
