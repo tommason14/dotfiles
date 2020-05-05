@@ -6,12 +6,12 @@ NO_COLOUR='\[\e[0m\]'
 DATE=$(date '+%d/%m')
 
 declare -A host
-host["gadi"]="gadi"
-host["mon"]="mon"
-host["m3"]="m3"
-host["stampede"]="stm"
-host["MBP"]="mac"
-host["MU00151959X"]="mac"
+host["gadi"]="Gadi"
+host["mon"]="Mon"
+host["m3"]="M3"
+host["stampede"]="Stm"
+host["MBP"]="Mac"
+host["MU00151959X"]="Mac"
 
 for name in "${!host[@]}"
 do
@@ -19,13 +19,6 @@ do
     export PS1="${CYAN}[ ${host[$name]} \W ]\$ ${NO_COLOUR}"
   fi
 done
-# if [[ $USER =~ (tommason|tmas0023) ]]; then
-#   export PS1="${CYAN}[ Mac \W ]\$ ${NO_COLOUR}"
-# elif [[ $HOSTNAME == *"stampede2.tacc.utexas.edu" ]]; then
-#   export PS1="[${DATE} Stampede \W \$] "
-# else
-#   export PS1="[${DATE} \h \W \$] "
-# fi
 
 # uni mac or macbook {{{1
 

@@ -6,12 +6,12 @@ NO_COLOUR='\[\e[0m\]'
 DATE=$(date '+%d/%m')
 
 declare -A host
-host["gadi"]="gadi"
-host["mon"]="mon"
-host["m3"]="m3"
-host["stampede"]="stm"
-host["MBP"]="mac"
-host["MU00151959X"]="mac"
+host["gadi"]="Gadi"
+host["mon"]="Mon"
+host["m3"]="M3"
+host["stampede"]="Stm"
+host["MBP"]="Mac"
+host["MU00151959X"]="Mac"
 
 for name in "${!host[@]}"
 do
