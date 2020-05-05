@@ -128,7 +128,7 @@ cmap <esc> cmd-escape
 # File opening {{{2
 
 map o. $open .
-map ov $vim "$f"
+map oiv $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
 map oi $open -a /Applications/iA\ Writer.app/ "$f"
@@ -152,6 +152,7 @@ cmd open ${{
 
 # Shell utilities {{{2
 
+map ovm vmd "$f"
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
