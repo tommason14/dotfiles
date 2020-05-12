@@ -157,6 +157,7 @@ map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
 map rot remove_orca_temps
+map p2 $python $f
 map py $python3 $f
 map gfr !gauss_freqs
 
