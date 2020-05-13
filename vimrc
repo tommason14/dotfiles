@@ -160,13 +160,16 @@ nnoremap <Leader><Space> z=
 " Run python in vim
 
 " Run on selected text
-vnoremap <Leader>p y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
+vnoremap <Leader>p3 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
+vnoremap <Leader>p2 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python<CR>
 
 " Run on selected text, no output
-vnoremap <Leader>n y`]o<Esc>p`[v`]:!python3<CR>
+vnoremap <Leader>n3 y`]o<Esc>p`[v`]:!python3<CR>
+vnoremap <Leader>n2 y`]o<Esc>p`[v`]:!python<CR>
 
 " Run on entire buffer
-nnoremap <Leader>p :norm ggVG$,p<CR>
+nnoremap <Leader>p3 :norm ggVG$,p3<CR>
+nnoremap <Leader>p2 :norm ggVG$,p2<CR>
 
 " Run R in vim
 
