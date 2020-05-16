@@ -6,7 +6,11 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
     open -a /Applications/"$program" $2
   }
 
-  pres_to_pdf() {
+  xaringan_to_pdf() {
+    decktape remark --chrome-arg=--allow-file-access-from-files $1 ${1%.html}.pdf 
+  }
+
+  reveal_to_pdf() {
     decktape reveal http://localhost:1948/$1 $2 -s "1200x800"
   }
 
