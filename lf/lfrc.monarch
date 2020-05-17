@@ -152,7 +152,7 @@ cmd open ${{
 
 # Shell utilities {{{2
 
-map ovm vmd "$f"
+map ovm $vmd "$f"
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
@@ -240,8 +240,8 @@ map gau cd ~/monash_automation/
 map gba cd /home/tmason1/scratch/Battery_electrolytes
 map gch cd /home/tmason1/scratch/hydrated_ils
 map gcs cd ~/chem_scripts
-map gd cd /home/tmason1/scratch/dopamine
 map gdf cd ~/dotfiles
+map gd cd /home/tmason1/scratch/dopamine
 map gow cd /home/tmason1/sn29
 map gp cd /home/tmason1/scratch/polymers/polymerisation_rates
 map gq cd /home/tmason1/sn29/apps/qcp

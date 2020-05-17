@@ -152,7 +152,7 @@ cmd open ${{
 
 # Shell utilities {{{2
 
-map ovm vmd "$f"
+map ovm $vmd "$f"
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
@@ -238,8 +238,8 @@ map ovi $vim ~/dotfiles/vimrc
 
 map gau cd ~/monash_automation/
 map gch cd /scratch/pawsey0197/tmason/Hydrated_ILs
-map gd cd /scratch/pawsey0197/tmason/dopamine
 map gdf cd ~/dotfiles
+map gd cd /scratch/pawsey0197/tmason/dopamine
 map gq cd /group/pawsey0197/apps/source/qcp
 map gs cd /scratch/pawsey0197/tmason
 map gw cd /group/pawsey0197
