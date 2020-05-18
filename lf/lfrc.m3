@@ -239,8 +239,8 @@ map ovi $vim ~/dotfiles/vimrc
 map gau cd ~/monash_automation/
 map gch cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 map gcs cd ~/chem_scripts
-map gdf cd ~/dotfiles
 map gd cd /home/tmason1/sn29_scratch/tmason1/dopamine
+map gdf cd ~/dotfiles
 map gp cd /home/tmason1/sn29_scratch/tmason1/polymers
 map gq cd /home/tmason1/sn29/apps/qcp
 map gs cd /home/tmason1/sn29_scratch/tmason1

@@ -1,6 +1,5 @@
 {
-    "workbench.colorTheme": "Gruvbox Dark (Medium)",
-    "latex-workshop.message.update.show": false,
+  "latex-workshop.message.update.show": false,
     "editor.wordWrap": "wordWrapColumn",
     "window.zoomLevel": 2,
     "latex-workshop.view.pdf.viewer": "tab",

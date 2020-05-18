@@ -152,7 +152,7 @@ cmd open ${{
 
 # Shell utilities {{{2
 
-map ovm vmd "$f"
+map ovm $vmd "$f"
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
