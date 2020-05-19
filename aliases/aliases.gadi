@@ -366,7 +366,6 @@ ex=:\
 *.nix=:\
 " 
 
-
 # aliases for default commands
 alias c='clear'
 alias i='less -i'

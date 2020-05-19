@@ -10,6 +10,8 @@ set ifs "\n"
 # Settings {{{1
 
 set info size
+set icons
+set drawbox
 set previewer ~/dotfiles/lf/previewer.sh
 
 # Custom commands {{{1
