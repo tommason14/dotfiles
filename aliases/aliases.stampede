@@ -157,7 +157,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   alias feh='feh -F -d'
   function preview {
-    qlmanage -p $1 2> /dev/null
+    qlmanage -p $1 &> /dev/null
   }
 
   alias hyperjs='vim ~/dotfiles/hyper.js'

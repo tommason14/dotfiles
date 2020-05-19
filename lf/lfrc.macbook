@@ -149,7 +149,7 @@ map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
-map pr $qlmanage -p "$f"
+map pr $qlmanage -p "$f" &>/dev/null
 
 cmd open ${{
     case $(file --mime-type $f -b) in
