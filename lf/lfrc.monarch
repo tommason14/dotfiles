@@ -37,7 +37,9 @@ cmd bulk-rename ${{ # {{{3
 		echo "$fs" > $index
 	else
 		echo "$(ls "$(dirname $f)" | tr ' ' "\n")" > $index
-	fi
+	fi  
+  # basenames not the whole path
+  awk -F "/" '{print $NF}' $index > tmpf && mv tmpf $index
 	index_edit=$(mktemp /tmp/lf-bulk-rename.XXXXXXXXXX)
 	cat $index > $index_edit
 	$EDITOR $index_edit

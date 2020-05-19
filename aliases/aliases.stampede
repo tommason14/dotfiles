@@ -174,9 +174,38 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   # window management
   alias yb='brew services start yabai && brew services start skhd'
   alias ybr='brew services restart yabai && brew services restart skhd'
-  alias ybs='brew services stop yabai && brew services stop skhd'
- 
-  export LF_ICONS="\
+  alias ybs='brew services stop yabai && brew services stop skhd' 
+fi
+
+# remote {{{1
+
+if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
+then
+  alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
+  alias remove_orca_temps="ls -1 | sed '/inp/d;/job/d;/log/d;/xyz/d' | xargs rm"
+fi
+
+# everywhere {{{1 
+
+alias bash_aliases='vim ~/.bash_aliases && source ~/.bashrc'
+alias bash_functions='vim ~/.bash_functions && source ~/.bashrc'
+alias bashrc='vim ~/.bashrc && source ~/.bashrc'
+alias dotfiles='cd ~/dotfiles'
+alias dots='cd ~/dotfiles'
+alias shortcuts='cd ~/dotfiles/shortcuts'
+# lfrc is different for slurm/pbs/local
+if [[ $USER =~ (tommason|tmas0023) ]]; then
+  lf_conf="~/dotfiles/lf/lfrc.base.local"
+elif [[ $USER =~ "tmason" ]]; then
+  lf_conf="~/dotfiles/lf/lfrc.base.slurm"
+else
+  lf_conf="~/dotfiles/lf/lfrc.base.pbs"
+fi
+alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null"
+alias rangerconf='vim ~/.config/ranger/rc.conf'
+alias vimrc='vim ~/dotfiles/vimrc'
+
+export LF_ICONS="\
 di=:\
 fi=:\
 ln=:\
@@ -337,35 +366,6 @@ ex=:\
 *.nix=:\
 " 
 
-fi
-
-# remote {{{1
-
-if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
-then
-  alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
-  alias remove_orca_temps="ls -1 | sed '/inp/d;/job/d;/log/d;/xyz/d' | xargs rm"
-fi
-
-# everywhere {{{1 
-
-alias bash_aliases='vim ~/.bash_aliases && source ~/.bashrc'
-alias bash_functions='vim ~/.bash_functions && source ~/.bashrc'
-alias bashrc='vim ~/.bashrc && source ~/.bashrc'
-alias dotfiles='cd ~/dotfiles'
-alias dots='cd ~/dotfiles'
-alias shortcuts='cd ~/dotfiles/shortcuts'
-# lfrc is different for slurm/pbs/local
-if [[ $USER =~ (tommason|tmas0023) ]]; then
-  lf_conf="~/dotfiles/lf/lfrc.base.local"
-elif [[ $USER =~ "tmason" ]]; then
-  lf_conf="~/dotfiles/lf/lfrc.base.slurm"
-else
-  lf_conf="~/dotfiles/lf/lfrc.base.pbs"
-fi
-alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null"
-alias rangerconf='vim ~/.config/ranger/rc.conf'
-alias vimrc='vim ~/dotfiles/vimrc'
 
 # aliases for default commands
 alias c='clear'
