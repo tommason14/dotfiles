@@ -17,12 +17,12 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   latex_compile() { latexmk -pvc -pdfxe $1 & }
 
   make_pdf() {
-  pandoc $1 --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
-  open ${1%.md}.pdf
+    pandoc $1 --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.pdf 
+    open ${1%.md}.pdf
   }
 
   make_tex() {
-  pandoc $1 --biblatex --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.tex
+    pandoc $1 --biblatex --pdf-engine=xelatex --filter=pandoc-citeproc -o ${1%.md}.tex
   }
 
   tex() {
@@ -40,7 +40,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
     args="bbl blg log synctex.gz fls fdb_latexmk out"
     for arg in $args
     do
-      if [ -f $TEX.$arg ]; then
+      if [[ -f $TEX.$arg ]]; then
         echo "Removing $TEX.$arg"
         rm $TEX.$arg
       fi
@@ -227,11 +227,11 @@ copy() {
 lfcd () {
     tmp="$(mktemp)"
     lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
+    if [[ -f "$tmp" ]]; then
         dir="$(cat "$tmp")"
         rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
+        if [[ -d "$dir" ]]; then
+            if [[ "$dir" != "$(pwd)" ]]; then
                 cd "$dir"
             fi
         fi
@@ -255,35 +255,29 @@ rm Rplots.pdf
 }
 
 plot_uv() {
-
-[[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
-
-sigma=${2:-0.05}
-step=${3:-0.01}
-Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, scales='free_y')" &> /dev/null
-open Rplots.pdf
-sleep 3 
-rm Rplots.pdf
+  [[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
+  sigma=${2:-0.05}
+  step=${3:-0.01}
+  Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, scales='free_y')" &> /dev/null
+  open Rplots.pdf
+  sleep 3 
+  rm Rplots.pdf
 }
 
 plot_uv_vertical() {
-
-[[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
-
-sigma=${2:-0.05}
-step=${3:-0.01}
-Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, ncol=1, scales='free_y')" &> /dev/null
-open Rplots.pdf
-sleep 3 
-rm Rplots.pdf
+  [[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
+  sigma=${2:-0.05}
+  step=${3:-0.01}
+  Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, ncol=1, scales='free_y')" &> /dev/null
+  open Rplots.pdf
+  sleep 3 
+  rm Rplots.pdf
 }
 
 travis_xyz_analysis(){
-[[ $# -eq 0 ]] && echo "Syntax: travis_xyz_analysis traj.lmp" && return 1
-
-[[ $USER =~ (tmas0023|tommason) ]] && 
-  input="$repos/chem_scripts/travis_xyz_analysis.txt" || 
-  input="~/chem_scripts/travis_xyz_analysis.txt"
-
-travis -p "$1" -i "$input"
+  [[ $# -eq 0 ]] && echo "Syntax: travis_xyz_analysis traj.lmp" && return 1
+  [[ $USER =~ (tmas0023|tommason) ]] && 
+    input="$repos/chem_scripts/travis_xyz_analysis.txt" || 
+    input="$HOME/chem_scripts/travis_xyz_analysis.txt"
+  travis -p "$1" -i "$input"
 }
