@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   use() {
@@ -48,13 +48,13 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   check_references(){
-    grep -i @article{$1 $repos/thesis/refs.bib |\
-    sed 's/\@article{//' |\
-    sed 's/\,//' |\
+    grep -i "@article{$1" "$repos/thesis/refs.bib" |
+    sed 's/\@article{//' |
+    sed 's/\,//' |
     sort
   }
 
-  pymol() { # used as an alias
+  pymol(){ 
    /Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc"
   }
 
@@ -276,4 +276,14 @@ Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plo
 open Rplots.pdf
 sleep 3 
 rm Rplots.pdf
+}
+
+travis_xyz_analysis(){
+[[ $# -eq 0 ]] && echo "Syntax: travis_xyz_analysis traj.lmp" && return 1
+
+[[ $USER =~ (tmas0023|tommason) ]] && 
+  input="$repos/chem_scripts/travis_xyz_analysis.txt" || 
+  input="~/chem_scripts/travis_xyz_analysis.txt"
+
+travis -p "$1" -i "$input"
 }
