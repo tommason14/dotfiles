@@ -206,10 +206,17 @@ make_gif() {
 # i.e. make_subdirs gauss.template
 # then run qcp from that dir
 function make_subdirs {
-  top_dir=$(pwd); for f in $(find . -path "*xyz"); do dir_name=$(dirname $f);
-  base_name=$(basename $f); file_name=$(echo $base_name | cut -d . -f 1); cd
-  $dir_name; mkdir $file_name; cd $file_name; cp $top_dir/$1 . ;
-  cp $top_dir/$f .; cd $top_dir; done
+  top_dir=$(pwd)
+  for f in $(find . -path "*xyz"); do 
+    dir_name=$(dirname "$f")
+    base_name=$(basename "$f")
+    file_name=$(echo "$base_name" | cut -d . -f 1)
+    cd "$dir_name"
+    mkdir "$file_name"
+    cd "$file_name"
+    cp "$top_dir/$f" .
+    cd "$top_dir"
+  done
 }
 
 function gamesstoxyz {
@@ -239,39 +246,58 @@ lfcd () {
 }
 
 plot_individual_ir() {
-Rscript -e "read_csv('$1') %>% ir_with_lorentzians() %>% ggplot() + aes(Wave, Int) + geom_line()" &> /dev/null
-open Rplots.pdf
-sleep 3 
-rm Rplots.pdf
+  Rscript -e "read_csv('$1') %>%
+    ir_with_lorentzians() %>%
+    ggplot() +
+    aes(Wave, Int) +
+    geom_line()" &> /dev/null
+  open Rplots.pdf
+  sleep 3 
+  rm Rplots.pdf
 }
 
 plot_ir_from_csv() {
-half_width=${2:-20}
-Rscript -e "read_csv('$1') %>% group_by(File) %>% do(ir_with_lorentzians(., $half_width))\
-            %>% plot_ir_spectra() + facet_wrap(File~.)" &> /dev/null
-open Rplots.pdf
-sleep 3 
-rm Rplots.pdf
+  half_width=${2:-20}
+  Rscript -e "read_csv('$1') %>%
+    group_by(File) %>%
+    do(ir_with_lorentzians(., $half_width)) %>%
+    plot_ir_spectra() +
+    facet_wrap(File~.)" &> /dev/null
+  open Rplots.pdf
+  sleep 3 
+  rm Rplots.pdf
 }
 
 plot_uv() {
   [[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
   sigma=${2:-0.05}
   step=${3:-0.01}
-  Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, scales='free_y')" &> /dev/null
+  Rscript -e "read_csv('$1') %>% 
+    group_by(Config) %>%
+    do(add_gaussians(.)) %>%
+    plot_gaussians() +
+    facet_wrap(.~Config, scales='free_y')" &> /dev/null
   open Rplots.pdf
   sleep 3 
   rm Rplots.pdf
 }
 
 plot_uv_vertical() {
-  [[ $1 =~ "-h" || $# -eq 0 ]] && echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" && return 1
+  [[ $1 =~ "-h" || $# -eq 0 ]] && 
+    echo "Syntax: plot_uv csvfile [sigma, default=0.05] [step,default=0.01]" &&
+    return 1
   sigma=${2:-0.05}
   step=${3:-0.01}
-  Rscript -e "read_csv('$1') %>% group_by(Config) %>% do(add_gaussians(.)) %>% plot_gaussians() + facet_wrap(.~Config, ncol=1, scales='free_y')" &> /dev/null
-  open Rplots.pdf
+  Rscript -e "read_csv('$1') %>% 
+    group_by(Config) %>% 
+    do(add_gaussians(.)) %>%
+    plot_gaussians(curve = '#2a9d8f', lines = '#fb8b24') + 
+    theme_tom(font='Fira Code Light') +
+    facet_wrap(.~Config, ncol=1, scales='free_y') +
+    ggsave('Rplot.png', dpi=300)" &> /dev/null
+  open Rplot.png
   sleep 3 
-  rm Rplots.pdf
+  rm Rplot.png
 }
 
 travis_xyz_analysis(){
