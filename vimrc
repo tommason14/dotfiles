@@ -8,6 +8,7 @@ Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
 Plugin 'psf/black'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
+Plugin 'tommason14/lammps.vim'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'matze/vim-tex-fold' 
@@ -205,7 +206,7 @@ nnoremap <Leader>h :hi clear SpellBad<CR>:hi SpellBad cterm=underline<CR><CR>
 " Compiling
 au FileType markdown nnoremap <Leader>r :w<CR>:! pandoc --filter pandoc-crossref --filter pandoc-citeproc --filter pandoc-mustache --pdf-engine xelatex % -o %:r.pdf<CR><CR>
 
-au FileType rmd nnoremap <Leader>r :w<CR>:!Rscript -e "require(rmarkdown); render('%')"<CR>
+au FileType rmd nnoremap <Leader>r :w<CR>:!Rscript -e "require(rmarkdown); render('%')"<CR> 
 
 
 " Python  {{{1 
@@ -396,13 +397,14 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
 set number
 set relativenumber
 
-if $USER == "tm3124"
-  colo slate
-else
+if $USER == "tommason"
   colo wal
+else
+  colo default
 endif
 
 hi Normal ctermbg=none " Use terminal background 
+hi Folded ctermbg=none " Same for folds
 
 " Changes style of highlighting
 hi clear SpellBad

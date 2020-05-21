@@ -122,8 +122,8 @@ map y
 map yy copy
 map dd cut
 map pp paste
-map dD delete
-map dt $mv "$fx" ~/.trash # bin for accidental deletion
+map dD $mv "$fx" ~/.Trash/ 
+map dt delete # delete true
 map <bs2> set hidden!
 map re rename
 cmap <esc> cmd-escape
@@ -146,7 +146,7 @@ else
   /Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64 "$f"
 fi
 }}
-
+map ou push $use<space>
 map ovm vmd "$f"
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
@@ -173,6 +173,8 @@ map py $python3 $f
 map rot remove_orca_temps
 map gfr !gauss_freqs
 map cl !compile_latex $(basename "$f")
+map md push :mkdir<space>
+ 
 
 # utilities
 cmap <C-c> cmd-escape

@@ -36,12 +36,12 @@ done
 
 # Machine-specific
 
-[[ -d ~/.config/ranger ]] || mkdir ~/.config/ranger
+# [[ -d ~/.config/ranger ]] || mkdir ~/.config/ranger
 [[ -d ~/.config/lf ]] || mkdir ~/.config/lf
 
 alias_symlink=~/.bash_aliases
 lf_symlink=~/.config/lf/lfrc
-ranger_symlink=~/.config/ranger/rc.conf
+# ranger_symlink=~/.config/ranger/rc.conf
 
 make_links(){
   [[ -L $alias_symlink ]] || (
@@ -50,9 +50,9 @@ make_links(){
   [[ -L $lf_symlink ]] || (
   echo "Symlinking $dir/lf/lfrc.$1 --> $lf_symlink" &&
   ln -s $dir/lf/lfrc.$1 $lf_symlink)
-  [[ -L $ranger_symlink ]] || (
-  echo "Symlinking $dir/ranger/rc.conf.$1 --> $ranger_symlink" &&
-  ln -s $dir/ranger/rc.conf.$1 $ranger_symlink)
+  # [[ -L $ranger_symlink ]] || (
+  # echo "Symlinking $dir/ranger/rc.conf.$1 --> $ranger_symlink" &&
+  # ln -s $dir/ranger/rc.conf.$1 $ranger_symlink)
 }
 
 if [[ $USER == "tommason" ]]; then
