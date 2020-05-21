@@ -1,10 +1,10 @@
 library(reticulate)
 use_python('/usr/local/bin/python3', required = TRUE)
+library(stats) # purely so dplyr::filter works
 library(tidyverse)
 library(magrittr)
 library(readxl)
 library(latex2exp) 
-dfilter <- dplyr::filter # namespace issues- base stats overrides dplyr filter 
 
 `%notin%` = function(x,y) !(x %in% y)
 

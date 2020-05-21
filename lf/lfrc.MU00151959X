@@ -164,6 +164,7 @@ cmd open ${{
 
 # Shell utilities {{{2
 
+map . ${{lf -remote "send $id push $./$(basename $f)<space>"}}
 map g2m $gamess_to_molden.py "$f"
 map moc molden2csv "$f"
 map mx $chmod +x "$f"
@@ -174,6 +175,7 @@ map rot remove_orca_temps
 map gfr !gauss_freqs
 map cl !compile_latex $(basename "$f")
 map md push :mkdir<space>
+map rs $Rscript $f
  
 
 # utilities

@@ -405,6 +405,8 @@ endif
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
+hi Statement cterm=none " keywords not in bold (normally cterm=bold)
+hi Folded cterm=none " Remove bold text from folds
 
 " Changes style of highlighting
 hi clear SpellBad

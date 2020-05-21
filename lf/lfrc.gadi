@@ -156,6 +156,7 @@ cmd open ${{
 
 # Shell utilities {{{2
 
+map . ${{lf -remote "send $id push $./$(basename $f)<space>"}}
 map ovm $vmd "$f"
 map g2m $gamess_to_molden.py "$f"
 map mx $chmod +x "$f"
@@ -164,6 +165,7 @@ map rot remove_orca_temps
 map p2 $python $f
 map py $python3 $f
 map gfr !gauss_freqs
+map rs $Rscript $f
 
 # utilities
 cmap <C-c> cmd-escape
