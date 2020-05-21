@@ -413,12 +413,6 @@ set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
 
-" if ssh, set dark background
-let g:remoteSession = ($SSH_CLIENT != "")
-if g:remoteSession
-  set bg=dark
-endif
-
 " set list
 " set listchars=tab:→\ ,eol:↲
 " " hi NonText ctermfg=DarkGrey
