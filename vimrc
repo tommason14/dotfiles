@@ -63,9 +63,9 @@ let g:UltiSnipsUsePythonVersion = 3
 
 function Snippets()
   if $USER == "tommason" || $USER == "tmas0023"
-    execute "tabnew ~/Documents/repos/vim-snippets/snippets/".&ft.".snippets"
+    execute "tabnew ~/Documents/repos/vim-snippets/UltiSnips/".&ft.".snippets"
   else
-    execute "tabnew ~/vim-snippets/snippets/".&ft.".snippets"
+    execute "tabnew ~/vim-snippets/UltiSnips/".&ft.".snippets"
   endif
 endfunction
 
@@ -76,6 +76,22 @@ let g:snips_github="https:github.com/tommason14"
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+function GetAllSnippets()
+  call UltiSnips#SnippetsInCurrentScope(1)
+  let list = []
+  for [key, info] in items(g:current_ulti_dict_info)
+    let parts = split(info.location, ':')
+    echo key
+    " call add(list, {
+    "   \"key": key,
+    "   \"path": parts[0],
+    "   \"linenr": parts[1],
+    "   \"description": info.description,
+    "   \})
+  endfor
+  return list
+endfunction
 
 au BufWritePost *.snippets !update_snippets.sh 
 
@@ -114,6 +130,7 @@ let mapleader = ","
 " Snippets
 
 nnoremap <Leader>s :call Snippets()<CR>
+nnoremap ls :call GetAllSnippets()<CR>
 
 " Tabnew 
 
@@ -244,6 +261,7 @@ au BufNewFile,BufRead *.Rmd,*.rmd
     \ set spell spelllang=en_gb                      |
     \ set textwidth=80                               |
     \ set filetype=rmd                               |
+    " \ UltiSnipsAddFiletypes markdown                 |
     \ nnoremap <Leader>o :!open %:r.html<CR>         |
     \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
 
