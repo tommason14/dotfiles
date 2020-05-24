@@ -32,6 +32,10 @@ curl https://gist.githubusercontent.com/tommason14/324cb37dd7803f3b06b39f53d3830
 brew cask install visual-studio-code 
 brew cask install zotero
 
+brew tap zegervdv/zathura
+brew install zathura
+brew install zathura-pdf-poppler
+
 # System setup
 
 brew install yabai
@@ -39,4 +43,4 @@ brew install skhd
 
 # Writing
 
-# brew install mactex
+brew install mactex

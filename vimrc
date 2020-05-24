@@ -15,9 +15,11 @@ Plugin 'matze/vim-tex-fold'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
+Plugin 'chriskempson/base16-vim'
 if $USER == "tommason" || $USER == "tmas0023"
   Plugin 'xuhdev/vim-latex-live-preview'
 endif
+
 call vundle#end()
 
 " Basics {{{1
@@ -261,7 +263,6 @@ au BufNewFile,BufRead *.Rmd,*.rmd
     \ set spell spelllang=en_gb                      |
     \ set textwidth=80                               |
     \ set filetype=rmd                               |
-    " \ UltiSnipsAddFiletypes markdown                 |
     \ nnoremap <Leader>o :!open %:r.html<CR>         |
     \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
 
@@ -410,15 +411,24 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
     \ set shiftwidth=2                      |
     \ set filetype=sh                       | 
 
+" LAMMPS comment style, for the Tcomment plugin
+" au FileType lammps let g:tcomment#filetype#syntax_map_user = {'lammps': 'python'}
+let g:tcomment_types={'lammps': '# %s'}
+
 " Visuals {{{1
 
 set number
 set relativenumber
 
-if $USER == "tommason"
+if $USER == "tommason" || $USER == "tmas0023"
   colo wal
 else
   colo default
+endif
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
 endif
 
 hi Normal ctermbg=none " Use terminal background 
@@ -436,3 +446,12 @@ hi clear Error
 " set list
 " set listchars=tab:→\ ,eol:↲
 " " hi NonText ctermfg=DarkGrey
+
+" Change cursor to thin line on insert
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" lag when escaping from insert mode
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
