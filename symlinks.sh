@@ -88,4 +88,7 @@ vsdir="$HOME/Library/Application Support/Code/User"
 [[ ! -L "$vsdir/keybindings.json" ]] && ln -s "$dir/vscode/keybindings.json" "$vsdir/keybindings.json"
 [[ ! -d "$vsdir/snippets" ]] && ln -s "$dir/vscode/snippets/" "$vsdir"
 
+zathuradir="$HOME/.config/zathura"
+[[ ! -d $zathuradir ]] && mkdir -p "$zathuradir"
+ln -s "$dir/zathurarc" "$zathuradir"
 fi

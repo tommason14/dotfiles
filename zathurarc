@@ -1,0 +1,5 @@
+set selection-clipboard clipboard
+map [normal] f toggle_fullscreen
+map [fullscreen] f toggle_fullscreen
+map [normal] i recolor
+map [fullscreen] i recolor

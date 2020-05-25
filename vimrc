@@ -190,9 +190,16 @@ nnoremap <Leader>p2 :norm ggVG$,p2<CR>
 
 " Select R plot and run with ,z<letter>
 " small, large, mega
-vnoremap <Leader>zs y:tabnew tmpR.R<CR>ipng('tmpR.png', width=1200, height=1200, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
+vnoremap <Leader>zs 
+  \ y:tabnew tmpR.R<CR> 
+  \ ipng('tmpR.png', width=1200, height=1200,res=300)<Esc>
+  \ o<Esc>PGidev.off()<Esc>:wq<CR>
+  \ :!Rscript tmpR.R<CR>
+  \ :!qlmanage -p tmpR.png &> /dev/null <CR>
+  \ :!rm tmpR.R tmpR.png<CR><CR>
 
-vnoremap <Leader>zl y:tabnew tmpR.R<CR>ipng('tmpR.png', width=3000, height=2400, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
+vnoremap <Leader>zl y:tabnew tmpR.R<CR>ipng('tmpR.png', width=3000, height=2400, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!qlmanage -p tmpR.png &> /dev/null <CR>
+ \:!rm tmpR.R tmpR.png<CR><CR>
 
 vnoremap <Leader>zm y:tabnew tmpR.R<CR>ipng('tmpR.png', width=5000, height=4000, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
 
