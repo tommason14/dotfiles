@@ -25,7 +25,6 @@ call vundle#end()
 " Basics {{{1
 
 set nocompatible
-filetype off
 filetype plugin on
 syntax enable
 set encoding=utf-8 
@@ -36,6 +35,8 @@ set visualbell " no beeps!
 set expandtab
 set ruler
 set linebreak " don't break words when wrapping to new line
+set autoindent
+set smartindent
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -236,8 +237,9 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4                              |
     \ set shiftwidth=4                               |
     \ set textwidth=100                              |
-    \ let g:black_linelength = 90                   |
+    \ let g:black_linelength = 90                    |
     \ set filetype=python                            |
+    \ set formatoptions=tcqj                         |
 
 au BufWritePost *.py :Black
 au FileType python nnoremap <Leader>r :!python3 %<CR>
