@@ -16,9 +16,6 @@ Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
-if $USER == "tommason" || $USER == "tmas0023"
-  Plugin 'xuhdev/vim-latex-live-preview'
-endif
 
 call vundle#end()
 
@@ -190,13 +187,13 @@ vnoremap <Leader>n2 y`]o<Esc>p`[v`]:!python<CR>
 nnoremap <Leader>p3 :norm ggVG$,p3<CR>
 nnoremap <Leader>p2 :norm ggVG$,p2<CR>
 
-" Run R in vim
+" Select R plot and run with ,z<letter>
+" small, large, mega
+vnoremap <Leader>zs y:tabnew tmpR.R<CR>ipng('tmpR.png', width=1200, height=1200, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
 
-" Run on selected text
-vnoremap <Leader>E y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!Rscript <CR>
+vnoremap <Leader>zl y:tabnew tmpR.R<CR>ipng('tmpR.png', width=3000, height=2400, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
 
-" Run on entire buffer
-nnoremap <Leader>R :norm ggVG$,E<CR>
+vnoremap <Leader>zm y:tabnew tmpR.R<CR>ipng('tmpR.png', width=5000, height=4000, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
 
 " Set filetype to allow above command whenever
 nnoremap <Leader>f :set ft=python<CR>i
