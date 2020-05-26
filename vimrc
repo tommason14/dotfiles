@@ -12,6 +12,7 @@ Plugin 'tommason14/lammps.vim'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'matze/vim-tex-fold' 
+Plugin 'masukomi/vim-markdown-folding'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
