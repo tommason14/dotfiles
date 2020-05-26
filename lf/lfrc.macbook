@@ -163,6 +163,7 @@ map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f" &>/dev/null
+map oz $zathura "$f"
 
 cmd open ${{
     case $(file --mime-type $f -b) in
@@ -260,7 +261,7 @@ echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g'
 
 # Files {{{2
 
-map oba $vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null
+map oba $vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null
 map obf $vim ~/.bash_functions && source ~/.bashrc
 map obp $vim ~/.bash_profile && source ~/.bashrc
 map obr $vim ~/.bashrc && source ~/.bashrc

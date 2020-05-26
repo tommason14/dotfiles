@@ -201,7 +201,7 @@ elif [[ $USER =~ "tmason" ]]; then
 else
   lf_conf="~/dotfiles/lf/lfrc.base.pbs"
 fi
-alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null"
+alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
 

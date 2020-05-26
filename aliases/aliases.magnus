@@ -201,7 +201,7 @@ elif [[ $USER =~ "tmason" ]]; then
 else
   lf_conf="~/dotfiles/lf/lfrc.base.pbs"
 fi
-alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null"
+alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
 
@@ -441,7 +441,7 @@ export vault="tmason1@118.138.242.229"
 
 # files {{{1
 
-alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null'
+alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null'
 alias obf='vim ~/.bash_functions && source ~/.bashrc'
 alias obp='vim ~/.bash_profile && source ~/.bashrc'
 alias obr='vim ~/.bashrc && source ~/.bashrc'

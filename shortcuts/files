@@ -1,4 +1,4 @@
-ba: ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc && cd - > /dev/null
+ba: ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null
 bf: ~/.bash_functions && source ~/.bashrc
 bp: ~/.bash_profile && source ~/.bashrc
 br: ~/.bashrc && source ~/.bashrc
