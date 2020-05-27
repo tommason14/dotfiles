@@ -4,6 +4,7 @@
 brew install entr
 brew install git
 brew install gnuplot
+brew install groff
 brew install imagemagick
 brew install lf
 brew install open-babel
