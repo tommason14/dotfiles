@@ -136,7 +136,7 @@ theme_tom <- function(font="Anonymous Pro", base_size = 11.5,
   ret <- ret + theme(plot.subtitle=element_text(hjust=0, size=subtitle_size,
                                                 margin=margin(b=subtitle_margin),
                                                 family=subtitle_family, face=subtitle_face))
-  ret <- ret + theme(plot.caption=element_text(hjust=1, size=caption_size,
+  ret <- ret + theme(plot.caption=element_text(hjust=0, size=caption_size,
                                                margin=margin(t=caption_margin),
                                                family=caption_family, face=caption_face))
   ret <- ret + theme(plot.margin=plot_margin)
