@@ -32,9 +32,9 @@ cmd pymol ${{
 }}
 
 cmd chem_assist_ds ${{
-settings_file=$(ls *.py | sort | head -n 1)
-chem_assist -ds $settings_file
-[ -d __pycache__ ] && rm -r __pycache__
+  settings_file=$(ls *.py | sort | head -n 1)
+  chem_assist -ds $settings_file
+  [ -d __pycache__ ] && rm -r __pycache__
 }}
 
 cmd bulk-rename ${{ # {{{3
@@ -102,16 +102,6 @@ cmd plotgauss !{{
 cmd molden2csv ${{
   (echo 'Wave,Int' && cat "$f" | awk '{OFS=","; print $1,$2}' ) > tmp.out.csv
   mv tmp.out.csv "$f"
-}}
-
-## Travis
-
-cmd travis_xyz !{{ 
-  [ $# -eq 0 ] && echo "Syntax: travis_xyz_analysis traj.lmp" && return 1
-  [ $USER = "tmas0023" ] | [ $USER = "tommason" ] && 
-    input="$repos/chem_scripts/travis_xyz_analysis.txt" || 
-    input="$HOME/chem_scripts/travis_xyz_analysis.txt"
-  travis -p "$f" -i "$input"
 }}
 
 # Mappings {{{1
@@ -188,7 +178,7 @@ map gfr !gauss_freqs
 map cl !compile_latex $(basename "$f")
 map md push :mkdir<space>
 map rs $Rscript $f
-map tr travis_xyz "$f"
+map tr $travis_xyz_analysis "$f"
  
 
 # utilities
@@ -260,20 +250,3 @@ echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g'
 # export COPIED=$fs
 }}
 
-# PBS {{{2
-[ $USER = "tm3124" ] && 
-  map sb $qsub $f &&
-  map sj $submit_jobs &&
-  map squ !qstat -u tm3124 &&
-  map sqo !nqstat &&
-  map sql !nqstat 
-
-# SLURM {{{2
-
-[ $USER = "tmason"* ] &&
-  map sb $sbatch "$f" &&
-  map sj $submit_jobs &&
-  map squ !squeue -u $USER -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D %R" &&
-  map sql !squeue -u $USER -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
-  %.12l %.12L %.6D %.16S %R" &&
-  map sqo !squeue -u $USER -o "%10i %30j %130Z"

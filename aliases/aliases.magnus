@@ -194,15 +194,7 @@ alias bashrc='vim ~/.bashrc && source ~/.bashrc'
 alias dotfiles='cd ~/dotfiles'
 alias dots='cd ~/dotfiles'
 alias shortcuts='cd ~/dotfiles/shortcuts'
-# lfrc is different for slurm/pbs/local
-if [[ $USER =~ (tommason|tmas0023) ]]; then
-  lf_conf="~/dotfiles/lf/lfrc.base.local"
-elif [[ $USER =~ "tmason" ]]; then
-  lf_conf="~/dotfiles/lf/lfrc.base.slurm"
-else
-  lf_conf="~/dotfiles/lf/lfrc.base.pbs"
-fi
-alias lfrc="vim $lf_conf && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
+alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
 alias rangerconf='vim ~/.config/ranger/rc.conf'
 alias vimrc='vim ~/dotfiles/vimrc'
 

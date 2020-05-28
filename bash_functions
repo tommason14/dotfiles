@@ -299,11 +299,3 @@ plot_uv_vertical() {
   sleep 3 
   rm Rplot.png
 }
-
-travis_xyz_analysis(){
-  [[ $# -eq 0 ]] && echo "Syntax: travis_xyz_analysis traj.lmp" && return 1
-  [[ $USER =~ (tmas0023|tommason) ]] && 
-    input="$repos/chem_scripts/travis_xyz_analysis.txt" || 
-    input="$HOME/chem_scripts/travis_xyz_analysis.txt"
-  travis -p "$1" -i "$input"
-}

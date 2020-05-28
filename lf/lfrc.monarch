@@ -27,10 +27,14 @@ cmd touch $touch $1
 cmd mkdir $mkdir -p $1
 cmd mv $mv "$f" $1
 
+cmd pymol ${{
+  eval "/Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc""
+}}
+
 cmd chem_assist_ds ${{
-settings_file=$(ls *.py | sort | head -n 1)
-chem_assist -ds $settings_file
-[ -d __pycache__ ] && rm -r __pycache__
+  settings_file=$(ls *.py | sort | head -n 1)
+  chem_assist -ds $settings_file
+  [ -d __pycache__ ] && rm -r __pycache__
 }}
 
 cmd bulk-rename ${{ # {{{3
@@ -39,10 +43,10 @@ cmd bulk-rename ${{ # {{{3
 		echo "$fs" > $index
 	else
 		echo "$(ls "$(dirname $f)" | tr ' ' "\n")" > $index
-	fi  
+	fi
+	index_edit=$(mktemp /tmp/lf-bulk-rename.XXXXXXXXXX)
   # basenames not the whole path
   awk -F "/" '{print $NF}' $index > tmpf && mv tmpf $index
-	index_edit=$(mktemp /tmp/lf-bulk-rename.XXXXXXXXXX)
 	cat $index > $index_edit
 	$EDITOR $index_edit
 	if [ $(cat $index | wc -l) -eq $(cat $index_edit | wc -l) ]; then
@@ -61,18 +65,6 @@ cmd bulk-rename ${{ # {{{3
 		echo "Number of lines must stay the same"
 	fi
 	rm $index $index_edit
-}}
-
-cmd open-file ${{ # {{{3
-  file -i $f | grep -q 'text\|regular' && vim $f || open $f
-  # case $f in
-  #   *.md|*.txt|*.py|*.js|*.sh|*.yaml|*.f|*.src|*.cpp|*.c|*.) vim $f;;
-  #   *.png|*.jpg) open $f;;
-  #   *.tar.xz|*.txz) tar xJvf $f;;
-  #   *.zip) unzip $f;;
-  #   *.rar) unrar x $f;;
-  #   *.7z) 7z x $f;;
-  # esac
 }}
 
 # Gnuplots {{{2
@@ -107,15 +99,22 @@ cmd plotgauss !{{
   gnuplot -e "set terminal dumb; plot '-' with lines notitle"
 }}
 
+cmd molden2csv ${{
+  (echo 'Wave,Int' && cat "$f" | awk '{OFS=","; print $1,$2}' ) > tmp.out.csv
+  mv tmp.out.csv "$f"
+}}
+
 # Mappings {{{1
 
 # Remove defaults {{{2 
 
 map c
 map d
+map l
 map m
 map p
 map r
+map w
 map y
 
 # Ranger-like {{{2
@@ -123,8 +122,8 @@ map y
 map yy copy
 map dd cut
 map pp paste
-map dD delete
-map dt $mv "$fx" ~/.trash # bin for accidental deletion
+map dD $mv "$fx" ~/.Trash/ 
+map dt delete # delete true
 map <bs2> set hidden!
 map re rename
 cmap <esc> cmd-escape
@@ -135,17 +134,28 @@ map o. $open .
 map oiv $vim "$f"
 map om $molden "$f"
 map og $gmolden "$f"
-map oi $open -a /Applications/iA\ Writer.app/ "$f"
+map oav $open -a /Applications/Avogadro.app/ "$f"
+map oia $open -a /Applications/iA\ Writer.app/ "$f"
+map oiq $open -a /Applications/iQmol.app/ "$f"
+
+cmd vmd ${{
+if [ $USER == "tmas0023" ]
+then
+  /Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86 "$f"
+else
+  /Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64 "$f"
+fi
+}}
+map ou push $use<space>
+map ovm vmd "$f"
+map op pymol "$fs"
+map ors $open -a /Applications/RStudio.app/ "$f"
+map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
+map pr $qlmanage -p "$f" &>/dev/null
+map oz $zathura "$f"
+map ovl $"$(find /usr/local/Cellar/vim -name 'less.sh')" "$f"
 
-# dedicated keys for file opener actions
-# map o &rifle $f
-# map O $mimeopen --ask $f
-
-# define a custom 'open' command
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
 cmd open ${{
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
@@ -157,15 +167,19 @@ cmd open ${{
 # Shell utilities {{{2
 
 map . ${{lf -remote "send $id push $./$(basename $f)<space>"}}
-map ovm $vmd "$f"
 map g2m $gamess_to_molden.py "$f"
+map moc molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
-map rot remove_orca_temps
 map p2 $python $f
 map py $python3 $f
+map rot remove_orca_temps
 map gfr !gauss_freqs
+map cl !compile_latex $(basename "$f")
+map md push :mkdir<space>
 map rs $Rscript $f
+map tr $travis_xyz_analysis "$f"
+ 
 
 # utilities
 cmap <C-c> cmd-escape
@@ -177,7 +191,7 @@ map yq3 $yes "" | qcp -t3
 map cad chem_assist_ds
 map cae $chem_assist -e
 map car $chem_assist -r
-map cat $chem_assist -t
+map cat :chem_assist -t -m 1
 
 # fluorescence
 map yqf $qcp_fluorescence
@@ -190,10 +204,11 @@ map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_it
 
 # Gnuplots {{{2
 
+
 map pm plotmp2 "$f"
 map pfo plotfmo "$f"
-map pgr plotrmsgamess "$f"
 map pga plotgauss "$f"
+map pgr plotrmsgamess "$f"
 
 # New files {{{2
 
@@ -203,8 +218,8 @@ cmd new_rmd %{{
   sed -i "" "s/Title/${@:2}/" $1
 }}
 
-map tr push :new_rmd<space>
-map mr $Rscript -e "require(rmarkdown); render(\"$f\")"
+# map tr push :new_rmd<space>
+map mr !Rscript -e "require(rmarkdown); render(\"$f\")"
 
 # Renaming {{{2
 
@@ -216,6 +231,24 @@ map I :{{
 }}
 
 map A rename 
+
+# Wallpaper {{{2
+
+map wl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" 
+map lwl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" -l
+map wr $~/Documents/repos/wallpapers/random_wallpaper.sh
+map lwr $~/Documents/repos/wallpapers/random_wallpaper.sh -l
+
+
+# Copy across volumes, say from google drive to local mac
+
+
+# Store all copied 
+cmd myc !{{
+echo $fs #  ↓ replacing space in string   ↓ add newline to count
+echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g' 
+# export COPIED=$fs
+}}
 
 # SLURM {{{2
 
