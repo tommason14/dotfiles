@@ -207,6 +207,8 @@ vnoremap <Leader>zm y:tabnew tmpR.R<CR>ipng('tmpR.png', width=5000, height=4000,
 " Set filetype to allow above command whenever
 nnoremap <Leader>f :set ft=python<CR>i
 
+nnoremap <Leader>b :set ft=sh<CR>i
+
 " open vimrc
 nnoremap <Leader>v :tabnew $MYVIMRC<CR>
 nnoremap sv :so $MYVIMRC<CR>
