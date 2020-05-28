@@ -258,3 +258,21 @@ echo $fs #  ↓ replacing space in string   ↓ add newline to count
 echo $fs | sed -E 's/ [A-z]/\\&/' | sed 's; /;\n&;g' 
 # export COPIED=$fs
 }}
+
+# PBS {{{2
+[ $USER = "tm3124" ] && 
+  map sb $qsub $f &&
+  map sj $submit_jobs &&
+  map squ !qstat -u tm3124 &&
+  map sqo !nqstat &&
+  map sql !nqstat 
+
+# SLURM {{{2
+
+[ $USER = "tmason"* ] &&
+  map sb $sbatch "$f" &&
+  map sj $submit_jobs &&
+  map squ !squeue -u $USER -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D %R" &&
+  map sql !squeue -u $USER -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C
+  %.12l %.12L %.6D %.16S %R" &&
+  map sqo !squeue -u $USER -o "%10i %30j %130Z"

@@ -13,8 +13,8 @@ else
   export EDITOR=vim
 fi
 
-[[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
-[[ $USER == "tmas0023" ]] &&
+# [[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
+[[ $USER =~ (tommason|tmas0023) ]] &&
   BASE16_SHELL="$HOME/.config/base16-shell/"
   [ -n "$PS1" ] && 
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && 

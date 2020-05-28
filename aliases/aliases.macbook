@@ -383,6 +383,10 @@ alias ...='cd ../../'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+# sed or gsed on mac
+[ $USER = "tommason" ] || [ $USER = "tmas0023" ] && sed="gsed" || sed="sed"
+export sed
+
 # chem assist
 
 chem_assist_ds() {
