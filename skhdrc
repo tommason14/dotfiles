@@ -93,8 +93,14 @@ shift + lctrl + alt - j : yabai -m window --insert south
 shift + lctrl + alt - k : yabai -m window --insert north
 shift + lctrl + alt - l : yabai -m window --insert east
 
-# Float / Unfloat window
-shift + alt - space : yabai -m window --toggle float
+# Float / Unfloat window 
+# shift + alt - space : yabai -m window --toggle float
+
+# Float / Unfloat desktop
+shift + alt - space : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
+
+# if floating, should turn off autoraise, toggle with shift-alt-n
+shift + alt - n : [[ $(yabai -m config focus_follows_mouse) == 'autoraise' ]] && yabai -m config focus_follows_mouse off || yabai -m config focus_follows_mouse autoraise
 
 # Restart Yabai
 lctrl + alt - r : 
@@ -105,3 +111,9 @@ lctrl + alt - r :
 # Make window native fullscreen
 alt - f         : yabai -m window --toggle zoom-fullscreen
 cmd + alt - f : yabai -m window --toggle native-fullscreen
+
+# open apps
+cmd + alt - r : open /Applications/RStudio.app/
+# try and get this working...
+cmd + alt - y : vim ~/dotfiles/yabairc
+
