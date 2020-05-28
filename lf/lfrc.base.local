@@ -34,7 +34,7 @@ cmd pymol ${{
 cmd chem_assist_ds ${{
 settings_file=$(ls *.py | sort | head -n 1)
 chem_assist -ds $settings_file
-[[ -d __pycache__ ]] && rm -r __pycache__
+[ -d __pycache__ ] && rm -r __pycache__
 }}
 
 cmd bulk-rename ${{ # {{{3
@@ -164,6 +164,7 @@ map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f" &>/dev/null
 map oz $zathura "$f"
+map ovl $"$(find /usr/local/Cellar/vim -name 'less.sh')" "$f"
 
 cmd open ${{
     case $(file --mime-type $f -b) in

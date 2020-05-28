@@ -136,6 +136,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias avo="open -a /Applications/Avogadro.app/"
   alias iqmol="open -a /Applications/IQmol.app/"
   alias deckset="open -a /Applications/Deckset.app/"
+  alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
 
   # monash
   # alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi-login-01.nci.org.au'

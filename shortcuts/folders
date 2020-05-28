@@ -1,43 +1,43 @@
 # Locals
-au: ~/Documents/repos/monash_automation
-bch: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
-bg: /Volumes/GoogleDrive/My\ Drive/backups/gadi
-bk: /Volumes/GoogleDrive/My\ Drive/backups
-bm3: /Volumes/GoogleDrive/My\ Drive/backups/m3
-bma: /Volumes/GoogleDrive/My\ Drive/backups/magnus
-bmo: /Volumes/GoogleDrive/My\ Drive/backups/monarch
-br: /Volumes/GoogleDrive/My\ Drive/backups/raijin
-bs: /Volumes/GoogleDrive/My\ Drive/backups/stampede
-cha: ~/Documents/repos/hydrated_ils/hydrated_il_analysis
-chp: ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
-cm: /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files
-cs: ~/Documents/repos/chem_scripts
-dc: ~/Documents
-df: ~/dotfiles
-dk: ~/Desktop
-dl: ~/Documents/repos/daily_log
-da: ~/Documents/repos/dopamine/dopamine_analysis
-dp: ~/Documents/repos/dopamine/dopamine_paper
-dr: ~/Dropbox
-dw: ~/Downloads
-fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
-fo: /Volumes/GoogleDrive/My\ Drive
-fpo: /Volumes/GoogleDrive/My\ Drive/polymers
-fpd: /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
-mc: ~/Documents/repos/mccg
-mm: ~/Documents/repos/membranes
-mo: ~/Movies
-pc: ~/Pictures
-q: ~/Documents/repos/qcp
-rm: ~/Documents/repos/membranes
-rp: ~/Documents/repos
-sc: /Volumes/GoogleDrive/My\ Drive/scripts
-su: ~/Documents/repos/dopamine/dopamine_paper/supp_info
-ta: ~/Documents/repos/talks/confirmation_talk
-te: ~/Documents/repos/templates
-th: ~/Documents/repos/thesis
-tm: ~/tmp
-w: ~/Documents/repos/wallpapers
+mac-au: ~/Documents/repos/monash_automation
+mac-bch: /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
+mac-bg: /Volumes/GoogleDrive/My\ Drive/backups/gadi
+mac-bk: /Volumes/GoogleDrive/My\ Drive/backups
+mac-bm3: /Volumes/GoogleDrive/My\ Drive/backups/m3
+mac-bma: /Volumes/GoogleDrive/My\ Drive/backups/magnus
+mac-bmo: /Volumes/GoogleDrive/My\ Drive/backups/monarch
+mac-br: /Volumes/GoogleDrive/My\ Drive/backups/raijin
+mac-bs: /Volumes/GoogleDrive/My\ Drive/backups/stampede
+mac-cha: ~/Documents/repos/hydrated_ils/hydrated_il_analysis
+mac-chp: ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
+mac-cm: /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files
+mac-cs: ~/Documents/repos/chem_scripts
+mac-dc: ~/Documents
+mac-df: ~/dotfiles
+mac-dk: ~/Desktop
+mac-dl: ~/Documents/repos/daily_log
+mac-da: ~/Documents/repos/dopamine/dopamine_analysis
+mac-dp: ~/Documents/repos/dopamine/dopamine_paper
+mac-dr: ~/Dropbox
+mac-dw: ~/Downloads
+mac-fd: /Volumes/GoogleDrive/My\ Drive/Dopamine
+mac-fo: /Volumes/GoogleDrive/My\ Drive
+mac-fpo: /Volumes/GoogleDrive/My\ Drive/polymers
+mac-fpd: /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
+mac-mc: ~/Documents/repos/mccg
+mac-mm: ~/Documents/repos/membranes
+mac-mo: ~/Movies
+mac-pc: ~/Pictures
+mac-q: ~/Documents/repos/qcp
+mac-rm: ~/Documents/repos/membranes
+mac-rp: ~/Documents/repos
+mac-sc: /Volumes/GoogleDrive/My\ Drive/scripts
+mac-su: ~/Documents/repos/dopamine/dopamine_paper/supp_info
+mac-ta: ~/Documents/repos/talks/confirmation_talk
+mac-te: ~/Documents/repos/templates
+mac-th: ~/Documents/repos/thesis
+mac-tm: ~/tmp
+mac-w: ~/Documents/repos/wallpapers
 
 # Magnus
 mgs-au: ~/monash_automation/

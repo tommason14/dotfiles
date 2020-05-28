@@ -4,6 +4,7 @@
 brew install entr
 brew install git
 brew install gnuplot
+brew install grep
 brew install imagemagick
 brew install lf
 brew install open-babel
@@ -13,6 +14,7 @@ brew install pandoc-crossref
 brew install python
 brew install r
 brew install ranger
+brew install sed
 brew install tmux
 brew install tree
 brew install vim # should find +python3 with vim --version
