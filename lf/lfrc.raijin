@@ -30,7 +30,7 @@ cmd mv $mv "$f" $1
 cmd chem_assist_ds ${{
 settings_file=$(ls *.py | sort | head -n 1)
 chem_assist -ds $settings_file
-[[ -d __pycache__ ]] && rm -r __pycache__
+[ -d __pycache__ ] && rm -r __pycache__
 }}
 
 cmd bulk-rename ${{ # {{{3
