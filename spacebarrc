@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+source ~/.cache/wal/colors.sh # pywal scheme
+
+# spacebar template colours
+CBACK=$(echo $background | sed 's/#//')
+CFORE=$(echo $foreground | sed 's/#//')
+CACTV=$(echo $color3 | sed 's/#//')
+CNORM=$(echo $color1 | sed 's/#//')
+CINSE=$(echo $foreground | sed 's/#//')
+
+spacebar -m config text_font         "Helvetica Neue:Bold:12.0"
+spacebar -m config icon_font         "FontAwesome:Regular:12.0"
+# spacebar -m config icon_font         "Font Awesome 5 Free:Solid:12"
+spacebar -m config space_icon_strip  I II III IV V VI VII VIII IX X
+spacebar -m config power_icon_strip   
+spacebar -m config space_icon        
+spacebar -m config clock_icon        
+
+# always want a dark bar, so switch fg and bg
+# colours if needed
+if grep -Fq "light" ~/.cache/wal/scheme_colours
+then
+  back="0xff$CFORE"
+  fore="0xff$CBACK"
+else
+  back="0xff$CBACK"
+  fore="0xff$CFORE"
+fi
+
+spacebar -m config background_color  $back
+spacebar -m config foreground_color  $fore

@@ -9,19 +9,6 @@ CACTV=$(echo $color3 | sed 's/#//')
 CNORM=$(echo $color1 | sed 's/#//')
 CINSE=$(echo $foreground | sed 's/#//')
 
-# bar settings
-yabai -m config status_bar                   on
-yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
-# yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
-yabai -m config status_bar_icon_font         "Font Awesome 5 Free:Solid:12"
-yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
-yabai -m config status_bar_power_icon_strip   
-yabai -m config status_bar_space_icon        
-yabai -m config status_bar_clock_icon        
-
-yabai -m config status_bar_background_color  0xff$CBACK
-yabai -m config status_bar_foreground_color  0xff$CFORE
-
 yabai -m config active_window_border_color   0xff$CACTV
 yabai -m config normal_window_border_color   0xff$CNORM
 yabai -m config insert_window_border_color   0xff$CINSE
@@ -49,7 +36,7 @@ yabai -m config mouse_action2                resize
 yabai -m config layout                       bsp
 # pad top by more to give pecan bar some room
 # if using yabai bar, 30 is good
-yabai -m config top_padding                  35
+yabai -m config top_padding                  30
 yabai -m config bottom_padding               30
 yabai -m config left_padding                 30
 yabai -m config right_padding                30

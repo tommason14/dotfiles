@@ -5,6 +5,7 @@ dir=~/dotfiles
 ipython=~/.ipython/profile_default/startup/start.ipy
 jupyter_css=~/.jupyter/custom/custom.css
 yabairc=~/.config/yabai/yabairc
+spacebarrc=~/.config/spacebar/spacebarrc
 skhdrc=~/.config/skhd/skhdrc
 wal=~/.config/wal/templates
 
@@ -15,6 +16,7 @@ amethyst"
   [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s
 $dir/jupyter/custom.css $jupyter_css)
   [[ -L $yabairc ]] || (echo "Linking yabairc" && ln -s $dir/yabairc $yabairc)
+  [[ -L $spacebarrc ]] || (echo "Linking spacebarrc" && ln -s $dir/spacebarrc $spacebarrc)
   [[ -L $skhdrc ]] || (echo "Linking skhdrc" && ln -s $dir/skhdrc $skhdrc)
   # pywal atom theme
   # uses a package found here: https://github.com/ClydeDroid/dotfiles/tree/master/.atom/packages/wal-syntax

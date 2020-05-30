@@ -163,6 +163,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   alias hyperjs='vim ~/dotfiles/hyper.js'
   alias yabairc='vim ~/dotfiles/yabairc'
+  alias spacerc='vim ~/dotfiles/spacebarrc'
   alias skhdrc='vim ~/dotfiles/skhdrc'
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
   alias rprofile='vim ~/dotfiles/Rprofile'
@@ -173,9 +174,9 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   export walls="$repos/wallpapers"
 
   # window management
-  alias yb='brew services start yabai && brew services start skhd'
-  alias ybr='brew services restart yabai && brew services restart skhd'
-  alias ybs='brew services stop yabai && brew services stop skhd' 
+  alias yb='brew services start yabai && brew services start skhd && brew services start spacebar'
+  alias ybr='brew services restart yabai && brew services restart skhd & brew services restart spacebar'
+  alias ybs='brew services stop yabai && brew services stop skhd && brew services stop spacebar' 
 fi
 
 # remote {{{1
