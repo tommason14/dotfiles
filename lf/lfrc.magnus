@@ -18,10 +18,6 @@ set previewer ~/dotfiles/lf/previewer.sh
 
 # LF commands {{{2
 
-cmd remove_orca_temps ${{
-  ls -1 | sed '/inp/d;/job/d;/log/d;/xyz/d' | xargs rm
-}}
-
 cmd q quit
 cmd touch $touch $1
 cmd mkdir $mkdir -p $1
@@ -65,43 +61,6 @@ cmd bulk-rename ${{ # {{{3
 		echo "Number of lines must stay the same"
 	fi
 	rm $index $index_edit
-}}
-
-# Gnuplots {{{2
-
-cmd plotmp2 !{{ 
-   cat "$f" |\
-   grep 'E(MP2)' |\
-   sed '/NaN/d' |\
-   tr -s [:blank:] |\
-   cut -d ' ' -f 3 |\
-   gnuplot -e "set terminal dumb; plot '-' with lines notitle"
-}}
-
-cmd plotfmo !{{
-  cat "$f" |\
-  grep 'E corr MP2(2)=' |\
-  tr -s [:blank:] |\
-  cut -d ' ' -f 10 |\
-  gnuplot -e "set terminal dumb; plot '-' with lines notitle"
-}}
-
-cmd plotrmsgamess !{{
-  grep 'R.M.S.=' "$f" | awk '{print $NF}' |\
-  gnuplot -e "set terminal dumb; plot '-' with lines notitle"
-}}
-
-cmd plotgauss !{{
-  cat "$f" |\
-  grep 'SCF Done' |\
-  tr -s [:blank:] |\
-  cut -d ' ' -f 6 |\
-  gnuplot -e "set terminal dumb; plot '-' with lines notitle"
-}}
-
-cmd molden2csv ${{
-  (echo 'Wave,Int' && cat "$f" | awk '{OFS=","; print $1,$2}' ) > tmp.out.csv
-  mv tmp.out.csv "$f"
 }}
 
 # Mappings {{{1
@@ -158,6 +117,12 @@ map ovl $"$(find /usr/local/Cellar/vim -name 'less.sh')" "$f"
 
 cmd open ${{
     case $(file --mime-type $f -b) in
+        application/pdf|image/*) 
+          for f in $fx
+          do 
+            qlmanage -p "$f" &> /dev/null
+          done 
+          ;;
         text/*) $EDITOR $fx;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
@@ -168,12 +133,12 @@ cmd open ${{
 
 map . ${{lf -remote "send $id push $./$(basename $f)<space>"}}
 map g2m $gamess_to_molden.py "$f"
-map moc molden2csv "$f"
+map moc $molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
 map p2 $python $f
 map py $python3 $f
-map rot remove_orca_temps
+map rot $remove_orca_temps
 map gfr !gauss_freqs
 map cl !compile_latex $(basename "$f")
 map md push :mkdir<space>
@@ -203,7 +168,6 @@ map pfn $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot.gnuplot.sh "$f
 map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_iter.py -f "$f" -l 180 -m 500
 
 # Gnuplots {{{2
-
 
 map pm plotmp2 "$f"
 map pfo plotfmo "$f"

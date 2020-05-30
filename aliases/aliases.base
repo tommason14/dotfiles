@@ -28,11 +28,10 @@ done
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
-    export PATH=$repos/chem_scripts:$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH
+    export PATH="$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
     export PATH="$repos/monash_automation/bin:$PATH"
     export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-    alias automation="cd $repos/monash_automation"
     export automation="$repos/monash_automation"
     if [[ $HOSTNAME == *"MBP"* ]] 
     then
@@ -49,55 +48,16 @@ fi
 
 # raijin/gadi {{{1
 
-if [[ $PWD == *"565"* || $PWD == *"k96"* ]]; then
-    export PATH=~/chem_scripts:/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation/bin:$PATH
+if [[ $USER == "tm3124" ]]; then
+    export PATH="/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation/bin:$PATH"
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
-    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
-    alias job_count='qstat -u tm3124 | grep tm3124 | wc -l'
-    alias automation='cd ~/monash_automation'
-    
-    alias gspec='cp /~/monash_automation/chem_assistant/templates/gamess_meta/spec/meta.py .'
-    alias pspec='cp ~/monash_automation/chem_assistant/templates/psi_meta/spec/meta.py .'
 fi
 
-# magnus {{{1
+# remotes {{{1
 
-if [[ $PWD == *"tmason"* && $HOSTNAME == *"magnus"* ]]; then
-    export PATH=~/chem_scripts:~/monash_automation/bin:$PATH
+if [[ $USER =~ "tmason" ]]; then
+    export PATH="~/chem_scripts:~/monash_automation/bin:$PATH"
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
-    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
-    alias job_count='squeue | grep tmason | wc -l'
-    alias automation='cd ~/monash_automation'
-fi
-
-# stampede2 {{{1
-
-if [[ $PWD == *"tmason"* && $HOSTNAME == *"stampede"* ]]; then
-    export PATH=~/chem_scripts:~/monash_automation/bin:$PATH
-    export PYTHONPATH=~/monash_automation:$PYTHONPATH
-    alias ranger='eval $(resize) && ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
-    alias automation='cd ~/monash_automation'
-    alias job_count='squeue | grep tmason | wc -l'
-    function pf {
-    smooth_fluorescence_data.py -f $1
-    cat spectra.data | awk -F "," '{print $4, $5}' | sed '1d' | gnuplot -e "set terminal dumb; plot '-' with lines notitle"
-    }
-fi
-
-# monarch/massive {{{1
-
-if [[ $PWD == *"tmason1"* ]]; then
-    export PATH=~/chem_scripts:~/monash_automation/bin:$PATH
-    export PYTHONPATH=~/monash_automation:$PYTHONPATH
-    alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
-    alias job_count='squeue | grep tmason1 | wc -l'
-    alias automation='cd ~/monash_automation'
-fi
-
-# gaia {{{1
-
-if [[ $PWD == *"nfs"* ]]; then
-    alias ranger='python3 ~/ranger/ranger.py --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"' 
 fi
 
 # local {{{1
@@ -105,28 +65,9 @@ fi
 [[ $USER == "tommason" ]] && shopt -s direxpand
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  alias analysis='cd "$filestream"/Hydrated_ILs/Analysis'
-  alias backups='cd "$filestream"/backups'
-  alias ccat='highlight --out-format=ansi'
-  alias dc='cd ~/Documents'
-  alias desktop='cd ~/Desktop'
-  alias dk='cd ~/Desktop'
-  alias documents='cd ~/Documents'
-  alias downloads='cd ~/Downloads'
-  alias dw='cd ~/Downloads'
-  alias gd='cd "$filestream"/Dopamine'
-  alias google='cd "$filestream"'
-  alias gp='cd "$filestream"/polymers'
-  alias gq='cd $repos/qcp'
   alias grep='grep --color'
   alias jl='jupyter-lab'
   alias ls='ls -G'
-  alias mccg='cd $repos/mccg'
-  alias mo='cd ~/Movies'
-  alias pc='cd ~/Pictures'
-  alias polymers='cd "$filestream"/Polymers'
-  alias scripts='cd "$filestream"/scripts'
-  
   ### open applications
 
   function pymol { # used as an alias
@@ -139,7 +80,6 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
 
   # monash
-  # alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi-login-01.nci.org.au'
   alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi.nci.org.au'
   alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
   alias magnus='sshpass -f ~/dotfiles/sshfile ssh -Y tmason@magnus.pawsey.org.au'
@@ -154,21 +94,19 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   alias size='du -sh'
   alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
-  alias thesis='cd $repos/thesis'
 
   alias feh='feh -F -d'
-  function preview {
-    qlmanage -p $1 &> /dev/null
-  }
 
   alias hyperjs='vim ~/dotfiles/hyper.js'
+  alias ybrc='vim ~/dotfiles/yabairc'
   alias yabairc='vim ~/dotfiles/yabairc'
+  alias sprc='vim ~/dotfiles/spacebarrc'
   alias spacerc='vim ~/dotfiles/spacebarrc'
+  alias skrc='vim ~/dotfiles/skhdrc'
   alias skhdrc='vim ~/dotfiles/skhdrc'
   alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
   alias rprofile='vim ~/dotfiles/Rprofile'
   alias pymolrc='vim ~/dotfiles/pymolrc'
-  alias update_repos='cd $repos && sh update_repos.sh && cd -'
   alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
   alias wr='$repos/wallpapers/random_wallpaper.sh'
   export walls="$repos/wallpapers"
@@ -177,14 +115,6 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   alias yb='brew services start yabai && brew services start skhd && brew services start spacebar'
   alias ybr='brew services restart yabai && brew services restart skhd & brew services restart spacebar'
   alias ybs='brew services stop yabai && brew services stop skhd && brew services stop spacebar' 
-fi
-
-# remote {{{1
-
-if ! [[ $PWD == *"tommason"* || $PWD == *"tmas0023"* ]]
-then
-  alias kill_subjobs="ps | grep subjobs.sh | awk '{print $1}' | xargs kill -9"  
-  alias remove_orca_temps="ls -1 | sed '/inp/d;/job/d;/log/d;/xyz/d' | xargs rm"
 fi
 
 # everywhere {{{1 
@@ -400,18 +330,6 @@ else
   export settings="$HOME/Documents/repos/monash_automation/settings_files"
 fi
 
-# plots everywhere
-alias lastcol="awk '{print \$NF}'"
-alias plotgnu="gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-alias plotpcm="grep 'EMP2+EPCM' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-alias plotmp2="grep 'E(MP2)' | sed '/NaN/d' | tr -s [:blank:] | cut -d ' ' -f 3 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-alias plotfmo="grep 'E corr MP2(2)=' | tr -s [:blank:] | cut -d ' ' -f 10 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-alias plotgauss="grep 'SCF Done' | tr -s [:blank:] | cut -d ' ' -f 6 | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-alias plotgamessfreqs="sed -n '/FREQ(CM\*\*-1)/,/^$/{//!p;}' | awk '{print $2,$NF}' | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\""
-alias plotgaussfreqs="tee >(grep Frequencies | awk '{OFS=\"\n\"; print $3,$4,$5}' > fone) >(grep 'IR Inten' | awk '{OFS=\"\n\"; print $4,$5,$6}' > ftwo ) &> /dev/null && paste fone ftwo | gnuplot -e \"set terminal dumb; plot '-' with lines notitle\" && rm fone ftwo"
-alias plotrmsgamess='grep "R.M.S.=" | lastcol | plotgnu'
-alias plotrmsgauss='grep "Internal  Forces" | lastcol | plotgnu'
-
 # sort energies
 alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr -k 2"
 
@@ -436,3 +354,6 @@ export monarch='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
+
+# add scripts to path 
+export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
