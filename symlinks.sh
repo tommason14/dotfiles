@@ -92,5 +92,5 @@ vsdir="$HOME/Library/Application Support/Code/User"
 
 zathuradir="$HOME/.config/zathura"
 [[ ! -d $zathuradir ]] && mkdir -p "$zathuradir"
-ln -s "$dir/zathurarc" "$zathuradir"
+[[ ! -L "$zathuradir/zathurarc" ]] && ln -s "$dir/zathurarc" "$zathuradir/zathurarc"
 fi

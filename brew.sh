@@ -42,6 +42,7 @@ brew install zathura-pdf-poppler
 
 brew install yabai
 brew install skhd
+brew install somdoron/formulae/spacebar
 
 # Writing
 
