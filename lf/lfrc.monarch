@@ -249,5 +249,6 @@ map gow cd /home/tmason1/sn29
 map gp cd /home/tmason1/scratch/polymers/polymerisation_rates
 map gq cd /home/tmason1/sn29/apps/qcp
 map gs cd /home/tmason1/scratch
+map gsc cd ~/.local/scripts
 map gt cd /home/tmason1/scratch/tests
 map gw cd /home/tmason1/p2015120004

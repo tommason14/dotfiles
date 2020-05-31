@@ -247,5 +247,6 @@ map gdf cd ~/dotfiles
 map gp cd /scratch/06233/tmason/polymers/polymerisation_rates
 map gq cd /work/06233/tmason/stampede2/qcp
 map gs cd /scratch/06233/tmason
+map gsc cd ~/.local/scripts
 map gt cd /scratch/06233/tmason/tests
 map gw cd /work/06233/tmason/stampede2

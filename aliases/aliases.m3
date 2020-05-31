@@ -28,8 +28,8 @@ done
 if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
-    export PATH="$repos/membranes/polymatic:"$filestream"/bin:"$filestream"/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
-    export PATH="$repos/monash_automation/bin:$PATH"
+    PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
+    PATH="$repos/monash_automation/bin:$PATH"
     export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
     export automation="$repos/monash_automation"
@@ -49,14 +49,14 @@ fi
 # raijin/gadi {{{1
 
 if [[ $USER == "tm3124" ]]; then
-    export PATH="/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation/bin:$PATH"
+    PATH="/home/565/tm3124/.linuxbrew/bin:/home/565/tm3124/py-37/bin:/home/565/tm3124/monash_automation/bin:$PATH"
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
 fi
 
 # remotes {{{1
 
 if [[ $USER =~ "tmason" ]]; then
-    export PATH="~/chem_scripts:~/monash_automation/bin:$PATH"
+    PATH="~/chem_scripts:~/monash_automation/bin:$PATH"
     export PYTHONPATH=~/monash_automation:$PYTHONPATH
 fi
 
@@ -383,5 +383,6 @@ alias gdf='cd ~/dotfiles'
 alias gp='cd /home/tmason1/sn29_scratch/tmason1/polymers'
 alias gq='cd /home/tmason1/sn29/apps/qcp'
 alias gs='cd /home/tmason1/sn29_scratch/tmason1'
+alias gsc='cd ~/.local/scripts'
 alias gt='cd /home/tmason1/sn29_scratch/tmason1/tests'
 alias gw='cd /home/tmason1/sn29'

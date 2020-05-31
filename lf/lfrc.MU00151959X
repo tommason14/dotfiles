@@ -264,7 +264,7 @@ map gpc cd ~/Pictures
 map gq cd ~/Documents/repos/qcp
 map grm cd ~/Documents/repos/membranes
 map grp cd ~/Documents/repos
-map gsc cd /Volumes/GoogleDrive/My\ Drive/scripts
+map gsc cd ~/.local/scripts
 map gsu cd ~/Documents/repos/dopamine/dopamine_paper/supp_info
 map gta cd ~/Documents/repos/talks/confirmation_talk
 map gte cd ~/Documents/repos/templates
