@@ -342,6 +342,7 @@ alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundl
 
 alias vim='vim -p' # automatically open in tabs
 alias resize_vim='eval $(resize)' # if vim shows up small
+alias pr='preview'
 
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
@@ -378,11 +379,11 @@ alias ovi='vim ~/dotfiles/vimrc'
 alias gau='cd ~/monash_automation/'
 alias gch='cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils'
 alias gcs='cd ~/chem_scripts'
-alias gdf='cd ~/dotfiles'
 alias gd='cd /home/tmason1/sn29_scratch/tmason1/dopamine'
+alias gdf='cd ~/dotfiles'
 alias gp='cd /home/tmason1/sn29_scratch/tmason1/polymers'
 alias gq='cd /home/tmason1/sn29/apps/qcp'
-alias gsc='cd ~/.local/scripts'
 alias gs='cd /home/tmason1/sn29_scratch/tmason1'
+alias gsc='cd ~/.local/scripts'
 alias gt='cd /home/tmason1/sn29_scratch/tmason1/tests'
 alias gw='cd /home/tmason1/sn29'

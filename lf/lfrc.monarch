@@ -250,12 +250,12 @@ map gau cd ~/monash_automation/
 map gba cd /home/tmason1/scratch/Battery_electrolytes
 map gch cd /home/tmason1/scratch/hydrated_ils
 map gcs cd ~/chem_scripts
-map gdf cd ~/dotfiles
 map gd cd /home/tmason1/scratch/dopamine
+map gdf cd ~/dotfiles
 map gow cd /home/tmason1/sn29
 map gp cd /home/tmason1/scratch/polymers/polymerisation_rates
 map gq cd /home/tmason1/sn29/apps/qcp
-map gsc cd ~/.local/scripts
 map gs cd /home/tmason1/scratch
+map gsc cd ~/.local/scripts
 map gt cd /home/tmason1/scratch/tests
 map gw cd /home/tmason1/p2015120004
