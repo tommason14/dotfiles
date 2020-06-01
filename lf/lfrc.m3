@@ -105,8 +105,11 @@ grep -Fq "atoms" $f && vmdlammps.sh $(basename $f) && exit 0
 if [ $USER == "tmas0023" ]
 then
   /Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86 "$f"
-else
+elif [ $USER == "tommason" ]
+then
   /Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64 "$f"
+else
+  vmd "$f"
 fi
 }}
 map ou push $use<space>
@@ -246,11 +249,11 @@ map ovi $vim ~/dotfiles/vimrc
 map gau cd ~/monash_automation/
 map gch cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 map gcs cd ~/chem_scripts
-map gd cd /home/tmason1/sn29_scratch/tmason1/dopamine
 map gdf cd ~/dotfiles
+map gd cd /home/tmason1/sn29_scratch/tmason1/dopamine
 map gp cd /home/tmason1/sn29_scratch/tmason1/polymers
 map gq cd /home/tmason1/sn29/apps/qcp
-map gs cd /home/tmason1/sn29_scratch/tmason1
 map gsc cd ~/.local/scripts
+map gs cd /home/tmason1/sn29_scratch/tmason1
 map gt cd /home/tmason1/sn29_scratch/tmason1/tests
 map gw cd /home/tmason1/sn29
