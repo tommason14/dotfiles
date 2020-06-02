@@ -6,6 +6,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
 Plugin 'psf/black'
+Plugin 'metakirby5/codi.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -98,6 +99,8 @@ au BufWritePost *.snippets !update_snippets.sh
 
 " LF command {{{1
 
+" ,l to open selected file in new tab- super useful!
+
 function! LF()
     let temp = tempname()
     exec 'silent !lf -selection-path=' . shellescape(temp)
@@ -110,7 +113,7 @@ function! LF()
         redraw!
         return
     endif
-    exec 'edit ' . fnameescape(names[0])
+    exec 'tabedit ' . fnameescape(names[0])
     for name in names[1:]
         exec 'argadd ' . fnameescape(name)
     endfor

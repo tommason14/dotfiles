@@ -151,7 +151,7 @@ map cl !compile_latex $(basename "$f")
 map md push :mkdir<space>
 map rs $Rscript $f
 map tr $travis_xyz_analysis "$f"
- 
+map rl !realpath "$f" 
 
 # utilities
 cmap <C-c> cmd-escape
