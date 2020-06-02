@@ -355,6 +355,7 @@ au BufNewFile,BufRead *.md
     \ set textwidth=79                      |
     \ set spell spelllang=en_gb             |
     \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
+    \ set filetype=markdown                 |
 
 au BufNewFile,BufRead *.txt
     \ set tabstop=2                         |

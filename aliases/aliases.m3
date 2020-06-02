@@ -16,7 +16,7 @@ host["MU00151959X"]="Mac"
 for name in "${!host[@]}"
 do
   if [[ $HOSTNAME =~ "$name" ]]; then
-    export PS1="${CYAN}[ ${host[$name]} \W ]\$ ${NO_COLOUR}"
+    export PS1="${CYAN} ${host[$name]} \W \$ ${NO_COLOUR}"
   fi
 done
 

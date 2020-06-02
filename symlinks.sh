@@ -9,9 +9,10 @@ spacebarrc=~/.config/spacebar/spacebarrc
 skhdrc=~/.config/skhd/skhdrc
 wal=~/.config/wal/templates
 
+
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   files="bash_functions vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
-amethyst"    
+amethyst vmdrc"    
   [[ -L $ipython ]] || (echo "Linking ipythonrc" && ln -s $dir/jupyter/ipythonrc $ipython)
   [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s
 $dir/jupyter/custom.css $jupyter_css)
