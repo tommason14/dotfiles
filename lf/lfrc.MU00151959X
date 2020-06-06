@@ -239,7 +239,7 @@ map ovi $vim ~/dotfiles/vimrc
 
 # Movement {{{2
 
-map gau cd ~/Documents/repos/monash_automation
+map gau cd ~/Documents/repos/autochem
 map gbch cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs
 map gbg cd /Volumes/GoogleDrive/My\ Drive/backups/gadi
 map gbk cd /Volumes/GoogleDrive/My\ Drive/backups

@@ -29,10 +29,10 @@ if [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleD
     export filestream="/Volumes/GoogleDrive/My Drive"
     export repos="$HOME/Documents/repos"
     PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
-    PATH="$repos/monash_automation/bin:$PATH"
-    export PYTHONPATH="$repos/monash_automation/:$PYTHONPATH"
+    PATH="$repos/autochem/bin:$PATH"
+    export PYTHONPATH="$repos/autochem/:$PYTHONPATH"
     alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-    export automation="$repos/monash_automation"
+    export automation="$repos/autochem"
     if [[ $HOSTNAME == *"MBP"* ]] 
     then
       alias vmd='/Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64'
@@ -376,7 +376,7 @@ alias ovi='vim ~/dotfiles/vimrc'
 
 # movement {{{1
 
-alias gau='cd ~/Documents/repos/monash_automation'
+alias gau='cd ~/Documents/repos/autochem'
 alias gbch='cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs'
 alias gbg='cd /Volumes/GoogleDrive/My\ Drive/backups/gadi'
 alias gbk='cd /Volumes/GoogleDrive/My\ Drive/backups'
