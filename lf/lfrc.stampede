@@ -143,8 +143,8 @@ map g2m $gamess_to_molden.py "$f"
 map moc $molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
-map p2 $python $f
-map py $python3 $f
+map p2 !python $f
+map py !python3 $f
 map rot $remove_orca_temps
 map gfr !gauss_freqs
 map cl !compile_latex $(basename "$f")

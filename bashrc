@@ -20,3 +20,5 @@ fi
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
       eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
+export PATH=$PATH:/Users/tmas0023/pysimm/bin
