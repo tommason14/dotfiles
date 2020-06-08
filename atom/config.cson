@@ -9,11 +9,13 @@
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "wal-syntax"
+      "gruvbox-plus-syntax"
     ]
     useTreeSitterParsers: false
   editor:
-    fontSize: 17
+    fontFamily: "Fira Code,Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 16
+    preferredLineLength: 90
     scrollPastEnd: true
     showIndentGuide: true
     softWrap: true
