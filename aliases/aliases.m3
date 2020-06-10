@@ -275,6 +275,7 @@ ex=:\
 # aliases for default commands
 alias c='clear'
 alias i='less -i'
+alias less='less -R'
 alias l='ls'
 alias ld='ls'
 alias ll='ls -lh'

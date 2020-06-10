@@ -1,11 +1,15 @@
 "*":
   Hydrogen:
     startDir: "dirOfFile"
+  "atom-html-preview":
+    enableMathJax: true
+    triggerOnSave: true
   core:
     disabledPackages: [
       "language-python"
       "language-gfm"
     ]
+    packagesWithKeymapsDisabled: []
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"

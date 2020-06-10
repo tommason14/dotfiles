@@ -2,6 +2,8 @@
 
 # bash utils
 brew install entr
+brew install fd
+brew install fzf
 brew install git
 brew install gnuplot
 brew install grep
