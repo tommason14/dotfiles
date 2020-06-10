@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  use() {
-    program=$(ls /Applications/ | grep -i "$1" | head -n 1)
-    open -a /Applications/"$program" $2
+
+  sc(){
+   find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf | xargs -o $EDITOR
   }
 
   xaringan_to_pdf() {
