@@ -3,7 +3,7 @@
 if [[ $USER =~ (tommason|tmas0023) ]]; then
 
   sc(){
-   find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf | xargs -o $EDITOR
+   find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}'| xargs -o $EDITOR
   }
 
   xaringan_to_pdf() {
