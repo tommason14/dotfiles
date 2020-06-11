@@ -264,6 +264,7 @@ map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine
 map gfo cd /Volumes/GoogleDrive/My\ Drive
 map gfpd cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 map gfpo cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gkij cd /Volumes/GoogleDrive/My\ Drive/backups/gadi/hydrated_ils/molecular_dynamics/ch_ac/clusters/cluster-0
 map gmc cd ~/Documents/repos/mccg
 map gmm cd ~/Documents/repos/membranes
 map gmo cd ~/Movies
