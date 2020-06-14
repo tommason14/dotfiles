@@ -243,6 +243,7 @@ map otdj $vim ~/Documents/repos/daily_log/subd_jobs.md
 map otdm $vim ~/Documents/repos/daily_log/membranes.md
 map otdp $vim ~/Documents/repos/daily_log/membranes.md
 map ovi $vim ~/dotfiles/vimrc
+map ozh $vim ~/.zshrc && source ~/.zshrc
 
 # Movement {{{2
 

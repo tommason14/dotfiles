@@ -22,3 +22,4 @@ fi
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 export PATH=$PATH:/Users/tmas0023/pysimm/bin
+export PAGER=bat

@@ -95,3 +95,9 @@ zathuradir="$HOME/.config/zathura"
 [[ ! -d $zathuradir ]] && mkdir -p "$zathuradir"
 [[ ! -L "$zathuradir/zathurarc" ]] && ln -s "$dir/zathurarc" "$zathuradir/zathurarc"
 fi
+
+# bat now replaces less
+[[ ! -d ~/.config/bat ]] && mkdir ~/.config/bat
+[[ ! -L ~/.config/bat/config ]] &&
+  echo "Linking bat config" && 
+  ln -s $dir/lf/bat.config ~/.config/bat/config

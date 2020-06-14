@@ -10,3 +10,4 @@ tdd: ~/Documents/repos/daily_log/dopamine.md
 tdm: ~/Documents/repos/daily_log/membranes.md
 tdp: ~/Documents/repos/daily_log/membranes.md
 tdj: ~/Documents/repos/daily_log/subd_jobs.md
+zh: ~/.zshrc && source ~/.zshrc

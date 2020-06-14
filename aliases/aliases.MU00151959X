@@ -356,6 +356,7 @@ alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
 alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
 alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
 alias ovi='vim ~/dotfiles/vimrc'
+alias ozh='vim ~/.zshrc && source ~/.zshrc'
 
 # movement {{{1
 
@@ -377,7 +378,7 @@ alias gdc='cd ~/Documents'
 alias gdf='cd ~/dotfiles'
 alias gdk='cd ~/Desktop'
 alias gdl='cd ~/Documents/repos/daily_log'
-alias gdp='cd ~/Documents/repos/dopamine/dopamine_paper'
+alias gdp='cd ~/Documents/repos/dopamine/dopamine_colour_paper'
 alias gdr='cd ~/Dropbox'
 alias gdw='cd ~/Downloads'
 alias gfd='cd /Volumes/GoogleDrive/My\ Drive/Dopamine'

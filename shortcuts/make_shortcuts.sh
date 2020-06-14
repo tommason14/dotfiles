@@ -77,11 +77,33 @@ make_configs(){
     printf "\n# movement {{{1\n\n" >> $alias
     cat $SHORTCUTS/folders | sort | delete_blanks | rm_comments | sed -n "/$f-/p" |\
     sed -e "s/^$f-/alias g/" -e "s/:/='cd/" -e "s/$/'/" >> $alias
+    
+    # zshrc for mac
+    while ! $zshdone
+    do
+      if [[ $f == "mac" ]] 
+      then
+        sed '/#  SHORTCUTS  #/q' $DOTS/zshrc > tmpzsh
+        echo '###############' >> tmpzsh
+        printf "\n# files\n\n" >> tmpzsh
+        cat $SHORTCUTS/files |
+          sort | clean |
+          sed -e 's/^/alias o/' -e "s/:/='vim/" -e "s/$/'/" >> tmpzsh
+        printf "\n# movement\n\n" >> tmpzsh
+        cat $SHORTCUTS/folders |
+          sort | delete_blanks | rm_comments |
+          sed -n "/$f-/p" |
+          sed -e "s/^$f-/alias g/" -e "s/:/='cd/" -e "s/$/'/" >> tmpzsh
+        zshdone=true
+        mv tmpzsh $DOTS/zshrc
+      fi
+    done
 }
 
 
 main(){
   confs="uni home mgs mas mon stm rjn gadi"
+  zshdone=false # mac
   for conf in ${confs[@]}
   do
     make_configs $conf

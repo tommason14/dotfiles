@@ -236,6 +236,7 @@ map otdj $vim ~/Documents/repos/daily_log/subd_jobs.md
 map otdm $vim ~/Documents/repos/daily_log/membranes.md
 map otdp $vim ~/Documents/repos/daily_log/membranes.md
 map ovi $vim ~/dotfiles/vimrc
+map ozh $vim ~/.zshrc && source ~/.zshrc
 
 # Movement {{{2
 
@@ -257,7 +258,7 @@ map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
 map gdl cd ~/Documents/repos/daily_log
-map gdp cd ~/Documents/repos/dopamine/dopamine_paper
+map gdp cd ~/Documents/repos/dopamine/dopamine_colour_paper
 map gdr cd ~/Dropbox
 map gdw cd ~/Downloads
 map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine

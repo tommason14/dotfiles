@@ -356,6 +356,7 @@ alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
 alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
 alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
 alias ovi='vim ~/dotfiles/vimrc'
+alias ozh='vim ~/.zshrc && source ~/.zshrc'
 
 # movement {{{1
 

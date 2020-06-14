@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 PS1="%F{blue}%1d $%f "
 
 HISTFILE=$HOME/.cache/zsh/history
@@ -21,6 +23,7 @@ fi
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 export PATH=$PATH:/Users/tmas0023/pysimm/bin
+export PAGER=bat
 
 ###############
 #  FUNCTIONS  #
@@ -367,6 +370,12 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #  SHORTCUTS  #
 ###############
 
+# files
+
+alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null'
+alias obf='vim ~/.bash_functions && source ~/.bashrc'
+alias obp='vim ~/.bash_profile && source ~/.bashrc'
+alias obr='vim ~/.bashrc && source ~/.bashrc'
 alias oip='vim ~/dotfiles/jupyter/ipythonrc'
 alias orp='vim ~/dotfiles/Rprofile'
 alias otdc='vim ~/Documents/repos/daily_log/choline.md'
@@ -376,11 +385,8 @@ alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
 alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
 alias ovi='vim ~/dotfiles/vimrc'
 alias ozh='vim ~/.zshrc && source ~/.zshrc'
-alias zrc='vim ~/.zshrc && source ~/.zshrc'
-alias lfrc='vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null'
 
-
-# movement {{{1
+# movement
 
 alias gau='cd ~/Documents/repos/autochem'
 alias gbch='cd /Volumes/GoogleDrive/My\ Drive/hydrated_ILs'
@@ -400,7 +406,7 @@ alias gdc='cd ~/Documents'
 alias gdf='cd ~/dotfiles'
 alias gdk='cd ~/Desktop'
 alias gdl='cd ~/Documents/repos/daily_log'
-alias gdp='cd ~/Documents/repos/dopamine/dopamine_paper'
+alias gdp='cd ~/Documents/repos/dopamine/dopamine_colour_paper'
 alias gdr='cd ~/Dropbox'
 alias gdw='cd ~/Downloads'
 alias gfd='cd /Volumes/GoogleDrive/My\ Drive/Dopamine'
@@ -422,5 +428,3 @@ alias gte='cd ~/Documents/repos/templates'
 alias gth='cd ~/Documents/repos/thesis'
 alias gtm='cd ~/tmp'
 alias gw='cd ~/Documents/repos/wallpapers'
-
-

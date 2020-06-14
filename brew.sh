@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
 # bash utils
+brew install bat
 brew install entr
 brew install fd
 brew install fzf
@@ -20,6 +21,7 @@ brew install sed
 brew install tmux
 brew install tree
 brew install vim # should find +python3 with vim --version
+brew install zsh-syntax-highlighting
 
 # Avoid Ultisnips issues
 git config --global core.editor "/usr/local/bin/vim"
