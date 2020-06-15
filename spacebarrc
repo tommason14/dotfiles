@@ -10,8 +10,7 @@ CNORM=$(echo $color1 | sed 's/#//')
 CINSE=$(echo $foreground | sed 's/#//')
 
 spacebar -m config text_font         "Helvetica Neue:Bold:12.0"
-spacebar -m config icon_font         "FontAwesome:Regular:12.0"
-# spacebar -m config icon_font         "Font Awesome 5 Free:Solid:12"
+spacebar -m config icon_font         "Font Awesome 5 Free:Solid:12"
 spacebar -m config space_icon_strip  I II III IV V VI VII VIII IX X
 spacebar -m config power_icon_strip   
 spacebar -m config space_icon        

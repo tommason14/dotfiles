@@ -114,6 +114,7 @@ fi
 }}
 map ou push $use<space>
 map ovm vmd "$f"
+map ovi $use ovito "$(basename $f)"
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"

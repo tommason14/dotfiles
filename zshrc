@@ -309,6 +309,7 @@ alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 
 alias feh='feh -F -d'
 
+alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
 alias hyperjs='vim ~/dotfiles/hyper.js'
 alias ybrc='vim ~/dotfiles/yabairc'
 alias yabairc='vim ~/dotfiles/yabairc'
@@ -338,6 +339,7 @@ alias lsa='ls -a'
 alias mkdir='mkdir -p'
 alias s='source'
 alias v='vim'
+alias pr='preview'
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -383,7 +385,7 @@ alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
 alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
 alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
 alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
-alias ovi='vim ~/dotfiles/vimrc'
+alias ovrc='vim ~/dotfiles/vimrc'
 alias ozh='vim ~/.zshrc && source ~/.zshrc'
 
 # movement

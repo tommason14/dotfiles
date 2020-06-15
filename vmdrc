@@ -1,33 +1,33 @@
-proc reset_viz {molid} {
-  # operate only on existing molecules
-  if {[lsearch [molinfo list] $molid] >= 0} {
-    # delete all representations
-    set numrep [molinfo $molid get numreps]
-    for {set i 0} {$i < $numrep} {incr i} {
-      mol delrep $i $molid
-    }
-    # add new representations
-    mol color Name
-    # mol representation VDW 0.3 15.0
-    mol representation CPK
-    mol selection all
-    mol material Opaque
-    mol addrep $molid
-    mol representation DynamicBonds 1.6 0.3 6.0
-    mol selection {name C}
-    mol addrep $molid
-    mol representation DynamicBonds 1.2 0.3 6.0
-    mol selection {name C H}
-    mol addrep $molid
-  } 
-}
-
-proc reset_viz_proxy {args} {
-  foreach {fname molid rw} $args {}
-  eval "after idle {reset_viz $molid}"
-}
-
-## hook up the function.
-trace variable vmd_initialize_structure w reset_viz_proxy
-# take care of molecule loaded at start.
-after idle { reset_viz 0 }
+# proc reset_viz {molid} {
+#   # operate only on existing molecules
+#   if {[lsearch [molinfo list] $molid] >= 0} {
+#     # delete all representations
+#     set numrep [molinfo $molid get numreps]
+#     for {set i 0} {$i < $numrep} {incr i} {
+#       mol delrep $i $molid
+#     }
+#     # add new representations
+#     mol color Name
+#     # mol representation VDW 0.3 15.0
+#     mol representation CPK
+#     mol selection all
+#     mol material Opaque
+#     mol addrep $molid
+#     mol representation DynamicBonds 1.6 0.3 6.0
+#     mol selection {name C}
+#     mol addrep $molid
+#     mol representation DynamicBonds 1.2 0.3 6.0
+#     mol selection {name C H}
+#     mol addrep $molid
+#   } 
+# }
+# 
+# proc reset_viz_proxy {args} {
+#   foreach {fname molid rw} $args {}
+#   eval "after idle {reset_viz $molid}"
+# }
+# 
+# ## hook up the function.
+# trace variable vmd_initialize_structure w reset_viz_proxy
+# # take care of molecule loaded at start.
+# after idle { reset_viz 0 }

@@ -114,6 +114,7 @@ fi
 }}
 map ou push $use<space>
 map ovm vmd "$f"
+map ovi $use ovito "$(basename $f)"
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
@@ -235,7 +236,7 @@ map otdd $vim ~/Documents/repos/daily_log/dopamine.md
 map otdj $vim ~/Documents/repos/daily_log/subd_jobs.md
 map otdm $vim ~/Documents/repos/daily_log/membranes.md
 map otdp $vim ~/Documents/repos/daily_log/membranes.md
-map ovi $vim ~/dotfiles/vimrc
+map ovrc $vim ~/dotfiles/vimrc
 map ozh $vim ~/.zshrc && source ~/.zshrc
 
 # Movement {{{2
