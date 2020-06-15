@@ -306,7 +306,6 @@ alias lammps_dir='cd /usr/local/share/lammps'
 
 alias size='du -sh'
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
-
 alias feh='feh -F -d'
 
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
