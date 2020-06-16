@@ -90,7 +90,7 @@ cmap <esc> cmd-escape
 # File opening {{{2
 
 map o. $open .
-map oiv $vim "$f"
+map oiv $vim -p $fx
 map om $molden "$f"
 map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"

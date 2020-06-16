@@ -101,6 +101,7 @@ fi
 export sed='gsed'
 export grep='ggrep'
 export settings="$HOME/Documents/repos/monash_automation/settings_files"
+
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
 export gadi='tm3124@gadi.nci.org.au'
@@ -112,6 +113,10 @@ export monarch='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
+
+# MD dirs
+export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
+export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
@@ -307,6 +312,8 @@ alias lammps_dir='cd /usr/local/share/lammps'
 alias size='du -sh'
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 alias feh='feh -F -d'
+alias gamess_docs='bat ~/Documents/GAMESS/gamess-standard-sept-2018/INPUT.DOC'
+
 
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
 alias hyperjs='vim ~/dotfiles/hyper.js'

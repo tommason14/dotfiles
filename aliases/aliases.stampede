@@ -339,6 +339,10 @@ export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
 
+# MD dirs
+export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
+export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
+
 # add scripts to path 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
