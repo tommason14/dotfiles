@@ -3,10 +3,17 @@
 PS1="%F{blue}%1d $%f "
 
 HISTFILE=$HOME/.cache/zsh/history
+HISTSIZE=10000 # per session
+SAVEHIST=1000000 # in file
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^[e' edit-command-line
+
+# tab through options
+autoload -U compinit && compinit
+zstyle ':completion:*' menu select
+
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   export EDITOR=/usr/local/bin/vim # explicitly declare brew-installed vim
