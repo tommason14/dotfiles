@@ -140,6 +140,12 @@ nnoremap ls :call GetAllSnippets()<CR>
 
 nnoremap <Leader>t :tabnew 
 
+" Alt-arrow to move splits
+map <Esc>[1;9A <C-w><Up>
+map <Esc>[1;9B <C-w><Down>
+map <Esc>[1;9C <C-w><Right>
+map <Esc>[1;9D <C-w><Left>
+
 " LF key mapping
 
 nnoremap <Leader>l :LF<CR>

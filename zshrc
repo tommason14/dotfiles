@@ -29,15 +29,15 @@ fi
       eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
-export PATH=$PATH:/Users/tmas0023/pysimm/bin
-export PAGER=bat
+PATH=$PATH:/Users/tmas0023/pysimm/bin
+# export PAGER=bat
 
 ###############
 #  FUNCTIONS  #
 ###############
 
 sc(){
-find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}'| xargs -o $EDITOR
+find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}'| xargs -o $EDITOR
 }
 
 xaringan_to_pdf() {
@@ -93,7 +93,7 @@ lfcd () {
 export filestream="/Volumes/GoogleDrive/My Drive"
 export repos="$HOME/Documents/repos"
 export walls="$repos/wallpapers"
-PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:~/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
+PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:~/bin:/usr/local/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
 PATH="$repos/autochem/bin:$PATH"
 export PYTHONPATH="$repos/autochem/:$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_ac/analysis_organised:$PYTHONPATH"
 export automation="$repos/autochem"
@@ -105,7 +105,8 @@ else
   alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
 fi
 # gsed/ggrep on mac
-export sed='gsed'
+export sed="gsed"
+alias ggrep="ggrep --color"
 export grep='ggrep'
 export settings="$HOME/Documents/repos/monash_automation/settings_files"
 
@@ -125,7 +126,7 @@ export vault="tmason1@118.138.242.229"
 export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
 export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
-export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
+export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git\|pycache" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
 export LF_ICONS="\
 di=:\
@@ -319,8 +320,10 @@ alias lammps_dir='cd /usr/local/share/lammps'
 alias size='du -sh'
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 alias feh='feh -F -d'
-alias gamess_docs='bat ~/Documents/GAMESS/gamess-standard-sept-2018/INPUT.DOC'
 
+# gamess
+alias gamess_docs='bat ~/Documents/GAMESS/gamess-standard-sept-2018/INPUT.DOC'
+alias gamess_fmo='open /Users/tmas0023/Documents/GAMESS/gamess-standard-sept-2018/tools/fmo/annotated/FMO3-MP2.pdf'
 
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
 alias hyperjs='vim ~/dotfiles/hyper.js'
