@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
 Plugin 'psf/black'
-Plugin 'metakirby5/codi.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'

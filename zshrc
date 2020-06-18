@@ -108,7 +108,7 @@ fi
 export sed="gsed"
 alias ggrep="ggrep --color"
 export grep='ggrep'
-export settings="$HOME/Documents/repos/monash_automation/settings_files"
+export settings="$HOME/Documents/repos/autochem/settings_files"
 
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
@@ -118,6 +118,7 @@ export magnus='tmason@magnus.pawsey.org.au'
 export gaia='tmas0011@msgln6.its.monash.edu.au'
 export m3='tmason1@m3.massive.org.au'
 export monarch='tmason1@monarch.erc.monash.edu.au'
+export mon='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
@@ -305,14 +306,12 @@ alias deckset="open -a /Applications/Deckset.app/"
 alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
 
 # monash
-alias gadi='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@gadi.nci.org.au'
-alias raijin='sshpass -f ~/dotfiles/sshfile ssh -XY tm3124@raijin.nci.org.au'
-alias magnus='sshpass -f ~/dotfiles/sshfile ssh -Y tmason@magnus.pawsey.org.au'
+alias gadi='ssh -XY $gadi'
 alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y -t tmas0011@msgln6.its.monash.edu.au "cd /nfs/shares/pas-grp/TOM; bash"'
-alias m3='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@m3.massive.org.au'
-alias monarch='sshpass -f ~/dotfiles/sshfile ssh -Y tmason1@monarch.erc.monash.edu.au'
-alias stampede='~/dotfiles/sshstam'
-alias vault='sshpass -f ~/dotfiles/sshfile ssh tmason1@118.138.242.229'
+alias m3='ssh -Y $m3'
+alias monarch='ssh -Y $mon'
+alias stampede='ssh $stm'
+alias vault='ssh tmason1@118.138.242.229'
 alias chem06="ssh -XY chem06@monarch.erc.monash.edu"
 alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
 alias lammps_dir='cd /usr/local/share/lammps'
