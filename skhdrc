@@ -1,6 +1,3 @@
-# # opens iTerm2
-alt - return : "${HOME}"/dotfiles/yabai_scripts/open_lf.sh
-#
 # # Show system statistics
 # fn + lalt - 1 : "${HOME}"/.config/yabai/scripts/show_cpu.sh
 # fn + lalt - 2 : "${HOME}"/.config/yabai/scripts/show_mem.sh
