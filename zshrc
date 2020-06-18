@@ -21,8 +21,8 @@ else
   export EDITOR=vim
 fi
 
-# [[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
-[[ $USER =~ (tommason|tmas0023) ]] &&
+[[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
+[[ $USER == "tmas0023" ]] &&
   BASE16_SHELL="$HOME/.config/base16-shell/"
   [ -n "$PS1" ] && 
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
@@ -307,16 +307,12 @@ alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
 
 # monash
 alias gadi='ssh -XY $gadi'
-alias gaia='sshpass -f ~/dotfiles/sshfile ssh -Y -t tmas0011@msgln6.its.monash.edu.au "cd /nfs/shares/pas-grp/TOM; bash"'
 alias m3='ssh -Y $m3'
 alias monarch='ssh -Y $mon'
 alias stampede='ssh $stm'
 alias vault='ssh tmason1@118.138.242.229'
-alias chem06="ssh -XY chem06@monarch.erc.monash.edu"
-alias qcp='python3 ~/Google_Drive/Scripts/qcp/qcp/__main__.py'
 alias lammps_dir='cd /usr/local/share/lammps'
 
-alias size='du -sh'
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 alias feh='feh -F -d'
 
@@ -379,6 +375,7 @@ alias fm='eval $(resize) && lfcd'
 # alt-l to open lf
 bindkey -s '^[l' 'lfcd\n'
 
+alias weather="curl wttr.in/Melbourne\?0"
 
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
