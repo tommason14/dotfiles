@@ -221,6 +221,8 @@ alias weather="curl wttr.in/Melbourne\?0"
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortcuts.sh; cd - > /dev/null"
+
 ###############
 #  SHORTCUTS  #
 ###############
@@ -228,9 +230,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # files
 
 alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null'
-alias obf='vim ~/.bash_functions && source ~/.bashrc'
-alias obp='vim ~/.bash_profile && source ~/.bashrc'
-alias obr='vim ~/.bashrc && source ~/.bashrc'
+alias obf='vim ~/.bash_functions; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
+alias obp='vim ~/.bash_profile; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
+alias obr='vim ~/.bashrc; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
 alias oip='vim ~/dotfiles/jupyter/ipythonrc'
 alias orp='vim ~/dotfiles/Rprofile'
 alias otdc='vim ~/Documents/repos/daily_log/choline.md'
@@ -277,6 +279,7 @@ alias gq='cd ~/Documents/repos/qcp'
 alias grm='cd ~/Documents/repos/membranes'
 alias grp='cd ~/Documents/repos'
 alias gsc='cd ~/.local/scripts'
+alias gsh='cd ~/dotfiles/shortcuts'
 alias gsu='cd ~/Documents/repos/dopamine/dopamine_paper/supp_info'
 alias gta='cd ~/Documents/repos/talks/confirmation_talk'
 alias gte='cd ~/Documents/repos/templates'

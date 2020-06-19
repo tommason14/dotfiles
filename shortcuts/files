@@ -1,7 +1,7 @@
 ba: ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null
-bf: ~/.bash_functions && source ~/.bashrc
-bp: ~/.bash_profile && source ~/.bashrc
-br: ~/.bashrc && source ~/.bashrc
+bf: ~/.bash_functions; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc
+bp: ~/.bash_profile; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc
+br: ~/.bashrc; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc
 ip: ~/dotfiles/jupyter/ipythonrc
 rp: ~/dotfiles/Rprofile
 vrc: ~/dotfiles/vimrc

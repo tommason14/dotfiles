@@ -233,9 +233,9 @@ map sql !nqstat
 # Files {{{2
 
 map oba $vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null
-map obf $vim ~/.bash_functions && source ~/.bashrc
-map obp $vim ~/.bash_profile && source ~/.bashrc
-map obr $vim ~/.bashrc && source ~/.bashrc
+map obf $vim ~/.bash_functions; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc
+map obp $vim ~/.bash_profile; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc
+map obr $vim ~/.bashrc; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc
 map oip $vim ~/dotfiles/jupyter/ipythonrc
 map orp $vim ~/dotfiles/Rprofile
 map otdc $vim ~/Documents/repos/daily_log/choline.md

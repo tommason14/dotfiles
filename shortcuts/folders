@@ -33,6 +33,7 @@ mac-q: ~/Documents/repos/qcp
 mac-rm: ~/Documents/repos/membranes
 mac-rp: ~/Documents/repos
 mac-sc: ~/.local/scripts
+mac-sh: ~/dotfiles/shortcuts
 mac-su: ~/Documents/repos/dopamine/dopamine_paper/supp_info
 mac-ta: ~/Documents/repos/talks/confirmation_talk
 mac-te: ~/Documents/repos/templates
