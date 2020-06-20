@@ -21,12 +21,13 @@ else
   export EDITOR=vim
 fi
 
-[[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
-[[ $USER == "tmas0023" ]] &&
-  BASE16_SHELL="$HOME/.config/base16-shell/"
-  [ -n "$PS1" ] && 
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
-      eval "$("$BASE16_SHELL/profile_helper.sh")"
+# [[ $USER == "tommason" ]] && 
+cat ~/.cache/wal/sequences
+# [[ $USER == "tmas0023" ]] &&
+#   BASE16_SHELL="$HOME/.config/base16-shell/"
+#   [ -n "$PS1" ] && 
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
+#       eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -219,7 +220,7 @@ bindkey -s '^[l' 'lfcd\n'
 alias weather="curl wttr.in/Melbourne\?0"
 
 # Syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortcuts.sh; cd - > /dev/null"
 
