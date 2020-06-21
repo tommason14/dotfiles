@@ -421,6 +421,15 @@ endfunction
 
 au BufWritePost config.h call Compile_on_save()
 
+" YAML {{{1
+au BufNewFile,BufRead *.yml
+    \ set tabstop=2                         |
+    \ set softtabstop=2                     |
+    \ set expandtab                         |
+    \ set shiftwidth=2                      |
+    \ set textwidth=79                      |
+    \ set filetype=yaml                     |
+
 " Chem files {{{1
 au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
     \ set tabstop=2                         |
