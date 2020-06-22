@@ -10,6 +10,32 @@ SAVEHIST=1000000 # in file
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^[e' edit-command-line
 
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
+bindkey "^?" backward-delete-char # backspace fix
+
+# Change cursor shape
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
 # tab through options
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
@@ -21,17 +47,15 @@ else
   export EDITOR=vim
 fi
 
-# [[ $USER == "tommason" ]] && 
-cat ~/.cache/wal/sequences
-# [[ $USER == "tmas0023" ]] &&
-#   BASE16_SHELL="$HOME/.config/base16-shell/"
-#   [ -n "$PS1" ] && 
-#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
-#       eval "$("$BASE16_SHELL/profile_helper.sh")"
+[[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
+[[ $USER == "tmas0023" ]] &&
+  BASE16_SHELL="$HOME/.config/base16-shell/"
+  [ -n "$PS1" ] && 
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
+      eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
-# export PAGER=bat
 
 ###############
 #  FUNCTIONS  #
@@ -163,7 +187,7 @@ alias gamess_docs='bat ~/Documents/GAMESS/gamess-standard-sept-2018/INPUT.DOC'
 alias gamess_fmo='open /Users/tmas0023/Documents/GAMESS/gamess-standard-sept-2018/tools/fmo/annotated/FMO3-MP2.pdf'
 
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
-alias hyperjs='vim ~/dotfiles/hyper.js'
+alias vimrc="vim ~/dotfiles/vimrc"
 alias ybrc='vim ~/dotfiles/yabairc'
 alias yabairc='vim ~/dotfiles/yabairc'
 alias sprc='vim ~/dotfiles/spacebarrc'
