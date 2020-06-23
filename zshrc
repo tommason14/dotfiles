@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-
 PS1="%F{blue}%1d $%f "
 
 HISTFILE=$HOME/.cache/zsh/history
@@ -47,12 +46,8 @@ else
   export EDITOR=vim
 fi
 
-[[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
-[[ $USER == "tmas0023" ]] &&
-  BASE16_SHELL="$HOME/.config/base16-shell/"
-  [ -n "$PS1" ] && 
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && 
-      eval "$("$BASE16_SHELL/profile_helper.sh")"
+kitty + complete setup zsh | source /dev/stdin
+alias icat="kitty +kitten icat"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -160,6 +155,8 @@ source ~/dotfiles/lf/icons.sh
 #  aliases  #
 #############
 
+# weird terminal issue, can't clear terminal over ssh unless:
+alias ssh='kitty +kitten ssh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
 alias ls='ls -G'
@@ -186,6 +183,7 @@ alias feh='feh -F -d'
 alias gamess_docs='bat ~/Documents/GAMESS/gamess-standard-sept-2018/INPUT.DOC'
 alias gamess_fmo='open /Users/tmas0023/Documents/GAMESS/gamess-standard-sept-2018/tools/fmo/annotated/FMO3-MP2.pdf'
 
+alias kit="vim ~/.config/kitty/kitty.conf"
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
 alias vimrc="vim ~/dotfiles/vimrc"
 alias ybrc='vim ~/dotfiles/yabairc'

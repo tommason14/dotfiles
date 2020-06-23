@@ -447,16 +447,7 @@ let g:tcomment_types={'lammps': '# %s'}
 set number
 set relativenumber
 
-if $USER == "tommason" || $USER == "tmas0023"
-  colo wal
-else
-  colo default
-endif
-
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
+colo wal
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
@@ -470,14 +461,10 @@ set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
 
-" set list
-" set listchars=tab:→\ ,eol:↲
-" " hi NonText ctermfg=DarkGrey
-
 " Change cursor to thin line on insert
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let &t_SI.="\e[6 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 " lag when escaping from insert mode
 set ttimeout
 set ttimeoutlen=1

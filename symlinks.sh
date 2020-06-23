@@ -25,6 +25,7 @@ $dir/jupyter/custom.css $jupyter_css)
   [[ ! -L "$wal/colors-atom-syntax" ]] && ln -s $dir/wal/colors-atom-syntax $wal/colors-atom-syntax
   # spicetify
   [[ ! -L "$wal/spicetify_colours.ini" ]] && ln -s $dir/wal/spicetify_colours.ini $wal/spicetify_colours.ini
+  [[ ! -L "$wal/colors-kitty-macos" ]] && ln -s $dir/wal/colors-kitty-macos $wal/colors-kitty-macos
   mkdir -p $HOME/spicetify_data/Themes/pywal && touch $HOME/spicetify_data/Themes/pywal/user.css
   # pywal makes the theme and wl/make_wallpaper.sh copies the theme into the
   # spicetify directory
@@ -94,6 +95,11 @@ vsdir="$HOME/Library/Application Support/Code/User"
 zathuradir="$HOME/.config/zathura"
 [[ ! -d $zathuradir ]] && mkdir -p "$zathuradir"
 [[ ! -L "$zathuradir/zathurarc" ]] && ln -s "$dir/zathurarc" "$zathuradir/zathurarc"
+
+kitdir="$HOME/.config/kitty"
+[[ ! -d "$kitdir" ]] && mkdir -p "$kitdir"
+[[ ! -L "$kitdir/kitty.conf" ]] && ln -s "$dir/kitty.conf" "$kitdir/kitty.conf"
+
 fi
 
 # bat now replaces less
