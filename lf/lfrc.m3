@@ -177,10 +177,10 @@ map pft $/Volumes/GoogleDrive/My\ Drive/scripts/fluorescence/plot_uv_vis_last_it
 
 # Gnuplots {{{2
 
-map pm plotmp2 "$f"
-map pfo plotfmo "$f"
-map pga plotgauss "$f"
-map pgr plotrmsgamess "$f"
+map pm !plotmp2 "$f"
+map pfo !plotfmo "$f"
+map pga !plotgauss "$f"
+map pgr !plotrmsgamess "$f"
 
 # New files {{{2
 
