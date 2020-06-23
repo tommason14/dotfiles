@@ -152,14 +152,6 @@ push_qcp() {
   fi
 }
 
-change_to_chem_scripts() {
-  if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
-    cd "$repos/chem_scripts"
-  elif [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
-    cd ~/chem_scripts
-  fi
-}
-
 pull_repos() {
   pushd ~/dotfiles
   echo "Updating dotfiles..."
@@ -169,8 +161,8 @@ pull_repos() {
   git pull
   echo "Updating qcp..."
   pull_qcp
-  change_to_chem_scripts
-  echo "Updating chem scripts..."
+  cd ~/.local/scripts
+  echo "Updating scripts..."
   git pull 
   popd
 }
@@ -184,8 +176,8 @@ push_repos() {
   git add . && git commit && git push
   echo "Pushing qcp to master..."
   push_qcp
-  change_to_chem_scripts
-  echo "Pushing chem scripts to master..."
+  cd ~/.local/scripts
+  echo "Pushing scripts to master..."
   git add . && git commit && git push
   popd
 }
