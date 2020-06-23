@@ -62,7 +62,7 @@ PATH=$PATH:/Users/tmas0023/pysimm/bin
 ###############
 
 sc(){
-find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}'| xargs -o $EDITOR
+$EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
 }
 
 xaringan_to_pdf() {

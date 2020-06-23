@@ -2,10 +2,6 @@
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
 
-  sc(){
-   find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}'| xargs -o $EDITOR
-  }
-
   xaringan_to_pdf() {
     decktape remark --chrome-arg=--allow-file-access-from-files $1 ${1%.html}.pdf 
   }
@@ -79,6 +75,10 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
 fi
+
+sc(){
+ $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
+}
 
 nohup_bg() {
   nohup $1 < /dev/null > nohup_bg.log &
