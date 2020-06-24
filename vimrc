@@ -140,10 +140,10 @@ nnoremap ls :call GetAllSnippets()<CR>
 nnoremap <Leader>t :tabnew 
 
 " Alt-arrow to move splits
-map <Esc>[1;9A <C-w><Up>
-map <Esc>[1;9B <C-w><Down>
-map <Esc>[1;9C <C-w><Right>
-map <Esc>[1;9D <C-w><Left>
+map <Esc>[1;3A <C-w><Up>
+map <Esc>[1;3B <C-w><Down>
+map <Esc>[1;3C <C-w><Right>
+map <Esc>[1;3D <C-w><Left>
 
 " LF key mapping
 
@@ -182,6 +182,13 @@ inoremap <Up> <C-o>gk
 
 " Spell check - offer replacement
 nnoremap <Leader><Space> z=
+
+" Evaluate highlighted expression
+" (https://vi.stackexchange.com/questions/13602/the-meaning-of-in-vim)
+" Yank into register k first so that spaces are retained
+" gv to re-select expression
+" qkq to clear register
+vnoremap <Leader>e "kygv"=<C-r>k<CR>pqkq 
 
 " Run python in vim
 
@@ -442,12 +449,19 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
 " au FileType lammps let g:tcomment#filetype#syntax_map_user = {'lammps': 'python'}
 let g:tcomment_types={'lammps': '# %s'}
 
+" Kitty conf {{{1
+au BufRead kitty.conf set filetype=kitty
+let g:tcomment_types={'kitty': '# %s'}
+
 " Visuals {{{1
 
 set number
 set relativenumber
 
-colo wal
+" Uses colours from terminal (Kitty)
+colo default
+set background=dark
+set t_Co=16
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds

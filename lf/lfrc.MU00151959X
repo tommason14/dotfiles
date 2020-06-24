@@ -251,6 +251,7 @@ map gbmo cd /Volumes/GoogleDrive/My\ Drive/backups/monarch
 map gbr cd /Volumes/GoogleDrive/My\ Drive/backups/raijin
 map gbs cd /Volumes/GoogleDrive/My\ Drive/backups/stampede
 map gcha cd ~/Documents/repos/hydrated_ils/hydrated_il_analysis
+map gchm cd ~/Documents/repos/hydrated_ils/hydrated_il_MD
 map gchp cd ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
 map gcm cd /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files
 map gcs cd ~/Documents/repos/chem_scripts
@@ -266,6 +267,7 @@ map gfd cd /Volumes/GoogleDrive/My\ Drive/Dopamine
 map gfo cd /Volumes/GoogleDrive/My\ Drive
 map gfpd cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 map gfpo cd /Volumes/GoogleDrive/My\ Drive/polymers
+map gkc cd ~/.config/kitty
 map gkij cd /Volumes/GoogleDrive/My\ Drive/backups/gadi/hydrated_ils/molecular_dynamics/ch_ac/clusters/cluster-0
 map gmc cd ~/Documents/repos/mccg
 map gmm cd ~/Documents/repos/membranes

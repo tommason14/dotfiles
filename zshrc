@@ -47,6 +47,7 @@ else
 fi
 
 kitty + complete setup zsh | source /dev/stdin
+alias kitty-reload-colours="kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf"
 alias icat="kitty +kitten icat"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
@@ -147,6 +148,8 @@ export vault="tmason1@118.138.242.229"
 export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
 export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
+# IL MD scripts
+PATH="$filestream/hydrated_ils/MD/peter_helper_scripts:$PATH"
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git\|pycache" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
 source ~/dotfiles/lf/icons.sh
@@ -157,6 +160,7 @@ source ~/dotfiles/lf/icons.sh
 
 # weird terminal issue, can't clear terminal over ssh unless:
 alias ssh='kitty +kitten ssh'
+alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
 alias ls='ls -G'
@@ -278,6 +282,7 @@ alias gbmo='cd /Volumes/GoogleDrive/My\ Drive/backups/monarch'
 alias gbr='cd /Volumes/GoogleDrive/My\ Drive/backups/raijin'
 alias gbs='cd /Volumes/GoogleDrive/My\ Drive/backups/stampede'
 alias gcha='cd ~/Documents/repos/hydrated_ils/hydrated_il_analysis'
+alias gchm='cd ~/Documents/repos/hydrated_ils/hydrated_il_MD'
 alias gchp='cd ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19'
 alias gcm='cd /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files'
 alias gcs='cd ~/Documents/repos/chem_scripts'
@@ -293,6 +298,7 @@ alias gfd='cd /Volumes/GoogleDrive/My\ Drive/Dopamine'
 alias gfo='cd /Volumes/GoogleDrive/My\ Drive'
 alias gfpd='cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs'
 alias gfpo='cd /Volumes/GoogleDrive/My\ Drive/polymers'
+alias gkc='cd ~/.config/kitty'
 alias gkij='cd /Volumes/GoogleDrive/My\ Drive/backups/gadi/hydrated_ils/molecular_dynamics/ch_ac/clusters/cluster-0'
 alias gmc='cd ~/Documents/repos/mccg'
 alias gmm='cd ~/Documents/repos/membranes'
