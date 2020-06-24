@@ -120,6 +120,7 @@ map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f" &>/dev/null
+map os $use skim "$f"
 map oz $zathura "$f"
 map ovl $"$(find /usr/local/Cellar/vim -name 'less.sh')" "$f"
 

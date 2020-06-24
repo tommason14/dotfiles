@@ -12,6 +12,7 @@ mac-bs: /Volumes/GoogleDrive/My\ Drive/backups/stampede
 mac-cha: ~/Documents/repos/hydrated_ils/hydrated_il_analysis
 mac-chm: ~/Documents/repos/hydrated_ils/hydrated_il_MD
 mac-chp: ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
+mac-co: ~/.config/
 mac-cm: /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files
 mac-cs: ~/Documents/repos/chem_scripts
 mac-dc: ~/Documents

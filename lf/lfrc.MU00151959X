@@ -120,6 +120,7 @@ map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
 map <enter> $open "$f" # default programs
 map pr $qlmanage -p "$f" &>/dev/null
+map os $use skim "$f"
 map oz $zathura "$f"
 map ovl $"$(find /usr/local/Cellar/vim -name 'less.sh')" "$f"
 
@@ -254,6 +255,7 @@ map gcha cd ~/Documents/repos/hydrated_ils/hydrated_il_analysis
 map gchm cd ~/Documents/repos/hydrated_ils/hydrated_il_MD
 map gchp cd ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
 map gcm cd /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files
+map gco cd ~/.config/
 map gcs cd ~/Documents/repos/chem_scripts
 map gda cd ~/Documents/repos/dopamine/dopamine_analysis
 map gdc cd ~/Documents

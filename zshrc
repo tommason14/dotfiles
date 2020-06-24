@@ -41,7 +41,8 @@ zstyle ':completion:*' menu select
 
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  export EDITOR=/usr/local/bin/vim # explicitly declare brew-installed vim
+  # export EDITOR=/usr/local/bin/vim # explicitly declare brew-installed vim
+  export EDITOR=nvim
 else
   export EDITOR=vim
 fi
@@ -114,7 +115,7 @@ lfcd () {
 export filestream="/Volumes/GoogleDrive/My Drive"
 export repos="$HOME/Documents/repos"
 export walls="$repos/wallpapers"
-PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:~/bin:/usr/local/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
+PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:$HOME/bin:/usr/local/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2018/bin/x86_64-darwin:$PATH"
 PATH="$repos/autochem/bin:$PATH"
 export PYTHONPATH="$repos/autochem/:$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_ac/analysis_organised:$PYTHONPATH"
 export automation="$repos/autochem"
@@ -187,18 +188,19 @@ alias feh='feh -F -d'
 alias gamess_docs='bat ~/Documents/GAMESS/gamess-standard-sept-2018/INPUT.DOC'
 alias gamess_fmo='open /Users/tmas0023/Documents/GAMESS/gamess-standard-sept-2018/tools/fmo/annotated/FMO3-MP2.pdf'
 
-alias kit="vim ~/.config/kitty/kitty.conf"
-alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
-alias vimrc="vim ~/dotfiles/vimrc"
-alias ybrc='vim ~/dotfiles/yabairc'
-alias yabairc='vim ~/dotfiles/yabairc'
-alias sprc='vim ~/dotfiles/spacebarrc'
-alias spacerc='vim ~/dotfiles/spacebarrc'
-alias skrc='vim ~/dotfiles/skhdrc'
-alias skhdrc='vim ~/dotfiles/skhdrc'
-alias ipythonrc='vim ~/dotfiles/jupyter/ipythonrc'
-alias rprofile='vim ~/dotfiles/Rprofile'
-alias pymolrc='vim ~/dotfiles/pymolrc'
+alias kit="$EDITOR ~/.config/kitty/kitty.conf"
+alias lfrc="$EDITOR ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
+alias vimrc="$EDITOR ~/dotfiles/vimrc"
+alias nvimrc="$EDITOR ~/dotfiles/init.vim"
+alias ybrc='$EDITOR ~/dotfiles/yabairc'
+alias yabairc='$EDITOR ~/dotfiles/yabairc'
+alias sprc='$EDITOR ~/dotfiles/spacebarrc'
+alias spacerc='$EDITOR ~/dotfiles/spacebarrc'
+alias skrc='$EDITOR ~/dotfiles/skhdrc'
+alias skhdrc='$EDITOR ~/dotfiles/skhdrc'
+alias ipythonrc='$EDITOR ~/dotfiles/jupyter/ipythonrc'
+alias rprofile='$EDITOR ~/dotfiles/Rprofile'
+alias pymolrc='$EDITOR ~/dotfiles/pymolrc'
 alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
 alias wr='$repos/wallpapers/random_wallpaper.sh'
 
@@ -285,6 +287,7 @@ alias gcha='cd ~/Documents/repos/hydrated_ils/hydrated_il_analysis'
 alias gchm='cd ~/Documents/repos/hydrated_ils/hydrated_il_MD'
 alias gchp='cd ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19'
 alias gcm='cd /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files'
+alias gco='cd ~/.config/'
 alias gcs='cd ~/Documents/repos/chem_scripts'
 alias gda='cd ~/Documents/repos/dopamine/dopamine_analysis'
 alias gdc='cd ~/Documents'

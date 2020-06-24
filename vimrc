@@ -140,10 +140,17 @@ nnoremap ls :call GetAllSnippets()<CR>
 nnoremap <Leader>t :tabnew 
 
 " Alt-arrow to move splits
-map <Esc>[1;3A <C-w><Up>
-map <Esc>[1;3B <C-w><Down>
-map <Esc>[1;3C <C-w><Right>
-map <Esc>[1;3D <C-w><Left>
+if has("nvim")
+  map <A-Up> <C-w><Up>
+  map <A-Down> <C-w><Down>
+  map <A-Right> <C-w><Right>
+  map <A-Left> <C-w><Left>
+else
+  map <Esc>[1;3A <C-w><Up>
+  map <Esc>[1;3B <C-w><Down>
+  map <Esc>[1;3C <C-w><Right>
+  map <Esc>[1;3D <C-w><Left>
+endif
 
 " LF key mapping
 

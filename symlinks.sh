@@ -9,7 +9,6 @@ spacebarrc=~/.config/spacebar/spacebarrc
 skhdrc=~/.config/skhd/skhdrc
 wal=~/.config/wal/templates
 
-
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   files="bash_functions vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
 amethyst vmdrc zshrc"    
@@ -102,6 +101,9 @@ kitdir="$HOME/.config/kitty"
 #
 # # themes- a couple download from other places apart from kitty-themes
 # [[ ! -L "$kitdir/themes" ]] && ln -s "$dir/terminal" "$kitdir/themes"
+
+mkdir -p ~/.config/nvim
+[[ ! -L ~/.config/nvim/init.vim ]] && ln -s "$dir/init.vim" ~/.config/nvim/init.vim && echo "Linking nvim"
 
 fi
 
