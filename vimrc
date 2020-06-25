@@ -494,5 +494,5 @@ let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 " lag when escaping from insert mode
 set ttimeout
-set ttimeoutlen=5
+set ttimeoutlen=10
 set ttyfast
