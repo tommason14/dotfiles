@@ -133,7 +133,6 @@ export grep='ggrep'
 export settings="$HOME/Documents/repos/autochem/settings_files"
 
 # ssh
-alias remote='sshpass -f ~/dotfiles/sshfile'
 export gadi='tm3124@gadi.nci.org.au'
 export raijin='tm3124@raijin.nci.org.au'
 export magnus='tmason@magnus.pawsey.org.au'
