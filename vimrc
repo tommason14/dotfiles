@@ -466,7 +466,13 @@ set number
 set relativenumber
 
 " Uses colours from terminal (Kitty)
-colo default
+" if not pywal
+let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+if term_colour == '~/.cache/wal/colors-kitty.conf'
+  colo wal
+else
+  colo default
+endif
 set background=dark
 set t_Co=16
 

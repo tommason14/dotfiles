@@ -337,7 +337,7 @@ alias sortmp2="grep 'E(MP2)' | tr -s [:blank:] | cut -d ' ' -f 3 | nl | sort -nr
 alias total_filesize="xargs stat -c %s | awk '{total+=\$1} END {print total}'"
 
 alias ra='ranger'
-alias lf='eval $(resize) && lfcd'
+alias lf='lfcd'
 alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim'
 
 alias vim='vim -p' # automatically open in tabs
