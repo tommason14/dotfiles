@@ -76,9 +76,16 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
 
 fi
 
-sc(){
- $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
-}
+# default alias sc already on monarch
+if [[ $HOSTNAME =~ monarch ]]; then
+  scr(){
+   $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
+  } 
+else
+  sc(){
+   $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
+  }
+fi
 
 nohup_bg() {
   nohup $1 < /dev/null > nohup_bg.log &
