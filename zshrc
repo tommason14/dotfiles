@@ -174,11 +174,11 @@ alias deckset="open -a /Applications/Deckset.app/"
 alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
 
 # monash
-alias gadi='ssh -XY $gadi'
-alias m3='ssh -Y $m3'
-alias monarch='ssh -Y $mon'
-alias stampede='ssh $stm'
-alias vault='ssh tmason1@118.138.242.229'
+alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
+alias mon='kitty @ set-tab-title "Monarch" && ssh -Y $mon; kitty @ set-tab-title "Local"'
+alias m3='kitty @ set-tab-title "M3" && ssh -Y $m3; kitty @ set-tab-title "Local"'
+alias stm='kitty @ set-tab-title "Stampede" && ssh -Y $stm; kitty @ set-tab-title "Local"'
+alias vault='kitty @ set-tab-title "Vault" && ssh tmason1@118.138.242.229; kitty @ set-tab-title "Local"'
 alias lammps_dir='cd /usr/local/share/lammps'
 
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
@@ -241,7 +241,7 @@ alias cae='chem_assist -e'
 alias car='chem_assist -r'
 
 alias vim='vim -p' # automatically open in tabs
-alias fm='eval $(resize) && lfcd'
+alias lf='lfcd'
 # alt-l to open lf
 bindkey -s '^[l' 'lfcd\n'
 
