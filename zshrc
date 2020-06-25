@@ -197,6 +197,7 @@ alias sprc='$EDITOR ~/dotfiles/spacebarrc'
 alias spacerc='$EDITOR ~/dotfiles/spacebarrc'
 alias skrc='$EDITOR ~/dotfiles/skhdrc'
 alias skhdrc='$EDITOR ~/dotfiles/skhdrc'
+alias zathurarc='$EDITOR ~/dotfiles/zathurarc'
 alias ipythonrc='$EDITOR ~/dotfiles/jupyter/ipythonrc'
 alias rprofile='$EDITOR ~/dotfiles/Rprofile'
 alias pymolrc='$EDITOR ~/dotfiles/pymolrc'
@@ -240,9 +241,9 @@ alias cae='chem_assist -e'
 alias car='chem_assist -r'
 
 alias vim='vim -p' # automatically open in tabs
-alias lf='lfcd'
 # alt-l to open lf
 bindkey -s '^[l' 'lfcd\n'
+alias fm='lfcd'
 
 alias weather="curl wttr.in/Melbourne\?0"
 
