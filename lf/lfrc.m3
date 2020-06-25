@@ -153,6 +153,7 @@ map cl !compile_latex $(basename "$f")
 map md push :mkdir<space>
 map rs $Rscript $f
 map tr $travis_xyz_analysis "$f"
+map tdr $travis_xyz_analysis "$f" drude
 map rl !realpath "$f" 
 
 # utilities

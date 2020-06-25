@@ -160,7 +160,7 @@ source ~/dotfiles/lf/icons.sh
 #############
 
 # weird terminal issue, can't clear terminal over ssh unless:
-alias ssh='kitty +kitten ssh'
+# alias ssh='kitty +kitten ssh'
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'

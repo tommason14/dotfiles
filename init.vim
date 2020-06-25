@@ -4,4 +4,4 @@ source ~/.vimrc
 
 " Stop weird characters being entered into command mode 
 " when opening files
-set guicursor=
+" set guicursor=
