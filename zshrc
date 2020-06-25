@@ -40,12 +40,6 @@ autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
 export EDITOR=vim
-# if [[ $USER =~ (tommason|tmas0023) ]]; then
-#   # export EDITOR=/usr/local/bin/vim # explicitly declare brew-installed vim
-#   export EDITOR=nvim
-# else
-#   export EDITOR=vim
-# fi
 
 kitty + complete setup zsh | source /dev/stdin
 alias kitty-reload-colours="kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf"
