@@ -5,7 +5,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
-Plugin 'psf/black'
+" Plugin 'psf/black'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -494,5 +494,5 @@ let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 " lag when escaping from insert mode
 set ttimeout
-set ttimeoutlen=10
+set ttimeoutlen=15
 set ttyfast
