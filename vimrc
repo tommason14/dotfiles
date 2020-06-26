@@ -1,5 +1,4 @@
 " Plugins {{{1
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -30,6 +29,7 @@ set foldmethod=marker
 set foldlevelstart=0
 set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
+set belloff=all " no flashes!
 set expandtab
 set ruler
 set linebreak " don't break words when wrapping to new line
