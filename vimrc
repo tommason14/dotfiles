@@ -270,7 +270,7 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
-au BufWritePost *.py :Black
+" au BufWritePost *.py :Black
 au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Perl {{{1
