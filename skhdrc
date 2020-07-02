@@ -134,9 +134,3 @@ cmd + alt - f : yabai -m window --toggle native-fullscreen
 cmd + alt - r : open /Applications/RStudio.app/
 # try and get this working...
 cmd + alt - y : vim ~/dotfiles/yabairc
-
-# prevents skhd from monitoring events for listed processes.
-
-.blacklist [
-    "avogadro"
-]
