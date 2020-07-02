@@ -108,17 +108,19 @@ shift + lctrl + alt - l : yabai -m window --insert east
 
 # Float / Unfloat window 
 
-toggle_float(){
- if [[ $(yabai -m query --spaces --space | jq -r '.type') == bsp ]]
- then
-   yabai -m space --layout "float" && yabai -m config focus_follows_mouse off
- else
-  yabai -m space --layout "bsp" && yabai -m config focus_follows_mouse autoraise
- fi
-}
+# what I want:
 
-shift + alt - space : toggle_float
- 
+# shift + alt - space : 
+#  [[ $(yabai -m query --spaces --space | jq -r '.type') == bsp ]] && \
+#  yabai -m space --layout "float" && \
+#  yabai -m config focus_follows_mouse off || \
+#  yabai -m space --layout "bsp" && \
+#  yabai -m config focus_follows_mouse autoraise
+
+shift + alt - space : yabai -m space --layout $(yabai -m query --spaces --space | jq -r 'if .type == "bsp" then "float" else "bsp" end')
+
+# if floating, should turn off autoraise, toggle with shift-alt-n
+shift + alt - n : [[ $(yabai -m config focus_follows_mouse) == 'autoraise' ]] && yabai -m config focus_follows_mouse off || yabai -m config focus_follows_mouse autoraise
 
 # Restart Yabai
 lctrl + alt - r : 
