@@ -4,7 +4,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
-" Plugin 'psf/black'
+Plugin 'Chiel92/vim-autoformat'          " psf/black wasn't installing properly
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -34,7 +34,7 @@ set expandtab
 set ruler
 set linebreak " don't break words when wrapping to new line
 set autoindent
-set smartindent
+" set smartindent
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -266,11 +266,11 @@ au BufNewFile,BufRead *.py
     \ set softtabstop=4                              |
     \ set shiftwidth=4                               |
     \ set textwidth=100                              |
-    \ let g:black_linelength = 90                    |
+    \ let g:formatters_python=['black']              |
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
-" au BufWritePost *.py :Black
+au BufWritePost *.py :Autoformat
 au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Perl {{{1

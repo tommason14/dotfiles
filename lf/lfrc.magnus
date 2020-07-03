@@ -155,6 +155,7 @@ map rs $Rscript $f
 map tr $travis_xyz_analysis "$f"
 map tdr $travis_xyz_analysis "$f" drude
 map rl !realpath "$f" 
+map pt $polymatic_types.py $(basename "$f") > types.txt
 
 # utilities
 cmap <C-c> cmd-escape
