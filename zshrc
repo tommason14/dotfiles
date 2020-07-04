@@ -39,7 +39,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
-export EDITOR=vim
+export EDITOR=nvim
 
 kitty + complete setup zsh | source /dev/stdin
 alias kitty-reload-colours="kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf"
