@@ -136,3 +136,4 @@ cmd + alt - f : yabai -m window --toggle native-fullscreen
 cmd + alt - r : open /Applications/RStudio.app/
 # try and get this working...
 cmd + alt - y : vim ~/dotfiles/yabairc
+# cmd + shift - w : ~/Documents/repos/wallpapers/random_wallpaper.sh && kitty @ --to /tmp/mykitty set-colors --all --configured ~/.config/kitty/kitty.conf

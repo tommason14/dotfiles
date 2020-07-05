@@ -24,6 +24,8 @@ call vundle#end()
 set nocompatible
 filetype plugin on
 syntax enable
+set number
+set relativenumber
 set encoding=utf-8 
 set foldmethod=marker
 set foldlevelstart=0
@@ -34,7 +36,15 @@ set expandtab
 set ruler
 set linebreak " don't break words when wrapping to new line
 set autoindent
-" set smartindent
+set smarttab
+set formatoptions=tcqj
+" set display=lastline
+set wildmenu
+" set wildmode=list:full
+set autoread " reload a file changed outside of vim
+set laststatus=2
+set shortmess+=F " remove line that appears at bottom of file when opening
+
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -59,6 +69,7 @@ set incsearch  " search as you type
 " Ultisnips {{{1
 
 let g:UltiSnipsUsePythonVersion = 3
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Load snippets
 
@@ -123,12 +134,6 @@ command! -bar LF call LF()
 " Remapping {{{1 
 
 let mapleader = ","
-
-" Autocomplete - could clash with Ultisnips?
-" inoremap <Leader><Tab> <C-n>
-" " if in autocomplete, tab through
-" inoremap <expr> <Tab> pumvisible ? "<C-n>" : "<Tab>"  
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 " Snippets
 
@@ -462,11 +467,7 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-set number
-set relativenumber
-
-" Uses colours from terminal (Kitty)
-" if not pywal
+" Uses colours from terminal (Kitty) if not pywal
 let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
 if term_colour == '~/.cache/wal/colors-kitty.conf'
   colo wal

@@ -14,7 +14,6 @@ mac-chm: ~/Documents/repos/hydrated_ils/hydrated_il_MD
 mac-chp: ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19
 mac-co: ~/.config/
 mac-cm: /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files
-mac-cs: ~/Documents/repos/chem_scripts
 mac-dc: ~/Documents
 mac-df: ~/dotfiles
 mac-dk: ~/Desktop
@@ -67,13 +66,12 @@ rjn-w: /short/k96/apps
 mon-au: ~/monash_automation/
 mon-ba: /home/tmason1/scratch/Battery_electrolytes
 mon-ch: /home/tmason1/scratch/hydrated_ils
-mon-cs: ~/chem_scripts
 mon-d: /home/tmason1/scratch/dopamine
 mon-df: ~/dotfiles
 mon-ow: /home/tmason1/sn29
 mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
 mon-q: /home/tmason1/sn29/apps/qcp
-mon-s: /home/tmason1/scratch
+mon-sr: /home/tmason1/scratch
 mon-sc: ~/.local/scripts
 mon-t: /home/tmason1/scratch/tests
 mon-w: /home/tmason1/p2015120004
@@ -81,13 +79,12 @@ mon-w: /home/tmason1/p2015120004
 # Massive
 mas-au: ~/monash_automation/
 mas-ch: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
-mas-cs: ~/chem_scripts
 mas-d: /home/tmason1/sn29_scratch/tmason1/dopamine
 mas-df: ~/dotfiles
 mas-p: /home/tmason1/sn29_scratch/tmason1/polymers
 mas-t: /home/tmason1/sn29_scratch/tmason1/tests
 mas-q: /home/tmason1/sn29/apps/qcp
-mas-s: /home/tmason1/sn29_scratch/tmason1
+mas-sr: /home/tmason1/sn29_scratch/tmason1
 mas-sc: ~/.local/scripts
 mas-w: /home/tmason1/sn29
 
