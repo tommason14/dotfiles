@@ -114,7 +114,7 @@ fi
 }}
 map ou push $use<space>
 map ovm vmd "$f"
-map ovi $use ovito "$(basename $f)"
+map ovi $/Applications/Ovito.app/Contents/MacOS/ovito "$(basename $f)"
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
@@ -156,6 +156,7 @@ map tr $travis_xyz_analysis "$f"
 map tdr $travis_xyz_analysis "$f" drude
 map rl !realpath "$f" 
 map pt $polymatic_types.py $(basename "$f") > types.txt
+map aa $add_atomic_symbols_to_lammps_datafile.py $(basename "$f")
 
 # utilities
 cmap <C-c> cmd-escape
@@ -253,12 +254,11 @@ map ozh $vim ~/.zshrc && source ~/.zshrc
 
 map gau cd ~/monash_automation/
 map gch cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
-map gcs cd ~/chem_scripts
 map gd cd /home/tmason1/sn29_scratch/tmason1/dopamine
 map gdf cd ~/dotfiles
 map gp cd /home/tmason1/sn29_scratch/tmason1/polymers
 map gq cd /home/tmason1/sn29/apps/qcp
-map gs cd /home/tmason1/sn29_scratch/tmason1
 map gsc cd ~/.local/scripts
+map gsr cd /home/tmason1/sn29_scratch/tmason1
 map gt cd /home/tmason1/sn29_scratch/tmason1/tests
 map gw cd /home/tmason1/sn29

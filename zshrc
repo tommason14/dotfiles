@@ -39,7 +39,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
-export EDITOR=nvim
+export EDITOR=vim
 
 kitty + complete setup zsh | source /dev/stdin
 alias kitty-reload-colours="kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf"
@@ -169,6 +169,7 @@ alias avo="open -a /Applications/Avogadro.app/"
 alias iqmol="open -a /Applications/IQmol.app/"
 alias deckset="open -a /Applications/Deckset.app/"
 alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
+alias ovito="/Applications/Ovito.app/Contents/MacOS/ovito"
 
 # monash
 alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
@@ -286,7 +287,6 @@ alias gchm='cd ~/Documents/repos/hydrated_ils/hydrated_il_MD'
 alias gchp='cd ~/Documents/repos/hydrated_ils/hydrated_il_paper/aug_19'
 alias gcm='cd /Volumes/GoogleDrive/My\ Drive/chm3911/assignment_info/files'
 alias gco='cd ~/.config/'
-alias gcs='cd ~/Documents/repos/chem_scripts'
 alias gda='cd ~/Documents/repos/dopamine/dopamine_analysis'
 alias gdc='cd ~/Documents'
 alias gdf='cd ~/dotfiles'

@@ -114,7 +114,7 @@ fi
 }}
 map ou push $use<space>
 map ovm vmd "$f"
-map ovi $use ovito "$(basename $f)"
+map ovi $/Applications/Ovito.app/Contents/MacOS/ovito "$(basename $f)"
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
 map otx $open -a /Applications/texstudio.app/ "$f"
@@ -156,6 +156,7 @@ map tr $travis_xyz_analysis "$f"
 map tdr $travis_xyz_analysis "$f" drude
 map rl !realpath "$f" 
 map pt $polymatic_types.py $(basename "$f") > types.txt
+map aa $add_atomic_symbols_to_lammps_datafile.py $(basename "$f")
 
 # utilities
 cmap <C-c> cmd-escape

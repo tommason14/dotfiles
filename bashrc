@@ -7,11 +7,7 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 fi
 
-if [[ $USER =~ (tommason|tmas0023) ]]; then
-  export EDITOR=/usr/local/bin/vim # explicitly declare brew-installed vim
-else
-  export EDITOR=vim
-fi
+export EDITOR=vim
 
 # [[ $USER == "tommason" ]] && cat ~/.cache/wal/sequences
 [[ $USER =~ (tommason|tmas0023) ]] &&
