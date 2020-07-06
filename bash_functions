@@ -70,7 +70,7 @@ if [[ $USER =~ (tommason|tmas0023) ]]; then
   }
 
   vertical(){
-    convert ${@:1:$#-1} -gravity center -append ${@: -1} 
+    convert ${@:1:$#-1} -gravity center -append ${@:-1} 
     # ${@: -1} only works with arguments
   }
 
@@ -190,7 +190,6 @@ force_push() {
 }
 
 make_gif() {
-  args="$@"
   convert -loop 0 -delay 20 image* run.gif
 }
 
@@ -221,7 +220,7 @@ function gamesstoxyz {
 }
 
 copy() {
-  cat $1 | pbcopy
+  cat "$1" | pbcopy
 }
 
 lfcd () {
@@ -267,7 +266,7 @@ plot_uv() {
   step=${3:-0.01}
   Rscript -e "read_csv('$1') %>% 
     group_by(Config) %>%
-    do(add_gaussians(.)) %>%
+    do(add_gaussians(., $sigma, $step)) %>%
     plot_gaussians() +
     facet_wrap(.~Config, scales='free_y')" &> /dev/null
   open Rplots.pdf
@@ -283,7 +282,7 @@ plot_uv_vertical() {
   step=${3:-0.01}
   Rscript -e "read_csv('$1') %>% 
     group_by(Config) %>% 
-    do(add_gaussians(.)) %>%
+    do(add_gaussians(., $sigma, $step)) %>%
     plot_gaussians(curve = '#2a9d8f', lines = '#fb8b24') + 
     theme_tom(font='Fira Code Light') +
     facet_wrap(.~Config, ncol=1, scales='free_y') +

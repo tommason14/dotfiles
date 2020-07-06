@@ -38,9 +38,7 @@ set linebreak " don't break words when wrapping to new line
 set autoindent
 set smarttab
 set formatoptions=tcqj
-" set display=lastline
 set wildmenu
-" set wildmode=list:full
 set autoread " reload a file changed outside of vim
 set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening

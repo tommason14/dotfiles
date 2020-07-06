@@ -132,6 +132,7 @@ cmd open ${{
             qlmanage -p "$f" &> /dev/null
           done 
           ;;
+        application/json) $EDITOR $fx ;;
         text/*) $EDITOR $fx;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac

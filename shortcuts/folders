@@ -66,10 +66,10 @@ rjn-w: /short/k96/apps
 mon-au: ~/monash_automation/
 mon-ba: /home/tmason1/scratch/Battery_electrolytes
 mon-ch: /home/tmason1/scratch/hydrated_ils
-mon-d: /home/tmason1/scratch/dopamine
+mon-dp: /home/tmason1/scratch/dopamine
 mon-df: ~/dotfiles
 mon-ow: /home/tmason1/sn29
-mon-p: /home/tmason1/scratch/polymers/polymerisation_rates
+mon-p: /home/tmason1/scratch/polymers
 mon-q: /home/tmason1/sn29/apps/qcp
 mon-sr: /home/tmason1/scratch
 mon-sc: ~/.local/scripts
@@ -79,7 +79,7 @@ mon-w: /home/tmason1/p2015120004
 # Massive
 mas-au: ~/monash_automation/
 mas-ch: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
-mas-d: /home/tmason1/sn29_scratch/tmason1/dopamine
+mas-dp: /home/tmason1/sn29_scratch/tmason1/dopamine
 mas-df: ~/dotfiles
 mas-p: /home/tmason1/sn29_scratch/tmason1/polymers
 mas-t: /home/tmason1/sn29_scratch/tmason1/tests
@@ -92,9 +92,9 @@ mas-w: /home/tmason1/sn29
 stm-au: ~/monash_automation/
 stm-ch: /scratch/06233/tmason/hydrated_ils
 stm-cs: ~/chem_scripts
-stm-d: /scratch/06233/tmason/dopamine
+stm-dp: /scratch/06233/tmason/dopamine
 stm-df: ~/dotfiles
-stm-p: /scratch/06233/tmason/polymers/polymerisation_rates
+stm-p: /scratch/06233/tmason/polymers
 stm-q: /work/06233/tmason/stampede2/qcp
 stm-s: /scratch/06233/tmason
 stm-sc: ~/.local/scripts
@@ -105,6 +105,7 @@ stm-w: /work/06233/tmason/stampede2
 gadi-au: ~/monash_automation
 gadi-cs: ~/chem_scripts
 gadi-df: ~/dotfiles
-gadi-s: /scratch/k96/tm3124
+gadi-sr: /scratch/k96/tm3124
+gadi-p: /scratch/k96/tm3124/polymers
 gadi-sc: ~/.local/scripts
 gadi-wg: /home/565/zls565/.local/gamess19-srs # work gamess

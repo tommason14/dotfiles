@@ -132,6 +132,7 @@ cmd open ${{
             qlmanage -p "$f" &> /dev/null
           done 
           ;;
+        application/json) $EDITOR $fx ;;
         text/*) $EDITOR $fx;;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
@@ -255,9 +256,9 @@ map ozh $vim ~/.zshrc && source ~/.zshrc
 map gau cd ~/monash_automation/
 map gch cd /scratch/06233/tmason/hydrated_ils
 map gcs cd ~/chem_scripts
-map gd cd /scratch/06233/tmason/dopamine
 map gdf cd ~/dotfiles
-map gp cd /scratch/06233/tmason/polymers/polymerisation_rates
+map gdp cd /scratch/06233/tmason/dopamine
+map gp cd /scratch/06233/tmason/polymers
 map gq cd /work/06233/tmason/stampede2/qcp
 map gs cd /scratch/06233/tmason
 map gsc cd ~/.local/scripts

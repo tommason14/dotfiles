@@ -170,7 +170,9 @@ alias avo="open -a /Applications/Avogadro.app/"
 alias iqmol="open -a /Applications/IQmol.app/"
 alias deckset="open -a /Applications/Deckset.app/"
 alias vl="$(find /usr/local/Cellar/vim -name 'less.sh')"
-alias ovito="/Applications/Ovito.app/Contents/MacOS/ovito"
+function ovito(){
+  /Applications/Ovito.app/Contents/MacOS/ovito "$1" @
+} # run as bg proc
 
 # monash
 alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
