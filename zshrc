@@ -108,8 +108,7 @@ lfcd () {
 #  EXPORTS  #
 #############
 
-[[ $USER == "tommason" ]] && export LAMMPS_EXEC="/usr/local/bin/lmp_serial" # pysimm, no fourier dihedrals tho
-[[ $USER == "tmas0023" ]] && export LAMMPS_EXEC="/Users/tmas0023/Documents/lammps-3Mar20/src/lmp_mac" # compiled
+export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
 
 export filestream="/Volumes/GoogleDrive/My Drive"
 export repos="$HOME/Documents/repos"

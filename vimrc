@@ -3,7 +3,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
+" Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
 Plugin 'Chiel92/vim-autoformat'          " psf/black wasn't installing properly
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
