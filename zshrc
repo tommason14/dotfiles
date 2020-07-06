@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 PS1="%F{blue}%1d $%f "
+PROMPT_COMMAND='echo -ne "terminal"'
 
 HISTFILE=$HOME/.cache/zsh/history
 HISTSIZE=10000 # per session
