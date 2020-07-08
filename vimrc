@@ -278,14 +278,14 @@ au FileType python nnoremap <Leader>r :!python3 %<CR>
 
 " Perl {{{1
 
-au BufNewFile,BufRead *.pl
-    \ set tabstop=4  |
+au BufNewFile,BufRead *.pl,*pm
+    \ set tabstop=2  |
     \ set expandtab  |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
     \ set textwidth=100 |
     \ set filetype=perl |
-    \ nnoremap <Leader>r :!perl %<CR>
+    \ set complete-=i | " don't search /usr/local/Cellar/Perl5 when C-n autocompleting
 
 " R {{{1
 
