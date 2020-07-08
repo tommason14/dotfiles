@@ -44,7 +44,7 @@ mac-tm: ~/tmp
 mac-w: ~/Documents/repos/wallpapers
 
 # Magnus
-mgs-au: ~/monash_automation/
+mgs-au: ~/autochem
 mgs-ch: /scratch/pawsey0197/tmason/Hydrated_ILs
 mgs-d: /scratch/pawsey0197/tmason/dopamine
 mgs-df: ~/dotfiles
@@ -54,7 +54,7 @@ mgs-sc: ~/.local/scripts
 mgs-w: /group/pawsey0197
 
 # Raijin
-rjn-au: ~/monash_automation/
+rjn-au: ~/autochem
 rjn-ch: /short/k96/tm3124/hydrated_ils_choline
 rjn-df: ~/dotfiles
 rjn-q: /short/k96/apps/qcp
@@ -63,7 +63,7 @@ rjn-sc: ~/.local/scripts
 rjn-w: /short/k96/apps
 
 # Monarch
-mon-au: ~/monash_automation/
+mon-au: ~/autochem
 mon-ba: /home/tmason1/scratch/Battery_electrolytes
 mon-ch: /home/tmason1/scratch/hydrated_ils
 mon-dp: /home/tmason1/scratch/dopamine
@@ -77,7 +77,7 @@ mon-t: /home/tmason1/scratch/tests
 mon-w: /home/tmason1/p2015120004
 
 # Massive
-mas-au: ~/monash_automation/
+mas-au: ~/autochem
 mas-ch: /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 mas-dp: /home/tmason1/sn29_scratch/tmason1/dopamine
 mas-df: ~/dotfiles
@@ -89,7 +89,7 @@ mas-sc: ~/.local/scripts
 mas-w: /home/tmason1/sn29
 
 # Stampede
-stm-au: ~/monash_automation/
+stm-au: ~/autochem
 stm-ch: /scratch/06233/tmason/hydrated_ils
 stm-cs: ~/chem_scripts
 stm-dp: /scratch/06233/tmason/dopamine
@@ -102,7 +102,7 @@ stm-t: /scratch/06233/tmason/tests
 stm-w: /work/06233/tmason/stampede2
 
 # Gadi
-gadi-au: ~/monash_automation
+gadi-au: ~/autochem
 gadi-cs: ~/chem_scripts
 gadi-df: ~/dotfiles
 gadi-sr: /scratch/k96/tm3124

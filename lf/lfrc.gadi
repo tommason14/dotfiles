@@ -253,7 +253,7 @@ map ozh $vim ~/.zshrc && source ~/.zshrc
 
 # Movement {{{2
 
-map gau cd ~/monash_automation
+map gau cd ~/autochem
 map gcs cd ~/chem_scripts
 map gdf cd ~/dotfiles
 map gp cd /scratch/k96/tm3124/polymers

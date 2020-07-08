@@ -253,7 +253,7 @@ map ozh $vim ~/.zshrc && source ~/.zshrc
 
 # Movement {{{2
 
-map gau cd ~/monash_automation/
+map gau cd ~/autochem
 map gch cd /home/tmason1/sn29_scratch/tmason1/hydrated_ils
 map gdf cd ~/dotfiles
 map gdp cd /home/tmason1/sn29_scratch/tmason1/dopamine
