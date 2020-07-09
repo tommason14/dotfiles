@@ -158,6 +158,7 @@ map tdr $travis_xyz_analysis "$f" drude
 map rl !realpath "$f" 
 map pt $polymatic_types.py $(basename "$f") > types.txt
 map aa $add_atomic_symbols_to_lammps_datafile.py $(basename "$f")
+map lo !lookup_fmo_progress.sh $(basename "$f")
 
 # utilities
 cmap <C-c> cmd-escape
