@@ -85,12 +85,13 @@ map dD $mv "$fx" ~/.Trash/
 map dt delete # delete true
 map <bs2> set hidden!
 map re rename
-cmap <esc> cmd-escape
+map <esc> cmd-escape
 
 # File opening {{{2
 
 map o. $open .
-map oiv $vim -p $fx
+map ovt $vim -p $fx
+map ovs $vim -O $fx
 map om $molden "$f"
 map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"

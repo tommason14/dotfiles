@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-PS1="%F{blue}%1d $%f "
+PS1="%F{cyan}%1d $%f "
 PROMPT_COMMAND='echo -ne "terminal"'
 
 HISTFILE=$HOME/.cache/zsh/history

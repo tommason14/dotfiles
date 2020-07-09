@@ -32,6 +32,7 @@ set foldlevelstart=0
 set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
 set belloff=all " no flashes!
+set showcmd " visual select shows number of lines
 set expandtab
 set ruler
 set linebreak " don't break words when wrapping to new line
@@ -406,15 +407,18 @@ au Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Skim'
 let g:livepreview_engine = 'xelatex'
 
- " Bash {{{1
+ " Shell {{{1
 
-au BufNewFile,BufRead *.sh,bash*,*lfrc*
+au BufNewFile,BufRead *.sh,bash*,*lfrc*,*alias*
     \ set tabstop=2                         |
     \ set softtabstop=2                     |
     \ set expandtab                         |
     \ set shiftwidth=2                      |
     \ set textwidth=79                      |
     \ set filetype=sh                       |
+    \ set syntax=zsh                        |
+" different syntax highlighting to filetypes, sh highlighting
+" gave errors
 
 "  C++ {{{
 au BufNewFile,BufRead *.cpp
