@@ -1,0 +1,29 @@
+# Molecules should be laid out in four lines as follows:
+# name=<NAME>
+# charge=<CHARGE>
+# multiplicity=<MULTIPLICITY>
+# atoms=<list of individual atoms in any order>
+# hashed and blank lines are not read by python,
+# and names should contain no spaces
+# below is an example for hydrogen peroxide:
+
+name=h2o2
+charge=0
+multiplicity=1
+atoms=O,H,H,O
+
+name=dihydrogen_citrate
+charge=-1
+multiplicity=1
+atoms=C,C,C,H,H,O,O,C,O,C,C,H,H,O,H,O,H,H,O,O
+
+name=dibutyl_phosphate
+charge=-1
+multiplicity=1
+atoms=C,C,H,H,H,C,H,H,C,H,H,O,H,H,P,O,O,O,C,C,H,H,C,H,H,C,H,H,H,H,H
+
+name=hydroxy-dmso
+charge=1
+multiplicity=1
+atoms=C,H,H,H,C,H,H,H,S,O,H
+

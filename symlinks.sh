@@ -109,3 +109,10 @@ fi
 [[ ! -L ~/.config/bat/config ]] &&
   echo "Linking bat config" && 
   ln -s $dir/lf/bat.config ~/.config/bat/config
+
+# autochem
+mols=~/.config/autochem/molecules.txt
+[[ ! -d ~/.config/autochem ]] && mkdir ~/.config/autochem
+[[ -f $mols ]] && rm $mols # if already present, remove and use this symlink
+[[ ! -L $mols ]] && ln -s $dir/molecules.txt $mols
+
