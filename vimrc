@@ -460,8 +460,7 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
     \ set filetype=sh                       | 
 
 " LAMMPS comment style, for the Tcomment plugin
-" au FileType lammps let g:tcomment#filetype#syntax_map_user = {'lammps': 'python'}
-let g:tcomment_types={'lammps': '# %s'}
+au Filetype lammps set commentstring=#%s
 
 " Kitty conf {{{1
 au BufRead kitty.conf set filetype=kitty
