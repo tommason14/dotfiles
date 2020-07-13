@@ -97,24 +97,8 @@ map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"
 map oia $open -a /Applications/iA\ Writer.app/ "$f"
 map oiq $open -a /Applications/iQmol.app/ "$f"
-
-cmd vmd ${{
-
-# load vmdlammps.sh if lammps file
-grep -Fq "atoms" $f && vmdlammps.sh $(basename $f) && exit 0
-
-if [ $USER == "tmas0023" ]
-then
-  /Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86 "$f"
-elif [ $USER == "tommason" ]
-then
-  /Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64 "$f"
-else
-  vmd "$f"
-fi
-}}
 map ou push $use<space>
-map ovm vmd "$f"
+map ovm $vmdlammps.sh "$f"
 map ovi $/Applications/Ovito.app/Contents/MacOS/ovito "$(basename $f)" &
 map op pymol "$fs"
 map ors $open -a /Applications/RStudio.app/ "$f"
