@@ -11,5 +11,3 @@ export EDITOR=vim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 export PATH=$PATH:/Users/tmas0023/pysimm/bin
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
