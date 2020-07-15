@@ -40,6 +40,9 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+# fzf completion
+source ~/.fzf.zsh
+
 export EDITOR=vim
 
 kitty + complete setup zsh | source /dev/stdin
