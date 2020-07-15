@@ -57,6 +57,10 @@ sc(){
 $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
 }
 
+esc(){
+  $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
+}
+
 termpdf(){
 kitty @ kitten termpdf.py $(realpath $1)
 }
