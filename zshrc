@@ -40,6 +40,9 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+# fzf completion
+source ~/.fzf.zsh
+
 export EDITOR=vim
 
 kitty + complete setup zsh | source /dev/stdin
@@ -57,12 +60,21 @@ sc(){
 $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
 }
 
+esc(){
+  $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
+}
+
 termpdf(){
 kitty @ kitten termpdf.py $(realpath $1)
 }
 
 xaringan_to_pdf() {
 decktape remark --chrome-arg=--allow-file-access-from-files $1 ${1%.html}.pdf 
+}
+
+code_for_keynote() {
+[[ "$#" -eq 0 ]] && echo "Syntax: code_for_keynote <filename>" && return 1
+highlight -O rtf $1 --syntax python
 }
 
 pymol(){ 
@@ -126,6 +138,7 @@ else
 fi
 # gsed/ggrep on mac
 export sed="gsed"
+alias grep="grep --color"
 alias ggrep="ggrep --color"
 export grep='ggrep'
 export settings="$HOME/Documents/repos/autochem/settings_files"
@@ -247,10 +260,8 @@ bindkey -s '^[l' 'lfcd\n'
 alias fm='lfcd'
 
 alias weather="curl wttr.in/Melbourne\?0"
-
 # Syntax highlighting
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortcuts.sh; cd - > /dev/null"
 
 ###############

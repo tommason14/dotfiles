@@ -2,9 +2,13 @@ library(reticulate)
 use_python('/usr/local/bin/python3', required = TRUE)
 library(stats) # purely so dplyr::filter works
 library(tidyverse)
+library(ggplot2)
 library(magrittr)
 library(readxl)
 library(latex2exp) 
+
+# supress empty Rplots.pdf
+grDevices::pdf(NULL)
 
 `%notin%` = function(x,y) !(x %in% y)
 
@@ -59,29 +63,29 @@ theme_tom <- function(font="Anonymous Pro", base_size = 11.5,
                         plot_margin = margin(30, 30, 30, 30),
                         grid_col = "#cccccc", grid = TRUE,
                         axis_col = "#cccccc", axis = FALSE, ticks = FALSE) {
-  
+
   ret <- ggplot2::theme_minimal(base_family=font, base_size=base_size)
-  
+
   ret <- ret + theme(legend.background=element_blank())
   ret <- ret + theme(legend.key=element_blank())
-  
+
   if (inherits(grid, "character") | grid == TRUE) {
-    
+
     ret <- ret + theme(panel.grid=element_line(color=grid_col, size=0.2))
     ret <- ret + theme(panel.grid.major=element_line(color=grid_col, size=0.2))
     ret <- ret + theme(panel.grid.minor=element_line(color=grid_col, size=0.15))
-    
+
     if (inherits(grid, "character")) {
       if (regexpr("X", grid)[1] < 0) ret <- ret + theme(panel.grid.major.x=element_blank())
       if (regexpr("Y", grid)[1] < 0) ret <- ret + theme(panel.grid.major.y=element_blank())
       if (regexpr("x", grid)[1] < 0) ret <- ret + theme(panel.grid.minor.x=element_blank())
       if (regexpr("y", grid)[1] < 0) ret <- ret + theme(panel.grid.minor.y=element_blank())
     }
-    
+
   } else {
     ret <- ret + theme(panel.grid=element_blank())
   }
-  
+
   if (inherits(axis, "character") | axis == TRUE) {
     ret <- ret + theme(axis.line=element_line(color="#2b2b2b", size=0.15))
     if (inherits(axis, "character")) {
@@ -103,7 +107,7 @@ theme_tom <- function(font="Anonymous Pro", base_size = 11.5,
   } else {
     ret <- ret + theme(axis.line=element_blank())
   }
-  
+
   if (!ticks) {
     ret <- ret + theme(axis.ticks = element_blank())
     ret <- ret + theme(axis.ticks.x = element_blank())
@@ -114,10 +118,10 @@ theme_tom <- function(font="Anonymous Pro", base_size = 11.5,
     ret <- ret + theme(axis.ticks.y = element_line(size=0.15))
     ret <- ret + theme(axis.ticks.length = grid::unit(5, "pt"))
   }
-  
+
   xj <- switch(tolower(substr(axis_title_just, 1, 1)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
   yj <- switch(tolower(substr(axis_title_just, 2, 2)), b=0, l=0, m=0.5, c=0.5, r=1, t=1)
-  
+
   ret <- ret + theme(axis.text.x=element_text(size=axis_text_size, margin=margin(t=0)))
   ret <- ret + theme(axis.text.y=element_text(size=axis_text_size, margin=margin(r=0)))
   ret <- ret + theme(axis.title=element_text(size=axis_title_size, family=axis_title_family))
@@ -140,9 +144,9 @@ theme_tom <- function(font="Anonymous Pro", base_size = 11.5,
                                                margin=margin(t=caption_margin),
                                                family=caption_family, face=caption_face))
   ret <- ret + theme(plot.margin=plot_margin)
-  
+
   ret
-  
+
 }
 
 

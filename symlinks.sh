@@ -95,7 +95,7 @@ kitdir="$HOME/.config/kitty"
 # [[ ! -d "$kitdir" ]] && mkdir -p "$kitdir"
 # [[ ! -L "$kitdir/kitty.conf" ]] && ln -s "$dir/terminal/kitty.conf" "$kitdir/kitty.conf"
 #
-# # themes- a couple download from other places apart from kitty-themes
+# # themes- a couple downloaded from other places apart from kitty-themes
 # [[ ! -L "$kitdir/themes" ]] && ln -s "$dir/terminal" "$kitdir/themes"
 [[ ! -L $wal ]] && ln -s "$dir/wal" $wal && echo "linking wal templates"
 

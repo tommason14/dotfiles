@@ -79,7 +79,11 @@ fi
 # default alias sc already on monarch
 scr(){
  $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
-} 
+}
+
+escr(){
+  $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
+}
 
 escr(){
   $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
