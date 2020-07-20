@@ -127,6 +127,7 @@ cmd open ${{
 # Shell utilities {{{2
 
 map . ${{lf -remote "send $id push $./$(basename $f)<space>"}}
+map ma !mass "$f"
 map g2m $gamess_to_molden.py "$f"
 map moc $molden2csv "$f"
 map mx $chmod +x "$f"
@@ -243,6 +244,6 @@ map gau cd ~/autochem
 map gch cd /short/k96/tm3124/hydrated_ils_choline
 map gdf cd ~/dotfiles
 map gq cd /short/k96/apps/qcp
-map gs cd /short/k96/tm3124
 map gsc cd ~/.local/scripts
+map gs cd /short/k96/tm3124
 map gw cd /short/k96/apps

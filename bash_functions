@@ -81,6 +81,10 @@ scr(){
  $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
 } 
 
+escr(){
+  $(find ~/.local/scripts -type f | grep -v '.git\|pycache' | fzf --preview='less {}')
+}
+
 nohup_bg() {
   nohup $1 < /dev/null > nohup_bg.log &
 }
