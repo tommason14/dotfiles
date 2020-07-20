@@ -74,7 +74,7 @@
     ],
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "terminal.integrated.shell.osx": "/usr/local/bin/bash",
-    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "workbench.colorTheme": "Wal",
     "workbench.startupEditor": "newUntitledFile",
     "editor.quickSuggestions": true,
 }

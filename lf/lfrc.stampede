@@ -247,7 +247,7 @@ map gdf cd ~/dotfiles
 map gdp cd /scratch/06233/tmason/dopamine
 map gp cd /scratch/06233/tmason/polymers
 map gq cd /work/06233/tmason/stampede2/qcp
-map gsc cd ~/.local/scripts
 map gs cd /scratch/06233/tmason
+map gsc cd ~/.local/scripts
 map gt cd /scratch/06233/tmason/tests
 map gw cd /work/06233/tmason/stampede2

@@ -244,6 +244,6 @@ map gau cd ~/autochem
 map gch cd /short/k96/tm3124/hydrated_ils_choline
 map gdf cd ~/dotfiles
 map gq cd /short/k96/apps/qcp
-map gsc cd ~/.local/scripts
 map gs cd /short/k96/tm3124
+map gsc cd ~/.local/scripts
 map gw cd /short/k96/apps
