@@ -16,6 +16,8 @@ Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'jpalardy/vim-slime'
+Plugin 'hanschen/vim-ipython-cell'
 
 call vundle#end()
 
@@ -275,7 +277,9 @@ au BufNewFile,BufRead *.py
     \ set formatoptions=tcqj                         |
 
 au BufWritePost *.py :Autoformat
-au FileType python nnoremap <Leader>r :!python3 %<CR>
+au Filetype python nnoremap <Leader>r :IPythonCellExecuteCell<CR>
+
+let g:slime_target = "kitty"
 
 " Perl {{{1
 

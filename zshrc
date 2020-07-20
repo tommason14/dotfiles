@@ -129,12 +129,12 @@ PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fft
 PATH="$repos/autochem/bin:$PATH"
 export PYTHONPATH="$repos/autochem/:$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_ac/analysis_organised:$PYTHONPATH"
 export automation="$repos/autochem"
-if [[ $HOSTNAME == *"MBP"* ]] 
+if [[ $USER == "tommason" ]] 
 then
-  alias vmd='/Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64'
+  alias vmd="/Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64"
 else
   # uni desktop
-  alias vmd='/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86'
+  alias vmd="/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86"
 fi
 # gsed/ggrep on mac
 export sed="gsed"
@@ -192,7 +192,7 @@ alias mon='kitty @ set-tab-title "Monarch" && ssh -Y $mon; kitty @ set-tab-title
 alias m3='kitty @ set-tab-title "M3" && ssh -Y $m3; kitty @ set-tab-title "Local"'
 alias stm='kitty @ set-tab-title "Stampede" && ssh -Y $stm; kitty @ set-tab-title "Local"'
 alias vault='kitty @ set-tab-title "Vault" && ssh tmason1@118.138.242.229; kitty @ set-tab-title "Local"'
-alias lammps_dir='cd /usr/local/share/lammps'
+alias lammps_dir='cd ~/Documents/lammps-3Mar20'
 
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 alias feh='feh -F -d'
