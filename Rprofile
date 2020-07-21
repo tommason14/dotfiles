@@ -48,6 +48,7 @@ y_scale <- function(y){
   c(0, floor(max(y)) / 2, floor(max(y)))
 }
 
+# hrbrthemes::theme_ipsum, but loaded here to avoid font issues
 theme_tom <- function(font="Anonymous Pro", base_size = 11.5,
                         plot_title_family = font, plot_title_size = 18,
                         plot_title_face = "bold", plot_title_margin = 10,

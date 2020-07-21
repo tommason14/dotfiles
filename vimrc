@@ -217,9 +217,9 @@ vnoremap <Leader>n2 y`]o<Esc>p`[v`]:!python<CR>
 nnoremap <Leader>p3 :norm ggVG$,p3<CR>
 nnoremap <Leader>p2 :norm ggVG$,p2<CR>
 
-" Select R plot and run with ,z<letter>
+" Select R plot and run with ,p<letter>
 " small, large, mega
-vnoremap <Leader>zs 
+au FileType R vnoremap <Leader>ps 
   \ y:tabnew tmpR.R<CR>
   \ipng('tmpR.png', width=1200, height=1200,res=300)<Esc>
   \o<Esc>PGidev.off()<Esc>:wq<CR>
@@ -227,10 +227,21 @@ vnoremap <Leader>zs
   \:!qlmanage -p tmpR.png &> /dev/null <CR>
   \:!rm tmpR.R tmpR.png<CR><CR>
 
-vnoremap <Leader>zl y:tabnew tmpR.R<CR>ipng('tmpR.png', width=3000, height=2400, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!qlmanage -p tmpR.png &> /dev/null <CR>
- \:!rm tmpR.R tmpR.png<CR><CR>
+au FileType R vnoremap <Leader>pl 
+  \ y:tabnew tmpR.R<CR>
+  \ipng('tmpR.png', width=3000, height=2400, res=300)<Esc>
+  \o<Esc>PGidev.off()<Esc>:wq<CR>
+  \:!Rscript tmpR.R<CR>
+  \:!qlmanage -p tmpR.png &> /dev/null <CR>
+  \:!rm tmpR.R tmpR.png<CR><CR>
 
-vnoremap <Leader>zm y:tabnew tmpR.R<CR>ipng('tmpR.png', width=5000, height=4000, res=300)<Esc>o<Esc>PGidev.off()<Esc>:wq<CR>:!Rscript tmpR.R<CR>:!open tmpR.png && sleep 3<CR>:!rm tmpR.R tmpR.png<CR><CR>
+au FileType R vnoremap <Leader>pm
+  \ y:tabnew tmpR.R<CR>
+  \ipng('tmpR.png', width=5000, height=4000, res=300)<Esc>
+  \o<Esc>PGidev.off()<Esc>:wq<CR>
+  \:!Rscript tmpR.R<CR>
+  \:!qlmanage -p tmpR.png && sleep 3<CR>
+  \:!rm tmpR.R tmpR.png<CR><CR>
 
 " Set filetype to allow above command whenever
 nnoremap <Leader>f :set ft=python<CR>i
@@ -312,7 +323,6 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set shiftwidth=2                               |
     \ set textwidth=80                               |
     \ set filetype=R                                 |
-    \ nnoremap <Leader>p :tabnew $HOME/.rprofile<CR> |
     \ nnoremap <Leader>r :w<CR>:!Rscript % <CR>:!open Rplots.pdf &<CR><CR> |
 
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1

@@ -77,4 +77,8 @@
     "workbench.colorTheme": "Wal",
     "workbench.startupEditor": "newUntitledFile",
     "editor.quickSuggestions": true,
+    "python.dataScience.widgetScriptSources": [
+      "jsdelivr.com",
+      "unpkg.com"
+    ],
 }
