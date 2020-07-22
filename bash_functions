@@ -96,8 +96,8 @@ nohup_bg() {
 goto(){
   # extend to PBS as well
   [ $# -eq 0 ] &&
-  echo "Navigates to the working directory of a SLURM job.
-  Syntax: $(basename $0) SLURM_JOBID" && return 1
+  echo "Navigates to the working directory of a SLURM job." &&
+  echo "Syntax: goto SLURM_JOBID" && return 1
   cd $(scontrol show jobid $1 | grep WorkDir | awk -F'=' '{print $2}')
 }
 
