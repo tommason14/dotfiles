@@ -45,8 +45,6 @@ source ~/.fzf.zsh
 
 export EDITOR=vim
 
-kitty + complete setup zsh | source /dev/stdin
-alias kitty-reload-colours="kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf"
 alias icat="kitty +kitten icat"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
@@ -55,6 +53,12 @@ PATH=$PATH:/Users/tmas0023/pysimm/bin
 ###############
 #  FUNCTIONS  #
 ###############
+
+fzfman(){
+  fd \.1$ /usr/share/man | fzf | xargs -o man
+}
+zle -N fzfman
+bindkey '^H' fzfman
 
 sc(){
 $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
@@ -170,7 +174,7 @@ source ~/dotfiles/lf/icons.sh
 #############
 
 # weird terminal issue, can't clear terminal over ssh unless:
-alias ssh='kitty +kitten ssh'
+# alias ssh='kitty +kitten ssh'
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
