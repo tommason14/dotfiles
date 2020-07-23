@@ -84,4 +84,5 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Microsoft",
+    "vsicons.dontShowNewVersionMessage": true,
 }
