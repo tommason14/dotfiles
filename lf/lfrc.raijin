@@ -132,8 +132,8 @@ map g2m $gamess_to_molden.py "$f"
 map moc $molden2csv "$f"
 map mx $chmod +x "$f"
 map yc $cat "$f" | pbcopy
-map p2 !python $f
-map py !python3 $f
+map p2 $python $f
+map py $python3 $f
 map rot $remove_orca_temps
 map gfr !gauss_freqs
 map cl !compile_latex $(basename "$f")
@@ -145,6 +145,9 @@ map rl !realpath "$f"
 map pt $polymatic_types.py $(basename "$f") > types.txt
 map aa $add_atomic_symbols_to_lammps_datafile.py $(basename "$f")
 map lo !lookup_fmo_progress.sh $(basename "$f")
+
+map gld $grep_lammps_data.sh "$f" > data.csv
+map pld $plot_lammps_density.sh 
 
 # utilities
 cmap <C-c> cmd-escape
