@@ -16,8 +16,7 @@ Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
-Plugin 'jpalardy/vim-slime'
-Plugin 'hanschen/vim-ipython-cell'
+Plugin 'voldikss/vim-floaterm'           " Looks cool
 
 call vundle#end()
 
@@ -90,22 +89,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-function GetAllSnippets()
-  call UltiSnips#SnippetsInCurrentScope(1)
-  let list = []
-  for [key, info] in items(g:current_ulti_dict_info)
-    let parts = split(info.location, ':')
-    echo key
-    " call add(list, {
-    "   \"key": key,
-    "   \"path": parts[0],
-    "   \"linenr": parts[1],
-    "   \"description": info.description,
-    "   \})
-  endfor
-  return list
-endfunction
-
 au BufWritePost *.snippets !update_snippets.sh 
 
 " LF command {{{1
@@ -139,7 +122,6 @@ let mapleader = ","
 " Snippets
 
 nnoremap <Leader>s :call Snippets()<CR>
-nnoremap ls :call GetAllSnippets()<CR>
 
 " Tabnew 
 
@@ -243,8 +225,11 @@ au FileType R vnoremap <Leader>pm
   \:!qlmanage -p tmpR.png && sleep 3<CR>
   \:!rm tmpR.R tmpR.png<CR><CR>
 
+" Float term commands
+nnoremap <Leader>fl :FloatermNew lf<CR>
+
 " Set filetype to allow above command whenever
-nnoremap <Leader>f :set ft=python<CR>i
+nnoremap <Leader>fp :set ft=python<CR>i
 
 nnoremap <Leader>b :set ft=sh<CR>i
 
@@ -288,9 +273,6 @@ au BufNewFile,BufRead *.py
     \ set formatoptions=tcqj                         |
 
 au BufWritePost *.py :Autoformat
-au Filetype python nnoremap <Leader>r :IPythonCellExecuteCell<CR>
-
-let g:slime_target = "kitty"
 
 " Perl {{{1
 
@@ -432,7 +414,10 @@ au BufNewFile,BufRead *.sh,bash*,*lfrc*,*alias*
     \ set filetype=sh                       |
     \ set syntax=zsh                        |
 " different syntax highlighting to filetypes, sh highlighting
-" gave errors
+" doesn't accept $(...)
+
+" if ft=sh set on the fly
+au FileType sh set syntax=zsh
 
 "  C++ {{{
 au BufNewFile,BufRead *.cpp
