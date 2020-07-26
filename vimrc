@@ -272,7 +272,7 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
-au BufWritePost *.py :Autoformat
+" au BufWritePost *.py :Autoformat
 
 " Perl {{{1
 
