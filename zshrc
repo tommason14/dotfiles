@@ -120,6 +120,12 @@ lfcd () {
     fi
 }
 
+# Rectangle gaps (same as Spectacle but maintained)
+function rectangle_gaps(){
+  [[ $# -eq 0 ]] && echo "Syntax: rectangle_gaps <gap in pixels>" && return 1
+  defaults write com.knollsoft.Rectangle gapSize -float $1
+}
+
 #############
 #  EXPORTS  #
 #############
@@ -266,6 +272,8 @@ alias fm='lfcd'
 alias weather="curl wttr.in/Melbourne\?0"
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# editing shortcuts
 alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortcuts.sh; cd - > /dev/null"
 
 ###############
