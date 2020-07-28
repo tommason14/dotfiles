@@ -17,6 +17,7 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
+Plugin 'autozimu/LanguageClient-neovim'
 
 call vundle#end()
 
@@ -460,6 +461,7 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
 
 " LAMMPS comment style, for the Tcomment plugin
 au Filetype lammps set commentstring=#%s
+
 
 " Kitty conf {{{1
 au BufRead kitty.conf set filetype=kitty

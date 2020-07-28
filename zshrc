@@ -10,7 +10,7 @@ SAVEHIST=1000000 # in file
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^[e' edit-command-line
 
-# Vi mode
+# # Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 bindkey "^?" backward-delete-char # backspace fix
@@ -35,7 +35,7 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
+#
 # tab through options
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
@@ -43,7 +43,7 @@ zstyle ':completion:*' menu select
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 alias icat="kitty +kitten icat"
 
@@ -243,7 +243,7 @@ alias ll='ls -lh'
 alias lsa='ls -a'
 alias mkdir='mkdir -p'
 alias s='source'
-alias v='vim'
+alias v='nvim'
 alias pr='preview'
 
 alias cd..='cd ..'
