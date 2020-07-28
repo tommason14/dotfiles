@@ -17,7 +17,6 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-Plugin 'autozimu/LanguageClient-neovim'
 
 call vundle#end()
 
@@ -91,30 +90,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 au BufWritePost *.snippets !update_snippets.sh 
-
-" LF command {{{1
-
-" ,l to open selected file in new tab- super useful!
-
-function! LF()
-    let temp = tempname()
-    exec 'silent !lf -selection-path=' . shellescape(temp)
-    if !filereadable(temp)
-        redraw!
-        return
-    endif
-    let names = readfile(temp)
-    if empty(names)
-        redraw!
-        return
-    endif
-    exec 'tabedit ' . fnameescape(names[0])
-    for name in names[1:]
-        exec 'argadd ' . fnameescape(name)
-    endfor
-    redraw!
-endfunction
-command! -bar LF call LF()
 
 " Remapping {{{1 
 
@@ -227,7 +202,13 @@ au FileType R vnoremap <Leader>pm
   \:!rm tmpR.R tmpR.png<CR><CR>
 
 " Float term commands
-nnoremap <Leader>fl :FloatermNew lf<CR>
+function LFfloaterm(command)
+  let g:floaterm_open_command = a:command
+  FloatermNew lf
+endfunction
+
+nnoremap <Leader>fl :call LFfloaterm('edit')<CR>
+nnoremap <Leader>ft :call LFfloaterm('tabe')<CR>
 
 " Set filetype to allow above command whenever
 nnoremap <Leader>fp :set ft=python<CR>i
