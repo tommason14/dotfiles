@@ -27,3 +27,7 @@ charge=1
 multiplicity=1
 atoms=C,H,H,H,C,H,H,H,S,O,H
 
+name=sulfate
+charge=-2
+multiplicity=1
+atoms=S,O,O,O,O
