@@ -325,9 +325,9 @@ alias car='chem_assist -r'
 
 if [[ $USER =~ (tmason|tm3124) ]] 
 then
-  export settings="$HOME/monash_automation/settings_files" # remotes
+  export settings="$HOME/autochem/settings_files" # remotes
 else
-  export settings="$HOME/Documents/repos/monash_automation/settings_files"
+  export settings="$HOME/Documents/repos/autochem/settings_files"
 fi
 
 # sort energies
