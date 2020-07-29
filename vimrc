@@ -17,6 +17,9 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 
@@ -450,18 +453,20 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-" Uses colours from terminal (Kitty) if not pywal
-let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-if term_colour == '~/.cache/wal/colors-kitty.conf'
-  colo wal
-else
-  colo default
-endif
+" " Uses colours from terminal (Kitty) if not pywal
+" let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+" if term_colour == '~/.cache/wal/colors-kitty.conf'
+"   colo wal
+" else
+"   colo default
+" endif
+colo onedark
 set background=dark
-set t_Co=16
+" set t_Co=16
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
+highlight LineNr ctermfg=DarkGrey
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
 hi Folded cterm=none " Remove bold text from folds
 
@@ -480,3 +485,5 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 set ttimeout
 set ttimeoutlen=15
 set ttyfast
+
+let g:airline_powerline_fonts = 1
