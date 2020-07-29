@@ -43,7 +43,7 @@ zstyle ':completion:*' menu select
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=nvim
+export EDITOR=vim
 
 alias icat="kitty +kitten icat"
 
@@ -180,7 +180,7 @@ source ~/dotfiles/lf/icons.sh
 #############
 
 # weird terminal issue, can't clear terminal over ssh unless:
-# alias ssh='kitty +kitten ssh'
+# alias ssh='kitty +kitten ssh' 
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
@@ -243,7 +243,7 @@ alias ll='ls -lh'
 alias lsa='ls -a'
 alias mkdir='mkdir -p'
 alias s='source'
-alias v='nvim'
+alias v="$EDITOR" # vim or neovim
 alias pr='preview'
 
 alias cd..='cd ..'
