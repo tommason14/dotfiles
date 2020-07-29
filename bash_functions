@@ -138,15 +138,6 @@ zipall(){
   zip $1 -r * -x "*.DS_Store"
 }
 
-
-change_to_chem_assistant() {
-  if [[ $PWD == *"565"* || $PWD == *"tmason"* || $PWD == *"tmason1"* || $HOSTNAME == *"stampede"* ]]; then
-    cd ~/monash_automation
-  elif [[ $PWD == *"tmas0023"*  || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then 
-    cd "$repos/monash_automation"
-  fi
-}
-
 pull_qcp() {
   if  [[ $PWD == *"tmas0023"* || $PWD == *"tommason"* || $PWD == *"/Volumes/GoogleDrive"* ]]; then
     cd "$filestream"/scripts/qcp
@@ -171,8 +162,8 @@ pull_repos() {
   pushd ~/dotfiles
   echo "Updating dotfiles..."
   git pull && source ~/.bashrc 
-  change_to_chem_assistant
-  echo "Updating monash_automation..." 
+  cd ~/autochem
+  echo "Updating autochem..." 
   git pull
   echo "Updating qcp..."
   pull_qcp
@@ -184,15 +175,15 @@ pull_repos() {
 
 push_repos() {
   pushd ~/dotfiles
-  echo "Pushing dotfiles to master..."
+  echo "Pushing dotfiles to github..."
   git add . && git commit && git push
-  change_to_chem_assistant
-  echo "Pushing monash_automation to master..." 
+  cd ~/autochem
+  echo "Pushing autochem to github..." 
   git add . && git commit && git push
-  echo "Pushing qcp to master..."
+  echo "Pushing qcp to github..."
   push_qcp
   cd ~/.local/scripts
-  echo "Pushing scripts to master..."
+  echo "Pushing scripts to github..."
   git add . && git commit && git push
   popd
 }
