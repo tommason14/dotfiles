@@ -17,8 +17,8 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
@@ -460,7 +460,7 @@ let g:tcomment_types={'kitty': '# %s'}
 " else
 "   colo default
 " endif
-" colo onedark
+colo onedark
 " colo base16-default-dark
 set background=dark
 " set t_Co=16
@@ -491,4 +491,4 @@ set ttimeout
 set ttimeoutlen=15
 set ttyfast
 
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
