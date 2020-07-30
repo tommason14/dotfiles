@@ -1,14 +1,13 @@
 #!/usr/bin/env zsh
 PS1="%F{cyan}%1d $%f "
-PROMPT_COMMAND='echo -ne "terminal"'
 
 HISTFILE=$HOME/.cache/zsh/history
 HISTSIZE=10000 # per session
 SAVEHIST=1000000 # in file
 
 # Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^[e' edit-command-line
+# autoload edit-command-line; zle -N edit-command-line
+# bindkey '^[e' edit-command-line
 
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
@@ -17,10 +16,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 # # Vi mode
 # bindkey -v
-export KEYTIMEOUT=1
-bindkey "^?" backward-delete-char # backspace fix
-
-# Change cursor shape
+# export KEYTIMEOUT=1
+# bindkey "^?" backward-delete-char # backspace fix
+#
+# # Change cursor shape
 # function zle-keymap-select {
 #   if [[ ${KEYMAP} == vicmd ]] ||
 #      [[ $1 = 'block' ]]; then
@@ -34,13 +33,17 @@ bindkey "^?" backward-delete-char # backspace fix
 # }
 # zle -N zle-keymap-select
 # zle-line-init() {
-#     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+#     # zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
 #     echo -ne "\e[5 q"
 # }
 # zle -N zle-line-init
-# echo -ne '\e[5 q' # Use beam shape cursor on startup.
-# preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 #
+# _fix_cursor(){
+#   echo -ne '\e[5 q' # Use beam shape cursor on startup.
+# }
+# # for each prompt
+# precmd_functions+=(_fix_cursor)
+
 # tab through options
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select

@@ -17,8 +17,8 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
@@ -460,13 +460,13 @@ let g:tcomment_types={'kitty': '# %s'}
 " else
 "   colo default
 " endif
-colo onedark
+" colo onedark
+" colo base16-default-dark
 set background=dark
 " set t_Co=16
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
-highlight LineNr ctermfg=DarkGrey
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
 hi Folded cterm=none " Remove bold text from folds
 
@@ -481,9 +481,14 @@ hi clear Error
 let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+" always start vim with block, and exit with bar
+autocmd VimEnter * silent exec "! echo '\e[1 q'"
+autocmd VimLeave * silent exec "! echo '\e[5 q'"
+
 " lag when escaping from insert mode
 set ttimeout
 set ttimeoutlen=15
 set ttyfast
 
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1

@@ -148,6 +148,7 @@ map lo !lookup_fmo_progress.sh $(basename "$f")
 
 map gld $grep_lammps_data.sh "$f" > data.csv
 map pld $plot_lammps_density.sh 
+map xm $xmgrace "$f"
 
 # utilities
 cmap <C-c> cmd-escape

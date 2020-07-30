@@ -499,5 +499,3 @@ syntax on
 set number
 highlight Normal ctermbg=None
 highlight LineNr ctermfg=DarkGrey
-
-let g:deoplete#enable_at_startup = 1

@@ -171,7 +171,7 @@ formatted <- function(...){
   vals <- c(...)
   replacements <- c()
   for (val in vals) {
-    val = str_replace_all(val, '_(?=\\{?\\d)', '$_') # subscripts followed by digit, _4_ -> $_4_
+    val = str_replace_all(val, '_(?=\\{?\\d)', '$_') # subscripts followed by digit, _4_ -> $_4_ or _{40}_ -> $_{40}_
     val = str_replace_all(val, '(?<=\\d\\}?)_', '$') # subscripts preceeded by digit, $_4_ -> $_4$
     val = str_replace_all(val, '\\[', '\\\\[')
     val = str_replace_all(val, '\\]', '\\\\]')
