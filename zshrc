@@ -9,40 +9,42 @@ SAVEHIST=1000000 # in file
 # autoload edit-command-line; zle -N edit-command-line
 # bindkey '^[e' edit-command-line
 
+[[ ! "$TERM" == "xterm-kitty" ]] && {
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
+}
 
-# # Vi mode
-# bindkey -v
-# export KEYTIMEOUT=1
-# bindkey "^?" backward-delete-char # backspace fix
-#
-# # Change cursor shape
-# function zle-keymap-select {
-#   if [[ ${KEYMAP} == vicmd ]] ||
-#      [[ $1 = 'block' ]]; then
-#     echo -ne '\e[1 q'
-#   elif [[ ${KEYMAP} == main ]] ||
-#        [[ ${KEYMAP} == viins ]] ||
-#        [[ ${KEYMAP} = '' ]] ||
-#        [[ $1 = 'beam' ]]; then
-#     echo -ne '\e[5 q'
-#   fi
-# }
-# zle -N zle-keymap-select
-# zle-line-init() {
-#     # zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-#     echo -ne "\e[5 q"
-# }
-# zle -N zle-line-init
-#
-# _fix_cursor(){
-#   echo -ne '\e[5 q' # Use beam shape cursor on startup.
-# }
-# # for each prompt
-# precmd_functions+=(_fix_cursor)
+# Vi mode
+bindkey -v
+export KEYTIMEOUT=1
+bindkey "^?" backward-delete-char # backspace fix
+
+# Change cursor shape
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    # zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+
+_fix_cursor(){
+  echo -ne '\e[5 q' # Use beam shape cursor on startup.
+}
+# for each prompt
+precmd_functions+=(_fix_cursor)
 
 # tab through options
 autoload -U compinit && compinit
@@ -52,8 +54,6 @@ zstyle ':completion:*' menu select
 source ~/.fzf.zsh
 
 export EDITOR=vim
-
-alias icat="kitty +kitten icat"
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -186,9 +186,9 @@ source ~/dotfiles/lf/icons.sh
 #############
 #  aliases  #
 #############
-
+alias icat="kitty +kitten icat"
 # weird terminal issue, can't clear terminal over ssh unless:
-# alias ssh='kitty +kitten ssh' 
+alias ssh='kitty +kitten ssh' 
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
@@ -205,16 +205,20 @@ function ovito(){
 } # run as bg proc
 
 # monash
-# alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
-# alias mon='kitty @ set-tab-title "Monarch" && ssh -Y $mon; kitty @ set-tab-title "Local"'
-# alias m3='kitty @ set-tab-title "M3" && ssh -Y $m3; kitty @ set-tab-title "Local"'
-# alias stm='kitty @ set-tab-title "Stampede" && ssh -Y $stm; kitty @ set-tab-title "Local"'
-# alias vault='kitty @ set-tab-title "Vault" && ssh tmason1@118.138.242.229; kitty @ set-tab-title "Local"'
+[[ "$TERM" == "xterm-kitty" ]] && {
+alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
+alias mon='kitty @ set-tab-title "Monarch" && ssh -Y $mon; kitty @ set-tab-title "Local"'
+alias m3='kitty @ set-tab-title "M3" && ssh -Y $m3; kitty @ set-tab-title "Local"'
+alias stm='kitty @ set-tab-title "Stampede" && ssh -Y $stm; kitty @ set-tab-title "Local"'
+alias vault='kitty @ set-tab-title "Vault" && ssh tmason1@118.138.242.229; kitty @ set-tab-title "Local"'
+} || {
 alias gadi='ssh -Y $gadi'
 alias mon='ssh -Y $mon'
 alias m3='ssh -Y $m3'
 alias stm='ssh -Y $stm'
 alias vault='ssh tmason1@118.138.242.229'
+}
+
 alias lammps_dir='cd ~/Documents/lammps-3Mar20'
 
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'

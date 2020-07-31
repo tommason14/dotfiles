@@ -29,6 +29,7 @@ git config --global core.editor "/usr/local/bin/vim"
 # gui programs
 brew cask install deckset
 brew cask install google-drive-file-stream
+brew cask install kitty
 brew cask install notion
 
 brew cask install spectacle
