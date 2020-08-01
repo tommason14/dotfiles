@@ -53,7 +53,7 @@ zstyle ':completion:*' menu select
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -204,20 +204,20 @@ function ovito(){
   /Applications/Ovito.app/Contents/MacOS/ovito "$1" @
 } # run as bg proc
 
-# monash
-[[ "$TERM" == "xterm-kitty" ]] && {
-alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
-alias mon='kitty @ set-tab-title "Monarch" && ssh -Y $mon; kitty @ set-tab-title "Local"'
-alias m3='kitty @ set-tab-title "M3" && ssh -Y $m3; kitty @ set-tab-title "Local"'
-alias stm='kitty @ set-tab-title "Stampede" && ssh -Y $stm; kitty @ set-tab-title "Local"'
-alias vault='kitty @ set-tab-title "Vault" && ssh tmason1@118.138.242.229; kitty @ set-tab-title "Local"'
-} || {
-alias gadi='ssh -Y $gadi'
-alias mon='ssh -Y $mon'
-alias m3='ssh -Y $m3'
-alias stm='ssh -Y $stm'
-alias vault='ssh tmason1@118.138.242.229'
-}
+# ssh
+if [[ "$TERM" == "xterm-kitty" ]]; then
+  alias gadi='kitty @ set-tab-title "Gadi" && ssh -Y $gadi; kitty @ set-tab-title "Local"'
+  alias mon='kitty @ set-tab-title "Monarch" && ssh -Y $mon; kitty @ set-tab-title "Local"'
+  alias m3='kitty @ set-tab-title "M3" && ssh -Y $m3; kitty @ set-tab-title "Local"'
+  alias stm='kitty @ set-tab-title "Stampede" && ssh -Y $stm; kitty @ set-tab-title "Local"'
+  alias vault='kitty @ set-tab-title "Vault" && ssh tmason1@118.138.242.229; kitty @ set-tab-title "Local"'
+else
+  alias gadi='ssh -Y $gadi'
+  alias mon='ssh -Y $mon'
+  alias m3='ssh -Y $m3'
+  alias stm='ssh -Y $stm'
+  alias vault='ssh tmason1@118.138.242.229'
+fi
 
 alias lammps_dir='cd ~/Documents/lammps-3Mar20'
 

@@ -6,12 +6,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
+Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
-Plugin 'matze/vim-tex-fold' 
 Plugin 'masukomi/vim-markdown-folding'
 Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'dylanaraps/wal.vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
+Plugin 'neoclide/coc.nvim'
 
 call vundle#end()
 
@@ -38,7 +39,7 @@ set wildmenu
 set autoread " reload a file changed outside of vim
 set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening
-
+let g:local = $USER == "tommason" || $USER == "tmas0023"
 
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
@@ -52,7 +53,6 @@ if has('persistent_undo')
     let &undodir = myUndoDir
     set undofile
 endif
-
 
 " Searching {{{1
 set ignorecase " ignore case while searching
@@ -68,7 +68,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Load snippets
 
 function Snippets()
-  if $USER == "tommason" || $USER == "tmas0023"
+  if g:local
     execute "tabnew ~/Documents/repos/vim-snippets/UltiSnips/".&ft.".snippets"
   else
     execute "tabnew ~/vim-snippets/UltiSnips/".&ft.".snippets"
@@ -199,8 +199,7 @@ nnoremap <Leader>fp :set ft=python<CR>i
 nnoremap <Leader>b :set ft=sh<CR>i
 
 " open vimrc
-nnoremap <Leader>v :tabnew $MYVIMRC<CR>
-nnoremap sv :so $MYVIMRC<CR>
+nnoremap <Leader>v :tabnew ~/.config/nvim/init.vim<CR>
 
 " Format csv files in buffer
 nnoremap <Leader>r :Tabularize /,<CR>gg
@@ -237,7 +236,6 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
-" au BufWritePost *.py :Autoformat
 
 " Perl {{{1
 
@@ -434,14 +432,18 @@ let g:tcomment_types={'kitty': '# %s'}
 " Visuals {{{1
 
 " Uses colours from terminal (Kitty) if not pywal
-let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-if term_colour == '~/.cache/wal/colors-kitty.conf'
-  colo wal
+if g:local && $TERM == "xterm-kitty"
+  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+  if term_colour == '~/.cache/wal/colors-kitty.conf'
+    colo wal
+  else
+    colo default
+  endif
 else
   colo default
 endif
+
 set background=dark
-set t_Co=16
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
@@ -464,3 +466,8 @@ hi clear Error
 " set ttimeout
 " set ttimeoutlen=1
 " set ttyfast
+
+" Colour code fixes
+" base16-ocean
+" second enter because of 'pattern undo not found'
+cnoremap 3b3b <c-u>undo<CR>
