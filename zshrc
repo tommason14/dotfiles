@@ -62,12 +62,6 @@ PATH=$PATH:/Users/tmas0023/pysimm/bin
 #  FUNCTIONS  #
 ###############
 
-fzfman(){
-  fd \.1$ /usr/share/man | fzf | xargs -o man
-}
-zle -N fzfman
-bindkey '^H' fzfman
-
 sc(){
 $EDITOR $(find ~/.local/scripts -type f | grep -v '.git\|__pycache__' | fzf --preview='less {}')
 }
@@ -264,6 +258,11 @@ alias s='source'
 alias v="$EDITOR" # vim or neovim
 alias pr='preview'
 alias fenv='env | fzf'
+alias fopen='ls | fzf | xargs -I{} open {}'
+alias fman='fd \.1$ /usr/share/man | fzf | xargs -o man'
+# ctrl-h 
+bindkey -s '^H' 'fman\n'
+
 
 alias cd..='cd ..'
 alias ..='cd ..'
