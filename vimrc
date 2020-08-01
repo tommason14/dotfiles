@@ -209,8 +209,8 @@ function LFfloaterm(command)
   FloatermNew lf
 endfunction
 
-nnoremap <Leader>fl :call LFfloaterm('edit')<CR>
-nnoremap <Leader>ft :call LFfloaterm('tabe')<CR>
+nnoremap <Leader>l :call LFfloaterm('edit')<CR>
+nnoremap <Leader>t :call LFfloaterm('tabe')<CR>
 
 " Set filetype to allow above command whenever
 nnoremap <Leader>fp :set ft=python<CR>i

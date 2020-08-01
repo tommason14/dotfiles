@@ -138,6 +138,7 @@ function rectangle_gaps(){
 #  EXPORTS  #
 #############
 
+export GAMESS="$HOME/Documents/GAMESS/gamess-for-mac/rungms"
 export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
 
 export filestream="/Volumes/GoogleDrive/My Drive"
@@ -188,7 +189,7 @@ source ~/dotfiles/lf/icons.sh
 #############
 alias icat="kitty +kitten icat"
 # weird terminal issue, can't clear terminal over ssh unless:
-alias ssh='kitty +kitten ssh' 
+# alias ssh='kitty +kitten ssh' 
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
@@ -262,6 +263,7 @@ alias mkdir='mkdir -p'
 alias s='source'
 alias v="$EDITOR" # vim or neovim
 alias pr='preview'
+alias fenv='env | fzf'
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -281,7 +283,6 @@ alias cad='chem_assist_ds'
 alias cae='chem_assist -e'
 alias car='chem_assist -r'
 
-alias vim='vim -p' # automatically open in tabs
 # alt-l to open lf
 bindkey -s '^[l' 'lfcd\n'
 alias fm='lfcd'

@@ -1,20 +1,19 @@
 " Plugins {{{1
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.config/nvim/autoload/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tommason14/vim-snippets'
-Plugin 'tommason14/lammps.vim'
-Plugin 'junegunn/goyo.vim'               " Perfect for writing
-Plugin 'godlygeek/tabular'               " Fantastic formatting
-Plugin 'masukomi/vim-markdown-folding'
-Plugin 'tomtom/tcomment_vim'             " Comments
-Plugin 'dylanaraps/wal.vim'
-Plugin 'voldikss/vim-floaterm'           " Looks cool
-Plugin 'neoclide/coc.nvim'
+Plug 'SirVer/ultisnips'
+Plug 'tommason14/vim-snippets'
+Plug 'tommason14/lammps.vim'
+Plug 'junegunn/goyo.vim'               " Perfect for writing
+Plug 'godlygeek/tabular'               " Fantastic formatting
+Plug 'masukomi/vim-markdown-folding'
+Plug 'tomtom/tcomment_vim'             " Comments
+Plug 'dylanaraps/wal.vim'
+Plug 'voldikss/vim-floaterm'           " Looks cool
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ervandew/supertab'
 
-call vundle#end()
+call plug#end()
 
 " Basics {{{1
 
@@ -147,7 +146,8 @@ vnoremap <Leader>e "kygv"=<C-r>k<CR>pqkq
 " Run python in vim
 
 " Run on selected text
-vnoremap <Leader>p3 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
+" vnoremap <Leader>p3 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
+vnoremap <Leader>p3 y`]o<Esc>p`[v`]:!python3<CR>
 vnoremap <Leader>p2 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python<CR>
 
 " Run on selected text, no output
@@ -190,8 +190,8 @@ function LFfloaterm(command)
   FloatermNew lf
 endfunction
 
-nnoremap <Leader>fl :call LFfloaterm('edit')<CR>
-nnoremap <Leader>ft :call LFfloaterm('tabe')<CR>
+nnoremap <Leader>l :call LFfloaterm('edit')<CR>
+nnoremap <Leader>t :call LFfloaterm('tabe')<CR>
 
 " Set filetype to allow above command whenever
 nnoremap <Leader>fp :set ft=python<CR>i
@@ -236,6 +236,24 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
+" CoC setup {{{1
+
+set hidden
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call CocAction('doHover')<CR>
+
+nnoremap <silent> <Leader>f :call CocAction('format')<CR>
+
+nnoremap <Leader>x :CocConfig<CR>
+
+" Supertab by default moves from bottom up- to prevent this:
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Perl {{{1
 
@@ -338,6 +356,8 @@ au BufNewFile,BufRead *.md
     \ set spell spelllang=en_gb             |
     \ syn match markdownError "\w\@<=\w\@=" | " Stops highlighting after subscripting in equations
     \ set filetype=markdown                 |
+
+au FileType markdown let b:coc_suggest_disable = 1 " turn off suggestions when writing- it's distracting.
 
 au BufNewFile,BufRead *.txt
     \ set tabstop=2                         |
@@ -471,3 +491,5 @@ hi clear Error
 " base16-ocean
 " second enter because of 'pattern undo not found'
 cnoremap 3b3b <c-u>undo<CR>
+cnoremap 2c2c <c-u>undo<CR>
+cnoremap 3434 <c-u>undo<CR>
