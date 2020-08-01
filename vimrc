@@ -3,8 +3,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'vim-syntastic/syntastic'         " Syntax highlighting
-Plugin 'Chiel92/vim-autoformat'          " psf/black wasn't installing properly
+Plugin 'Chiel92/vim-autoformat'          
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -46,6 +45,7 @@ set wildmenu
 set autoread " reload a file changed outside of vim
 set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening
+let g:local = $USER == "tommason" || $USER == "tmas0023"
 
 
 " Put plugins and dictionaries in this dir (also on Windows)
@@ -76,7 +76,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Load snippets
 
 function Snippets()
-  if $USER == "tommason" || $USER == "tmas0023"
+  if g:local
     execute "tabnew ~/Documents/repos/vim-snippets/UltiSnips/".&ft.".snippets"
   else
     execute "tabnew ~/vim-snippets/UltiSnips/".&ft.".snippets"
@@ -452,18 +452,18 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-" " Uses colours from terminal (Kitty) if not pywal
-" let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-" if term_colour == '~/.cache/wal/colors-kitty.conf'
-"   colo wal
-" else
-"   colo default
-" endif
-" colo onedark
-" colo base16-default-dark
-colo default
+" Uses colours from terminal (Kitty) if not pywal on local
+if g:local && $TERM == "xterm-kitty"
+  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+  if term_colour == '~/.cache/wal/colors-kitty.conf'
+    colo wal
+  else
+    colo default
+  endif
+else
+  colo default
+endif
 set background=dark
-" set t_Co=16
 
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds

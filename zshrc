@@ -9,12 +9,12 @@ SAVEHIST=1000000 # in file
 # autoload edit-command-line; zle -N edit-command-line
 # bindkey '^[e' edit-command-line
 
-[[ ! "$TERM" == "xterm-kitty" ]] && {
+# [[ ! "$TERM" == "xterm-kitty" ]] && {
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
         eval "$("$BASE16_SHELL/profile_helper.sh")"
-}
+# }
 
 # Vi mode
 bindkey -v
