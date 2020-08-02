@@ -225,7 +225,7 @@ function gamesstoxyz {
 }
 
 copy() {
-  cat "$1" | pbcopy
+  cat "${1:-/dev/stdin}" | kitty +kitten clipboard
 }
 
 lfcd () {

@@ -105,7 +105,7 @@ mkcd() {
 }
 
 copy() {
-  cat $1 | pbcopy
+  cat ${1:-/dev/stdin} | kitty +kitten clipboard
 }
 
 lfcd () {
@@ -183,7 +183,7 @@ source ~/dotfiles/lf/icons.sh
 #############
 alias icat="kitty +kitten icat"
 # weird terminal issue, can't clear terminal over ssh unless:
-# alias ssh='kitty +kitten ssh' 
+alias ssh='kitty +kitten ssh' # but this stops the message of the day showing...
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
@@ -258,7 +258,8 @@ alias s='source'
 alias v="$EDITOR" # vim or neovim
 alias pr='preview'
 alias fenv='env | fzf'
-alias fopen='ls | fzf | xargs -I{} open {}'
+alias fvim='fzf -m --print0 | xargs -0 -o vim -p' # multiple files possible
+alias fopen='fzf --print0 | xargs -0 -o open'
 alias fman='fd \.1$ /usr/share/man | fzf | xargs -o man'
 # ctrl-h 
 bindkey -s '^H' 'fman\n'
