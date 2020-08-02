@@ -260,6 +260,7 @@ alias pr='preview'
 alias fenv='env | fzf'
 alias fvim='fzf -m --print0 | xargs -0 -o vim -p' # multiple files possible
 alias fopen='fzf --print0 | xargs -0 -o open'
+alias fpr='fzf --print0 | xargs -0 -o preview'
 alias fman='fd \.1$ /usr/share/man | fzf | xargs -o man'
 # ctrl-h 
 bindkey -s '^H' 'fman\n'
