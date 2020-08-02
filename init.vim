@@ -28,7 +28,8 @@ set backspace=2 " backspace works like other editors
 set visualbell " no beeps!
 set belloff=all " no flashes!
 set showcmd " visual select shows number of lines
-set expandtab
+set splitright " automatically place new vertical splits on the right
+set expandtab " tabs to spaces
 set ruler
 set linebreak " don't break words when wrapping to new line
 set autoindent
@@ -36,6 +37,7 @@ set smarttab
 set formatoptions=tcqj
 set wildmenu
 set autoread " reload a file changed outside of vim
+set clipboard=unnamedplus " automatically copy to clipboard
 set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening
 let g:local = $USER == "tommason" || $USER == "tmas0023"
@@ -493,3 +495,4 @@ hi clear Error
 cnoremap 3b3b <c-u>undo<CR>
 cnoremap 2c2c <c-u>undo<CR>
 cnoremap 3434 <c-u>undo<CR>
+cnoremap 4040 <c-u>undo<CR>
