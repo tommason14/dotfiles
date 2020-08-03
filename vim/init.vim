@@ -446,6 +446,8 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
 " LAMMPS comment style, for the Tcomment plugin
 au Filetype lammps set commentstring=#%s
 
+" remove blank line at the end of xyzs causing errors
+au BufWritePost *xyz :%s#\($\n\s*\)\+\%$##
 
 " Kitty conf {{{1
 au BufRead kitty.conf set filetype=kitty
@@ -478,23 +480,4 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
-"
-" " " Change cursor to thin line on insert
-" " let &t_SI.="\e[6 q" "SI = INSERT mode
-" " let &t_SR.="\e[4 q" "SR = REPLACE mode
-" " let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-" " lag when escaping from insert mode
-" set guicursor=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
-" set ttimeout
-" set ttimeoutlen=1
-" set ttyfast
 
-" Colour code fixes
-" base16-ocean
-" second enter because of 'pattern undo not found'
-cnoremap 3b3b <c-u>undo<CR>
-cnoremap 2c2c <c-u>undo<CR>
-cnoremap 3434 <c-u>undo<CR>
-cnoremap 4040 <c-u>undo<CR>
-cnoremap 1f1f <c-u>undo<CR>
-cnoremap 2121 <c-u>undo<CR>
