@@ -84,7 +84,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
-au BufWritePost *.snippets !update_snippets.sh 
+au BufWinLeave *.snippets :FloatermNew --autoclose=2 update_snippets.sh
 
 " Remapping {{{1 
 
@@ -496,3 +496,5 @@ cnoremap 3b3b <c-u>undo<CR>
 cnoremap 2c2c <c-u>undo<CR>
 cnoremap 3434 <c-u>undo<CR>
 cnoremap 4040 <c-u>undo<CR>
+cnoremap 1f1f <c-u>undo<CR>
+cnoremap 2121 <c-u>undo<CR>

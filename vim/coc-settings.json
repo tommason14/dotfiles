@@ -1,0 +1,5 @@
+{
+  "python.formatting.provider": "yapf",
+  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.jumpCommand": "vsplit"
+}

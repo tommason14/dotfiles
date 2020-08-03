@@ -10,10 +10,10 @@ SAVEHIST=1000000 # in file
 # bindkey '^[e' edit-command-line
 
 # [[ ! "$TERM" == "xterm-kitty" ]] && {
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#         eval "$("$BASE16_SHELL/profile_helper.sh")"
 # }
 
 # Vi mode
@@ -132,7 +132,7 @@ function rectangle_gaps(){
 #  EXPORTS  #
 #############
 
-export GAMESS="$HOME/Documents/GAMESS/gamess-for-mac/rungms"
+export GAMESS="$HOME/Documents/GAMESS/macos/rungms"
 export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
 
 export filestream="/Volumes/GoogleDrive/My Drive"
@@ -225,8 +225,8 @@ alias gamess_fmo='open /Users/tmas0023/Documents/GAMESS/gamess-standard-sept-201
 
 alias kit="$EDITOR ~/.config/kitty/kitty.conf"
 alias lfrc="$EDITOR ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.zshrc; cd - > /dev/null"
-alias vimrc="$EDITOR ~/dotfiles/vimrc"
-alias nvimrc="$EDITOR ~/dotfiles/init.vim"
+alias vimrc="$EDITOR ~/dotfiles/vim/vimrc"
+alias nvimrc="$EDITOR ~/dotfiles/vim/init.vim"
 alias ybrc="$EDITOR ~/dotfiles/yabairc"
 alias yabairc="$EDITOR ~/dotfiles/yabairc"
 alias sprc="$EDITOR ~/dotfiles/spacebarrc"
@@ -287,6 +287,7 @@ alias car='chem_assist -r'
 bindkey -s '^[l' 'lfcd\n'
 alias fm='lfcd'
 
+alias today="$EDITOR $repos/notes/today.md"
 alias weather="curl wttr.in/Melbourne\?0"
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

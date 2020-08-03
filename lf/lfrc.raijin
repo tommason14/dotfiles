@@ -69,6 +69,7 @@ cmd bulk-rename ${{ # {{{3
 
 map c
 map d
+map j
 map l
 map m
 map p
@@ -97,6 +98,7 @@ map og $gmolden "$f"
 map oav $open -a /Applications/Avogadro.app/ "$f"
 map oia $open -a /Applications/iA\ Writer.app/ "$f"
 map oiq $open -a /Applications/iQmol.app/ "$f"
+map ojl $jupyter-lab "$f"
 map ou push $use<space>
 map ovm $vmdlammps.sh "$f"
 map ovi $/Applications/Ovito.app/Contents/MacOS/ovito "$(basename $f)" &

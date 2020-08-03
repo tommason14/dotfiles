@@ -10,7 +10,7 @@ skhdrc=~/.config/skhd/skhdrc
 wal=~/.config/wal/templates
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
-  files="bash_functions vimrc pymolrc hyper.js chunkwmrc skhdrc Rprofile
+  files="bash_functions pymolrc hyper.js chunkwmrc skhdrc Rprofile
 amethyst vmdrc zshrc"    
   [[ -L $ipython ]] || (echo "Linking ipythonrc" && ln -s $dir/jupyter/ipythonrc $ipython)
   [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s
@@ -39,7 +39,6 @@ done
 
 alias_symlink=~/.bash_aliases
 lf_symlink=~/.config/lf/lfrc
-# ranger_symlink=~/.config/ranger/rc.conf
 
 make_links(){
   [[ -L $alias_symlink ]] || (
@@ -48,9 +47,6 @@ make_links(){
   [[ -L $lf_symlink ]] || (
   echo "Symlinking $dir/lf/lfrc.$1 --> $lf_symlink" &&
   ln -s $dir/lf/lfrc.$1 $lf_symlink)
-  # [[ -L $ranger_symlink ]] || (
-  # echo "Symlinking $dir/ranger/rc.conf.$1 --> $ranger_symlink" &&
-  # ln -s $dir/ranger/rc.conf.$1 $ranger_symlink)
 }
 
 if [[ $USER == "tommason" ]]; then
@@ -91,20 +87,18 @@ zathuradir="$HOME/.config/zathura"
 [[ ! -L "$zathuradir/zathurarc" ]] && ln -s "$dir/zathurarc" "$zathuradir/zathurarc"
 
 kitdir="$HOME/.config/kitty"
-[[ ! -L "$kitdir" ]] && ln -s "$dir/terminal" "$kitdir"
-# [[ ! -d "$kitdir" ]] && mkdir -p "$kitdir"
-# [[ ! -L "$kitdir/kitty.conf" ]] && ln -s "$dir/terminal/kitty.conf" "$kitdir/kitty.conf"
-#
-# # themes- a couple downloaded from other places apart from kitty-themes
-# [[ ! -L "$kitdir/themes" ]] && ln -s "$dir/terminal" "$kitdir/themes"
-[[ ! -L $wal ]] && ln -s "$dir/wal" $wal && echo "linking wal templates"
+[[ ! -L "$kitdir" ]] && ln -s "$dir/terminal" "$kitdir" && echo "Linking kitty config"
 
+[[ ! -L "$wal" ]] && ln -s "$dir/wal" $wal && echo "Linking wal templates"
+
+#vim
+[[ ! -L ~/.vimrc ]] && ln -s "$dir/vim/vimrc" ~/.vimrc && echo "Linking vimrc"
 mkdir -p ~/.config/nvim
-[[ ! -L ~/.config/nvim/init.vim ]] && ln -s "$dir/init.vim" ~/.config/nvim/init.vim && echo "Linking nvim"
+[[ ! -L ~/.config/nvim/init.vim ]] && ln -s "$dir/vim/init.vim" ~/.config/nvim/init.vim && echo "Linking init.vim"
+[[ ! -L ~/.config/nvim/coc-settings.json ]] && ln -s "$dir/vim/coc-settings.json" ~/.config/nvim/coc-settings.json && echo "Linking CoC"
 
 fi
 
-# bat now replaces less
 [[ ! -d ~/.config/bat ]] && mkdir ~/.config/bat
 [[ ! -L ~/.config/bat/config ]] &&
   echo "Linking bat config" && 
