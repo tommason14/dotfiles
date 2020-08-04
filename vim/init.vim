@@ -502,20 +502,6 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
-<<<<<<< HEAD
-"
-" " " Change cursor to thin line on insert
-" " let &t_SI.="\e[6 q" "SI = INSERT mode
-" " let &t_SR.="\e[4 q" "SR = REPLACE mode
-" " let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-" " lag when escaping from insert mode
-" set guicursor=n-v-c-sm:block,i-ci-ve:ver25-Cursor,r-cr-o:hor20
-" set ttimeout
-" set ttimeoutlen=1
-" set ttyfast
 
 " Fix paste from other document adding odd characters
 set t_BE=0
-=======
-
->>>>>>> a5d011e04bf7b463962e2c39aa78a0987d6414d0
