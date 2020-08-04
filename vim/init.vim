@@ -10,9 +10,13 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'tomtom/tcomment_vim'             " Comments
 Plug 'dylanaraps/wal.vim'
 Plug 'voldikss/vim-floaterm'           " Looks cool
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'ervandew/supertab'
-
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'ervandew/supertab'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 " Basics {{{1
@@ -37,7 +41,7 @@ set smarttab
 set formatoptions=tcqj
 set wildmenu
 set autoread " reload a file changed outside of vim
-set clipboard=unnamedplus " automatically copy to clipboard
+" set clipboard=unnamedplus " automatically copy to clipboard
 set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening
 let g:local = $USER == "tommason" || $USER == "tmas0023"
@@ -118,8 +122,8 @@ nnoremap <Leader>b "*p
 " Toggle folds
 nnoremap <Space> za
 
-" Re-wrap paragraph
-nnoremap <silent> gq gqip
+" Re-wrap paragraph for markdown
+au FileType markdown nnoremap <silent> gq gqip
 
 " Easy save
 nnoremap <leader>w :w<CR>
@@ -238,24 +242,41 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
-" CoC setup {{{1
+" Langauge server setup {{{1
+" for python3: pip3 install 'python-language-server[yapf]'
+" then remove pycodestyle and autopep8
+" for perl: cpan install Perl::LanguageServer (no executable...)
+" for R 
 
 set hidden
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call CocAction('doHover')<CR>
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 
-nnoremap <silent> <Leader>f :call CocAction('format')<CR>
+let g:LanguageClient_serverCommands = {
+  \ 'python': ['/usr/local/bin/pyls'],
+  \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
+  \ }
 
-nnoremap <Leader>x :CocConfig<CR>
+" disable preview window
+set completeopt-=preview
 
-" Supertab by default moves from bottom up- to prevent this:
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" use omni completion provided by lsp
+au FileType python,R set omnifunc=lsp#omnifunc
+
+" autoformat on save
+au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
+
+" hide bar that appears at the side when linter detects an error
+au FileType python,R set signcolumn=no
+
+" gq to format
+au FileType python,R nnoremap gq :call LanguageClient#textDocument_formatting()<CR>
+
+" hide [LC] Project root: on startup
+let g:LanguageClient_echoProjectRoot = 0
+
+let g:deoplete#enable_at_startup = 1
 
 " Perl {{{1
 
@@ -266,7 +287,8 @@ au BufNewFile,BufRead *.pl,*pm
     \ set shiftwidth=2 |
     \ set textwidth=100 |
     \ set filetype=perl |
-    \ set complete-=i | " don't search /usr/local/Cellar/Perl5 when C-n autocompleting
+
+" \ set complete-=i | " don't search /usr/local/Cellar/Perl5 when C-n autocompleting
 
 " R {{{1
 
@@ -489,12 +511,5 @@ hi clear Error
 " set ttimeoutlen=1
 " set ttyfast
 
-" Colour code fixes
-" base16-ocean
-" second enter because of 'pattern undo not found'
-cnoremap 3b3b <c-u>undo<CR>
-cnoremap 2c2c <c-u>undo<CR>
-cnoremap 3434 <c-u>undo<CR>
-cnoremap 4040 <c-u>undo<CR>
-cnoremap 1f1f <c-u>undo<CR>
-cnoremap 2121 <c-u>undo<CR>
+" Fix paste from other document adding odd characters
+set t_BE=0
