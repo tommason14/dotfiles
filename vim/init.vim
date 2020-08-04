@@ -503,5 +503,12 @@ set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
 
+" Fix issues {{{1
+
 " Fix paste from other document adding odd characters
 set t_BE=0
+
+" Fix ^[201~ problem, not coming out of insert mode when pasting
+" Fixed by :set paste then pasting, 
+" so this snippet might fix it
+inoremap <c-v> :set paste<Esc>"+p
