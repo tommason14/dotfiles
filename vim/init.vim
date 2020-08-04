@@ -468,6 +468,8 @@ au BufNewFile,BufRead *.inp,*.ok,*.job,*.out,*.log
 " LAMMPS comment style, for the Tcomment plugin
 au Filetype lammps set commentstring=#%s
 
+" remove blank line at the end of xyzs causing errors
+au BufWritePost *xyz :%s#\($\n\s*\)\+\%$##
 
 " Kitty conf {{{1
 au BufRead kitty.conf set filetype=kitty
@@ -500,6 +502,7 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
+<<<<<<< HEAD
 "
 " " " Change cursor to thin line on insert
 " " let &t_SI.="\e[6 q" "SI = INSERT mode
@@ -513,3 +516,6 @@ hi clear Error
 
 " Fix paste from other document adding odd characters
 set t_BE=0
+=======
+
+>>>>>>> a5d011e04bf7b463962e2c39aa78a0987d6414d0
