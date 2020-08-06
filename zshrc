@@ -188,6 +188,7 @@ alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
 alias ls='ls -G'
+alias scp='noglob scp' # travis [mol]-[mol] treated as regex
 ### open applications
 
 alias ia="open -a /Applications/iA\ Writer.app/"
@@ -296,6 +297,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ################################
 #  Run pfetch on new instance  #
 ################################
+export PF_INFO="ascii title os host shell editor memory"
 pfetch
 
 # editing shortcuts
