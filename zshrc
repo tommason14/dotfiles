@@ -293,6 +293,11 @@ alias weather="curl wttr.in/Melbourne\?0"
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+################################
+#  Run pfetch on new instance  #
+################################
+pfetch
+
 # editing shortcuts
 alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortcuts.sh; cd - > /dev/null"
 
