@@ -511,4 +511,10 @@ set t_BE=0
 " Fix ^[201~ problem, not coming out of insert mode when pasting
 " Fixed by :set paste then pasting, 
 " so this snippet might fix it
-inoremap <c-v> :set paste<Esc>"+p
+" function! XTermPasteBegin()
+"   set pastetoggle=<Esc>[201~
+"   set paste
+"   return ""
+" endfunction
+"
+" inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()

@@ -22,26 +22,28 @@ export KEYTIMEOUT=1
 bindkey "^?" backward-delete-char # backspace fix
 
 # Change cursor shape
+# No blinking
+# (https://invisible-island.net/xterm/ctlseqs/ctlseqs.html, search for 'CSI Ps SP q')
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
+    echo -ne '\e[2 q'
   elif [[ ${KEYMAP} == main ]] ||
        [[ ${KEYMAP} == viins ]] ||
        [[ ${KEYMAP} = '' ]] ||
        [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
+    echo -ne '\e[6 q'
   fi
 }
 zle -N zle-keymap-select
 zle-line-init() {
     # zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+    echo -ne "\e[6 q"
 }
 zle -N zle-line-init
 
 _fix_cursor(){
-  echo -ne '\e[5 q' # Use beam shape cursor on startup.
+  echo -ne '\e[6 q' # Use beam shape cursor on startup.
 }
 # for each prompt
 precmd_functions+=(_fix_cursor)
@@ -183,7 +185,8 @@ source ~/dotfiles/lf/icons.sh
 #############
 alias icat="kitty +kitten icat"
 # weird terminal issue, can't clear terminal over ssh unless:
-alias ssh='kitty +kitten ssh' # but this stops the message of the day showing...
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh='kitty +kitten ssh' 
+# but this stops the message of the day showing...
 alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
@@ -266,6 +269,10 @@ alias fman='fd \.1$ /usr/share/man | fzf | xargs -o man'
 # ctrl-h 
 bindkey -s '^H' 'fman\n'
 
+
+# git
+alias g='git'
+alias gc='git clone'
 
 alias cd..='cd ..'
 alias ..='cd ..'
