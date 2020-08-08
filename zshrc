@@ -52,6 +52,9 @@ precmd_functions+=(_fix_cursor)
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+# Completion for kitty
+kitty + complete setup zsh | source /dev/stdin
+
 # fzf completion
 source ~/.fzf.zsh
 

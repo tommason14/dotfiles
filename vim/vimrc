@@ -480,11 +480,11 @@ hi clear Error
 " Change cursor to thin line on insert
 let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 " always start vim with block, and exit with bar
-autocmd VimEnter * silent exec "! echo '\e[1 q'"
-autocmd VimLeave * silent exec "! echo '\e[5 q'"
+autocmd VimEnter * silent exec "! echo '\e[2 q'"
+autocmd VimLeave * silent exec "! echo '\e[6 q'"
 
 " lag when escaping from insert mode
 set ttimeout
