@@ -6,20 +6,18 @@ HISTSIZE=10000 # per session
 SAVEHIST=1000000 # in file
 
 # Edit line in vim with ctrl-e:
-# autoload edit-command-line; zle -N edit-command-line
-# bindkey '^[e' edit-command-line
-
-# [[ ! "$TERM" == "xterm-kitty" ]] && {
-# BASE16_SHELL="$HOME/.config/base16-shell/"
-# [ -n "$PS1" ] && \
-#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-#         eval "$("$BASE16_SHELL/profile_helper.sh")"
-# }
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^[e' edit-command-line
 
 # Vi mode
 bindkey -v
 export KEYTIMEOUT=1
 bindkey "^?" backward-delete-char # backspace fix
+
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Change cursor shape
 # No blinking
@@ -58,7 +56,7 @@ kitty + complete setup zsh | source /dev/stdin
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=nvim
+export EDITOR=vim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -110,7 +108,8 @@ mkcd() {
 }
 
 copy() {
-  cat ${1:-/dev/stdin} | kitty +kitten clipboard
+  [[ $TERM == "xterm-kitty" ]] && cmd="kitty +kitten clipboard" || cmd="pbcopy"
+  cat ${1:-/dev/stdin} | "$cmd"
 }
 
 lfcd () {

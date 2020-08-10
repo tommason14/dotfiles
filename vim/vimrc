@@ -3,7 +3,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Chiel92/vim-autoformat'          
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -16,8 +15,8 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'neoclide/coc.nvim'
+
 
 call vundle#end()
 
@@ -256,8 +255,6 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
-" au BufWritePost *.py :Autoformat
-
 " Perl {{{1
 
 au BufNewFile,BufRead *.pl,*pm
@@ -461,7 +458,7 @@ if g:local && $TERM == "xterm-kitty"
     colo default
   endif
 else
-  colo default
+  colo base16-default-dark
 endif
 set background=dark
 
