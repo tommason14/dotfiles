@@ -56,7 +56,7 @@ kitty + complete setup zsh | source /dev/stdin
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin

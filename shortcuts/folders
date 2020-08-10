@@ -96,7 +96,7 @@ stm-dp: /scratch/06233/tmason/dopamine
 stm-df: ~/dotfiles
 stm-p: /scratch/06233/tmason/polymers
 stm-q: /work/06233/tmason/stampede2/qcp
-stm-s: /scratch/06233/tmason
+stm-sr: /scratch/06233/tmason
 stm-sc: ~/.local/scripts
 stm-t: /scratch/06233/tmason/tests
 stm-w: /work/06233/tmason/stampede2
