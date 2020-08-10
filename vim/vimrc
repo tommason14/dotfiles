@@ -458,7 +458,7 @@ if g:local && $TERM == "xterm-kitty"
     colo default
   endif
 else
-  colo base16-default-dark
+  colo default
 endif
 set background=dark
 
