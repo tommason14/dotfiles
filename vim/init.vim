@@ -493,7 +493,6 @@ else
   colo default
 endif
 
-au BufRead,BufNewFile *tex colo pencil
 set background=dark
 
 hi Normal ctermbg=none " Use terminal background 

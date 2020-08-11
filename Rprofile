@@ -8,7 +8,7 @@ library(readxl)
 library(latex2exp)
 
 # supress empty Rplots.pdf
-grDevices::pdf(NULL)
+# grDevices::pdf(NULL)
 
 `%notin%` <- function(x, y) !(x %in% y)
 

@@ -99,35 +99,27 @@ au BufWritePost *.snippets !update_snippets.sh
 let mapleader = ","
 
 " Snippets
-
 if g:local
   nnoremap <Leader>s :call Snippets()<CR>
 else
+  " LAMMPS samples
   if trim(system("echo $HOSTNAME")) =~ "monarch"
-    nnoremap <Leader>s :tabnew ~/p2015120004/apps/ILMD/samples.txt 
+    nnoremap <Leader>s :tabnew ~/p2015120004/apps/ILMD/samples.txt<CR>
   else 
-    nnoremap <Leader>s :tabnew ~/sn29/apps/ILMD/samples.txt 
+    nnoremap <Leader>s :tabnew ~/sn29/apps/ILMD/samples.txt<CR>
   endif
 endif
-" Tabnew 
 
+" Tabnew 
 nnoremap <Leader>t :tabnew 
 
 " Alt-arrow to move splits
-if has("nvim")
-  map <A-Up> <C-w><Up>
-  map <A-Down> <C-w><Down>
-  map <A-Right> <C-w><Right>
-  map <A-Left> <C-w><Left>
-else
-  map <Esc>[1;3A <C-w><Up>
-  map <Esc>[1;3B <C-w><Down>
-  map <Esc>[1;3C <C-w><Right>
-  map <Esc>[1;3D <C-w><Left>
-endif
+map <Esc>[1;3A <C-w><Up>
+map <Esc>[1;3B <C-w><Down>
+map <Esc>[1;3C <C-w><Right>
+map <Esc>[1;3D <C-w><Left>
 
 " LF key mapping
-
 nnoremap <Leader>l :LF<CR>
 
 " Try out additional escape
@@ -137,7 +129,6 @@ inoremap jj <Esc>
 vnoremap <Leader>s :sort<CR>
 
 " Copy/paste to/from clipboard
-
 nnoremap <Leader>y "*y
 nnoremap <Leader>b "*p
 
