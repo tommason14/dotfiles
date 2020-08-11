@@ -17,6 +17,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'reedes/vim-colors-pencil'
 call plug#end()
 
 " Basics {{{1
@@ -256,6 +257,7 @@ let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
   \ 'python': ['/usr/local/bin/pyls'],
   \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
+  \ 'tex': ['~/bin/texlab']
   \ }
 
 " disable preview window
@@ -406,6 +408,8 @@ au BufNewFile,BufRead *.tex
     \ nnoremap <Leader>r :!compile_latex % <CR> |
     \ nnoremap <Leader>o :!open %:r.pdf <CR> |
 
+au FileType tex let g:LanguageClient_diagnosticsEnable=0 
+
 au Filetype tex setl updatetime=1
 let g:livepreview_previewer = 'open -a Skim'
 let g:livepreview_engine = 'xelatex'
@@ -489,6 +493,7 @@ else
   colo default
 endif
 
+au BufRead,BufNewFile *tex colo pencil
 set background=dark
 
 hi Normal ctermbg=none " Use terminal background 
@@ -506,4 +511,4 @@ hi clear Error
 " Fix issues {{{1
 
 " Fix ^[201~ problem, not coming out of insert mode when pasting
-" Fixed by :set paste then pasting, 
+" Fixed by :set paste then pasting 
