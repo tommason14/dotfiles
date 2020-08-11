@@ -18,7 +18,11 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
-  Plugin 'neoclide/coc.nvim'
+  Plugin 'autozimu/LanguageClient-neovim'
+  Plugin 'Shougo/deoplete.nvim'
+  " make deoplete work in vim
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
 endif
 
 call vundle#end()
@@ -255,6 +259,42 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
+" Language server setup {{{1
+set hidden
+
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
+
+let g:LanguageClient_serverCommands = {
+  \ 'python': ['/usr/local/bin/pyls'],
+  \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
+  \ 'tex': ['~/bin/texlab'],
+  \ 'perl': ['perl' ,'-MPerl::LanguageServer', '-e', 'Perl::LanguageServer::run'],
+  \ }
+
+" disable preview window
+set completeopt-=preview
+
+" use omni completion provided by lsp
+au FileType python,R,perl set omnifunc=lsp#omnifunc
+
+" autoformat on save
+au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
+
+" hide bar that appears at the side when linter detects an error
+" au FileType python,R set signcolumn=no
+
+" gq to format
+au FileType python,R nnoremap gq :call LanguageClient#textDocument_formatting()<CR>
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+" hide [LC] Project root: on startup
+let g:LanguageClient_echoProjectRoot = 0
+
+let g:deoplete#enable_at_startup = 1
+
 " Perl {{{1
 
 au BufNewFile,BufRead *.pl,*pm
@@ -264,7 +304,7 @@ au BufNewFile,BufRead *.pl,*pm
     \ set shiftwidth=2 |
     \ set textwidth=100 |
     \ set filetype=perl |
-    \ set complete-=i | " don't search /usr/local/Cellar/Perl5 when C-n autocompleting
+    " \ set complete-=i | " don't search /usr/local/Cellar/Perl5 when C-n autocompleting
 
 " R {{{1
 
