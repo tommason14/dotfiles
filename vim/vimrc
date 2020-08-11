@@ -1,4 +1,6 @@
 " Plugins {{{1
+let g:local = $USER == "tommason" || $USER == "tmas0023"
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -15,8 +17,9 @@ Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-Plugin 'neoclide/coc.nvim'
-
+if g:local
+  Plugin 'neoclide/coc.nvim'
+endif
 
 call vundle#end()
 
@@ -44,7 +47,6 @@ set wildmenu
 set autoread " reload a file changed outside of vim
 set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening
-let g:local = $USER == "tommason" || $USER == "tmas0023"
 
 
 " Put plugins and dictionaries in this dir (also on Windows)
