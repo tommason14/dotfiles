@@ -259,6 +259,9 @@ au BufNewFile,BufRead *.py
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
+" italic docstrings
+au FileType python syn region Comment start=/"""/ end=/"""/ 
+
 " Language server setup {{{1
 set hidden
 
@@ -269,7 +272,6 @@ let g:LanguageClient_serverCommands = {
   \ 'python': ['/usr/local/bin/pyls'],
   \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
   \ 'tex': ['~/bin/texlab'],
-  \ 'perl': ['perl' ,'-MPerl::LanguageServer', '-e', 'Perl::LanguageServer::run'],
   \ }
 
 " disable preview window
@@ -505,7 +507,14 @@ set background=dark
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
-hi Folded cterm=none " Remove bold text from folds
+" Italic comments
+" First vim needs to know which characters to see to 
+" switch to italic mode
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+" then set italics
+hi Comment cterm=italic
+hi Folded ctermbg=none cterm=italic " Italic and use terminal colours
 
 " Changes style of highlighting
 hi clear SpellBad
@@ -520,8 +529,9 @@ let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
 " always start vim with block, and exit with bar
-autocmd VimEnter * silent exec "! echo '\e[2 q'"
-autocmd VimLeave * silent exec "! echo '\e[6 q'"
+" autocmd VimEnter * silent exec "! echo '\e[2 q'"
+" autocmd VimEnter * silent i<Esc>
+" autocmd VimLeave * silent exec "! echo '\e[6 q'"
 
 " lag when escaping from insert mode
 set ttimeout

@@ -10,14 +10,11 @@ Plug 'masukomi/vim-markdown-folding'
 Plug 'tomtom/tcomment_vim'             " Comments
 Plug 'dylanaraps/wal.vim'
 Plug 'voldikss/vim-floaterm'           " Looks cool
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'ervandew/supertab'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'reedes/vim-colors-pencil'
 call plug#end()
 
 " Basics {{{1
@@ -242,6 +239,9 @@ au BufNewFile,BufRead *.py
     \ let g:formatters_python=['black']              |
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
+
+" italic docstrings
+au FileType python syn region Comment start=/"""/ end=/"""/ 
 
 " Langauge server setup {{{1
 " for python3: pip3 install 'python-language-server[yapf]'
@@ -498,7 +498,14 @@ set background=dark
 hi Normal ctermbg=none " Use terminal background 
 hi Folded ctermbg=none " Same for folds
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
-hi Folded cterm=none " Remove bold text from folds
+" Italic comments
+" First vim needs to know which characters to see to 
+" switch to italic mode
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+" then set italics
+hi Comment cterm=italic
+hi Folded ctermbg=none cterm=italic " Italic and use terminal colours
 
 " Changes style of highlighting
 hi clear SpellBad
