@@ -15,6 +15,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Basics {{{1
@@ -257,8 +258,8 @@ let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
   \ 'python': ['/usr/local/bin/pyls'],
   \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
-  \ 'tex': ['~/bin/texlab']
   \ }
+  " \ 'tex': ['~/bin/texlab']
 
 " disable preview window
 set completeopt-=preview
@@ -408,11 +409,11 @@ au BufNewFile,BufRead *.tex
     \ nnoremap <Leader>r :!compile_latex % <CR> |
     \ nnoremap <Leader>o :!open %:r.pdf <CR> |
 
-au FileType tex let g:LanguageClient_diagnosticsEnable=0 
+" au FileType tex let g:LanguageClient_diagnosticsEnable=0 
 
 au Filetype tex setl updatetime=1
-let g:livepreview_previewer = 'open -a Skim'
-let g:livepreview_engine = 'xelatex'
+let g:tex_flavor = 'latex'
+let g:vimtex_quickfix_open_on_warning = 0 " don't open quickfix window after compiling
 
  " Shell {{{1
 
