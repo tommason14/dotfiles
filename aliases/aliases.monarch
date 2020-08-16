@@ -125,8 +125,7 @@ alias dotfiles='cd ~/dotfiles'
 alias dots='cd ~/dotfiles'
 alias shortcuts='cd ~/dotfiles/shortcuts'
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
-alias rangerconf='vim ~/.config/ranger/rc.conf'
-alias vimrc='vim ~/dotfiles/vimrc'
+alias vimrc='vim ~/.vimrc'
 
 export LF_ICONS="\
 di=:\
