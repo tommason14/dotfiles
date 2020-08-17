@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -528,12 +529,13 @@ let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
-" always start vim with block, and exit with bar
-" autocmd VimEnter * silent exec "! echo '\e[2 q'"
-" autocmd VimEnter * silent i<Esc>
-" autocmd VimLeave * silent exec "! echo '\e[6 q'"
+autocmd VimEnter * :normal :startinsert :stopinsert 
 
 " lag when escaping from insert mode
 set ttimeout
 set ttimeoutlen=15
 set ttyfast
+
+let g:lightline = {
+  \ 'colorscheme': 'Tomorrow_Night'
+  \ }
