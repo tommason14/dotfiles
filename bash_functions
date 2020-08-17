@@ -225,8 +225,8 @@ function gamesstoxyz {
 }
 
 copy() {
-  [[ $TERM == "xterm-kitty" ]] && cmd="kitty +kitten clipboard" || cmd="pbcopy"
-  cat "${1:-/dev/stdin}" | "$cmd"
+  [[ $TERM == "xterm-kitty" ]] && cat ${1:-/dev/stdin} | kitty +kitten clipboard || 
+  cat ${1:-/dev/stdin} | pbcopy
 }
 
 lfcd () {

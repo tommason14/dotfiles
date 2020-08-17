@@ -56,7 +56,7 @@ kitty + complete setup zsh | source /dev/stdin
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=nvim
+export EDITOR=vim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -108,8 +108,8 @@ mkcd() {
 }
 
 copy() {
-  [[ $TERM == "xterm-kitty" ]] && cmd="kitty +kitten clipboard" || cmd="pbcopy"
-  cat ${1:-/dev/stdin} | "$cmd"
+  [[ $TERM == "xterm-kitty" ]] && cat ${1:-/dev/stdin} | kitty +kitten clipboard || 
+  cat ${1:-/dev/stdin} | pbcopy
 }
 
 lfcd () {
@@ -168,7 +168,7 @@ export gaia='tmas0011@msgln6.its.monash.edu.au'
 export m3='tmason1@m3.massive.org.au'
 export monarch='tmason1@monarch-login1.erc.monash.edu.au'
 export mon='tmason1@monarch-login1.erc.monash.edu.au'
-export stm='tmason@stampede2.tacc.utexas.edu'
+export stm='tmason@login3.stampede2.tacc.utexas.edu' # log in to same node to re-attach to tmux sessions
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
 

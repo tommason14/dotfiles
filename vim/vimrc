@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -16,6 +17,7 @@ Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'franbach/miramare'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
   Plugin 'autozimu/LanguageClient-neovim'
@@ -491,17 +493,26 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
+set termguicolors
 " Uses colours from terminal (Kitty) if not pywal on local
-if g:local && $TERM == "xterm-kitty"
-  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-  if term_colour == '~/.cache/wal/colors-kitty.conf'
-    colo wal
+if g:local
+  if $TERM == "xterm-kitty"
+    let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+    if term_colour == '~/.cache/wal/colors-kitty.conf'
+      colo wal
+    else
+      " colo default
+      colo miramare
+    endif
   else
-    colo default
+    " iterm
+    colo miramare
   endif
 else
+  " remote
   colo default
 endif
+
 set background=dark
 
 hi Normal ctermbg=none " Use terminal background 

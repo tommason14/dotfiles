@@ -7,10 +7,11 @@ Plug 'tommason14/lammps.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/goyo.vim'               " Perfect for writing
 Plug 'godlygeek/tabular'               " Fantastic formatting
-Plug 'masukomi/vim-markdown-folding'
+" Plug 'masukomi/vim-markdown-folding'
 Plug 'tomtom/tcomment_vim'             " Comments
 Plug 'dylanaraps/wal.vim'
 Plug 'voldikss/vim-floaterm'           " Looks cool
+Plug 'franbach/miramare'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -485,21 +486,30 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-" Uses colours from terminal (Kitty) if not pywal
-if g:local && $TERM == "xterm-kitty"
-  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-  if term_colour == '~/.cache/wal/colors-kitty.conf'
-    colo wal
+set termguicolors
+" Uses colours from terminal (Kitty) if not pywal on local
+if g:local
+  if $TERM == "xterm-kitty"
+    let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+    if term_colour == '~/.cache/wal/colors-kitty.conf'
+      colo wal
+    else
+      " colo default
+      colo miramare
+    endif
   else
-    colo default
+    " iterm
+    colo miramare
   endif
 else
+  " remote
   colo default
 endif
 
 set background=dark
 
 hi Normal ctermbg=none " Use terminal background 
+hi NonText ctermbg=none
 hi Folded ctermbg=none " Same for folds
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
 " Italic comments
@@ -509,7 +519,7 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 " then set italics
 hi Comment cterm=italic
-hi Folded ctermbg=none cterm=italic " Italic and use terminal colours
+hi Folded cterm=italic " Italic and use terminal colours
 
 " Changes style of highlighting
 hi clear SpellBad
