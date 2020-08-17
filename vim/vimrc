@@ -493,23 +493,23 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-set termguicolors
-" Uses colours from terminal (Kitty) if not pywal on local
+let g:kitty = $TERM == "xterm-kitty"
+if g:kitty
+  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+  let g:pywal = term_colour == '~/.cache/wal/colors-kitty.conf'
+else
+  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
+  let g:pywal = cmd == 'cat ~/.cache/wal/sequences'
+endif 
+
 if g:local
-  if $TERM == "xterm-kitty"
-    let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-    if term_colour == '~/.cache/wal/colors-kitty.conf'
+  if g:pywal
       colo wal
-    else
-      " colo default
-      colo miramare
-    endif
   else
-    " iterm
+    set termguicolors
     colo miramare
   endif
-else
-  " remote
+else " remotes
   colo default
 endif
 
@@ -539,12 +539,19 @@ let &t_SI.="\e[6 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[2 q" "EI = NORMAL mode (ELSE)
 
-" always start vim with block, and exit with bar
-" autocmd VimEnter * silent exec "! echo '\e[2 q'"
-" autocmd VimEnter * silent i<Esc>
-" autocmd VimLeave * silent exec "! echo '\e[6 q'"
+autocmd VimEnter * :normal :startinsert :stopinsert 
 
 " lag when escaping from insert mode
 set ttimeout
 set ttimeoutlen=15
 set ttyfast
+
+if g:pywal
+  let g:lightline = {
+    \ 'colorscheme': 'wal'
+    \ }
+else
+  let g:lightline = {
+    \ 'colorscheme': 'miramare'
+    \ }
+endif

@@ -102,7 +102,7 @@ fi
 [[ ! -d ~/.config/bat ]] && mkdir ~/.config/bat
 [[ ! -L ~/.config/bat/config ]] &&
   echo "Linking bat config" && 
-  ln -s $dir/lf/bat.config ~/.config/bat/config
+  ln -s $dir/bat.config ~/.config/bat/config
 
 # autochem
 mols=~/.config/autochem/molecules.txt

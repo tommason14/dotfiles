@@ -19,6 +19,8 @@ bindkey "^?" backward-delete-char # backspace fix
 #     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 #         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+cat ~/.cache/wal/sequences
+
 # Change cursor shape
 # No blinking
 # (https://invisible-island.net/xterm/ctlseqs/ctlseqs.html, search for 'CSI Ps SP q')
@@ -244,7 +246,7 @@ alias ipythonrc="$EDITOR ~/dotfiles/jupyter/ipythonrc"
 alias rprofile="$EDITOR ~/dotfiles/Rprofile"
 alias pymolrc="$EDITOR ~/dotfiles/pymolrc"
 alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
-alias wr='$repos/wallpapers/random_wallpaper.sh'
+alias wr='$repos/wallpapers/random_wallpaper.sh 2>/dev/null' # is a directory pywal error
 
 # window management
 alias yb='brew services start yabai && brew services start skhd && brew services start spacebar'
@@ -318,19 +320,19 @@ alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortc
 
 # files
 
-alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null'
-alias obf='vim ~/.bash_functions; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
-alias obp='vim ~/.bash_profile; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
-alias obr='vim ~/.bashrc; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
-alias oip='vim ~/dotfiles/jupyter/ipythonrc'
-alias orp='vim ~/dotfiles/Rprofile'
-alias otdc='vim ~/Documents/repos/daily_log/choline.md'
-alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
-alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
-alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
-alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
-alias ovrc='vim ~/dotfiles/vimrc'
-alias ozh='vim ~/.zshrc && source ~/.zshrc'
+alias oba="$EDITOR ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
+alias obf="$EDITOR ~/.bash_functions; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc"
+alias obp="$EDITOR ~/.bash_profile; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc"
+alias obr="$EDITOR ~/.bashrc; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc"
+alias oip="$EDITOR ~/dotfiles/jupyter/ipythonrc"
+alias orp="$EDITOR ~/dotfiles/Rprofile"
+alias otdc="$EDITOR ~/Documents/repos/daily_log/choline.md"
+alias otdd="$EDITOR ~/Documents/repos/daily_log/dopamine.md"
+alias otdj="$EDITOR ~/Documents/repos/daily_log/subd_jobs.md"
+alias otdm="$EDITOR ~/Documents/repos/daily_log/membranes.md"
+alias otdp="$EDITOR ~/Documents/repos/daily_log/membranes.md"
+alias ovrc="$EDITOR ~/dotfiles/vimrc"
+alias ozh="$EDITOR ~/.zshrc && source ~/.zshrc"
 
 # movement
 

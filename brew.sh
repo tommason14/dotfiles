@@ -33,8 +33,7 @@ brew cask install kitty
 brew cask install notion
 
 brew cask install spectacle
-curl https://gist.githubusercontent.com/tommason14/324cb37dd7803f3b06b39f53d38301f6/raw/spectacle.json
--o ~/Library/Application\ Support/Spectacle/Shortcuts.json
+curl https://gist.githubusercontent.com/tommason14/324cb37dd7803f3b06b39f53d38301f6/raw/spectacle.json -o ~/Library/Application\ Support/Spectacle/Shortcuts.json
 
 brew cask install visual-studio-code 
 brew cask install zotero

@@ -2,6 +2,7 @@
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'SirVer/ultisnips'
+Plug 'itchyny/lightline.vim'
 Plug 'tommason14/vim-snippets'
 Plug 'tommason14/lammps.vim'
 Plug 'digitaltoad/vim-pug'
@@ -527,6 +528,10 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
+
+let g:lightline = {
+  \ 'colorscheme': 'Tomorrow_Night'
+  \ }
 
 " Fix issues {{{1
 
