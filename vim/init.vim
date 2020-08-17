@@ -5,6 +5,7 @@ Plug 'SirVer/ultisnips'
 Plug 'itchyny/lightline.vim'
 Plug 'tommason14/vim-snippets'
 Plug 'tommason14/lammps.vim'
+Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/goyo.vim'               " Perfect for writing
 Plug 'godlygeek/tabular'               " Fantastic formatting
 Plug 'masukomi/vim-markdown-folding'
@@ -325,6 +326,8 @@ au BufNewFile,BufRead *.jade
     \ set textwidth=79                      |
     \ set filetype=pug                      |
 
+au BufWritePost *.jade :!jade -P %
+
 au BufNewFile,BufRead *.html
     \ set tabstop=2                         |
     \ set softtabstop=2                     |
@@ -423,7 +426,7 @@ au BufNewFile,BufRead *.sh,bash*,*lfrc*,*alias*
     \ set softtabstop=2                     |
     \ set expandtab                         |
     \ set shiftwidth=2                      |
-    \ set textwidth=79                      |
+    " \ set textwidth=79                      |
     \ set filetype=sh                       |
     \ set syntax=zsh                        |
 " different syntax highlighting to filetypes, sh highlighting
