@@ -2,6 +2,12 @@
 
 # open apps
 cmd + alt - r : open /Applications/RStudio.app/
-# try and get this working...
-cmd + alt - y : vim ~/dotfiles/yabairc
-cmd + shift - w : ~/Documents/repos/wallpapers/random_wallpaper.sh 2>/dev/null
+cmd + shift - w : ~/Documents/repos/wallpapers/random_wallpaper.sh 2>/dev/null; ps aux | grep kitty | grep -qv grep && kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+
+# restart iTerm
+
+cmd + alt - i : pwd | pbcopy && exit && /Applications/iTerm.app/Contents/MacOS/iTerm2 && cd $(pbpaste)
+
+.blacklist [
+  "kitty"
+]

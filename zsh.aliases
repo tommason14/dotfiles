@@ -1,0 +1,4 @@
+alias base16_on="sed -i '' '/BASE/,/eval/ s/^# //' ~/.zshrc && source ~/.zshrc"
+alias base16_off="sed -i '' '/BASE/,/eval/ s/^/# /' ~/.zshrc "
+alias wal_on="sed -i '' 's|# ^\(cat ~/.cache/wal/sequences\)|\1|' ~/.zshrc && source ~/.zshrc"
+alias wal_off="sed -i '' 's|^\(cat ~/.cache/wal/sequences\)|# \1|' ~/.zshrc"

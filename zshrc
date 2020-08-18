@@ -14,12 +14,20 @@ bindkey -v
 export KEYTIMEOUT=1
 bindkey "^?" backward-delete-char # backspace fix
 
+############
+#  base16  #
+############
+
 # BASE16_SHELL="$HOME/.config/base16-shell/"
 # [ -n "$PS1" ] && \
 #     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 #         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
-cat ~/.cache/wal/sequences
+###########
+#  pywal  #
+###########
+
+# cat ~/.cache/wal/sequences
 
 # Change cursor shape
 # No blinking
@@ -52,8 +60,25 @@ precmd_functions+=(_fix_cursor)
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 
+# set zsh window title
+function set-title-precmd() {
+  val="${PWD/#$HOME/~}"
+  printf "\e]2;%s\a" "${val##*/}"
+}
+
+function set-title-preexec() {
+  printf "\e]2;%s\a" "$1"
+}
+
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd set-title-precmd
+add-zsh-hook preexec set-title-preexec
+
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
+
+# start skhd on login
+pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null & 
 
 # fzf completion
 source ~/.fzf.zsh
@@ -186,6 +211,7 @@ source ~/dotfiles/lf/icons.sh
 #############
 #  aliases  #
 #############
+source ~/dotfiles/zsh.aliases
 alias icat="kitty +kitten icat"
 # weird terminal issue, can't clear terminal over ssh unless:
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh='kitty +kitten ssh' 
@@ -303,6 +329,8 @@ alias today="$EDITOR $repos/notes/today.md"
 alias weather="curl wttr.in/Melbourne\?0"
 # Syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# i.e $LAM normally black before typing $LAMMPS_EXEC, and not visible
+ZSH_HIGHLIGHT_STYLES[comment]='fg=cyan' # fixed now
 
 ################################
 #  Run pfetch on new instance  #
