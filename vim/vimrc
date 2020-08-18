@@ -52,6 +52,7 @@ set formatoptions=tcqj
 set wildmenu
 set autoread " reload a file changed outside of vim
 set laststatus=2
+set noshowmode
 set shortmess+=F " remove line that appears at bottom of file when opening
 
 

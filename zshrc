@@ -110,7 +110,6 @@ mkcd() {
 }
 
 copy() {
-  [[ $TERM == "xterm-kitty" ]] && cat ${1:-/dev/stdin} | kitty +kitten clipboard || 
   cat ${1:-/dev/stdin} | pbcopy
 }
 
