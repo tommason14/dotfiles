@@ -7,6 +7,7 @@ brew install fd
 brew install fzf
 brew install git
 brew install gnuplot
+brew install gnu-sed
 brew install grep
 brew install imagemagick
 brew install lf

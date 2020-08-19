@@ -1,4 +1,6 @@
 " Plugins {{{1
+let g:local = $USER == "tommason" || $USER == "tmas0023"
+
 call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'SirVer/ultisnips'
@@ -11,6 +13,7 @@ Plug 'godlygeek/tabular'               " Fantastic formatting
 " Plug 'masukomi/vim-markdown-folding'
 Plug 'tomtom/tcomment_vim'             " Comments
 Plug 'dylanaraps/wal.vim'
+Plug 'chriskempson/base16-vim'
 Plug 'voldikss/vim-floaterm'           " Looks cool
 Plug 'franbach/miramare'
 Plug 'autozimu/LanguageClient-neovim', {
@@ -43,8 +46,8 @@ set smarttab
 set formatoptions=tcqj
 set wildmenu
 set autoread " reload a file changed outside of vim
-" set clipboard=unnamedplus " automatically copy to clipboard
 set laststatus=2
+set noshowmode
 set shortmess+=F " remove line that appears at bottom of file when opening
 let g:local = $USER == "tommason" || $USER == "tmas0023"
 
@@ -487,27 +490,38 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-set termguicolors
-" Uses colours from terminal (Kitty) if not pywal on local
+set background=dark
+let g:kitty = $TERM == "xterm-kitty"
+if g:kitty
+  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
+  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
+  let g:pywal = term_colour == '~/.cache/wal/colors-kitty.conf' || cmd == 'cat ~/.cache/wal/sequences'
+else
+  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
+  let g:pywal = cmd == 'cat ~/.cache/wal/sequences'
+endif 
+
+let base_check = trim(system('env | grep BASE16_THEME'))
+let g:base = base_check =~ 'BASE16_THEME' 
 if g:local
-  if $TERM == "xterm-kitty"
-    let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-    if term_colour == '~/.cache/wal/colors-kitty.conf'
-      colo wal
-    else
-      " colo default
-      colo miramare
-    endif
+  if g:base
+    " set termguicolors
+    let base16colorspace=256
+    source ~/.vimrc_background
+    hi clear LineNr
+  elseif g:pywal
+    colo wal
+  " Look into making this work for when a kitty conf is set, regardless of
+  " base16
+  " elseif !g:pywal && !g:base && g:kitty
+  "   colo default
   else
-    " iterm
+    set termguicolors
     colo miramare
   endif
-else
-  " remote
+else " remotes
   colo default
 endif
-
-set background=dark
 
 hi Normal ctermbg=none " Use terminal background 
 hi NonText ctermbg=none
@@ -529,11 +543,16 @@ set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
 
-let g:lightline = {
-  \ 'colorscheme': 'Tomorrow_Night'
-  \ }
-
-" Fix issues {{{1
-
-" Fix ^[201~ problem, not coming out of insert mode when pasting
-" Fixed by :set paste then pasting 
+if g:base
+  let g:lightline = {
+    \ 'colorscheme': 'base16'
+    \ }
+elseif g:pywal
+  let g:lightline = {
+    \ 'colorscheme': 'wal'
+    \ }
+else
+  let g:lightline = {
+    \ 'colorscheme': 'miramare'
+    \ }
+endif

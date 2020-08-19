@@ -8,6 +8,6 @@ cmd + shift - w : ~/Documents/repos/wallpapers/random_wallpaper.sh 2>/dev/null; 
 
 cmd + alt - i : pwd | pbcopy && exit && /Applications/iTerm.app/Contents/MacOS/iTerm2 && cd $(pbpaste)
 
-.blacklist [
-  "kitty"
-]
+# .blacklist [
+#   "kitty"
+# ]
