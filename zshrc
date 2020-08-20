@@ -18,16 +18,16 @@ bindkey "^?" backward-delete-char # backspace fix
 #  base16  #
 ############
 
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 ###########
 #  pywal  #
 ###########
 
-# cat ~/.cache/wal/sequences
+cat ~/.cache/wal/sequences
 
 # Change cursor shape
 # No blinking
@@ -78,7 +78,12 @@ add-zsh-hook preexec set-title-preexec
 kitty + complete setup zsh | source /dev/stdin
 
 # start skhd on login
-pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null & 
+if [[ $USER == tmas0023 ]] 
+then
+ pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &
+else
+ pgrep skhd >/dev/null || skhd -c ~/dotfiles/skhdrc >/dev/null &
+fi
 
 # fzf completion
 source ~/.fzf.zsh
@@ -274,9 +279,10 @@ alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
 alias wr='$repos/wallpapers/random_wallpaper.sh 2>/dev/null' # is a directory pywal error
 
 # window management
-alias yb='brew services start yabai && brew services start skhd && brew services start spacebar'
-alias ybr='brew services restart yabai && brew services restart skhd & brew services restart spacebar'
-alias ybs='brew services stop yabai && brew services stop skhd && brew services stop spacebar' 
+# skhd always on, no need for brew services start skhd
+alias yb='brew services start yabai && brew services start spacebar'
+alias ybr='brew services restart yabai && brew services restart spacebar'
+alias ybs='brew services stop yabai && brew services stop spacebar' 
 
 # aliases for default commands
 alias c='clear'
