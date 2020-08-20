@@ -573,3 +573,9 @@ else
     \ 'colorscheme': 'miramare'
     \ }
 endif
+
+if ! g:local
+  let g:lightline = {
+    \ 'colorscheme': 'wal'
+    \ }
+endif
