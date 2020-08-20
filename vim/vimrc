@@ -525,7 +525,7 @@ if g:local
     colo miramare
   endif
 else " remotes
-  colo default
+  colo wal
 endif
 
 
