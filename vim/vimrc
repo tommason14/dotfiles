@@ -49,6 +49,7 @@ set ruler
 set linebreak " don't break words when wrapping to new line
 set autoindent
 set smarttab
+set nojoinspaces " only add one space after full stop when using the gq command
 set formatoptions=tcqj
 set wildmenu
 set autoread " reload a file changed outside of vim
