@@ -438,9 +438,9 @@ au BufNewFile,BufRead *.sh,bash*,*lfrc*,*alias*
     \ set softtabstop=2                     |
     \ set expandtab                         |
     \ set shiftwidth=2                      |
-    \ set textwidth=79                      |
     \ set filetype=sh                       |
     \ set syntax=zsh                        |
+    " \ set textwidth=79                      |
 " different syntax highlighting to filetypes, sh highlighting
 " doesn't accept $(...)
 
@@ -522,8 +522,8 @@ if g:local
   " elseif !g:pywal && !g:base && g:kitty
   "   colo default
   else
-    set termguicolors
-    colo miramare
+    " set termguicolors
+    colo default
   endif
 else " remotes
   colo wal
@@ -569,10 +569,10 @@ elseif g:pywal
   let g:lightline = {
     \ 'colorscheme': 'wal'
     \ }
-else
-  let g:lightline = {
-    \ 'colorscheme': 'miramare'
-    \ }
+" else
+  " let g:lightline = {
+  "   \ 'colorscheme': 'miramare'
+  "   \ }
 endif
 
 if ! g:local
