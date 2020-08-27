@@ -6,8 +6,11 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tommason14/vim-snippets'
+if ! $HOSTNAME =~ "monarch"
+  " no python3 enabled version
+  Plugin 'SirVer/ultisnips'
+  Plugin 'tommason14/vim-snippets'
+endif
 Plugin 'tommason14/lammps.vim'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
