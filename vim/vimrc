@@ -6,7 +6,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
-if ! $HOSTNAME =~ "monarch"
+if stridx($HOSTNAME, "monarch") == -1
   " no python3 enabled version
   Plugin 'SirVer/ultisnips'
   Plugin 'tommason14/vim-snippets'
