@@ -20,8 +20,7 @@ Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
-Plugin 'daviesjamie/vim-base16-lightline'
-Plugin 'franbach/miramare'
+Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
   Plugin 'autozimu/LanguageClient-neovim'
@@ -499,41 +498,10 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-set background=dark
-let g:kitty = $TERM == "xterm-kitty"
-if g:kitty
-  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
-  let g:pywal = term_colour == '~/.cache/wal/colors-kitty.conf' || cmd == 'cat ~/.cache/wal/sequences'
-else
-  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
-  let g:pywal = cmd == 'cat ~/.cache/wal/sequences'
-endif 
-
-let base_check = trim(system('env | grep BASE16_THEME'))
-let g:base = base_check =~ 'BASE16_THEME' 
-if g:local
-  if g:base
-    " set termguicolors
-    let base16colorspace=256
-    source ~/.vimrc_background
-    hi clear LineNr
-  elseif g:pywal
-    colo wal
-  " Look into making this work for when a kitty conf is set, regardless of
-  " base16
-  " elseif !g:pywal && !g:base && g:kitty
-  "   colo default
-  else
-    colo default
-  endif
-else " remotes
-  colo default
-endif
-
+source ~/dotfiles/vim/colours.vim
 
 hi Normal ctermbg=none " Use terminal background 
-hi Folded ctermbg=none " Same for folds
+hi LineNr ctermbg=None " Use terminal background
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
 " Italic comments
 " First vim needs to know which characters to see to 
@@ -562,23 +530,3 @@ autocmd VimEnter * :normal :startinsert :stopinsert
 set ttimeout
 set ttimeoutlen=15
 set ttyfast
-
-if g:base
-  let g:lightline = {
-    \ 'colorscheme': 'base16'
-    \ }
-elseif g:pywal
-  let g:lightline = {
-    \ 'colorscheme': 'wal'
-    \ }
-else
-  let g:lightline = {
-    \ 'colorscheme': 'm'
-    \ }
-endif
-
-if ! g:local
-  let g:lightline = {
-    \ 'colorscheme': 'base16'
-    \ }
-endif
