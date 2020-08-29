@@ -14,20 +14,71 @@ bindkey -v
 export KEYTIMEOUT=1
 bindkey "^?" backward-delete-char # backspace fix
 
-############
-#  base16  #
-############
+###################
+#  Colourschemes  #
+###################
 
-# BASE16_SHELL="$HOME/.config/base16-shell/"
-# [ -n "$PS1" ] && \
-#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-#         eval "$("$BASE16_SHELL/profile_helper.sh")"
+vimcolours="$HOME/dotfiles/vim/colours.vim"
 
-###########
-#  pywal  #
-###########
-
+pywal(){
+cat << EOF > $vimcolours
+set background=dark
+colorscheme wal
+let g:lightline = {"colorscheme" : "wal"}
+EOF
 cat ~/.cache/wal/sequences
+local kitty="~/.cache/wal/colors-kitty.conf"
+sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+
+gruvbox(){
+cat << EOF > $vimcolours
+set background=dark
+colorscheme gruvbox
+let g:lightline = {"colorscheme" : "gruvbox"}
+EOF
+local kitty="~/.config/kitty/themes/gruvbox_dark.conf"
+sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+
+nord(){
+cat << EOF > $vimcolours
+set background=dark
+colorscheme nord
+let g:lightline = {"colorscheme" : "nord"}
+EOF
+local kitty="~/.config/kitty/themes/nord.conf"
+sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+
+onedark(){
+cat << EOF > $vimcolours
+set background=dark
+set termguicolors
+colorscheme onedark
+let g:lightline = {"colorscheme" : "onedark"}
+EOF
+local kitty="~/.config/kitty/themes/OneDark.conf"
+sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+
+
+tomorrow_night(){
+cat << EOF > $vimcolours
+set background=dark
+set termguicolors
+colorscheme base16-tomorrow-night
+let base16colorspace=256
+let g:lightline = {"colorscheme" : "Tomorrow_Night"}
+EOF
+local kitty="~/.config/kitty/themes/Tomorrow_Night.conf"
+sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
 
 # Change cursor shape
 # No blinking
@@ -78,12 +129,7 @@ add-zsh-hook preexec set-title-preexec
 kitty + complete setup zsh | source /dev/stdin
 
 # start skhd on login
-if [[ $USER == tmas0023 ]] 
-then
- pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &
-else
- pgrep skhd >/dev/null || skhd -c ~/dotfiles/skhdrc >/dev/null &
-fi
+pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null & 
 
 # fzf completion
 source ~/.fzf.zsh
@@ -279,10 +325,9 @@ alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
 alias wr='$repos/wallpapers/random_wallpaper.sh 2>/dev/null' # is a directory pywal error
 
 # window management
-# skhd always on, no need for brew services start skhd
-alias yb='brew services start yabai && brew services start spacebar'
-alias ybr='brew services restart yabai && brew services restart spacebar'
-alias ybs='brew services stop yabai && brew services stop spacebar' 
+alias yb='brew services start yabai && brew services start skhd && brew services start spacebar'
+alias ybr='brew services restart yabai && brew services restart skhd & brew services restart spacebar'
+alias ybs='brew services stop yabai && brew services stop skhd && brew services stop spacebar' 
 
 # aliases for default commands
 alias c='clear'
@@ -297,6 +342,7 @@ alias s='source'
 alias v="$EDITOR" # vim or neovim
 alias pr='preview'
 alias fenv='env | fzf'
+alias fbase='eval $(alias | grep base16 | awk -F"=" '\''{print $1}'\'' | fzf)'
 alias fvim='fzf -m --print0 | xargs -0 -o vim -p' # multiple files possible
 alias fopen='fzf --print0 | xargs -0 -o open'
 alias fpr='fzf --print0 | xargs -0 -o preview'
