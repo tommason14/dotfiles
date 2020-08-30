@@ -129,7 +129,8 @@ add-zsh-hook preexec set-title-preexec
 kitty + complete setup zsh | source /dev/stdin
 
 # start skhd on login
-pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null & 
+[[ $USER == "tommason" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/skhdrc >/dev/null &} 
+[[ $USER == "tmas0023" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &} 
 
 # fzf completion
 source ~/.fzf.zsh
@@ -325,9 +326,9 @@ alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
 alias wr='$repos/wallpapers/random_wallpaper.sh 2>/dev/null' # is a directory pywal error
 
 # window management
-alias yb='brew services start yabai && brew services start skhd && brew services start spacebar'
-alias ybr='brew services restart yabai && brew services restart skhd & brew services restart spacebar'
-alias ybs='brew services stop yabai && brew services stop skhd && brew services stop spacebar' 
+alias yb='brew services start yabai && brew services start spacebar'
+alias ybr='brew services restart yabai && brew services restart spacebar'
+alias ybs='brew services stop yabai && brew services stop spacebar' 
 
 # aliases for default commands
 alias c='clear'
