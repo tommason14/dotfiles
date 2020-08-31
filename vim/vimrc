@@ -20,6 +20,7 @@ Plugin 'tomtom/tcomment_vim'             " Comments
 Plugin 'digitaltoad/vim-pug'             " Jade syntax highlighting
 Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
+Plugin 'daviesjamie/vim-base16-lightline'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
@@ -501,7 +502,7 @@ let g:tcomment_types={'kitty': '# %s'}
 source ~/dotfiles/vim/colours.vim
 
 hi Normal ctermbg=none " Use terminal background 
-hi LineNr ctermbg=None " Use terminal background
+hi clear LineNr " Use terminal background
 hi Statement cterm=none " keywords not in bold (normally cterm=bold)
 " Italic comments
 " First vim needs to know which characters to see to 
@@ -510,7 +511,9 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 " then set italics
 hi Comment cterm=italic
-hi Folded ctermbg=none cterm=italic " Italic and use terminal colours
+" ctermbg=none fails with base16
+hi clear Folded
+hi Folded cterm=italic " Italic and use terminal colours
 
 " Changes style of highlighting
 hi clear SpellBad
