@@ -11,7 +11,7 @@ wal=~/.config/wal/templates
 
 if [[ $USER =~ (tommason|tmas0023) ]]; then
   files="bash_functions pymolrc hyper.js chunkwmrc skhdrc Rprofile
-amethyst vmdrc zshrc tmux.conf"    
+amethyst zshrc tmux.conf"    
   [[ -L $ipython ]] || (echo "Linking ipythonrc" && ln -s $dir/jupyter/ipythonrc $ipython)
   [[ -L $jupyter_css ]] || (echo "Linking jupyter css" && ln -s
 $dir/jupyter/custom.css $jupyter_css)

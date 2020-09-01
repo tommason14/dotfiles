@@ -15,13 +15,14 @@ Plug 'tomtom/tcomment_vim'             " Comments
 Plug 'dylanaraps/wal.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'voldikss/vim-floaterm'           " Looks cool
-Plug 'franbach/miramare'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'lervag/vimtex'
+" Plug 'franbach/miramare'
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'lervag/vimtex'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Basics {{{1
