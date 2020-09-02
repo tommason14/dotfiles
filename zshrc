@@ -220,6 +220,7 @@ function rectangle_gaps(){
 
 export GAMESS="$HOME/Documents/GAMESS/macos/rungms"
 export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
+export LAMMPS_MPI="$HOME/Documents/lammps-3Mar20/src/lmp_mac_mpi"
 
 export filestream="/Volumes/GoogleDrive/My Drive"
 export repos="$HOME/Documents/repos"

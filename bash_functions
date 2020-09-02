@@ -276,8 +276,8 @@ function gamesstoxyz {
 
 copy() {
   command -v xclip >/dev/null &&
-  {cat ${1:-/dev/stdin} | xclip -selection clipboard} ||
-  {cat ${1:-/dev/stdin} | pbcopy} 
+  cat ${1:-/dev/stdin} | xclip -selection clipboard ||
+  cat ${1:-/dev/stdin} | pbcopy
 }
 
 lfcd () {
