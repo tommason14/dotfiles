@@ -110,3 +110,4 @@ mols=~/.config/autochem/molecules.txt
 [[ -f $mols ]] && rm $mols # if already present, remove and use this symlink
 [[ ! -L $mols ]] && ln -s $dir/molecules.txt $mols
 
+[[ $HOSTNAME =~ monarch ]] && ln -s ~/dotfiles/vim/monarch.init.vim ~/.config/nvim/init.vim

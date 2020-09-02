@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
-# PS1="%F{cyan}%1d $%f %b"
-italic="\e[3m"
-normal="\e[0m"
-PS1=$(echo "${italic}%F{cyan}%1d${normal} %F{cyan}$%f %b")  
+PS1="%F{cyan}%1d $%f %b"
+# italic="\e[3m"
+# normal="\e[0m"
+# PS1=$(echo "${italic}%F{cyan}%1d${normal} %F{cyan}$%f %b")  
 
 HISTFILE=$HOME/.cache/zsh/history
 HISTSIZE=10000 # per session
@@ -139,7 +139,7 @@ kitty + complete setup zsh | source /dev/stdin
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
