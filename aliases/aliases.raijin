@@ -126,6 +126,7 @@ alias dots='cd ~/dotfiles'
 alias shortcuts='cd ~/dotfiles/shortcuts'
 alias lfrc="vim ~/dotfiles/lf/lfrc.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null"
 alias vimrc='vim ~/.vimrc'
+alias nvimrc'nvim ~/.config/nvim/init.vim'
 
 export LF_ICONS="\
 di=:\
@@ -298,7 +299,7 @@ alias ll='ls -lh'
 alias lsa='ls -a'
 alias mkdir='mkdir -p'
 alias s='source'
-alias v='vim'
+alias v=${EDITOR:-vim}
 
 alias cd..='cd ..'
 alias ..='cd ..'
