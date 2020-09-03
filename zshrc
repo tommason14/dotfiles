@@ -222,7 +222,8 @@ export GAMESS="$HOME/Documents/GAMESS/macos/rungms"
 export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
 export LAMMPS_MPI="$HOME/Documents/lammps-3Mar20/src/lmp_mac_mpi"
 
-export filestream="/Volumes/GoogleDrive/My Drive"
+export filestream=/Volumes/GoogleDrive/My\ Drive
+export pdfs=/Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 export repos="$HOME/Documents/repos"
 export walls="$repos/wallpapers"
 PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:$HOME/bin:/usr/local/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2020/bin/x86_64-darwin:$PATH"
