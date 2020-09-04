@@ -289,7 +289,7 @@ set completeopt-=preview
 au FileType python,R,perl set omnifunc=lsp#omnifunc
 
 " autoformat on save
-" au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
+au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
 
 " hide bar that appears at the side when linter detects an error
 " au FileType python,R set signcolumn=no
