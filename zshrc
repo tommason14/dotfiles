@@ -84,6 +84,14 @@ sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
+colours(){
+$(for func in $(print -l ${(ok)functions} | grep -v "^_\|colours")
+  do 
+  definition=$(type -f "$func")
+  echo "$definition" | grep -lq "colorscheme" && echo "$func"
+  done | fzf)
+}
+
 # Change cursor shape
 # No blinking
 # (https://invisible-island.net/xterm/ctlseqs/ctlseqs.html, search for 'CSI Ps SP q')
@@ -274,7 +282,6 @@ alias icat="kitty +kitten icat"
 # weird terminal issue, can't clear terminal over ssh unless:
 [[ "$TERM" == "xterm-kitty" ]] && alias ssh='kitty +kitten ssh' 
 # but this stops the message of the day showing...
-alias colours='~/dotfiles/terminal/colours.sh'
 alias grep='grep --color'
 alias jl='jupyter-lab'
 alias ls='ls -G'
