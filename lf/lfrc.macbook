@@ -272,6 +272,7 @@ map gmm cd ~/Documents/repos/membranes
 map gmo cd ~/Movies
 map gpc cd ~/Pictures
 map gq cd ~/Documents/repos/qcp
+map gri cd ~/Documents/repos/ideas
 map grm cd ~/Documents/repos/membranes
 map grp cd ~/Documents/repos
 map gsc cd ~/.local/scripts
