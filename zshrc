@@ -359,6 +359,7 @@ alias fenv='env | fzf'
 alias fbase='eval $(alias | grep base16 | awk -F"=" '\''{print $1}'\'' | fzf)'
 alias fvim='fzf -m --print0 | xargs -0 -o vim -p' # multiple files possible
 alias fopen='fzf --print0 | xargs -0 -o open'
+alias ffinder='fzf --print0 | xargs -0 open -R'
 alias fpr='fzf --print0 | xargs -0 -o preview'
 alias fman='fd \.1$ /usr/share/man | fzf | xargs -o man'
 # ctrl-h 
