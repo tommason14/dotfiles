@@ -229,6 +229,7 @@ function rectangle_gaps(){
 export GAMESS="$HOME/Documents/GAMESS/macos/rungms"
 export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
 export LAMMPS_MPI="$HOME/Documents/lammps-3Mar20/src/lmp_mac_mpi"
+export moltemplate_ff=/Volumes/GoogleDrive/My\ Drive/polymers/LAMMPS/moltemplate/moltemplate/force_fields
 
 export filestream=/Volumes/GoogleDrive/My\ Drive
 export pdfs=/Volumes/GoogleDrive/My\ Drive/zotero/pdfs
