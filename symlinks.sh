@@ -24,7 +24,7 @@ $dir/jupyter/custom.css $jupyter_css)
   # pywal makes the theme and wl/make_wallpaper.sh copies the theme into the
   # spicetify directory
 else # remotes
-  files="bash_functions vimrc"    
+  files="bash_functions"    
 fi
 
 cd $dir
