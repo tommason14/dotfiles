@@ -144,10 +144,11 @@ nohup_bg() {
 }
 
 goto(){
-  # extend to PBS as well
   [ $# -eq 0 ] &&
-  echo "Navigates to the working directory of a SLURM job." &&
-  echo "Syntax: goto SLURM_JOBID" && return 1
+  echo "Navigates to the working directory of a SLURM/PBS job." &&
+  echo "Syntax: goto JOBID" && return 1
+  [ $USER == "tm3124" ] && 
+  cd $(qstat -f $1 | sed -n '/PBS_O_WORKDIR/,/PBS_O_PATH/p' | grep -v "PBS_O_PATH" | tr -d '\n' | sed 's/\s//g;s/,$//' | awk -F'=' '{print $2}') ||
   cd $(scontrol show jobid $1 | grep WorkDir | awk -F'=' '{print $2}')
 }
 
