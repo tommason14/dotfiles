@@ -91,6 +91,7 @@ map <esc> cmd-escape
 # File opening {{{2
 
 map o. $open .
+map orf $open -R $f # reveal in finder
 map ovt $$EDITOR -p $fx
 map ovs $$EDITOR -O $fx
 map om $molden "$f"
