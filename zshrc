@@ -226,6 +226,7 @@ function rectangle_gaps(){
 export GAMESS="$HOME/Documents/GAMESS/macos/rungms"
 export LAMMPS_EXEC="$HOME/Documents/lammps-3Mar20/src/lmp_mac"
 export LAMMPS_MPI="$HOME/Documents/lammps-3Mar20/src/lmp_mac_mpi"
+export moltemplate_ff=/Volumes/GoogleDrive/My\ Drive/polymers/LAMMPS/moltemplate/moltemplate/force_fields
 
 export filestream=/Volumes/GoogleDrive/My\ Drive
 export pdfs=/Volumes/GoogleDrive/My\ Drive/zotero/pdfs
@@ -356,6 +357,7 @@ alias fenv='env | fzf'
 alias fbase='eval $(alias | grep base16 | awk -F"=" '\''{print $1}'\'' | fzf)'
 alias fvim='fzf -m --print0 | xargs -0 -o vim -p' # multiple files possible
 alias fopen='fzf --print0 | xargs -0 -o open'
+alias ffinder='fzf --print0 | xargs -0 open -R'
 alias fpr='fzf --print0 | xargs -0 -o preview'
 alias fman='fd \.1$ /usr/share/man | fzf | xargs -o man'
 # ctrl-h 

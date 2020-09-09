@@ -27,9 +27,9 @@ cmd pymol ${{
   eval "/Applications/PyMOL.app/Contents/MacOS/PyMOL $@ -d "@~/.pymolrc""
 }}
 
-cmd chem_assist_ds ${{
+cmd autochem_ds ${{
   settings_file=$(ls *.py | sort | head -n 1)
-  chem_assist -ds $settings_file
+  autochem -ds $settings_file
   [ -d __pycache__ ] && rm -r __pycache__
 }}
 
@@ -91,6 +91,7 @@ map <esc> cmd-escape
 # File opening {{{2
 
 map o. $open .
+map orf $open -R $f # reveal in finder
 map ovt $$EDITOR -p $fx
 map ovs $$EDITOR -O $fx
 map om $molden "$f"
@@ -159,10 +160,10 @@ map yq1 $yes "" | qcp -t1
 map yq2 !qcp -t2
 map yq3 $yes "" | qcp -t3
 
-map cad chem_assist_ds
-map cae $chem_assist -e
-map car $chem_assist -r
-map cat :chem_assist -t -m 1
+map cad autochem_ds
+map cae $autochem -e
+map car $autochem -r
+map cat :autochem -t -m 1
 
 # fluorescence
 map yqf $qcp_fluorescence
