@@ -138,8 +138,10 @@ add-zsh-hook preexec set-title-preexec
 kitty + complete setup zsh | source /dev/stdin
 
 # start skhd on login
-[[ $USER == "tommason" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/skhdrc >/dev/null &} 
-[[ $USER == "tmas0023" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &} 
+pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &
+# for now, not using yabai on macbook
+# [[ $USER == "tommason" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/skhdrc >/dev/null &} 
+# [[ $USER == "tmas0023" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &} 
 
 # fzf completion
 source ~/.fzf.zsh
