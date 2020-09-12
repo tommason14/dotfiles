@@ -1,3 +1,5 @@
 set background=dark
-colorscheme wal
-let g:lightline = {"colorscheme" : "wal"}
+set termguicolors
+colorscheme base16-tomorrow-night
+let base16colorspace=256
+let g:lightline = {"colorscheme" : "Tomorrow_Night"}
