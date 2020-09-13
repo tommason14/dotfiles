@@ -20,13 +20,11 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'daviesjamie/vim-base16-lightline'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-" if g:local
 Plugin 'autozimu/LanguageClient-neovim'
 Plugin 'Shougo/deoplete.nvim'
 " make deoplete work in vim
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
-" endif
 
 call vundle#end()
 
@@ -81,7 +79,7 @@ set incsearch  " search as you type
 " Ultisnips {{{1
 
 let g:UltiSnipsUsePythonVersion = 3
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = trim(system('which python3'))
 
 " Load snippets
 
@@ -271,7 +269,6 @@ au FileType python syn region Comment start=/"""/ end=/"""/
 set hidden
 
 " Automatically start language servers.
-" if g:local 
 let g:LanguageClient_autoStart = 1
 
 let g:LanguageClient_serverCommands = {
@@ -302,7 +299,6 @@ nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 let g:LanguageClient_echoProjectRoot = 0
 
 let g:deoplete#enable_at_startup = 1
-" endif
 
 " Perl {{{1
 

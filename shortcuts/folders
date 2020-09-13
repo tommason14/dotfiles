@@ -109,4 +109,4 @@ gadi-df: ~/dotfiles
 gadi-sr: /scratch/k96/tm3124
 gadi-p: /scratch/k96/tm3124/polymers
 gadi-sc: ~/.local/scripts
-gadi-wg: /home/565/zls565/.local/gamess19-srs # work gamess
+gadi-w: /g/data/k96/apps
