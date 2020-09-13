@@ -20,13 +20,13 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'daviesjamie/vim-base16-lightline'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
-if g:local
-  Plugin 'autozimu/LanguageClient-neovim'
-  Plugin 'Shougo/deoplete.nvim'
-  " make deoplete work in vim
-  Plugin 'roxma/nvim-yarp'
-  Plugin 'roxma/vim-hug-neovim-rpc'
-endif
+" if g:local
+Plugin 'autozimu/LanguageClient-neovim'
+Plugin 'Shougo/deoplete.nvim'
+" make deoplete work in vim
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+" endif
 
 call vundle#end()
 
@@ -271,38 +271,38 @@ au FileType python syn region Comment start=/"""/ end=/"""/
 set hidden
 
 " Automatically start language servers.
-if g:local 
-  let g:LanguageClient_autoStart = 1
+" if g:local 
+let g:LanguageClient_autoStart = 1
 
-  let g:LanguageClient_serverCommands = {
-    \ 'python': ['/usr/local/bin/pyls'],
-    \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
-    \ 'tex': ['~/bin/texlab'],
-    \ }
-  
-  " disable preview window
-  set completeopt-=preview
-  
-  " use omni completion provided by lsp
-  au FileType python,R,perl set omnifunc=lsp#omnifunc
-  
-  " autoformat on save
-  au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
-  
-  " hide bar that appears at the side when linter detects an error
-  " au FileType python,R set signcolumn=no
-  
-  " gq to format
-  au FileType python,R nnoremap gq :call LanguageClient#textDocument_formatting()<CR>
-  
-  nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-  nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-  
-  " hide [LC] Project root: on startup
-  let g:LanguageClient_echoProjectRoot = 0
-  
-  let g:deoplete#enable_at_startup = 1
-endif
+let g:LanguageClient_serverCommands = {
+  \ 'python': ['/usr/local/bin/pyls'],
+  \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
+  \ 'tex': ['~/bin/texlab'],
+  \ }
+
+" disable preview window
+set completeopt-=preview
+
+" use omni completion provided by lsp
+au FileType python,R,perl set omnifunc=lsp#omnifunc
+
+" autoformat on save
+au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
+
+" hide bar that appears at the side when linter detects an error
+" au FileType python,R set signcolumn=no
+
+" gq to format
+au FileType python,R nnoremap gq :call LanguageClient#textDocument_formatting()<CR>
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+
+" hide [LC] Project root: on startup
+let g:LanguageClient_echoProjectRoot = 0
+
+let g:deoplete#enable_at_startup = 1
+" endif
 
 " Perl {{{1
 
