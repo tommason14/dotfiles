@@ -236,7 +236,9 @@ export repos="$HOME/Documents/repos"
 export walls="$repos/wallpapers"
 PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:$HOME/bin:/usr/local/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2020/bin/x86_64-darwin:$PATH"
 PATH="$repos/autochem/bin:$PATH"
-export PYTHONPATH="$repos/autochem/:$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_ac/analysis_organised:$PYTHONPATH"
+PYTHONPATH="$repos/autochem:$PYTHONPATH"
+PYTHONPATH="$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_ac/analysis_organised:$PYTHONPATH"
+PYTHONPATH="$HOME/.local/scripts/utils:$PYTHONPATH" # plottingfuncs
 export automation="$repos/autochem"
 if [[ $USER == "tommason" ]] 
 then
