@@ -457,7 +457,7 @@ au BufNewFile,BufRead *.cpp
     \ set filetype=cpp                      |
 
 " Compile when writing to a file
-au BufWritePost *.cpp !g++ --std=c++17  % -o %:r
+" au BufWritePost *.cpp !g++ --std=c++17  % -o %:r
 
 " Config with Makefiles {{{1
 
