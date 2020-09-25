@@ -383,4 +383,17 @@ plot_ir_spectra_no_colour <- function(df) {
   )
 }
 
+##############
+#  defaults  #
+##############
+theme_set(theme_bw() +
+  theme(text = element_text(family='Roboto Condensed'))
+  )
+scale_colour_discrete <- function(...){
+  scale_colour_brewer(..., palette='Dark2')
+}
+scale_fill_discrete <- function(...){
+  scale_fill_brewer(..., palette='Dark2')
+}
+
 cat("\nThis is the last line of .Rprofile.\n")
