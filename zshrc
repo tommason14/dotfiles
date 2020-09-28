@@ -221,6 +221,10 @@ function rectangle_gaps(){
   defaults write com.knollsoft.Rectangle gapSize -float $1
 }
 
+function lmp_run(){
+  mpirun -np $1 $LAMMPS_MPI -i $2 > out
+}
+
 #############
 #  EXPORTS  #
 #############
@@ -269,6 +273,7 @@ export vault="tmason1@118.138.242.229"
 # MD dirs
 export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
 export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
+export GMXLIB="/usr/local/Cellar/gromacs/2020.3/share/gromacs/top"
 
 # IL MD scripts
 PATH="$filestream/hydrated_ils/MD/peter_helper_scripts:$PATH"
