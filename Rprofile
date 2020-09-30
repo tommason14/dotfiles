@@ -323,11 +323,11 @@ gauss <- function(rel_offset) {
 fit_lorentzians <- function(old_spectra, xvals, half_width) {
   ints <- rep(0, length(xvals))
   # need to reference intensity and frequencies at same time; use numerical index
-  for (i in seq_len(xvals)) {
+  for (i in seq_along(xvals)) {
     intensity <- 0.0
     # Fit a lorentzian to every peak, and sum up intensity at each new wavelength,
     # with the offset from the original wavelength describing the new intensity
-    for (j in seq_len(old_spectra$Frequencies)) {
+    for (j in seq_along(old_spectra$Frequencies)) {
       rel_offset <- (xvals[i] - old_spectra$Frequencies[j]) / half_width
       intensity <- intensity + old_spectra$Intensities[j] * lorentz(rel_offset)
     }
