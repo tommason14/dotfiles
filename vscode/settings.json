@@ -76,7 +76,7 @@
     ],
     "python.defaultInterpreterPath": "/usr/local/bin/python3",
     "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-    "workbench.colorTheme": "Wal Bordered",
+    "workbench.colorTheme": "Chester Atom",
     "workbench.startupEditor": "newUntitledFile",
     "editor.quickSuggestions": true,
     "python.dataScience.widgetScriptSources": [

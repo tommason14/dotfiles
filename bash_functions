@@ -79,52 +79,7 @@ fi
 ###################
 #  Colourschemes  #
 ###################
-
-vimcolours="$HOME/dotfiles/vim/colours.vim"
-
-pywal(){
-cat << EOF > $vimcolours
-set background=dark
-colorscheme wal
-let g:lightline = {"colorscheme" : "wal"}
-EOF
-}
-
-gruvbox(){
-cat << EOF > $vimcolours
-set background=dark
-colorscheme gruvbox
-let g:lightline = {"colorscheme" : "gruvbox"}
-EOF
-}
-
-nord(){
-cat << EOF > $vimcolours
-set background=dark
-colorscheme nord
-let g:lightline = {"colorscheme" : "nord"}
-EOF
-}
-
-onedark(){
-cat << EOF > $vimcolours
-set background=dark
-set termguicolors
-colorscheme onedark
-let g:lightline = {"colorscheme" : "onedark"}
-EOF
-}
-
-
-tomorrow_night(){
-cat << EOF > $vimcolours
-set background=dark
-set termguicolors
-colorscheme base16-tomorrow-night
-let base16colorspace=256
-let g:lightline = {"colorscheme" : "Tomorrow_Night"}
-EOF
-}
+source ~/dotfiles/colours.functions
 
 # default alias sc already on monarch
 scr(){

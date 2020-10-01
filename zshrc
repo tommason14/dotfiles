@@ -19,67 +19,7 @@ bindkey "^?" backward-delete-char # backspace fix
 #  Colourschemes  #
 ###################
 
-vimcolours="$HOME/dotfiles/vim/colours.vim"
-
-pywal(){
-cat << EOF > $vimcolours
-set background=dark
-colorscheme wal
-let g:lightline = {"colorscheme" : "wal"}
-EOF
-cat ~/.cache/wal/sequences
-local kitty="~/.cache/wal/colors-kitty.conf"
-sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
-kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
-}
-
-gruvbox(){
-cat << EOF > $vimcolours
-set background=dark
-colorscheme gruvbox
-let g:lightline = {"colorscheme" : "gruvbox"}
-EOF
-local kitty="~/.config/kitty/themes/gruvbox_dark.conf"
-sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
-kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
-}
-
-nord(){
-cat << EOF > $vimcolours
-set background=dark
-colorscheme nord
-let g:lightline = {"colorscheme" : "nord"}
-EOF
-local kitty="~/.config/kitty/themes/nord.conf"
-sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
-kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
-}
-
-onedark(){
-cat << EOF > $vimcolours
-set background=dark
-set termguicolors
-colorscheme onedark
-let g:lightline = {"colorscheme" : "onedark"}
-EOF
-local kitty="~/.config/kitty/themes/OneDark.conf"
-sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
-kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
-}
-
-
-tomorrow_night(){
-cat << EOF > $vimcolours
-set background=dark
-set termguicolors
-colorscheme base16-tomorrow-night
-let base16colorspace=256
-let g:lightline = {"colorscheme" : "Tomorrow_Night"}
-EOF
-local kitty="~/.config/kitty/themes/Tomorrow_Night.conf"
-sed -i '' "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
-kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
-}
+source ~/dotfiles/colours.functions
 
 colours(){
 $(for func in $(print -l ${(ok)functions} | grep -v "^_\|colours")
