@@ -341,7 +341,6 @@ alias vundle='git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundl
 alias vim='vim -p' # automatically open in tabs
 alias resize_vim='eval $(resize)' # if vim shows up small
 alias pr='preview'
-bind '"\el":"lfcd\n"' # alt-l to open lfcd
 alias fm='lfcd'
 
 # ssh
