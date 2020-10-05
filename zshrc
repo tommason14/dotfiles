@@ -181,6 +181,11 @@ export walls="$repos/wallpapers"
 PATH="$repos/membranes/polymatic:$filestream/bin:$filestream/polymers/LAMMPS/fftool:$HOME/bin:/usr/local/bin:/usr/local/opt/make/libexec/gnubin:~/dotfiles/python_wrappers:/usr/local/texlive/2020/bin/x86_64-darwin:$PATH"
 PATH="$repos/autochem/bin:$PATH"
 PYTHONPATH="$repos/autochem:$PYTHONPATH"
+
+# moltemplate
+molpath="$HOME/Documents/moltemplate/moltemplate"
+PATH="$molpath:$molpath/scripts:$PATH"
+
 PYTHONPATH="$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_ac/analysis_organised:$PYTHONPATH"
 PYTHONPATH="$HOME/.local/scripts/utils:$PYTHONPATH" # plottingfuncs
 export automation="$repos/autochem"
