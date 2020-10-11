@@ -8,10 +8,12 @@ set background=dark
 colorscheme wal
 let g:lightline = {"colorscheme" : "wal"}
 EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
 cat ~/.cache/wal/sequences
 local kitty="~/.cache/wal/colors-kitty.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
 }
 
 gruvbox(){
@@ -20,9 +22,11 @@ set background=dark
 colorscheme gruvbox
 let g:lightline = {"colorscheme" : "gruvbox"}
 EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/gruvbox_dark.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
 }
 
 nord(){
@@ -31,9 +35,11 @@ set background=dark
 colorscheme nord
 let g:lightline = {"colorscheme" : "nord"}
 EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/nord.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
 }
 
 onedark(){
@@ -43,11 +49,12 @@ set termguicolors
 colorscheme onedark
 let g:lightline = {"colorscheme" : "onedark"}
 EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/OneDark.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
-
+}
 
 tomorrow_night(){
 cat << EOF > $vimcolours
@@ -57,9 +64,11 @@ colorscheme base16-tomorrow-night
 let base16colorspace=256
 let g:lightline = {"colorscheme" : "Tomorrow_Night"}
 EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/Tomorrow_Night.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
 }
 
 solarized_light(){
@@ -69,8 +78,9 @@ colorscheme base16-solarized-light
 set termguicolors
 let g:lightline = {"colorscheme" : "solarized"}
 EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/Solarized_Light.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
-
+}
