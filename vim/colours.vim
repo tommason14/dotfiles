@@ -1,3 +1,4 @@
 set background=dark
-colorscheme gruvbox
-let g:lightline = {"colorscheme" : "gruvbox"}
+colorscheme base16-ocean
+set termguicolors
+let g:lightline = {'colorscheme': 'base16_ocean'}

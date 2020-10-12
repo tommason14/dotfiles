@@ -2,6 +2,21 @@
 vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
+ocean(){
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-ocean
+set termguicolors
+let g:lightline = {'colorscheme': 'base16_ocean'}
+EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
+cat ~/.cache/wal/sequences
+local kitty="~/.config/kitty/themes/Ocean.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
 pywal(){
 cat << EOF > $vimcolours
 set background=dark

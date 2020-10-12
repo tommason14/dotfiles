@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
@@ -19,6 +18,8 @@ Plugin 'dylanaraps/wal.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'daviesjamie/vim-base16-lightline'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'mike-hearn/base16-vim-lightline'
+Plugin 'itchyny/lightline.vim'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
   Plugin 'autozimu/LanguageClient-neovim'
