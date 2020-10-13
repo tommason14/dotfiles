@@ -156,15 +156,18 @@ lfcd () {
 }
 
 # Rectangle gaps (same as Spectacle but maintained)
-function rectangle_gaps(){
+rectangle_gaps(){
   [[ $# -eq 0 ]] && echo "Syntax: rectangle_gaps <gap in pixels>" && return 1
   defaults write com.knollsoft.Rectangle gapSize -float $1
 }
 
-function lmp_run(){
+lmp_run(){
   mpirun -np $1 $LAMMPS_MPI -i $2 > out
 }
 
+gadiscp(){
+  scp $gadi:"$1" .
+}
 #############
 #  EXPORTS  #
 #############
