@@ -304,3 +304,8 @@ plot_uv_vertical() {
   sleep 3 
   rm Rplot.png
 }
+
+lammps_density(){
+  [[ $# -eq 0 ]] && echo "Syntax: lammps_density lammps_output" && return 1
+  grep_lammps_data.sh $1 | sed 1d | lastcol -, | gnuplot --persist -e "plot '-' with lines"
+}

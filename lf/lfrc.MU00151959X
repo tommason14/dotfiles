@@ -267,7 +267,7 @@ map gfo cd /Volumes/GoogleDrive/My\ Drive
 map gfpd cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs
 map gfpo cd /Volumes/GoogleDrive/My\ Drive/polymers
 map gkc cd ~/.config/kitty
-map gkij cd /Volumes/GoogleDrive/My\ Drive/backups/gadi/hydrated_ils/molecular_dynamics/ch_ac/clusters/cluster-0
+map gkij cd /Volumes/GoogleDrive/My\ Drive/backups/gadi/hydrated_ils/molecular_dynamics/pieda/8IP/c2mim-ac/anion-centred
 map gmc cd ~/Documents/repos/mccg
 map gmm cd ~/Documents/repos/membranes
 map gmo cd ~/Movies
