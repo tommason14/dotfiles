@@ -310,6 +310,7 @@ alias lsa='ls -a'
 alias mkdir='mkdir -p'
 alias s='source'
 alias v="$EDITOR" # vim or neovim
+alias vim="$EDITOR" # vim or neovim
 alias pr='preview'
 alias fenv='env | fzf'
 alias fbase='eval $(alias | grep base16 | awk -F"=" '\''{print $1}'\'' | fzf)'

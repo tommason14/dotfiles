@@ -10,19 +10,19 @@ Plug 'tommason14/lammps.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/goyo.vim'               " Perfect for writing
 Plug 'godlygeek/tabular'               " Fantastic formatting
-" Plug 'masukomi/vim-markdown-folding'
 Plug 'tomtom/tcomment_vim'             " Comments
 Plug 'dylanaraps/wal.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'voldikss/vim-floaterm'           " Looks cool
-" Plug 'franbach/miramare'
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'lervag/vimtex'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'daviesjamie/vim-base16-lightline'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'mike-hearn/base16-vim-lightline'
+Plug 'voldikss/vim-floaterm'          
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Basics {{{1
@@ -491,38 +491,7 @@ let g:tcomment_types={'kitty': '# %s'}
 
 " Visuals {{{1
 
-set background=dark
-let g:kitty = $TERM == "xterm-kitty"
-if g:kitty
-  let term_colour = trim(system('sed -n "s/include \(.*conf\)/\1/p" ~/.config/kitty/kitty.conf'))
-  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
-  let g:pywal = term_colour == '~/.cache/wal/colors-kitty.conf' || cmd == 'cat ~/.cache/wal/sequences'
-else
-  let cmd = trim(system('grep "^cat ~/.cache/wal/sequences" ~/.zshrc'))
-  let g:pywal = cmd == 'cat ~/.cache/wal/sequences'
-endif 
-
-let base_check = trim(system('env | grep BASE16_THEME'))
-let g:base = base_check =~ 'BASE16_THEME' 
-if g:local
-  if g:base
-    " set termguicolors
-    let base16colorspace=256
-    source ~/.vimrc_background
-    hi clear LineNr
-  elseif g:pywal
-    colo wal
-  " Look into making this work for when a kitty conf is set, regardless of
-  " base16
-  " elseif !g:pywal && !g:base && g:kitty
-  "   colo default
-  else
-    set termguicolors
-    colo miramare
-  endif
-else " remotes
-  colo default
-endif
+source ~/dotfiles/vim/colours.vim
 
 hi Normal ctermbg=none " Use terminal background 
 hi NonText ctermbg=none
@@ -543,17 +512,3 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
-
-if g:base
-  let g:lightline = {
-    \ 'colorscheme': 'base16'
-    \ }
-elseif g:pywal
-  let g:lightline = {
-    \ 'colorscheme': 'wal'
-    \ }
-else
-  let g:lightline = {
-    \ 'colorscheme': 'miramare'
-    \ }
-endif
