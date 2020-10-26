@@ -359,6 +359,9 @@ export vault="tmason1@118.138.242.229"
 export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
 export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
+# Gromacs
+alias gromacs_density="gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg" 
+
 # add scripts to path 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
