@@ -86,7 +86,7 @@ pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=nvim
+export EDITOR=vim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin
@@ -413,6 +413,7 @@ alias gdp='cd ~/Documents/repos/dopamine/dopamine_colour_paper'
 alias gdr='cd ~/Dropbox'
 alias gdw='cd ~/Downloads'
 alias gfd='cd /Volumes/GoogleDrive/My\ Drive/Dopamine'
+alias gfm='cd /Volumes/GoogleDrive/My\ Drive/meetings'
 alias gfo='cd /Volumes/GoogleDrive/My\ Drive'
 alias gfpd='cd /Volumes/GoogleDrive/My\ Drive/zotero/pdfs'
 alias gfpo='cd /Volumes/GoogleDrive/My\ Drive/polymers'
