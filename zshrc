@@ -269,6 +269,7 @@ else
 fi
 
 alias lammps_dir='cd ~/Documents/lammps-3Mar20'
+alias gromacs_density='gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg'
 
 alias xelatex_fonts='fc-list : family | cut -f1 -d"," | sort'
 alias feh='feh -F -d'
