@@ -1,5 +1,4 @@
 set background=dark
+colorscheme base16-ocean
 set termguicolors
-colorscheme base16-tomorrow-night
-let base16colorspace=256
-let g:lightline = {"colorscheme" : "Tomorrow_Night"}
+let g:lightline = {'colorscheme': 'base16_ocean'}
