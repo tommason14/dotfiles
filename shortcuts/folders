@@ -19,6 +19,7 @@ mac-df: ~/dotfiles
 mac-dk: ~/Desktop
 mac-dl: ~/Documents/repos/daily_log
 mac-da: ~/Documents/repos/dopamine/dopamine_analysis
+mac-dm: ~/Documents/repos/dopamine/supramolecular_aggregation_MD
 mac-dp: ~/Documents/repos/dopamine/dopamine_colour_paper
 mac-dr: ~/Dropbox
 mac-dw: ~/Downloads
