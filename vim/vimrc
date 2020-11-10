@@ -1,12 +1,14 @@
 " Plugins {{{1
 let g:local = $USER == "tommason" || $USER == "tmas0023"
-
+let g:allow_ultisnips = stridx(trim(system('echo $HOSTNAME')), 'monarch') == -1 && $USER != "mcd_thomasm"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'tommason14/vim-snippets'
+if g:allow_ultisnips
+  Plugin 'SirVer/ultisnips'
+  Plugin 'tommason14/vim-snippets'
+endif
 Plugin 'tommason14/lammps.vim'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting

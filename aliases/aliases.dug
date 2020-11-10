@@ -385,7 +385,5 @@ alias ozh='vim ~/.zshrc && source ~/.zshrc'
 
 alias gau='cd ~/autochem'
 alias gdf='cd ~/dotfiles'
-alias gp='cd /scratch/k96/tm3124/polymers'
 alias gsc='cd ~/.local/scripts'
-alias gsr='cd /scratch/k96/tm3124'
-alias gw='cd /g/data/k96/apps'
+alias gsr='cd ~/mcd/scratch'
