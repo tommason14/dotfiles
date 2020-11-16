@@ -79,13 +79,14 @@
     "workbench.colorTheme": "Chester Atom",
     "workbench.startupEditor": "newUntitledFile",
     "editor.quickSuggestions": true,
-    "python.dataScience.widgetScriptSources": [
-      "jsdelivr.com",
-      "unpkg.com"
-    ],
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "python.languageServer": "Pylance",
     "vsicons.dontShowNewVersionMessage": true,
     "kite.showWelcomeNotificationOnStartup": false,
+    "jupyter.widgetScriptSources": [
+        "jsdelivr.com",
+        "unpkg.com"
+    ],
+    "jupyter.interactiveWindowMode": "perFile",
 }
