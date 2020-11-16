@@ -170,6 +170,14 @@ lmp_run(){
 gadiscp(){
   scp $gadi:"$1" .
 }
+
+vmd_unwrap () 
+{ 
+    echo "source ~/.local/scripts/chem/vmd_unwrap.tcl" >> unwrap_vmd.tmp
+    vmd $1 $2 -e unwrap_vmd.tmp
+    rm unwrap_vmd.tmp
+}
+
 #############
 #  EXPORTS  #
 #############

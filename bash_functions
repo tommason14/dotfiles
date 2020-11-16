@@ -230,6 +230,13 @@ function gamesstoxyz {
   mv temp $base_name.xyz 
 }
 
+vmd_unwrap() 
+{ 
+    echo "source ~/.local/scripts/chem/vmd_unwrap.tcl" >> unwrap_vmd.tmp
+    vmd $1 $2 -e unwrap_vmd.tmp
+    rm unwrap_vmd.tmp
+}
+
 copy() {
   command -v xclip >/dev/null &&
   cat ${1:-/dev/stdin} | xclip -selection clipboard ||
