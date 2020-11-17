@@ -170,6 +170,14 @@ lmp_run(){
 gadiscp(){
   scp $gadi:"$1" .
 }
+
+vmd_unwrap () 
+{ 
+    echo "source ~/.local/scripts/chem/vmd_unwrap.tcl" >> unwrap_vmd.tmp
+    vmd $1 $2 -e unwrap_vmd.tmp
+    rm unwrap_vmd.tmp
+}
+
 #############
 #  EXPORTS  #
 #############
@@ -409,6 +417,7 @@ alias gdc='cd ~/Documents'
 alias gdf='cd ~/dotfiles'
 alias gdk='cd ~/Desktop'
 alias gdl='cd ~/Documents/repos/daily_log'
+alias gdm='cd ~/Documents/repos/dopamine/supramolecular_aggregation_MD'
 alias gdp='cd ~/Documents/repos/dopamine/dopamine_colour_paper'
 alias gdr='cd ~/Dropbox'
 alias gdw='cd ~/Downloads'

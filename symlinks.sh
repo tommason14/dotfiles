@@ -61,6 +61,8 @@ for config in ${configs[@]}; do
   fi
 done
 
+[[ $USER == "mcd_thomasm" ]] && make_links "dug"
+
 # atom symlinks on local
 
 if [[ $USER =~ (tmas0023|tommason) ]]

@@ -259,6 +259,7 @@ map gdc cd ~/Documents
 map gdf cd ~/dotfiles
 map gdk cd ~/Desktop
 map gdl cd ~/Documents/repos/daily_log
+map gdm cd ~/Documents/repos/dopamine/supramolecular_aggregation_MD
 map gdp cd ~/Documents/repos/dopamine/dopamine_colour_paper
 map gdr cd ~/Dropbox
 map gdw cd ~/Downloads

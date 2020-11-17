@@ -10,6 +10,7 @@ conversion["gadi"]="gadi"
 conversion["mon"]="monarch"
 conversion["mas"]="m3"
 conversion["stm"]="stampede"
+conversion["dug"]="dug"
 conversion["uni"]="MU00151959X"
 conversion["home"]="macbook"
 
@@ -27,7 +28,8 @@ rm_supercomps(){
   sed '/^gadi/d' |\
   sed '/^mas/d' |\
   sed '/^mon/d' |\
-  sed '/^stm/d'
+  sed '/^stm/d' |\
+  sed '/^dug/d'
 }
 
 clean(){
@@ -54,6 +56,15 @@ add_slurm_to_lfrc(){
   echo 'map sqo !squeue -u $USER -o "%10i %30j %130Z"' >> $1
 }
 
+add_dug_slurm_lfrc(){
+  printf "# SLURM {{{2\n\n" >> $1
+  echo "# rjs script on dug aliased from /d/sw/Insight/latest/scripts/rjs" >> $1
+  echo 'map sb $/d/sw/Insight/latest/scripts/rjs "$f"' >> $1
+  echo 'map squ !squeue -u $USER -o "%.18i %.9P %.30j %.8u %.2t %.10M %.6D %R"' >> $1
+  echo 'map sql !squeue -u $USER -o "%.10i %.50Z %.10P %.15j %.8u %8Q %.8T %.10M %.4C %.12l %.12L %.6D %.16S %R"' >> $1
+  echo 'map sqo !squeue -u $USER -o "%10i %30j %130Z"' >> $1
+}
+
 make_configs(){
     f="$1"
     long_hostname=${conversion[$f]}
@@ -65,7 +76,7 @@ make_configs(){
     cp $DOTS/lf/lfrc.base $lfrc
     [[ $f =~ (gadi|rjn) ]] && add_pbs_to_lfrc $lfrc
     [[ $f =~ (mgs|mas|mon|stm) ]] && add_slurm_to_lfrc $lfrc
-
+    [[ $f =~ dug ]] && add_dug_slurm_lfrc $lfrc
     printf "\n# Files {{{2\n\n" >> $lfrc
     cat $SHORTCUTS/files | sort | clean | sed -e 's/^/map o/' -e 's/:/ $vim/' >> $lfrc
     printf "\n# Movement {{{2\n\n" >> $lfrc
@@ -102,7 +113,7 @@ make_configs(){
 
 
 main(){
-  confs="uni home mgs mas mon stm rjn gadi"
+  confs="uni home mgs mas mon stm rjn gadi dug"
   zshdone=false # mac
   for conf in ${confs[@]}
   do

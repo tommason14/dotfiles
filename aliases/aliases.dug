@@ -350,19 +350,40 @@ export raijin='tm3124@raijin.nci.org.au'
 export magnus='tmason@magnus.pawsey.org.au'
 export gaia='tmas0011@msgln6.its.monash.edu.au'
 export m3='tmason1@m3.massive.org.au'
-export mon='tmason1@monarch.erc.monash.edu.au'
 export monarch='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
-export vault='tmason1@118.138.242.229'
+export vault="tmason1@118.138.242.229"
 
 # MD dirs
 export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
 export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
-# Plotting
+# Gromacs
 alias gromacs_density="gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg" 
 alias lammps_density="echo density | lammps_plot.sh lammps.out"
-
 # add scripts to path 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
+
+# files {{{1
+
+alias oba='vim ~/dotfiles/aliases/aliases.base && cd ~/dotfiles/shortcuts && ./make_shortcuts.sh && source ~/.bashrc; cd - > /dev/null'
+alias obf='vim ~/.bash_functions; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
+alias obp='vim ~/.bash_profile; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
+alias obr='vim ~/.bashrc; [[ ! $USER =~ (tmas0023|tommason) ]] && source ~/.bashrc'
+alias oip='vim ~/dotfiles/jupyter/ipythonrc'
+alias orp='vim ~/dotfiles/Rprofile'
+alias otdc='vim ~/Documents/repos/daily_log/choline.md'
+alias otdd='vim ~/Documents/repos/daily_log/dopamine.md'
+alias otdj='vim ~/Documents/repos/daily_log/subd_jobs.md'
+alias otdm='vim ~/Documents/repos/daily_log/membranes.md'
+alias otdp='vim ~/Documents/repos/daily_log/membranes.md'
+alias ovrc='vim ~/dotfiles/vimrc'
+alias ozh='vim ~/.zshrc && source ~/.zshrc'
+
+# movement {{{1
+
+alias gau='cd ~/autochem'
+alias gdf='cd ~/dotfiles'
+alias gsc='cd ~/.local/scripts'
+alias gsr='cd ~/mcd/scratch'

@@ -361,7 +361,7 @@ export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
 # Gromacs
 alias gromacs_density="gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg" 
-
+alias lammps_density="echo density | lammps_plot.sh lammps.out"
 # add scripts to path 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
@@ -384,7 +384,6 @@ alias ozh='vim ~/.zshrc && source ~/.zshrc'
 # movement {{{1
 
 alias gau='cd ~/autochem'
-alias gcs='cd ~/chem_scripts'
 alias gdf='cd ~/dotfiles'
 alias gp='cd /scratch/k96/tm3124/polymers'
 alias gsc='cd ~/.local/scripts'

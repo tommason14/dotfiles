@@ -19,6 +19,7 @@ mac-df: ~/dotfiles
 mac-dk: ~/Desktop
 mac-dl: ~/Documents/repos/daily_log
 mac-da: ~/Documents/repos/dopamine/dopamine_analysis
+mac-dm: ~/Documents/repos/dopamine/supramolecular_aggregation_MD
 mac-dp: ~/Documents/repos/dopamine/dopamine_colour_paper
 mac-dr: ~/Dropbox
 mac-dw: ~/Downloads
@@ -105,9 +106,14 @@ stm-w: /work/06233/tmason/stampede2
 
 # Gadi
 gadi-au: ~/autochem
-gadi-cs: ~/chem_scripts
 gadi-df: ~/dotfiles
 gadi-sr: /scratch/k96/tm3124
 gadi-p: /scratch/k96/tm3124/polymers
 gadi-sc: ~/.local/scripts
 gadi-w: /g/data/k96/apps
+
+# Dug
+dug-au: ~/autochem
+dug-df: ~/dotfiles
+dug-sc: ~/.local/scripts
+dug-sr: ~/mcd/scratch
