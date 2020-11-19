@@ -1,4 +1,3 @@
 set background=dark
-set termguicolors
-colorscheme onedark
-let g:lightline = {"colorscheme" : "onedark"}
+colorscheme gruvbox
+let g:lightline = {"colorscheme" : "gruvbox"}
