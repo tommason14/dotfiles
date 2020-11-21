@@ -174,7 +174,8 @@ gadiscp(){
 vmd_unwrap () 
 { 
     echo "source ~/.local/scripts/chem/vmd_unwrap.tcl" >> unwrap_vmd.tmp
-    vmd $1 $2 -e unwrap_vmd.tmp
+    [[ $USER == tommason ]] && vmd="/Applications/VMD 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64"
+    $vmd $1 $2 -e unwrap_vmd.tmp
     rm unwrap_vmd.tmp
 }
 
