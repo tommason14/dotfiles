@@ -151,6 +151,7 @@ map lo !lookup_fmo_progress.sh $(basename "$f")
 
 map gld $grep_lammps_data.sh "$f" > data.csv
 map pld $plot_lammps_density.sh 
+map dx $datafile_to_unwrapped_xyz.py "$f"
 map xm $xmgrace "$f"
 
 # utilities

@@ -350,18 +350,20 @@ export raijin='tm3124@raijin.nci.org.au'
 export magnus='tmason@magnus.pawsey.org.au'
 export gaia='tmas0011@msgln6.its.monash.edu.au'
 export m3='tmason1@m3.massive.org.au'
+export mon='tmason1@monarch.erc.monash.edu.au'
 export monarch='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@stampede2.tacc.utexas.edu'
 export df="$HOME/dotfiles"
-export vault="tmason1@118.138.242.229"
+export vault='tmason1@118.138.242.229'
 
 # MD dirs
 export opls="$HOME/.local/scripts/chem/lammps/create_opls_jobs"
 export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
-# Gromacs
+# Plotting
 alias gromacs_density="gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg" 
 alias lammps_density="echo density | lammps_plot.sh lammps.out"
+
 # add scripts to path 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
