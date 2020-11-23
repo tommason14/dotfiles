@@ -103,8 +103,12 @@ goto(){
   echo "Navigates to the working directory of a SLURM/PBS job." &&
   echo "Syntax: goto JOBID" && return 1
   [ $USER == "tm3124" ] && 
-  cd $(qstat -fxw $1 | sed -n '/PBS_O_WORKDIR/,/PBS_O_PATH/p' | grep -v "PBS_O_PATH" | tr -d '\n' | sed 's/\s//g;s/,$//' | awk -F'=' '{print $2}') ||
+  cd $(qstat -f $1 | sed -n '/PBS_O_WORKDIR/,/PBS_O_PATH/p' | grep -v "PBS_O_PATH" | tr -d '\n' | sed 's/\s//g;s/,$//' | awk -F'=' '{print $2}') ||
   cd $(scontrol show jobid $1 | grep WorkDir | awk -F'=' '{print $2}')
+}
+
+goto_pbs_finished(){
+cd $(qstat -fxw $1 | grep Output_Path | cut -d '=' -f2 | cut -d':' -f2 | awk -F'/' '{OFS="/"; $NF=""; print $0}')
 }
 
 gitall() {
