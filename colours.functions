@@ -71,6 +71,20 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 }
 
+onelight(){
+cat << EOF > $vimcolours
+set background=light
+set termguicolors
+colorscheme one
+let g:lightline = {"colorscheme" : "base16_one_light"}
+EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/onehalf-light.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
 tomorrow_night(){
 cat << EOF > $vimcolours
 set background=dark
