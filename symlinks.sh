@@ -99,6 +99,9 @@ mkdir -p ~/.config/nvim
 [[ ! -L ~/.config/nvim/init.vim ]] && ln -s "$dir/vim/init.vim" ~/.config/nvim/init.vim && echo "Linking init.vim"
 [[ ! -L ~/.config/nvim/coc-settings.json ]] && ln -s "$dir/vim/coc-settings.json" ~/.config/nvim/coc-settings.json && echo "Linking CoC"
 
+# matplotlibrc
+[[ ! -d ~/.matplotlib ]] && mkdir -p ~/.matplotlib
+[[ ! -L ~/.matplotlib/matplotlibrc ]] && ln  -s "$dir/matplotlibrc" ~/.matplotlib/matplotlibrc && echo "Linking matplotlibrc"
 fi
 
 [[ ! -d ~/.config/bat ]] && mkdir ~/.config/bat
