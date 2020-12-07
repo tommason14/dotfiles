@@ -86,7 +86,7 @@ pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &
 # fzf completion
 source ~/.fzf.zsh
 
-export EDITOR=vim
+export EDITOR=nvim
 
 export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
 PATH=$PATH:/Users/tmas0023/pysimm/bin

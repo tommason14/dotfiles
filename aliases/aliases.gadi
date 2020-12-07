@@ -386,7 +386,9 @@ alias ozh='vim ~/.zshrc && source ~/.zshrc'
 # movement {{{1
 
 alias gau='cd ~/autochem'
+alias gch='cd /scratch/k96/tm3124/hydrated_ils'
 alias gdf='cd ~/dotfiles'
+alias gdp='cd /scratch/k96/tm3124/dopamine'
 alias gp='cd /scratch/k96/tm3124/polymers'
 alias gsc='cd ~/.local/scripts'
 alias gsr='cd /scratch/k96/tm3124'

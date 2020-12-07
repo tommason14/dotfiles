@@ -106,7 +106,9 @@ stm-w: /work/06233/tmason/stampede2
 
 # Gadi
 gadi-au: ~/autochem
+gadi-ch: /scratch/k96/tm3124/hydrated_ils
 gadi-df: ~/dotfiles
+gadi-dp: /scratch/k96/tm3124/dopamine
 gadi-sr: /scratch/k96/tm3124
 gadi-p: /scratch/k96/tm3124/polymers
 gadi-sc: ~/.local/scripts
