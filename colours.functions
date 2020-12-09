@@ -113,3 +113,29 @@ $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 }
+
+solarized_dark(){
+if [[ $EDITOR == nvim ]]; then
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-solarized-dark
+set termguicolors
+let g:lightline = {"colorscheme" : "solarized"}
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-solarized-dark
+set termguicolors
+let g:lightline = {"colorscheme" : "solarized"}
+EOF
+fi
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/Solarized_Dark.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
