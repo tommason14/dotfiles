@@ -1,4 +1,4 @@
-set background=dark
-colorscheme base16-solarized-dark
+set background=light
 set termguicolors
-let g:lightline = {"colorscheme" : "solarized"}
+colorscheme one
+let g:lightline = {"colorscheme" : "base16_one_light"}

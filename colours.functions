@@ -115,7 +115,8 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 solarized_dark(){
-if [[ $EDITOR == nvim ]]; then
+if [[ "$EDITOR" == "nvim" ]] 
+then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-solarized-dark
