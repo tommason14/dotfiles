@@ -376,7 +376,11 @@ pfetch
 # editing shortcuts
 alias osh="cd ~/dotfiles/shortcuts; ls * | fzf | xargs -o $EDITOR; ./make_shortcuts.sh; cd - > /dev/null"
 
-export PATH="$PATH:/Users/tmas0023/miniconda3/bin"
+################
+#  Ambertools  #
+################
+
+[[ $USER == tmas0023 ]] && export PATH="$PATH:/Users/tmas0023/miniconda3/bin"
 
 ###############
 #  SHORTCUTS  #
