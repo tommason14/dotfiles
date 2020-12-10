@@ -36,6 +36,7 @@ cat << EOF > $vimcolours
 set background=dark
 colorscheme gruvbox
 let g:lightline = {"colorscheme" : "gruvbox"}
+hi CursorLineNr ctermbg=none
 EOF
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/gruvbox_dark.conf"
