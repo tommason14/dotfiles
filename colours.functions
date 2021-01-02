@@ -87,6 +87,19 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 tomorrow_night(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
+cat << EOF > $vimcolours
+set background=dark
+set termguicolors
+colorscheme base16-tomorrow-night
+let base16colorspace=256
+let g:lightline = {"colorscheme" : "Tomorrow_Night"}
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
 cat << EOF > $vimcolours
 set background=dark
 set termguicolors
@@ -94,6 +107,7 @@ colorscheme base16-tomorrow-night
 let base16colorspace=256
 let g:lightline = {"colorscheme" : "Tomorrow_Night"}
 EOF
+fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/Tomorrow_Night.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
