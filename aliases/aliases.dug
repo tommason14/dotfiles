@@ -300,6 +300,7 @@ alias lsa='ls -a'
 alias mkdir='mkdir -p'
 alias s='source'
 alias v=${EDITOR:-vim}
+alias fexecute='eval $(history | awk '\''{$1=""; print $0}'\'' | sort | uniq | fzf)'
 
 alias cd..='cd ..'
 alias ..='cd ..'
