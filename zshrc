@@ -164,7 +164,7 @@ rectangle_gaps(){
 }
 
 lmp_run(){
-  mpirun -np $1 $LAMMPS_MPI -i $2 > out
+  mpirun -np 2 $LAMMPS_MPI -i $1 >& out
 }
 
 gadiscp(){
