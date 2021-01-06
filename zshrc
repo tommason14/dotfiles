@@ -164,7 +164,7 @@ rectangle_gaps(){
 }
 
 lmp_run(){
-  mpirun -np $1 $LAMMPS_MPI -i $2 > out
+  mpirun -np 2 $LAMMPS_MPI -i $1 >& out
 }
 
 gadiscp(){
@@ -277,7 +277,7 @@ else
   alias vault='ssh tmason1@118.138.242.229'
 fi
 
-alias lammps_dir='cd ~/Documents/lammps-3Mar20'
+alias lammps_dir='cd ~/Documents/lammps-stable_29Oct2020'
 alias gromacs_density='gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg'
 alias lammps_density='echo density | lammps_plot.sh'
 
