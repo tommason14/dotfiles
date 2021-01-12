@@ -364,6 +364,7 @@ export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 # Plotting
 alias gromacs_density="gromacs_get.sh npt.edr Density && gromacs_plot.sh npt_density.xvg" 
 alias lammps_density="echo density | lammps_plot.sh lammps.out"
+alias lammps_average_density="grep_lammps_data.sh lammps.out | csvcut -c Density | tail -n +2 | average_with_stdev"
 
 # add scripts to path 
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git" | tr '\n' ':' | sed 's/:$//'):$PATH"
