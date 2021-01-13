@@ -266,7 +266,6 @@ let g:LanguageClient_serverCommands = {
   \ 'python': ['/usr/local/bin/pyls'],
   \ 'R': ['R', '--slave', '-e', 'languageserver::run()'],
   \ }
-  " \ 'tex': ['~/bin/texlab']
 
 " disable preview window
 set completeopt-=preview

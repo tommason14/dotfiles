@@ -3,12 +3,25 @@ vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
 ocean(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-ocean
+set termguicolors
+let g:lightline = {'colorscheme': 'base16_ocean'}
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-ocean
 set termguicolors
 let g:lightline = {'colorscheme': 'base16_ocean'}
 EOF
+fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 cat ~/.cache/wal/sequences
 local kitty="~/.config/kitty/themes/Ocean.conf"
