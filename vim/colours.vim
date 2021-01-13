@@ -1,3 +1,4 @@
 set background=dark
-colorscheme nord
-let g:lightline = {"colorscheme" : "nord"}
+colorscheme gruvbox
+let g:lightline = {"colorscheme" : "gruvbox"}
+hi CursorLineNr ctermbg=none
