@@ -7,6 +7,7 @@ Plug 'SirVer/ultisnips'
 Plug 'itchyny/lightline.vim'
 Plug 'tommason14/vim-snippets'
 Plug 'tommason14/lammps.vim'
+Plug 'tommason14/colours.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/goyo.vim'               " Perfect for writing
 Plug 'godlygeek/tabular'               " Fantastic formatting
