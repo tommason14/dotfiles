@@ -108,7 +108,19 @@ goto(){
 }
 
 goto_pbs_finished(){
-cd $(qstat -fxw $1 | grep Output_Path | cut -d '=' -f2 | cut -d':' -f2 | awk -F'/' '{OFS="/"; $NF=""; print $0}')
+  [ $# -ne 1 ] &&
+    echo "Navigates to the working directory of a PBS job that has already finished." &&
+    echo "Syntax: goto_pbs_finished JOBID" &&
+    return 1
+  cd $(qstat -fxw $1 | grep Output_Path | cut -d '=' -f2 | cut -d':' -f2 | awk -F'/' '{OFS="/"; $NF=""; print $0}')
+}
+
+goto_slurm_finished(){
+  [ $# -ne 1 ] &&
+    echo "Navigates to the working directory of a SLURM job that has already finished." &&
+    echo "Syntax: goto_slurm_finished JOBID" &&
+    return 1
+    cd $(sacct -j $1 --format=WorkDir%200 | grep lustre | awk '{print $1}')
 }
 
 gitall() {
