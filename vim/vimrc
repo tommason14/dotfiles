@@ -1,14 +1,11 @@
 " Plugins {{{1
 let g:local = $USER == "tommason" || $USER == "tmas0023"
-let g:allow_ultisnips = stridx(trim(system('echo $HOSTNAME')), 'monarch') == -1 && $USER != "mcd_thomasm"
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-if g:allow_ultisnips
-  Plugin 'SirVer/ultisnips'
-  Plugin 'tommason14/vim-snippets'
-endif
+Plugin 'SirVer/ultisnips'
+Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
@@ -116,13 +113,12 @@ else
   " LAMMPS samples
   if trim(system("echo $HOSTNAME")) =~ "monarch"
     nnoremap <Leader>s :tabnew ~/p2015120004/apps/ILMD/samples.txt<CR>
-  else 
+  elseif trim(system("echo $HOSTNAME")) =~ "m3"
     nnoremap <Leader>s :tabnew ~/sn29/apps/ILMD/samples.txt<CR>
+  else
+    nnoremap <Leader>s :tabnew /g/data/k96/apps/ILMD/samples.txt<CR>
   endif
 endif
-
-" Tabnew 
-nnoremap <Leader>t :tabnew 
 
 " Alt-arrow to move splits
 map <Esc>[1;3A <C-w><Up>
@@ -222,9 +218,7 @@ endfunction
 nnoremap <Leader>l :call LFfloaterm('edit')<CR>
 nnoremap <Leader>t :call LFfloaterm('tabe')<CR>
 
-" Set filetype to allow above command whenever
 nnoremap <Leader>fp :set ft=python<CR>i
-
 nnoremap <Leader>b :set ft=sh<CR>i
 
 " open vimrc
