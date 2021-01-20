@@ -120,7 +120,7 @@ goto_slurm_finished(){
     echo "Navigates to the working directory of a SLURM job that has already finished." &&
     echo "Syntax: goto_slurm_finished JOBID" &&
     return 1
-    cd $(sacct -j $1 --format=WorkDir%200 | grep lustre | awk '{print $1}')
+    cd $(sacct -j $1 --format=WorkDir%200 | tail -1 | awk '{print $1}')
 }
 
 gitall() {
