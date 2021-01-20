@@ -107,20 +107,15 @@ goto(){
   cd $(scontrol show jobid $1 | grep WorkDir | awk -F'=' '{print $2}')
 }
 
-goto_pbs_finished(){
-  [ $# -ne 1 ] &&
-    echo "Navigates to the working directory of a PBS job that has already finished." &&
+goto_finished(){
+  [[ $# -ne 1 || $1 == '-h' ]] &&
+    echo "Navigates to the working directory of a SLURM/PBS job that has already finished." &&
     echo "Syntax: goto_pbs_finished JOBID" &&
     return 1
-  cd $(qstat -fxw $1 | grep Output_Path | cut -d '=' -f2 | cut -d':' -f2 | awk -F'/' '{OFS="/"; $NF=""; print $0}')
-}
 
-goto_slurm_finished(){
-  [ $# -ne 1 ] &&
-    echo "Navigates to the working directory of a SLURM job that has already finished." &&
-    echo "Syntax: goto_slurm_finished JOBID" &&
-    return 1
-    cd $(sacct -j $1 --format=WorkDir%200 | tail -1 | awk '{print $1}')
+  [[ $USER =~ tmason ]] &&
+    cd $(sacct -j $1 --format='WorkDir%200' | awk 'NR==3 {print $1}') ||
+    cd $(qstat -fxw $1 | grep Output_Path | cut -d '=' -f2 | cut -d':' -f2 | awk -F'/' '{OFS="/"; $NF=""; print $0}')
 }
 
 gitall() {
