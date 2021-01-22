@@ -23,7 +23,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Basics {{{1
@@ -104,10 +103,6 @@ let mapleader = ","
 " Snippets
 
 nnoremap <Leader>s :call Snippets()<CR>
-
-" Tabnew 
-
-nnoremap <Leader>t :tabnew 
 
 " Alt-arrow to move splits
 map <A-Up> <C-w><Up>
@@ -206,9 +201,7 @@ endfunction
 nnoremap <Leader>l :call LFfloaterm('edit')<CR>
 nnoremap <Leader>t :call LFfloaterm('tabe')<CR>
 
-" Set filetype to allow above command whenever
 nnoremap <Leader>fp :set ft=python<CR>i
-
 nnoremap <Leader>b :set ft=sh<CR>i
 
 " open vimrc
