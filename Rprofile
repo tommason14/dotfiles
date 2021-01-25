@@ -7,8 +7,12 @@ library(magrittr)
 library(readxl)
 library(latex2exp)
 
-# supress empty Rplots.pdf
-# grDevices::pdf(NULL)
+options(
+  languageserver.server_capabilities = list(
+    object_name_liner = NULL,
+    line_length_linter=lintr::line_length_linter(120)
+  )
+)
 
 `%notin%` <- function(x, y) !(x %in% y)
 
@@ -387,13 +391,12 @@ plot_ir_spectra_no_colour <- function(df) {
 #  defaults  #
 ##############
 theme_set(theme_bw() +
-  theme(text = element_text(family='Roboto Condensed'))
-  )
-scale_colour_discrete <- function(...){
-  scale_colour_brewer(..., palette='Dark2')
+  theme(text = element_text(family = "Roboto Condensed")))
+scale_colour_discrete <- function(...) {
+  scale_colour_brewer(..., palette = "Dark2")
 }
-scale_fill_discrete <- function(...){
-  scale_fill_brewer(..., palette='Dark2')
+scale_fill_discrete <- function(...) {
+  scale_fill_brewer(..., palette = "Dark2")
 }
 
 cat("\nThis is the last line of .Rprofile.\n")

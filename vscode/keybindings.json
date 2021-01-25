@@ -45,4 +45,13 @@
         "command": "editor.action.insertSnippet",
         "args": {"snippet": " %>% "},
     },
+    {
+        "key": "cmd+r",
+        "command": "python.execInTerminal"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
 ]
