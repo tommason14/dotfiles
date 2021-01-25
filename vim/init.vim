@@ -267,6 +267,8 @@ set completeopt-=preview
 " use omni completion provided by lsp
 au FileType python,R set omnifunc=lsp#omnifunc
 
+au FileType python nnoremap <silent> gd :call LanguageClient#textDocument_definition({'gotoCmd': 'split'})<CR>
+
 " autoformat on save
 au BufWritePost *.py,*.R :call LanguageClient_textDocument_formatting()
 
