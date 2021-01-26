@@ -299,9 +299,10 @@ au BufNewFile,BufRead *.R,*Rprofile
 
 " R output is highlighted with current colorscheme
 let g:rout_follow_colorscheme = 1
-
 " R commands in R output are highlighted
 let g:Rout_more_colors = 1
+" Disable the automatic _ to <- in insert mode
+let R_assign = 0
 
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade

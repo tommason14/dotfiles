@@ -7,31 +7,31 @@ library(latex2exp)
 
 options(
   languageserver.server_capabilities = list(
-    object_name_liner = NULL,
-    line_length_linter=lintr::line_length_linter(120)
+    object_name_linter = NULL,
+    line_length_linter = lintr::line_length_linter(120)
   )
 )
 
 `%notin%` <- function(x, y) !(x %in% y)
 
-df_with_ci <- function(path) {
-  # select rows, convert to long format, then join
-  # maybe should pass order_by?
-  bw <- read_csv(path)
-  energies <- bw %>% select(Groups, Electrostatics, Dispersion)
-  intervals <- bw %>% select(Groups, Electro_CI, Dispersion_CI)
-
-  en_long <- energies %>%
-    group_by(Groups) %>%
-    gather("Interaction", "Energy", Electrostatics, Dispersion)
-  ci_long <- intervals %>%
-    group_by(Groups) %>%
-    gather("CI_type", "CI", Electro_CI, Dispersion_CI)
-
-  df <- cbind(en_long, ci_long)
-  df <- df %>% ungroup()
-  return(df)
-}
+# df_with_ci <- function(path) {
+#   # select rows, convert to long format, then join
+#   # maybe should pass order_by?
+#   bw <- read_csv(path)
+#   energies <- bw %>% select(Groups, Electrostatics, Dispersion)
+#   intervals <- bw %>% select(Groups, Electro_CI, Dispersion_CI)
+#
+#   en_long <- energies %>%
+#     group_by(Groups) %>%
+#     gather("Interaction", "Energy", Electrostatics, Dispersion)
+#   ci_long <- intervals %>%
+#     group_by(Groups) %>%
+#     gather("CI_type", "CI", Electro_CI, Dispersion_CI)
+#
+#   df <- cbind(en_long, ci_long)
+#   df <- df %>% ungroup()
+#   return(df)
+# }
 
 dopamine_theming <- theme_light() +
   theme(
