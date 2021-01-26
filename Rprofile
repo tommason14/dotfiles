@@ -1,9 +1,7 @@
 library(reticulate)
 use_python("/usr/local/bin/python3", required = TRUE)
 library(stats) # purely so dplyr::filter works
-library(tidyverse)
-library(ggplot2)
-library(magrittr)
+suppressWarnings(suppressPackageStartupMessages(library(tidyverse)))
 library(readxl)
 library(latex2exp)
 
@@ -399,4 +397,4 @@ scale_fill_discrete <- function(...) {
   scale_fill_brewer(..., palette = "Dark2")
 }
 
-cat("\nThis is the last line of .Rprofile.\n")
+# cat("\nThis is the last line of .Rprofile.\n")
