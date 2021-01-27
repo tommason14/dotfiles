@@ -303,7 +303,7 @@ alias ipythonrc="$EDITOR ~/dotfiles/jupyter/ipythonrc"
 alias rprofile="$EDITOR ~/dotfiles/Rprofile"
 alias pymolrc="$EDITOR ~/dotfiles/pymolrc"
 alias ur='cd $repos && sh miscellaneous/update_repos.sh && cd -'
-alias wr='$repos/wallpapers/random_wallpaper.sh 2>/dev/null' # is a directory pywal error
+alias wr='$repos/wallpapers/random_wallpaper.sh >& /dev/null'
 
 # window management
 alias yb='brew services start yabai && brew services start spacebar'
@@ -325,7 +325,7 @@ alias vim="$EDITOR" # vim or neovim
 alias pr='preview'
 alias fenv='env | fzf'
 alias fbase='eval $(alias | grep base16 | awk -F"=" '\''{print $1}'\'' | fzf)'
-alias fvim='fzf -m --print0 | xargs -0 -o vim -p' # multiple files possible
+alias fvim='fzf -m --print0 | xargs -0 -o $EDITOR -p' # multiple files possible
 alias fopen='fzf --print0 | xargs -0 -o open'
 alias ffinder='fzf --print0 | xargs -0 open -R'
 alias fpr='fzf --print0 | xargs -0 -o preview'

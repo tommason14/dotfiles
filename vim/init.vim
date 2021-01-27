@@ -23,6 +23,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
+Plug 'gaalcaras/ncm-R' " R completion
+Plug 'ncm2/ncm2' " integrate with Nvim-R
 call plug#end()
 
 " Basics {{{1
@@ -50,6 +53,7 @@ set autoread " reload a file changed outside of vim
 set laststatus=2
 set noshowmode
 set shortmess+=F " remove line that appears at bottom of file when opening
+set mouse=a " move split borders with mouse while allowing the user to copy text with mouse
 let g:local = $USER == "tommason" || $USER == "tmas0023"
 
 " Put plugins and dictionaries in this dir (also on Windows)
@@ -166,32 +170,6 @@ vnoremap <Leader>n2 y`]o<Esc>p`[v`]:!python<CR>
 nnoremap <Leader>p3 :norm ggVG$,p3<CR>:norm <C-v><C-v>GI# <CR>
 nnoremap <Leader>p2 :norm ggVG$,p2<CR>
 
-" Select R plot and run with ,p<letter>
-" small, large, mega
-au FileType R vnoremap <Leader>ps 
-  \ y:tabnew tmpR.R<CR>
-  \ipng('tmpR.png', width=1200, height=1200,res=300)<Esc>
-  \o<Esc>PGidev.off()<Esc>:wq<CR>
-  \:!Rscript tmpR.R<CR>
-  \:!qlmanage -p tmpR.png &> /dev/null <CR>
-  \:!rm tmpR.R tmpR.png<CR><CR>
-
-au FileType R vnoremap <Leader>pl 
-  \ y:tabnew tmpR.R<CR>
-  \ipng('tmpR.png', width=3000, height=2400, res=300)<Esc>
-  \o<Esc>PGidev.off()<Esc>:wq<CR>
-  \:!Rscript tmpR.R<CR>
-  \:!qlmanage -p tmpR.png &> /dev/null <CR>
-  \:!rm tmpR.R tmpR.png<CR><CR>
-
-au FileType R vnoremap <Leader>pm
-  \ y:tabnew tmpR.R<CR>
-  \ipng('tmpR.png', width=5000, height=4000, res=300)<Esc>
-  \o<Esc>PGidev.off()<Esc>:wq<CR>
-  \:!Rscript tmpR.R<CR>
-  \:!qlmanage -p tmpR.png && sleep 3<CR>
-  \:!rm tmpR.R tmpR.png<CR><CR>
-
 " Float term commands
 function LFfloaterm(command)
   let g:floaterm_open_command = a:command
@@ -208,11 +186,11 @@ nnoremap <Leader>b :set ft=sh<CR>i
 nnoremap <Leader>v :tabnew ~/.config/nvim/init.vim<CR>
 
 " Format csv files in buffer
-nnoremap <Leader>r :Tabularize /,<CR>gg
+au BufRead,BufNewFile *csv nnoremap <Leader>r :Tabularize /,<CR>gg
 
 " Remove spaces.
 " For first line, remove double space ,\s or \s, but not between words
-nnoremap <Leader>x ggV:s/\s\s//g<CR>V:s/,\s/,/g<CR>V:s/\s,/,/g<CR>jVG:s/\s//g<CR>gg
+au BufRead,BufNewFile *csv nnoremap <Leader>x ggV:s/\s\s//g<CR>V:s/,\s/,/g<CR>V:s/\s,/,/g<CR>jVG:s/\s//g<CR>gg
 
 " Toggle comments - <Command>-/ mapped to ,c in iterm2
 noremap <silent> <Leader>c :TComment<CR>
@@ -316,7 +294,17 @@ au BufNewFile,BufRead *.R,*Rprofile
     \ set shiftwidth=2                               |
     \ set textwidth=80                               |
     \ set filetype=R                                 |
-    \ nnoremap <Leader>r :w<CR>:!Rscript % <CR>:!open Rplots.pdf &<CR><CR> |
+    \ nnoremap <Leader>rp :w<CR>:!Rscript --slave % 2>/dev/null<CR>:!preview Rplots.pdf && rm Rplots.pdf<CR><CR> |
+    \ vnoremap <Leader>r y`]o<Esc>p`[v`]:!R --slave 2>/dev/null<CR> |
+
+" Nvim-R settings
+
+" R output is highlighted with current colorscheme
+let g:rout_follow_colorscheme = 1
+" R commands in R output are highlighted
+let g:Rout_more_colors = 1
+" Disable the automatic _ to <- in insert mode
+let R_assign = 0
 
  " Jade, HTML, JS, CSS, Sass, SCSS {{{1
 au BufNewFile,BufRead *.jade
