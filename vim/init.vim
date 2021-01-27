@@ -53,7 +53,7 @@ set autoread " reload a file changed outside of vim
 set laststatus=2
 set noshowmode
 set shortmess+=F " remove line that appears at bottom of file when opening
-set mouse=n " move split borders with mouse
+set mouse=a " move split borders with mouse while allowing the user to copy text with mouse
 let g:local = $USER == "tommason" || $USER == "tmas0023"
 
 " Put plugins and dictionaries in this dir (also on Windows)
