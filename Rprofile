@@ -5,11 +5,16 @@ suppressWarnings(suppressPackageStartupMessages(library(tidyverse)))
 library(readxl)
 library(latex2exp)
 
-options(
-  languageserver.server_capabilities = list(
-    object_name_linter = NULL,
-    line_length_linter = lintr::line_length_linter(120)
-  )
+# https://www.rdocumentation.org/packages/languageserver/versions/0.3.0
+setHook(
+    packageEvent("languageserver", "onLoad"),
+    function(...) {
+        options(languageserver.default_linters = lintr::with_defaults(
+            line_length_linter = lintr::line_length_linter(120),
+            object_name_linter = NULL,
+            commented_code_linter = NULL
+        ))
+    }
 )
 
 `%notin%` <- function(x, y) !(x %in% y)
