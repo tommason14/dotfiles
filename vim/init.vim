@@ -167,8 +167,8 @@ vnoremap <Leader>n3 y`]o<Esc>p`[v`]:!python3<CR>
 vnoremap <Leader>n2 y`]o<Esc>p`[v`]:!python<CR>
 
 " Run on entire buffer
-nnoremap <Leader>p3 :norm ggVG$,p3<CR>:norm <C-v><C-v>GI# <CR>
-nnoremap <Leader>p2 :norm ggVG$,p2<CR>:norm <C-v><C-v>GI# <CR>
+nnoremap <Leader>p3 :norm ggVG$,p3<CR>0:norm <C-v><C-v>GI# <CR>
+nnoremap <Leader>p2 :norm ggVG$,p2<CR>0:norm <C-v><C-v>GI# <CR>
 
 " Float term commands
 function LFfloaterm(command)

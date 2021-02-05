@@ -17,6 +17,8 @@ setHook(
     }
 )
 
+H_to_kJ <- 2625.5
+
 `%notin%` <- function(x, y) !(x %in% y)
 
 # df_with_ci <- function(path) {
@@ -175,18 +177,29 @@ theme_tom <- function(font = "Anonymous Pro", base_size = 11.5,
   ret
 }
 
+bp_from_kj <- function(series) {
+  # Takes in energies in kJ/mol, returns
+  # probabilities according to a Boltzmann distribution,
+  # in kJ/mol. Also works with group by objects.
+  R = 8.3145
+  T = 298.15
+  diffs = series - min(series)
+  exponent = exp((-1 * diffs * 1000) / (R * T))
+  summed = sum(exponent)
+  return(exponent / summed)
+}
 
-bp <- function(series) {
+bp_from_hartrees <- function(series) {
   # Takes in energies in Hartrees, returns
   # probabilities according to a Boltzmann distribution,
   # in kJ/mol. Also works with group by objects.
-  R <- 8.3145
-  T <- 298.15
-  h_to_kJ <- 2625.5
-  series <- series * h_to_kJ
-  diffs <- series - min(series)
-  exponent <- exp((-1 * diffs * 1000) / (R * T))
-  summed <- sum(exponent)
+  R = 8.3145
+  T = 298.15
+  h_to_kJ = 2625.5
+  series = series * h_to_kJ
+  diffs = series - min(series)
+  exponent = exp((-1 * diffs * 1000) / (R * T))
+  summed = sum(exponent)
   return(exponent / summed)
 }
 
