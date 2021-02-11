@@ -26,6 +26,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'jalvesaq/Nvim-R', {'branch': 'stable'}
 Plug 'gaalcaras/ncm-R' " R completion
 Plug 'ncm2/ncm2' " integrate with Nvim-R
+Plug 'jalvesaq/vimcmdline'
 call plug#end()
 
 " Basics {{{1
@@ -170,6 +171,9 @@ vnoremap <Leader>n2 y`]o<Esc>p`[v`]:!python<CR>
 nnoremap <Leader>p3 :norm ggVG$,p3<CR>0:norm <C-v><C-v>GI# <CR>
 nnoremap <Leader>p2 :norm ggVG$,p2<CR>0:norm <C-v><C-v>GI# <CR>
 
+" vimcmdline open vertically
+let cmdline_vsplit=1
+" let cmdline_external_term_cmd='kitty %s &'
 " Float term commands
 function LFfloaterm(command)
   let g:floaterm_open_command = a:command
