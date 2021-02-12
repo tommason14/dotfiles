@@ -1,4 +1,5 @@
 set background=dark
+colorscheme serenade
+let g:lightline = {"colorscheme" : "serenade"}
 set termguicolors
-colorscheme onedark
-let g:lightline = {"colorscheme" : "onedark"}
+hi folded guibg=none

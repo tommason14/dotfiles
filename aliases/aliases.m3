@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
-CYAN='\[\e[0;36m\]'
-NO_COLOUR='\[\e[0m\]'
+# using \001 and \002 instead of \[ and \]
+# https://stackoverflow.com/questions/19092488/custom-bash-prompt-is-overwriting-itself
+CYAN='\001\e[0;36m\002'
+NO_COLOUR='\001\e[0m\002'
 DATE=$(date '+%d/%m')
 
 declare -A host

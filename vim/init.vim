@@ -17,6 +17,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'daviesjamie/vim-base16-lightline'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mike-hearn/base16-vim-lightline'
+Plug 'b4skyx/serenade'
 Plug 'voldikss/vim-floaterm'          
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -172,7 +173,8 @@ nnoremap <Leader>p3 :norm ggVG$,p3<CR>0:norm <C-v><C-v>GI# <CR>
 nnoremap <Leader>p2 :norm ggVG$,p2<CR>0:norm <C-v><C-v>GI# <CR>
 
 " vimcmdline open vertically
-let cmdline_vsplit=1
+let cmdline_follow_colorscheme = 1
+" let cmdline_vsplit=1
 " let cmdline_external_term_cmd='kitty %s &'
 " Float term commands
 function LFfloaterm(command)
