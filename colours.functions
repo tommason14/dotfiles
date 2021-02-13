@@ -3,6 +3,8 @@ vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
 serenade(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme serenade
@@ -10,6 +12,15 @@ let g:lightline = {"colorscheme" : "serenade"}
 set termguicolors
 hi folded guibg=none
 EOF
+else
+cat << EOF > $vimcolours
+set background=dark
+colorscheme serenade
+let g:lightline = {"colorscheme" : "serenade"}
+set termguicolors
+hi folded guibg=none
+EOF
+fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/serenade.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf

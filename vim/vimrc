@@ -19,7 +19,7 @@ Plugin 'daviesjamie/vim-base16-lightline'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'mike-hearn/base16-vim-lightline'
 Plugin 'itchyny/lightline.vim'
-Plug 'b4skyx/serenade'
+Plugin 'b4skyx/serenade'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
   Plugin 'autozimu/LanguageClient-neovim'
