@@ -19,6 +19,12 @@ bindkey "^?" backward-delete-char # backspace fix
 #  Colourschemes  #
 ###################
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
 source ~/dotfiles/colours.functions
 
 colours(){
@@ -28,6 +34,8 @@ $(for func in $(print -l ${(ok)functions} | grep -v "^_\|colours")
   echo "$definition" | grep -lq "colorscheme" && echo "$func"
   done | fzf)
 }
+zle -N colours
+bindkey '^[C' 'colours' # alt-shift-c
 
 # Change cursor shape
 # No blinking
@@ -79,9 +87,6 @@ kitty + complete setup zsh | source /dev/stdin
 
 # start skhd on login
 pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &
-# for now, not using yabai on macbook
-# [[ $USER == "tommason" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/skhdrc >/dev/null &} 
-# [[ $USER == "tmas0023" ]] && {pgrep skhd >/dev/null || skhd -c ~/dotfiles/noyabai.skhdrc >/dev/null &} 
 
 # fzf completion
 source ~/.fzf.zsh

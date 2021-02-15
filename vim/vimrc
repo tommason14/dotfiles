@@ -173,7 +173,7 @@ vnoremap <Leader>e "kygv"=<C-r>k<CR>pqkq
 " Run python in vim
 
 " Run on selected text
-vnoremap <Leader>p3 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python3<CR>
+vnoremap <Leader>p3 y`]o<Esc>p`[v`]:!python3<CR>
 vnoremap <Leader>p2 y`]o<Esc>o<Esc>iOutput:<Esc>p`[v`]:!python<CR>
 
 " Run on selected text, no output

@@ -2,6 +2,34 @@
 vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
+dracula(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-dracula
+let g:lightline = {"colorscheme" : "base16_dracula"}
+set termguicolors
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-dracula
+let g:lightline = {"colorscheme" : "base16_dracula"}
+set termguicolors
+EOF
+fi
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/dracula_base16.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
+
 serenade(){
 if [[ "$EDITOR" == "nvim" ]] 
 then
