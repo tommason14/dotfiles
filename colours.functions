@@ -2,6 +2,60 @@
 vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
+molokai(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
+cat << EOF > $vimcolours
+set background=dark
+colorscheme molokai
+let g:lightline = {"colorscheme" : "molokai"}
+set termguicolors
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
+cat << EOF > $vimcolours
+set background=dark
+colorscheme molokai
+let g:lightline = {"colorscheme" : "molokai"}
+set termguicolors
+EOF
+fi
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/molokai.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
+monokai(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-monokai
+let g:lightline = {"colorscheme" : "base16_monokai"}
+set termguicolors
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
+cat << EOF > $vimcolours
+set background=dark
+colorscheme base16-monokai
+let g:lightline = {"colorscheme" : "base16_monokai"}
+set termguicolors
+EOF
+fi
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/monokai.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
 dracula(){
 if [[ "$EDITOR" == "nvim" ]] 
 then
