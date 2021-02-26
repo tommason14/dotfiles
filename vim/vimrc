@@ -1,5 +1,7 @@
 " Plugins {{{1
 let g:local = $USER == "tommason" || $USER == "tmas0023"
+let g:notchestercolours = trim(system("grep colorscheme ~/dotfiles/vim/colours.vim | head -1")) != "colorscheme chester"
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -18,7 +20,9 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'daviesjamie/vim-base16-lightline'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'mike-hearn/base16-vim-lightline'
-Plugin 'itchyny/lightline.vim'
+if g:notchestercolours
+  Plug 'itchyny/lightline.vim'
+endif
 Plugin 'b4skyx/serenade'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
@@ -529,3 +533,42 @@ autocmd VimEnter * :normal :startinsert :stopinsert
 set ttimeout
 set ttimeoutlen=15
 set ttyfast
+
+" Statusline hidden by lightline, shows if lightline not in use
+
+let g:currentmode={
+    \ 'n'  : 'Normal',
+    \ 'no' : 'Normal·Operator Pending',
+    \ 'v'  : 'Visual',
+    \ 'V'  : 'V·Line',
+    \ '' : 'V·Block',
+    \ 's'  : 'Select',
+    \ 'S'  : 'S·Line',
+    \ '^S' : 'S·Block',
+    \ 'i'  : 'Insert',
+    \ 'R'  : 'Replace',
+    \ 'Rv' : 'V·Replace',
+    \ 'c'  : 'Command',
+    \ 'cv' : 'Vim Ex',
+    \ 'ce' : 'Ex',
+    \ 'r'  : 'Prompt',
+    \ 'rm' : 'More',
+    \ 'r?' : 'Confirm',
+    \ '!'  : 'Shell',
+    \ 't'  : 'Terminal'
+    \}
+
+set statusline=
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\ 
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 

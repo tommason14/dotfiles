@@ -1,13 +1,14 @@
 " Plugins {{{1
-let g:local = $USER == "tommason" || $USER == "tmas0023"
+let g:notchestercolours = trim(system("grep colorscheme ~/dotfiles/vim/colours.vim | head -1")) != "colorscheme chester"
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
 Plug 'SirVer/ultisnips'
-Plug 'itchyny/lightline.vim'
+if g:notchestercolours
+  Plug 'itchyny/lightline.vim'
+endif
 Plug 'tommason14/vim-snippets'
 Plug 'tommason14/lammps.vim'
-" Plug 'tommason14/colours.vim'
+Plug 'tommason14/colours.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'junegunn/goyo.vim'               " Perfect for writing
 Plug 'godlygeek/tabular'               " Fantastic formatting
@@ -52,8 +53,8 @@ set smarttab
 set formatoptions=tcqj
 set wildmenu
 set autoread " reload a file changed outside of vim
-set laststatus=2
 set noshowmode
+set laststatus=2
 set shortmess+=F " remove line that appears at bottom of file when opening
 set mouse=a " move split borders with mouse while allowing the user to copy text with mouse
 let g:local = $USER == "tommason" || $USER == "tmas0023"
@@ -503,3 +504,42 @@ hi SpellBad cterm=underline
 set spellcapcheck=""
 hi clear SpellLocal
 hi clear Error 
+
+" Statusline hidden by lightline, shows if lightline not in use
+
+let g:currentmode={
+    \ 'n'  : 'Normal',
+    \ 'no' : 'Normal·Operator Pending',
+    \ 'v'  : 'Visual',
+    \ 'V'  : 'V·Line',
+    \ '' : 'V·Block',
+    \ 's'  : 'Select',
+    \ 'S'  : 'S·Line',
+    \ '^S' : 'S·Block',
+    \ 'i'  : 'Insert',
+    \ 'R'  : 'Replace',
+    \ 'Rv' : 'V·Replace',
+    \ 'c'  : 'Command',
+    \ 'cv' : 'Vim Ex',
+    \ 'ce' : 'Ex',
+    \ 'r'  : 'Prompt',
+    \ 'rm' : 'More',
+    \ 'r?' : 'Confirm',
+    \ '!'  : 'Shell',
+    \ 't'  : 'Terminal'
+    \}
+
+set statusline=
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}\ 
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\ 

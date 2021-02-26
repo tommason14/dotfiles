@@ -2,6 +2,34 @@
 vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
+chester(){
+if [[ "$EDITOR" == "nvim" ]] 
+then
+cat << EOF > $vimcolours
+set background=dark
+colorscheme chester
+set termguicolors
+" let g:lightline = {"colorscheme" : "chester"}
+hi nontext guibg=none
+hi linenr guibg=none
+hi cursorlinenr guibg=none
+hi folded guibg=none
+EOF
+else
+cat << EOF > $vimcolours
+set background=dark
+colorscheme chester
+set termguicolors
+" let g:lightline = {"colorscheme" : "chester"}
+EOF
+fi
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/chester.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
 molokai(){
 if [[ "$EDITOR" == "nvim" ]] 
 then

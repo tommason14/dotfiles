@@ -1,8 +1,8 @@
 set background=dark
-colorscheme base16-gruvbox-dark-hard
-let g:lightline = {"colorscheme" : "base16_gruvbox_dark_hard"}
-hi CursorLineNr ctermbg=none
+colorscheme chester
 set termguicolors
+" let g:lightline = {"colorscheme" : "chester"}
+hi nontext guibg=none
 hi linenr guibg=none
 hi cursorlinenr guibg=none
 hi folded guibg=none
