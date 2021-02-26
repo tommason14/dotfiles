@@ -3,28 +3,16 @@ vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
 chester(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
-cat << EOF > $vimcolours
-set background=dark
-colorscheme chester
-set termguicolors
-hi nontext guibg=none
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
-EOF
-else
 cat << EOF > $vimcolours
 set background=dark
 colorscheme chester
 set termguicolors
 hi nontext guibg=NONE
 hi linenr guibg=NONE
-hi cursorlinenr guibg=NONE
+" green line number
+hi cursorlinenr guibg=NONE guifg=#16c98d
 hi folded guibg=NONE
 EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/chester.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -33,25 +21,15 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 molokai(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme molokai
 let g:lightline = {"colorscheme" : "molokai"}
 set termguicolors
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme molokai
-let g:lightline = {"colorscheme" : "molokai"}
-set termguicolors
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/molokai.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -60,25 +38,15 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 monokai(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-monokai
 let g:lightline = {"colorscheme" : "base16_monokai"}
 set termguicolors
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme base16-monokai
-let g:lightline = {"colorscheme" : "base16_monokai"}
-set termguicolors
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/monokai.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -87,25 +55,15 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 dracula(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-dracula
 let g:lightline = {"colorscheme" : "base16_dracula"}
 set termguicolors
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme base16-dracula
-let g:lightline = {"colorscheme" : "base16_dracula"}
-set termguicolors
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/dracula_base16.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -115,23 +73,13 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 
 
 serenade(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme serenade
 let g:lightline = {"colorscheme" : "serenade"}
 set termguicolors
-hi folded guibg=none
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme serenade
-let g:lightline = {"colorscheme" : "serenade"}
-set termguicolors
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/serenade.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -140,25 +88,15 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 ocean(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-ocean
 set termguicolors
 let g:lightline = {'colorscheme': 'base16_ocean'}
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme base16-ocean
-set termguicolors
-let g:lightline = {'colorscheme': 'base16_ocean'}
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 cat ~/.cache/wal/sequences
 local kitty="~/.config/kitty/themes/Ocean.conf"
@@ -196,27 +134,16 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 gruvbox_dark(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-gruvbox-dark-hard
 let g:lightline = {"colorscheme" : "base16_gruvbox_dark_hard"}
-hi CursorLineNr ctermbg=none
 set termguicolors
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi CursorLineNr ctermbg=NONE
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme base16-gruvbox-dark-hard
-let g:lightline = {"colorscheme" : "base16_gruvbox_dark_hard"}
-hi CursorLineNr ctermbg=none
-set termguicolors
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/gruvbox-dark-hard.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -266,27 +193,16 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 tomorrow_night(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 set termguicolors
 colorscheme base16-tomorrow-night
 let base16colorspace=256
 let g:lightline = {"colorscheme" : "Tomorrow_Night"}
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-set termguicolors
-colorscheme base16-tomorrow-night
-let base16colorspace=256
-let g:lightline = {"colorscheme" : "Tomorrow_Night"}
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/Tomorrow_Night.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -309,25 +225,15 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 
 solarized_dark(){
-if [[ "$EDITOR" == "nvim" ]] 
-then
 cat << EOF > $vimcolours
 set background=dark
 colorscheme base16-solarized-dark
 set termguicolors
 let g:lightline = {"colorscheme" : "solarized"}
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
-else
-cat << EOF > $vimcolours
-set background=dark
-colorscheme base16-solarized-dark
-set termguicolors
-let g:lightline = {"colorscheme" : "solarized"}
-EOF
-fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
 local kitty="~/.config/kitty/themes/Solarized_Dark.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf

@@ -1,8 +1,8 @@
 set background=dark
 colorscheme chester
 set termguicolors
-" let g:lightline = {"colorscheme" : "chester"}
-hi nontext guibg=none
-hi linenr guibg=none
-hi cursorlinenr guibg=none
-hi folded guibg=none
+hi nontext guibg=NONE
+hi linenr guibg=NONE
+" green line number
+hi cursorlinenr guibg=NONE guifg=#16c98d
+hi folded guibg=NONE
