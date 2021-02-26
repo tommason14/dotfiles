@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tommason14/vim-snippets'
 Plugin 'tommason14/lammps.vim'
+Plugin 'tommason14/colours.vim'
 Plugin 'junegunn/goyo.vim'               " Perfect for writing
 Plugin 'godlygeek/tabular'               " Fantastic formatting
 Plugin 'matze/vim-tex-fold' 
