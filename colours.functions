@@ -9,7 +9,6 @@ cat << EOF > $vimcolours
 set background=dark
 colorscheme chester
 set termguicolors
-" let g:lightline = {"colorscheme" : "chester"}
 hi nontext guibg=none
 hi linenr guibg=none
 hi cursorlinenr guibg=none
@@ -20,7 +19,10 @@ cat << EOF > $vimcolours
 set background=dark
 colorscheme chester
 set termguicolors
-" let g:lightline = {"colorscheme" : "chester"}
+hi nontext guibg=NONE
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
 EOF
 fi
 [[ $USER =~ (tommason|tmas0023) ]] && {
