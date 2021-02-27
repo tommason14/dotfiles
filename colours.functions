@@ -2,6 +2,25 @@
 vimcolours="$HOME/dotfiles/vim/colours.vim"
 [[ $USER =~ (tommason|tmas0023) ]] && sed='gsed' || sed='sed'
 
+lighthaus(){
+cat << EOF > $vimcolours
+set background=dark
+colorscheme lighthaus
+let g:lightline = {"colorscheme" : "lighthaus"}
+set termguicolors
+hi nontext guibg=NONE
+hi linenr guibg=NONE
+" green line number
+hi cursorlinenr guibg=NONE guifg=#16c98d
+hi folded guibg=NONE
+EOF
+[[ $USER =~ (tommason|tmas0023) ]] && {
+local kitty="~/.config/kitty/themes/lighthaus.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
 chester(){
 cat << EOF > $vimcolours
 set background=dark
