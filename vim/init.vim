@@ -18,7 +18,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'daviesjamie/vim-base16-lightline'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'mike-hearn/base16-vim-lightline'
-Plug 'lighthaus-theme/vim'
+Plug 'tommason14/vim-lighthaus'
 Plug 'b4skyx/serenade'
 Plug 'voldikss/vim-floaterm'          
 Plug 'autozimu/LanguageClient-neovim', {
