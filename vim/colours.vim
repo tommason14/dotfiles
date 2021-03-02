@@ -1,6 +1,5 @@
 set background=dark
-colorscheme lighthaus
-let g:lightline = {"colorscheme" : "lighthaus"}
+colorscheme chester
 set termguicolors
 hi nontext guibg=NONE
 hi linenr guibg=NONE
