@@ -10,6 +10,9 @@ SAVEHIST=1000000 # in file
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^[e' edit-command-line
 
+bindkey '^R' history-incremental-search-backward
+
+
 # Vi mode
 bindkey -v
 export KEYTIMEOUT=1
@@ -18,12 +21,6 @@ bindkey "^?" backward-delete-char # backspace fix
 ###################
 #  Colourschemes  #
 ###################
-
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 source ~/dotfiles/colours.functions
 
@@ -93,8 +90,8 @@ source ~/.fzf.zsh
 
 export EDITOR=nvim
 
-export PYTHONPATH=$PYTHONPATH:/Users/tmas0023/pysimm
-PATH=$PATH:/Users/tmas0023/pysimm/bin
+export PYTHONPATH=$PYTHONPATH:~/pysimm
+PATH=$PATH:~/pysimm/bin
 
 PATH=$PATH:~/miniconda3/bin
 
@@ -211,6 +208,7 @@ export automation="$repos/autochem"
 if [[ $USER == "tommason" ]] 
 then
   alias vmd="/Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64"
+  # alias vmd="/Applications/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/vmd_MACOSXX86_64"
 else
   # uni desktop
   alias vmd="/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86"
@@ -228,8 +226,8 @@ export raijin='tm3124@raijin.nci.org.au'
 export magnus='tmason@magnus.pawsey.org.au'
 export gaia='tmas0011@msgln6.its.monash.edu.au'
 export m3='tmason1@m3.massive.org.au'
-export monarch='tmason1@monarch-login1.erc.monash.edu.au'
-export mon='tmason1@monarch-login1.erc.monash.edu.au'
+export monarch='tmason1@monarch.erc.monash.edu.au'
+export mon='tmason1@monarch.erc.monash.edu.au'
 export stm='tmason@login3.stampede2.tacc.utexas.edu' # log in to same node to re-attach to tmux sessions
 export df="$HOME/dotfiles"
 export vault="tmason1@118.138.242.229"
