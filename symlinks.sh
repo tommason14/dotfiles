@@ -23,6 +23,8 @@ $dir/jupyter/custom.css $jupyter_css)
   mkdir -p $HOME/spicetify_data/Themes/pywal && touch $HOME/spicetify_data/Themes/pywal/user.css
   # pywal makes the theme and wl/make_wallpaper.sh copies the theme into the
   # spicetify directory
+[[ -L ~/.zshrc ]] || (echo "Linking zshrc" && ln -s $dir/zshrc ~/.zshrc)
+
 else # remotes
   files="bash_functions"    
 fi

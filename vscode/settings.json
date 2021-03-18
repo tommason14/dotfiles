@@ -89,4 +89,14 @@
         "unpkg.com"
     ],
     "jupyter.interactiveWindowMode": "perFile",
+    "python.formatting.blackArgs": [
+      "\"--line-length\", \"100\""
+    ],
+    "editor.formatOnSave": true,
+    "workbench.editorAssociations": [
+      {
+        "viewType": "jupyter.notebook.ipynb",
+        "filenamePattern": "*.ipynb"
+      }
+    ],
 }
