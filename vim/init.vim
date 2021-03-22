@@ -118,6 +118,11 @@ map <A-Down> <C-w><Down>
 map <A-Right> <C-w><Right>
 map <A-Left> <C-w><Left>
 
+" control + up/down = page up/page down
+" so leftmost key on mech. keyboard works as mac function key
+" map <C-Up> <PageUp>
+" map <C-Down> <PageDown>
+
 " Try out additional escape
 inoremap jj <Esc>
 

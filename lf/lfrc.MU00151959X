@@ -69,13 +69,16 @@ cmd bulk-rename ${{ # {{{3
 
 map c
 map d
-map j
-map l
+# map l
 map m
 map p
 map r
 map w
 map y
+
+# Quicker navigation
+map <s-up> page-up
+map <s-down> page-down
 
 # Ranger-like {{{2
 
@@ -147,7 +150,7 @@ map tdr $travis_xyz_analysis "$f" drude
 map rl !realpath "$f" 
 map pt $polymatic_types.py $(basename "$f") > types.txt
 map aa $add_atomic_symbols_to_lammps_datafile.py $(basename "$f")
-map lo !lookup_fmo_progress.sh $(basename "$f")
+# map lo !lookup_fmo_progress.sh $(basename "$f")
 
 map gld $grep_lammps_data.sh "$f" > data.csv
 map pld $plot_lammps_density.sh 
@@ -207,9 +210,9 @@ map A rename
 # Wallpaper {{{2
 
 map wl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" 
-map lwl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" -l
+# map lwl $~/Documents/repos/wallpapers/make_wallpaper.sh "$f" -l
 map wr $~/Documents/repos/wallpapers/random_wallpaper.sh
-map lwr $~/Documents/repos/wallpapers/random_wallpaper.sh -l
+# map lwr $~/Documents/repos/wallpapers/random_wallpaper.sh -l
 
 
 # Copy across volumes, say from google drive to local mac
