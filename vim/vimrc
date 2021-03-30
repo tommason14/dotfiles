@@ -269,6 +269,7 @@ au BufNewFile,BufRead *.py
 
 " italic docstrings
 au FileType python syn region Comment start=/"""/ end=/"""/ 
+au BufWritePost *.py :!command -v black >/dev/null && black %<CR>
 
 " Language server setup {{{1
 set hidden
