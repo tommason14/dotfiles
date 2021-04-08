@@ -348,17 +348,17 @@ alias ...='cd ../../'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# chem assist
+# chem stuff
 
-chem_assist_ds() {
+autochem_ds() {
 settings_file=$(ls *.py | sort | head -n 1)
-chem_assist -ds $settings_file
+autochem -ds $settings_file
 [[ -d __pycache__ ]] && rm -r __pycache__
 }
 
-alias cad='chem_assist_ds'
-alias cae='chem_assist -e'
-alias car='chem_assist -r'
+alias cad='autochem_ds'
+alias cae='autochem -e'
+alias car='autochem -r'
 
 # alt-l to open lf
 bindkey -s '^[l' 'lfcd\n'
