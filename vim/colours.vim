@@ -1,8 +1,8 @@
 set background=dark
+colorscheme chester
 set termguicolors
-colorscheme base16-tomorrow-night
-let base16colorspace=256
-let g:lightline = {"colorscheme" : "Tomorrow_Night"}
+hi nontext guibg=NONE
 hi linenr guibg=NONE
-hi cursorlinenr guibg=NONE
+" green line number
+hi cursorlinenr guibg=NONE guifg=#16c98d
 hi folded guibg=NONE
