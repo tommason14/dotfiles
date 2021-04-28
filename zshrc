@@ -90,7 +90,7 @@ source ~/.fzf.zsh
 
 export EDITOR=nvim
 
-export PYTHONPATH=$PYTHONPATH:~/pysimm
+PYTHONPATH=$PYTHONPATH:~/pysimm
 PATH=$PATH:~/pysimm/bin
 
 PATH=$PATH:~/miniconda3/bin
@@ -238,6 +238,10 @@ export gaff="$HOME/.local/scripts/chem/lammps/create_gaff_jobs"
 
 # IL MD scripts
 PATH="$filestream/hydrated_ils/MD/peter_helper_scripts:$PATH"
+
+# MS-TOOLS
+export PYTHONPATH="$HOME/Documents/ms-tools:$PYTHONPATH"
+
 export PATH="$(find "$HOME/.local/scripts" -type d | grep -v "^.$\|.git\|pycache" | tr '\n' ':' | sed 's/:$//'):$PATH"
 
 source ~/dotfiles/lf/icons.sh
@@ -359,6 +363,8 @@ autochem -ds $settings_file
 alias cad='autochem_ds'
 alias cae='autochem -e'
 alias car='autochem -r'
+
+alias conda_openmm='source ~/miniconda3/bin/activate && conda activate openmm'
 
 # alt-l to open lf
 bindkey -s '^[l' 'lfcd\n'
