@@ -246,7 +246,7 @@ au FileType python syn region Comment start=/"""/ end=/"""/
 set hidden
 
 " Automatically start language servers.
-let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_autoStart = 1
 
 let g:LanguageClient_serverCommands = {
   \ 'python': ['/usr/local/bin/pyls'],
