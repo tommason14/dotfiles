@@ -176,7 +176,6 @@ gadiscp(){
 vmd_unwrap () 
 { 
     echo "source ~/.local/scripts/chem/vmd_unwrap.tcl" >> unwrap_vmd.tmp
-    [[ $USER == tommason ]] && vmd="/Applications/VMD 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64"
     $vmd $1 $2 -e unwrap_vmd.tmp
     rm unwrap_vmd.tmp
 }
@@ -206,12 +205,11 @@ PYTHONPATH="$repos/dopamine/dopamine_analysis/elucidation_of_structure_in_c2mim_
 PYTHONPATH="$HOME/.local/scripts/utils:$PYTHONPATH" # plottingfuncs
 export automation="$repos/autochem"
 if [[ $USER == "tommason" ]] 
+# vmd symlinks set
 then
-  alias vmd="/Applications/VMD\ 1.9.4a38.app/Contents/vmd/vmd_MACOSXX86_64"
-  # alias vmd="/Applications/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd/vmd_MACOSXX86_64"
+  export VMDDIR=/Applications/VMD\ 1.9.4a51-x86_64-Rev9.app/Contents/vmd
 else
-  # uni desktop
-  alias vmd="/Applications/VMD\ 1.9.3.app/Contents/vmd/vmd_MACOSXX86"
+  export VMDDIR=/Applications/VMD\ 1.9.3.app/Contents/vmd
 fi
 # gsed/ggrep on mac
 export sed="gsed"

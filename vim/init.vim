@@ -500,9 +500,8 @@ hi Statement cterm=none " keywords not in bold (normally cterm=bold)
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 " then set italics
-" for some reason neovim is considered as a gui, so switch cterm to gui
-hi Comment gui=italic
-hi Folded gui=italic " Italic and use terminal colours
+hi Comment cterm=italic
+hi Folded cterm=italic " Italic and use terminal colours
 
 " Changes style of highlighting
 hi clear SpellBad

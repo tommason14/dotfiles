@@ -239,7 +239,7 @@ theme_default <- theme_bw() +
 
 
 # UV-Vis/Fluorescence
-# Note that functions are expecting output from chem_assist/qcp, in the form
+# Note that functions are expecting output from autochem/qcp, in the form
 # Config,Root,Iteration,Transition Energies (eV),Wavelength (nm),Intensity (au)
 
 normpdf <- function(x, mu, sigma) {
