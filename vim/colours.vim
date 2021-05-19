@@ -1,3 +1,4 @@
 set background=dark
-colorscheme wal
-let g:lightline = {"colorscheme" : "wal"}
+set termguicolors
+colorscheme onedark
+let g:lightline = {"colorscheme" : "onedark"}
