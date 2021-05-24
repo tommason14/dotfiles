@@ -14,7 +14,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE guifg=#16c98d
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/lighthaus.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -32,7 +32,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE guifg=#16c98d
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/chester.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -49,7 +49,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/molokai.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -66,7 +66,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/monokai.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -83,7 +83,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/dracula_base16.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -99,7 +99,7 @@ let g:lightline = {"colorscheme" : "serenade"}
 set termguicolors
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/serenade.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -116,7 +116,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 cat ~/.cache/wal/sequences
 local kitty="~/.config/kitty/themes/Ocean.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -130,7 +130,7 @@ set background=dark
 colorscheme wal
 let g:lightline = {"colorscheme" : "wal"}
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 cat ~/.cache/wal/sequences
 local kitty="~/.cache/wal/colors-kitty.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
@@ -145,7 +145,7 @@ colorscheme gruvbox
 let g:lightline = {"colorscheme" : "gruvbox"}
 hi CursorLineNr ctermbg=none
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/gruvbox_dark.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -163,7 +163,7 @@ hi linenr guibg=NONE
 hi cursorlinenr ctermbg=NONE guibg=NONE guifg=#83a598 
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/gruvbox-dark-hard.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -176,7 +176,7 @@ set background=dark
 colorscheme nord
 let g:lightline = {"colorscheme" : "nord"}
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/nord.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -190,7 +190,7 @@ set termguicolors
 colorscheme onedark
 let g:lightline = {"colorscheme" : "onedark"}
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/OneDark.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -204,7 +204,7 @@ set termguicolors
 colorscheme one
 let g:lightline = {"colorscheme" : "base16_one_light"}
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/onehalf-light.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -222,7 +222,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/Tomorrow_Night.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -236,7 +236,7 @@ colorscheme base16-solarized-light
 set termguicolors
 let g:lightline = {"colorscheme" : "solarized"}
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/Solarized_Light.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
@@ -253,7 +253,7 @@ hi linenr guibg=NONE
 hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
 EOF
-[[ $USER =~ (tommason|tmas0023) ]] && {
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/Solarized_Dark.conf"
 $sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
 kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
