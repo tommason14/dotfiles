@@ -81,3 +81,8 @@ name=formate
 charge=-1
 multiplicity=1
 atoms=C,O,H,O
+
+name=hydroxide
+charge=-1
+multiplicity=1
+atoms=O,H
