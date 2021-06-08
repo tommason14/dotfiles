@@ -237,6 +237,19 @@ theme_default <- theme_bw() +
   ) +
   no_grid
 
+scientific_axis <- function(l) {
+  # turn in to character string in scientific notation
+  l <- format(l, scientific = TRUE)
+  # quote the part before the exponent to keep all the digits
+  l <- gsub("^(.*)e", "'\\1'e", l)
+  # turn the 'e+' into plotmath format
+  l <- gsub("e", "%*%10^", l)
+  # return this as an expression
+  parse(text=l)
+}
+# Convert 2e-6 -> 2x10-6 
+# i.e:
+# plot + scale_y_continuous(labels = scientific_axis# plot +
 
 # UV-Vis/Fluorescence
 # Note that functions are expecting output from autochem/qcp, in the form
