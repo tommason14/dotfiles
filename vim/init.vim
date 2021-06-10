@@ -201,9 +201,9 @@ nnoremap <Leader>v :tabnew ~/.config/nvim/init.vim<CR>
 " Format csv files in buffer
 au BufRead,BufNewFile *csv nnoremap <Leader>r :Tabularize /,<CR>gg
 
-" Remove spaces.
+" Remove spaces and return to original csv.
 " For first line, remove double space ,\s or \s, but not between words
-au BufRead,BufNewFile *csv nnoremap <Leader>x ggV:s/\s\s//g<CR>V:s/,\s/,/g<CR>V:s/\s,/,/g<CR>jVG:s/\s//g<CR>gg
+au BufRead,BufNewFile *csv nnoremap <Leader>x ggV:s/\s\s//g<CR>V:s/,\s/,/g<CR>V:s/\s*,/,/g<CR>jVG:s/\s//g<CR>gg
 
 " Toggle comments - <Command>-/ mapped to ,c in iterm2
 noremap <silent> <Leader>c :TComment<CR>
