@@ -230,7 +230,7 @@ au BufNewFile,BufRead *.py
     \ set shiftwidth=4                               |
     \ set textwidth=100                              |
     \ let g:formatters_python=['black']              |
-    \ let g:black_linelength=100                     |
+    \ let g:black_linelength=110                     |
     \ set filetype=python                            |
     \ set formatoptions=tcqj                         |
 
