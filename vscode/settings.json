@@ -93,10 +93,11 @@
       "\"--line-length\", \"100\""
     ],
     "editor.formatOnSave": true,
-    "workbench.editorAssociations": [
-      {
-        "viewType": "jupyter-notebook",
-        "filenamePattern": "*.ipynb"
-      }
-    ],
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+      "default": "right",
+      "jupyter-notebook": "left"
+    },
 }

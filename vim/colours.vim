@@ -1,8 +1,7 @@
 set background=dark
-colorscheme base16-gruvbox-dark-hard
-let g:lightline = {"colorscheme" : "base16_gruvbox_dark_hard"}
 set termguicolors
+colorscheme nightfly
+let g:lightline = {"colorscheme" : "nightfly"}
 hi linenr guibg=NONE
-" blue number
-hi cursorlinenr ctermbg=NONE guibg=NONE guifg=#83a598 
+hi cursorlinenr guibg=NONE
 hi folded guibg=NONE

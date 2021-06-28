@@ -26,6 +26,7 @@ if g:notchestercolours
   Plugin 'itchyny/lightline.vim'
 endif
 Plugin 'b4skyx/serenade'
+Plugin 'bluz71/vim-nightfly-guicolors'
 Plugin 'voldikss/vim-floaterm'           " Looks cool
 if g:local
   Plugin 'autozimu/LanguageClient-neovim'

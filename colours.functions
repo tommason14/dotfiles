@@ -90,6 +90,23 @@ kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
 }
 }
 
+nightfly(){
+cat << EOF > $vimcolours
+set background=dark
+set termguicolors
+colorscheme nightfly
+let g:lightline = {"colorscheme" : "nightfly"}
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
+EOF
+[[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
+local kitty="~/.config/kitty/themes/nightfly.conf"
+$sed -i "s|include.*conf|include $kitty|" ~/.config/kitty/kitty.conf
+kitty @ set-colors --all --configured ~/.config/kitty/kitty.conf
+}
+}
+
 
 serenade(){
 cat << EOF > $vimcolours
