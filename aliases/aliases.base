@@ -349,6 +349,7 @@ alias fm='lfcd'
 # ssh
 alias remote='sshpass -f ~/dotfiles/sshfile'
 export gadi='tm3124@gadi.nci.org.au'
+export gadi_dt='tm3124@gadi-dm.nci.org.au' # data transfer / data mover
 export raijin='tm3124@raijin.nci.org.au'
 export magnus='tmason@magnus.pawsey.org.au'
 export gaia='tmas0011@msgln6.its.monash.edu.au'
