@@ -185,8 +185,7 @@ vmd_unwrap ()
 #############
 
 export GAMESS="$HOME/Documents/GAMESS/macos/rungms"
-export LAMMPS_EXEC="$HOME/Documents/lammps-stable_29Oct2020/bin/lmp_mac"
-export LAMMPS_MPI="$HOME/Documents/lammps-stable_29Oct2020/bin/lmp_mac_mpi"
+export LAMMPS_EXEC="$HOME/Documents/lammps-stable_29Oct2020/bin/lmp_mac_mpi"
 export moltemplate_ff=/Volumes/GoogleDrive/My\ Drive/polymers/LAMMPS/moltemplate/moltemplate/force_fields
 
 export filestream=/Volumes/GoogleDrive/My\ Drive
