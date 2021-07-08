@@ -21,6 +21,7 @@ Plug 'mike-hearn/base16-vim-lightline'
 Plug 'bluz71/vim-nightfly-guicolors'
 Plug 'tommason14/vim-lighthaus'
 Plug 'b4skyx/serenade'
+Plug 'ulwlu/elly.vim'
 Plug 'voldikss/vim-floaterm'          
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
