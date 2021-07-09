@@ -1,7 +1,5 @@
 set background=dark
-colorscheme elly
+colorscheme serenade
+let g:lightline = {"colorscheme" : "serenade"}
 set termguicolors
-let g:lightline = {"colorscheme" : "elly"}
-hi linenr guibg=NONE
-hi cursorlinenr guibg=NONE
 hi folded guibg=NONE
