@@ -23,6 +23,7 @@ Plug 'tommason14/vim-lighthaus'
 Plug 'b4skyx/serenade'
 Plug 'ulwlu/elly.vim'
 Plug 'voldikss/vim-floaterm'          
+Plug 'ayu-theme/ayu-vim'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
