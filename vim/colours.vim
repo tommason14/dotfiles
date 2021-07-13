@@ -1,6 +1,8 @@
 set background=dark
-colorscheme nord
-let g:lightline = {"colorscheme" : "nord"}
-hi Comment ctermfg=14 " brighter comments
-hi Folded ctermfg=14
-hi LineNr ctermfg=6
+set termguicolors
+let ayucolor='mirage'
+colorscheme ayu
+let g:lightline = {"colorscheme" : "ayu"}
+hi linenr guibg=NONE
+hi cursorlinenr guibg=NONE
+hi folded guibg=NONE
