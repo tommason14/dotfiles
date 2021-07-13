@@ -192,6 +192,8 @@ cat << EOF > $vimcolours
 set background=dark
 colorscheme nord
 let g:lightline = {"colorscheme" : "nord"}
+hi Comment ctermfg=14 " brighter comments
+hi Folded ctermfg=14
 EOF
 [[ $USER =~ (tommason|tmas0023) && $TERM =~ kitty ]] && {
 local kitty="~/.config/kitty/themes/nord.conf"
