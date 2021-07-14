@@ -23,6 +23,7 @@ Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'mike-hearn/base16-vim-lightline'
 Plugin 'tommason14/vim-lighthaus'
 Plugin 'ulwlu/elly.vim'
+Plugin 'ayu-theme/ayu-vim'
 if g:notchestercolours
   Plugin 'itchyny/lightline.vim'
 endif
